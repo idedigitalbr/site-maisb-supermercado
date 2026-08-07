@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grupo +B | Varejo, Saúde, Lazer & Gastronomia no Norte</title>
+  <meta name="description" content="Grupo +B, o maior ecossistema integrado paraense de varejo, farmácias, gastronomia, lazer e adegas premium." />
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://grupomaisbarato.com.br/index.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://grupomaisbarato.com.br/index.html" />
+  <meta property="og:title" content="Grupo +B | Varejo, Saúde, Lazer & Gastronomia" />
+  <meta property="og:description" content="O maior ecossistema integrado de marcas e experiências da Região Norte." />
+  <meta property="og:image" content="https://grupomaisbarato.com.br/assets/Logo%20Marca%20Grupo%20MaisB/Logo%20Grupo%20Mais%20Barato%20(Color%20Positivo).webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://grupomaisbarato.com.br/index.html" />
+  <meta name="twitter:title" content="Grupo +B | Varejo, Saúde, Lazer & Gastronomia" />
+  <meta name="twitter:description" content="O maior ecossistema integrado de marcas e experiências da Região Norte." />
+  <meta name="twitter:image" content="https://grupomaisbarato.com.br/assets/Logo%20Marca%20Grupo%20MaisB/Logo%20Grupo%20Mais%20Barato%20(Color%20Positivo).webp" />
+
+  <link rel="icon" type="image/webp" href="./assets/Logo Marca Grupo MaisB/FavIcon-Grupo Mais Barato (Color Negativo).webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="preload" href="./assets/Videos/video-b-home-poster.webp" as="image" />
+  <link rel="preload" href="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp" as="image" />
+  <link rel="stylesheet" href="./src/css/main.css?v=8.0" />
+  <!-- Script de Fallback Automático de Imagens e Vídeos -->
+  <script>
+    document.addEventListener('error', function(event) {
+      const target = event.target;
+      const tagName = target.tagName.toLowerCase();
+      
+      if (tagName === 'img' || tagName === 'video' || tagName === 'source') {
+        const element = target;
+        let fallbackCount = parseInt(element.getAttribute('data-fallback-count') || '0', 10);
+        const srcUrl = element.getAttribute('src');
+        if (!srcUrl || !srcUrl.includes('./assets/')) return;
+        
+        const assetPath = 'assets/' + srcUrl.split('./assets/')[1];
+        
+        // Priorizar o caminho local (./assets) para carregar offline da própria pasta do projeto
+        const fallbacks = [
+          './' + assetPath,                                     // 1º Fallback: Local
+          'https://grupomaisb.suporteide.digital/' + assetPath  // 2º Fallback: Online VPS
+        ];
+        
+        if (fallbackCount < fallbacks.length) {
+          const nextFallback = fallbacks[fallbackCount];
+          element.setAttribute('data-fallback-count', fallbackCount + 1);
+          element.src = nextFallback;
+          
+          if (tagName === 'source') {
+            const videoParent = element.parentNode;
+            if (videoParent && videoParent.tagName.toLowerCase() === 'video') {
+              videoParent.load();
+              if (videoParent.hasAttribute('autoplay')) {
+                videoParent.play().catch(function() {});
+              }
+            }
+          } else if (tagName === 'video') {
+            element.load();
+            if (element.hasAttribute('autoplay')) {
+              element.play().catch(function() {});
+            }
+          }
+        }
+      }
+    }, true);
+
+    // Corrigir Background Images do CSS quando aberto localmente
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.location.protocol === 'file:') {
+        for (let i = 0; i < document.styleSheets.length; i++) {
+          try {
+            const sheet = document.styleSheets[i];
+            const rules = sheet.cssRules || sheet.rules;
+            if (!rules) continue;
+            for (let j = 0; j < rules.length; j++) {
+              const rule = rules[j];
+              if (rule.style && rule.style.backgroundImage) {
+                const bg = rule.style.backgroundImage;
+                if (bg && bg.includes('./assets/')) {
+                  const parts = bg.split('./assets/');
+                  const assetPath = 'assets/' + parts[1].replace(/['"\)]/g, '');
+                  
+                  // Aponta para a pasta local assets/ do próprio projeto
+                  rule.style.backgroundImage = "url('./" + assetPath + "')";
+                }
+              }
+            }
+          } catch (e) {
+            // Ignorar erros de cross-origin em CDN
+          }
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  <header class="site-header" id="topo">
+    <div class="brand-group">
+      <a class="brand-main" href="#home" aria-label="Grupo +B">
+        <img src="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp" alt="Logo +B" />
+      </a>
+      <div class="brand-sub-logos">
+        <a href="#marca-super" class="sub-logo-link" title="+B Supermercados">
+          <img src="./assets/Logos SubMarcas/logo-supermercados-maisb.webp" alt="+B Supermercados" />
+        </a>
+        <a href="#marca-farma" class="sub-logo-link" title="+B Farma">
+          <img src="./assets/Logos SubMarcas/logo-farma-mais-b.webp" alt="+B Farma" />
+        </a>
+        <a href="#marca-plaza" class="sub-logo-link" title="Villa Plaza">
+          <img src="./assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp" alt="Villa Plaza" />
+        </a>
+        <a href="#marca-park" class="sub-logo-link" title="Villa Plaza Park">
+          <img src="./assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp" alt="Villa Plaza Park" />
+        </a>
+        <a href="#marca-wine" class="sub-logo-link" title="The Wine Experience">
+          <img src="./assets/Logos SubMarcas/logo-the-wine-experience.webp" alt="The Wine Experience" />
+        </a>
+      </div>
+    </div>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-menu" id="main-menu">
+      <a href="#home">Home</a>
+      <a href="#" id="menu-link-sobre">Sobre o Grupo +B</a>
+      <div class="dropdown contacts-dropdown">
+        <a class="drop-link btn-contacts-menu" aria-haspopup="true">Contatos</a>
+        <div class="drop-panel" aria-label="Submenu Contatos">
+          <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener" id="menu-link-trabalhe">Trabalhe Conosco</a>
+          <a href="./links.html" id="menu-link-links">Nossos Links</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="wf-main-content" data-wf-version="5.0">
+    <!-- SEÇÃO HERO CARROSSEL FULLSCREEN -->
+    <section class="hero-carousel-section wf-section" id="home" data-wf-label="SOBRE NÓS: HERO VÍDEO CARROSSEL - FULLSCREEN">
+      <!-- Linha de carregamento (Progress Bar) -->
+      <div class="carousel-progress-bar"></div>
+
+      <!-- Elemento tecnológico de órbita/anel neon sutil -->
+      <div class="hero-tech-ring-wrapper">
+        <div class="hero-tech-ring"></div>
+      </div>
+
+      <!-- Ponto de luz interativo (glow/burn) -->
+      <div class="hero-interactive-glow"></div>
+
+      <!-- Slides wrapper -->
+      <div class="carousel-slides">
+        
+        <!-- Slide 1 — Institucional Grupo +B -->
+        <div class="carousel-slide active theme-black" data-slide="1">
+          <!-- Vídeo de background específico do Slide 1 -->
+          <video class="carousel-bg-video" autoplay loop muted playsinline poster="./assets/Videos/video-b-home-poster.webp">
+            <source src="./assets/Videos/video-b-home-compressed.mp4" type="video/mp4">
+          </video>
+          <div class="slide-overlay slide1-overlay"></div>
+          <div class="container slide-container">
+            <div class="slide-content left-align">
+              <span class="eyebrow light">Bem-vindo</span>
+              <h1 class="slide-headline-huge">Somos o Grupo +B</h1>
+              <p class="slide-lead">Grandes marcas e experiências em supermercado, farmácia, gastronomia e lazer no Norte.</p>
+              <div class="slide-actions">
+                <a href="#" class="btn primary">Saber mais</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 — Trabalhe Conosco -->
+        <div class="carousel-slide theme-red" data-slide="2">
+          <!-- Imagem de background específica do Slide 2 -->
+          <img class="carousel-bg-image" src="./assets/Paginas (Imagens)/Home/topo-banner-trabalhe-conosco.webp" alt="Equipe de Atendimento Grupo +B" loading="lazy">
+          <div class="slide-overlay slide3-overlay"></div>
+          <div class="container slide-container">
+            <div class="slide-content left-align">
+              <div class="careers-badge-group">
+                <span class="careers-badge-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                </span>
+                <span class="careers-badge-pill">
+                  CARREIRAS +B
+                </span>
+              </div>
+              <h2>Trabalhe <br><span class="slide-headline-highlight">Conosco</span></h2>
+              <p class="slide-lead">Venha fazer parte das nossas empresas e encontre oportunidades para crescer com o <strong>Grupo +B</strong>.</p>
+              <div class="slide-actions">
+                <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener" class="btn primary">Quero me candidatar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px; display: inline-block; vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 — CTA para parceiros -->
+        <div class="carousel-slide theme-yellow" data-slide="3">
+          <!-- Imagem de background específica do Slide 3 -->
+          <img class="carousel-bg-image" src="./assets/Paginas (Imagens)/Home/topo-banner-seja-parceiro.webp" alt="Parceiros Comerciais Grupo +B" loading="lazy">
+          <div class="slide-overlay slide2-overlay"></div>
+          <div class="container slide-container">
+            <div class="slide-content left-align">
+              <div class="partner-badge-group">
+                <span class="partner-badge-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79-.07l1.66 1.48" /><path d="m19 14-1.23-1.07a2.83 2.83 0 0 0-3.79.07l-1.92 1.77a2.17 2.17 0 0 1-3.07 0v0a2.17 2.17 0 0 1 0-3.08L12 8.75" /></svg>
+                </span>
+                <span class="partner-badge-pill">
+                  PARCERIAS +B
+                </span>
+              </div>
+              <h2>Seja um <br><span class="slide-headline-highlight">Parceiro +B</span></h2>
+              <p class="slide-lead">Conecte sua empresa ao Grupo +B para oportunidades em fornecimento, negócios, investimento e parcerias estratégicas.</p>
+              <div class="slide-actions">
+                <a href="https://api.whatsapp.com/send/?phone=5591984040710&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn primary">Quero agendar reunião <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px; display: inline-block; vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Indicadores de slide -->
+      <div class="carousel-indicators">
+        <button class="indicator-dot active" aria-label="Slide 1"></button>
+        <button class="indicator-dot" aria-label="Slide 2"></button>
+        <button class="indicator-dot" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Setas de navegação -->
+      <button class="carousel-nav prev-btn" aria-label="Slide anterior">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button class="carousel-nav next-btn" aria-label="Próximo slide">
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </section>
+
+    <section class="section about-premium-section wf-section section-full-width" id="sobre" data-wf-label="SEÇÃO SOBRE O GRUPO - LAYOUT PREMIUM GLASSMORPHISM">
+      <!-- Ambient Lights / Background Glows -->
+      <div class="about-bg-glow glow-top-right"></div>
+      <div class="about-bg-glow glow-center-photo"></div>
+      <div class="about-bg-glow glow-bottom-left"></div>
+      <div class="about-dotted-pattern"></div>
+
+      <div class="container about-container">
+        <!-- Main Top Row (2 Columns: Content Left, Photo Right) -->
+        <div class="about-main-grid">
+          
+          <!-- Left Column: Content -->
+          <div class="about-content-col reveal">
+            <!-- Top Tag / Pill -->
+            <div class="about-pill-tag">
+              <span class="pill-icon-wrapper">
+                <svg viewBox="0 0 24 24" class="pill-icon" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>
+                  <line x1="7" y1="7" x2="7.01" y2="7"/>
+                </svg>
+              </span>
+              <span class="pill-text">SOBRE O GRUPO</span>
+            </div>
+
+            <!-- Headline -->
+            <h2 class="about-headline">
+              Sólida holding<br>
+              paraense com forte<br>
+              visão de <span class="highlight-red">expansão.</span>
+            </h2>
+
+            <!-- Decorative Horizontal Accent Line -->
+            <div class="about-headline-divider"></div>
+
+            <!-- Body Paragraphs -->
+            <div class="about-paragraphs">
+              <p>Desde 2015, o Grupo +B atua como uma holding estratégica no Pará, consolidando um portfólio robusto de marcas próprias e exclusivas que simplificam e transformam o cotidiano dos nossos clientes.</p>
+              <p>Com um modelo de gestão focado em inovação, experiência e solidez, crescemos de forma sustentável para gerar valor real para parceiros e comunidades locais.</p>
+            </div>
+
+            <!-- Saiba Mais CTA Button -->
+            <div class="about-cta" style="margin-top: 24px;">
+              <a href="#" class="btn primary" style="min-height: 46px; padding: 0 24px; font-size: 0.88rem; display: inline-flex;">
+                Saiba mais sobre nós
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Photo Card with Frame and Floating Glass Card -->
+          <div class="about-photo-col reveal delay-1">
+            <div class="about-photo-wrapper">
+              <img src="./assets/Paginas (Imagens)/Home/foto-minisobrenos.webp" alt="Equipe Grupo +B" class="about-team-photo" loading="lazy">
+              
+              <!-- Floating Glass Card (Overlay bottom-right) -->
+              <div class="about-floating-glass-card">
+                <div class="floating-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#E67E00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                  </svg>
+                </div>
+                <div class="floating-card-divider"></div>
+                <div class="floating-card-text">
+                  Crescimento que gera valor,<br>
+                  impacto e desenvolvimento<br>
+                  <span class="highlight-orange">sustentável</span> para a nossa região.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row: Linha de Números / Metrics (4 Glass Cards) -->
+        <div class="about-metrics-grid reveal">
+          <!-- Card 1: 2015 -->
+          <div class="metric-card">
+            <div class="metric-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D91A2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <circle cx="8" cy="14" r="1" fill="#D91A2A"/>
+                <circle cx="12" cy="14" r="1" fill="#D91A2A"/>
+                <circle cx="16" cy="14" r="1" fill="#D91A2A"/>
+                <circle cx="8" cy="18" r="1" fill="#D91A2A"/>
+                <circle cx="12" cy="18" r="1" fill="#D91A2A"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <div class="metric-number-title">
+                <span class="num-red">2015</span>
+              </div>
+              <div class="metric-accent-line"></div>
+              <p class="metric-desc">Início da nossa história.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: +10 MIL m² -->
+          <div class="metric-card">
+            <div class="metric-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D91A2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"/>
+                <path d="M5 21V7l7-4 7 4v14"/>
+                <path d="M9 10h1v1H9zM14 10h1v1h-1zM9 14h1v1H9zM14 14h1v1h-1zM9 18h1v1H9zM14 18h1v1h-1z"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <div class="metric-number-title">
+                <span class="num-red">+10</span> <span class="label-red">MIL m²</span>
+              </div>
+              <div class="metric-accent-line"></div>
+              <p class="metric-desc">De área operacional.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: 3 LOJAS -->
+          <div class="metric-card">
+            <div class="metric-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D91A2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <div class="metric-number-title">
+                <span class="num-red">3</span> <span class="label-red">LOJAS</span>
+              </div>
+              <div class="metric-accent-line"></div>
+              <p class="metric-desc">Bem localizadas em Belém.</p>
+            </div>
+          </div>
+
+          <!-- Card 4: 5 MARCAS -->
+          <div class="metric-card">
+            <div class="metric-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D91A2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <div class="metric-number-title">
+                <span class="num-red">5</span> <span class="label-red">MARCAS</span>
+              </div>
+              <div class="metric-accent-line"></div>
+              <p class="metric-desc">Marcas de confiança.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SEÇÃO NOSSAS PROMOÇÕES (CARROSSEL DE BANNERS)
+         ========================================== -->
+    <section class="section section-promocoes light-section wf-section section-full-width reveal" id="promocoes-secao" data-wf-label="SEÇÃO PROMOÇÕES - CARROSSEL BANNERS">
+      <div class="container">
+        
+        <div class="section-head center">
+          <span class="promocoes-badge">
+            <svg class="promocoes-badge-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            APROVEITE E ECONOMIZE
+          </span>
+          <h2 class="promocoes-title">Nossas Promoções</h2>
+          <p class="promocoes-subtitle">Confira as ofertas e eventos imperdíveis preparados para você e sua família.</p>
+        </div>
+
+        <!-- Carrossel de Promoções -->
+        <div class="promocoes-carousel-wrapper">
+          
+          <!-- Botão Prev -->
+          <button class="promocoes-nav-btn prev-btn" id="promo-prev-btn" aria-label="Promoção anterior">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Track Container -->
+          <div class="promocoes-carousel-container" id="promo-carousel-container">
+            <div class="promocoes-carousel-track" id="promo-carousel-track">
+              
+              <!-- SLIDE 1: BANNER RUN / EVENTOS -->
+              <div class="promocoes-slide active">
+                <a href="https://www.maisbrun.com.br/" target="_blank" rel="noopener noreferrer" class="promocoes-banner-link">
+                  <div class="promocoes-banner-inner">
+                    <img src="./assets/Paginas (Imagens)/Home/banner-mais-b-runx.webp" alt="Banner Grupo Mais B Run - Eventos e Corrida" class="promocoes-banner-img" loading="lazy">
+                  </div>
+                </a>
+              </div>
+
+              <!-- SLIDE 2: HORTIFRÚTI SELECIONADO -->
+              <div class="promocoes-slide">
+                <div class="promocoes-banner-custom banner-hortifruti">
+                  <div class="promo-custom-bg" style="background-image: url('./assets/Fotografias/02_Hortifruti/unid-plaza-foto-de-hortifruti.webp');"></div>
+                  <div class="promo-custom-overlay"></div>
+                  <div class="promo-custom-content">
+                    <span class="promo-tag">FEIRA DE HORTIFRÚTI</span>
+                    <h3 class="promo-heading">Frutas, Legumes & Verduras Fresquinhas</h3>
+                    <p class="promo-desc">Toda semana, produtos selecionados com qualidade direto do produtor para a sua mesa com até 30% OFF.</p>
+                    <div class="promo-footer-bar">
+                      <span class="promo-validity">⏰ Válido em todas as unidades +B</span>
+                      <a href="./links.html" class="btn-promo-action">
+                        <span>Ver Encarte da Semana</span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SLIDE 3: AÇOUGUE & CARNES NOBRES -->
+              <div class="promocoes-slide">
+                <div class="promocoes-banner-custom banner-carnes">
+                  <div class="promo-custom-bg" style="background-image: url('./assets/Fotografias/03_Carnes/unid-alcindo-foto-de-setor-de-carnes-nobres.webp');"></div>
+                  <div class="promo-custom-overlay"></div>
+                  <div class="promo-custom-content">
+                    <span class="promo-tag red-tag">QUARTA & QUINTA DA CARNE</span>
+                    <h3 class="promo-heading">Festival de Cortes Nobres & Carnes Frescas</h3>
+                    <p class="promo-desc">Os melhores cortes para o seu dia a dia e para aquele churrasco especial de fim de semana com preços imbatíveis.</p>
+                    <div class="promo-footer-bar">
+                      <span class="promo-validity">🥩 Garantia de Qualidade +B</span>
+                      <a href="https://wa.me/5591984040710" target="_blank" rel="noopener" class="btn-promo-action red-btn">
+                        <span>Peça pelo WhatsApp</span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SLIDE 4: PADARIA & CONFEITARIA -->
+              <div class="promocoes-slide">
+                <div class="promocoes-banner-custom banner-padaria">
+                  <div class="promo-custom-bg" style="background-image: url('./assets/Fotografias/04_Padaria/unid-plaza-foto-de-padaria-e-reposicao-de-paes.webp');"></div>
+                  <div class="promo-custom-overlay"></div>
+                  <div class="promo-custom-content">
+                    <span class="promo-tag gold-tag">PADARIA & FRIOS +B</span>
+                    <h3 class="promo-heading">Pães Quentinhos & Confeitaria Especial</h3>
+                    <p class="promo-desc">Fornadas saindo a toda hora, pães artesanais, bolos, salgados e frios fatiados na hora com o carinho que você merece.</p>
+                    <div class="promo-footer-bar">
+                      <span class="promo-validity">🍞 Produção Própria Diária</span>
+                      <a href="./links.html" class="btn-promo-action gold-btn">
+                        <span>Conhecer Nossas Lojas</span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Botão Next -->
+          <button class="promocoes-nav-btn next-btn" id="promo-next-btn" aria-label="Próxima promoção">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+        </div>
+
+        <!-- Indicadores / Bolinhas -->
+        <div class="promocoes-dots" id="promo-dots-container">
+          <button class="promocoes-dot active" data-index="0" aria-label="Ir para banner 1"></button>
+          <button class="promocoes-dot" data-index="1" aria-label="Ir para banner 2"></button>
+          <button class="promocoes-dot" data-index="2" aria-label="Ir para banner 3"></button>
+          <button class="promocoes-dot" data-index="3" aria-label="Ir para banner 4"></button>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- SEÇÃO DEPOIMENTOS PREMIUM -->
+    <section class="testimonials-section-premium" id="depoimentos" data-wf-label="SEÇÃO DEPOIMENTOS - PREMIUM">
+      <div class="container">
+        <div class="testimonials-premium-grid">
+          
+          <!-- Coluna 1: Texto e Controles -->
+          <div class="testimonials-copy-col reveal">
+            <span class="testimonial-badge-kicker">
+              <span class="badge-dot"></span>DEPOIMENTOS
+            </span>
+            <h2 class="testimonials-heading">A confiança de <br> quem faz parte <br> da <span class="highlight-red">nossa história.</span></h2>
+            <div class="testimonials-divider"></div>
+            <p class="testimonials-subheading">Parceiros e clientes que compartilham como o Grupo +B faz a diferença todos os dias, dentro e fora do negócio.</p>
+          </div>
+          
+          <!-- Coluna 2: Carrossel de Cards Vídeo -->
+          <div class="testimonials-carousel-wrapper reveal delay-1">
+            
+            <!-- Seta Anterior -->
+            <button class="testimonials-prev-btn" id="dep-prev-btn" aria-label="Depoimento anterior">
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+
+            <div class="testimonials-carousel-track-wrapper">
+              <div class="testimonials-carousel-track" id="dep-track">
+                
+                <!-- Card 1: Miki Nogani -->
+                <div class="dep-video-card">
+                  <div class="dep-video-inner">
+                    <video class="dep-video" src="./assets/Videos/Depoimentos - Grupo Mais B/depoimento-cliente-parceiro-mais-b.mp4" preload="metadata" playsinline></video>
+                    <button class="dep-play-btn" aria-label="Reproduzir depoimento">
+                      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="29" fill="rgba(255,255,255,0.92)"/>
+                        <polygon points="24,18 44,30 24,42" fill="#e30613"/>
+                      </svg>
+                    </button>
+                    <div class="dep-card-tag">
+                      <div class="dep-tag-left-stack">
+                        <span class="dep-tag-line-red"></span>
+                        <p class="dep-tag-name">Miki Nogani</p>
+                        <p class="dep-tag-role">Cliente +B</p>
+                      </div>
+                      <span class="dep-tag-duration">01:28</span>
+                    </div>
+                    <!-- Controles Customizados -->
+                    <div class="dep-custom-controls">
+                      <div class="dep-controls-timeline-wrapper">
+                        <div class="dep-controls-timeline-bar">
+                          <div class="dep-controls-timeline-progress"></div>
+                        </div>
+                      </div>
+                      <div class="dep-controls-buttons-row">
+                        <div class="dep-controls-left-buttons">
+                          <button class="dep-ctrl-btn dep-play-pause-btn" aria-label="Reproduzir/Pausar">
+                            <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3" fill="#ffc400"/></svg>
+                            <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><rect x="6" y="4" width="4" height="16" fill="#ffc400"/><rect x="14" y="4" width="4" height="16" fill="#ffc400"/></svg>
+                          </button>
+                          <button class="dep-ctrl-btn dep-rewind-btn" aria-label="Voltar 10 segundos">
+                            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#ffc400"/></svg>
+                          </button>
+                          <button class="dep-ctrl-btn dep-forward-btn" aria-label="Avançar 10 segundos">
+                            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#ffc400"/></svg>
+                          </button>
+                          <span class="dep-ctrl-time">00:00 / 00:00</span>
+                        </div>
+                        <div class="dep-controls-right-buttons">
+                          <div class="dep-volume-control-wrapper">
+                            <button class="dep-ctrl-btn dep-volume-btn" aria-label="Volume">
+                              <svg class="icon-volume-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#ffc400"/></svg>
+                              <svg class="icon-volume-off" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" fill="#ffc400"/></svg>
+                            </button>
+                            <input type="range" class="dep-volume-slider" min="0" max="1" step="0.05" value="1" aria-label="Ajustar Volume">
+                          </div>
+                          <button class="dep-ctrl-btn dep-fullscreen-btn" aria-label="Tela Cheia">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="#ffc400"/></svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Card 2: Karina Santos -->
+                <div class="dep-video-card">
+                  <div class="dep-video-inner">
+                    <video class="dep-video" src="./assets/Videos/Depoimentos - Grupo Mais B/depo-japa.mp4" preload="metadata" playsinline></video>
+                    <button class="dep-play-btn" aria-label="Reproduzir depoimento">
+                      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="29" fill="rgba(255,255,255,0.92)"/>
+                        <polygon points="24,18 44,30 24,42" fill="#e30613"/>
+                      </svg>
+                    </button>
+                    <div class="dep-card-tag">
+                      <div class="dep-tag-left-stack">
+                        <span class="dep-tag-line-red"></span>
+                        <p class="dep-tag-name">Karina Santos</p>
+                        <p class="dep-tag-role">Cliente +B</p>
+                      </div>
+                      <span class="dep-tag-duration">01:12</span>
+                    </div>
+                    <!-- Controles Customizados -->
+                    <div class="dep-custom-controls">
+                      <div class="dep-controls-timeline-wrapper">
+                        <div class="dep-controls-timeline-bar">
+                          <div class="dep-controls-timeline-progress"></div>
+                        </div>
+                      </div>
+                      <div class="dep-controls-buttons-row">
+                        <div class="dep-controls-left-buttons">
+                          <button class="dep-ctrl-btn dep-play-pause-btn" aria-label="Reproduzir/Pausar">
+                            <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3" fill="#ffc400"/></svg>
+                            <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><rect x="6" y="4" width="4" height="16" fill="#ffc400"/><rect x="14" y="4" width="4" height="16" fill="#ffc400"/></svg>
+                          </button>
+                          <button class="dep-ctrl-btn dep-rewind-btn" aria-label="Voltar 10 segundos">
+                            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#ffc400"/></svg>
+                          </button>
+                          <button class="dep-ctrl-btn dep-forward-btn" aria-label="Avançar 10 segundos">
+                            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#ffc400"/></svg>
+                          </button>
+                          <span class="dep-ctrl-time">00:00 / 00:00</span>
+                        </div>
+                        <div class="dep-controls-right-buttons">
+                          <div class="dep-volume-control-wrapper">
+                            <button class="dep-ctrl-btn dep-volume-btn" aria-label="Volume">
+                              <svg class="icon-volume-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#ffc400"/></svg>
+                              <svg class="icon-volume-off" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" fill="#ffc400"/></svg>
+                            </button>
+                            <input type="range" class="dep-volume-slider" min="0" max="1" step="0.05" value="1" aria-label="Ajustar Volume">
+                          </div>
+                          <button class="dep-ctrl-btn dep-fullscreen-btn" aria-label="Tela Cheia">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="#ffc400"/></svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 3: Maria Antonieta -->
+                <div class="dep-video-card">
+                  <div class="dep-video-inner">
+                    <video class="dep-video" src="./assets/Videos/Depoimentos - Grupo Mais B/depo-fk.mp4" preload="metadata" playsinline></video>
+                    <button class="dep-play-btn" aria-label="Reproduzir depoimento">
+                      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="29" fill="rgba(255,255,255,0.92)"/>
+                        <polygon points="24,18 44,30 24,42" fill="#e30613"/>
+                      </svg>
+                    </button>
+                    <div class="dep-card-tag">
+                      <div class="dep-tag-left-stack">
+                        <span class="dep-tag-line-red"></span>
+                        <p class="dep-tag-name">Maria Antonieta</p>
+                        <p class="dep-tag-role">Cliente +B</p>
+                      </div>
+                      <span class="dep-tag-duration">01:05</span>
+                    </div>
+                    <!-- Controles Customizados -->
+                    <div class="dep-custom-controls">
+                      <div class="dep-controls-timeline-wrapper">
+                        <div class="dep-controls-timeline-bar">
+                          <div class="dep-controls-timeline-progress"></div>
+                        </div>
+                      </div>
+                      <div class="dep-controls-buttons-row">
+                        <div class="dep-controls-left-buttons">
+                          <button class="dep-ctrl-btn dep-play-pause-btn" aria-label="Reproduzir/Pausar">
+                            <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3" fill="#ffc400"/></svg>
+                            <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><rect x="6" y="4" width="4" height="16" fill="#ffc400"/><rect x="14" y="4" width="4" height="16" fill="#ffc400"/></svg>
+                          </button>
+                          <button class="dep-ctrl-btn dep-rewind-btn" aria-label="Voltar 10 segundos">
+                            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#ffc400"/></svg>
+                          </button>
+                          <button class="dep-ctrl-btn dep-forward-btn" aria-label="Avançar 10 segundos">
+                            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#ffc400"/></svg>
+                          </button>
+                          <span class="dep-ctrl-time">00:00 / 00:00</span>
+                        </div>
+                        <div class="dep-controls-right-buttons">
+                          <div class="dep-volume-control-wrapper">
+                            <button class="dep-ctrl-btn dep-volume-btn" aria-label="Volume">
+                              <svg class="icon-volume-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#ffc400"/></svg>
+                              <svg class="icon-volume-off" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" fill="#ffc400"/></svg>
+                            </button>
+                            <input type="range" class="dep-volume-slider" min="0" max="1" step="0.05" value="1" aria-label="Ajustar Volume">
+                          </div>
+                          <button class="dep-ctrl-btn dep-fullscreen-btn" aria-label="Tela Cheia">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="#ffc400"/></svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 4: Depoimento 4 (Olhala & Equipe) -->
+                <div class="dep-video-card">
+                  <div class="dep-video-inner">
+                    <video class="dep-video" src="./assets/Videos/Depoimentos - Grupo Mais B/depo-olhala.mp4" preload="metadata" playsinline></video>
+                    <button class="dep-play-btn" aria-label="Reproduzir depoimento">
+                      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="29" fill="rgba(255,255,255,0.92)"/>
+                        <polygon points="24,18 44,30 24,42" fill="#e30613"/>
+                      </svg>
+                    </button>
+                    <div class="dep-card-tag">
+                      <div class="dep-tag-left-stack">
+                        <span class="dep-tag-line-red"></span>
+                        <p class="dep-tag-name">Olhala & Equipe</p>
+                        <p class="dep-tag-role">Parceiro Institucional</p>
+                      </div>
+                      <span class="dep-tag-duration">01:07</span>
+                    </div>
+                    <!-- Controles Customizados -->
+                    <div class="dep-custom-controls">
+                      <div class="dep-controls-timeline-wrapper">
+                        <div class="dep-controls-timeline-bar">
+                          <div class="dep-controls-timeline-progress"></div>
+                        </div>
+                      </div>
+                      <div class="dep-controls-buttons-row">
+                        <div class="dep-controls-left-buttons">
+                          <button class="dep-ctrl-btn dep-play-pause-btn" aria-label="Reproduzir/Pausar">
+                            <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3" fill="#ffc400"/></svg>
+                            <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><rect x="6" y="4" width="4" height="16" fill="#ffc400"/><rect x="14" y="4" width="4" height="16" fill="#ffc400"/></svg>
+                          </button>
+                          <button class="dep-ctrl-btn dep-rewind-btn" aria-label="Voltar 10 segundos">
+                            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#ffc400"/></svg>
+                          </button>
+                          <button class="dep-ctrl-btn dep-forward-btn" aria-label="Avançar 10 segundos">
+                            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#ffc400"/></svg>
+                          </button>
+                          <span class="dep-ctrl-time">00:00 / 00:00</span>
+                        </div>
+                        <div class="dep-controls-right-buttons">
+                          <div class="dep-volume-control-wrapper">
+                            <button class="dep-ctrl-btn dep-volume-btn" aria-label="Volume">
+                              <svg class="icon-volume-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#ffc400"/></svg>
+                              <svg class="icon-volume-off" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" fill="#ffc400"/></svg>
+                            </button>
+                            <input type="range" class="dep-volume-slider" min="0" max="1" step="0.05" value="1" aria-label="Ajustar Volume">
+                          </div>
+                          <button class="dep-ctrl-btn dep-fullscreen-btn" aria-label="Tela Cheia">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="#ffc400"/></svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Seta Próxima -->
+            <button class="testimonials-next-btn" id="dep-next-btn" aria-label="Próximo depoimento">
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <!-- Dots abaixo dos cards -->
+            <div class="testimonials-dots" id="dep-dots"></div>
+
+          </div>
+          
+          
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <section class="section faq light-section wf-section section-full-width" id="faq-secao" data-wf-label="SEÇÃO FAQ - ACCORDION INTERATIVO - FUNDO CLARO">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Respostas Rápidas</span>
+          <h2>Dúvidas Frequentes</h2>
+          <p>Esclareça suas principais dúvidas sobre parcerias, carreiras e atuação do Grupo +B.</p>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question">Como cadastrar minha empresa como fornecedora?</button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Você pode iniciar o cadastro enviando os dados básicos de sua empresa e portfólio de produtos através dos nossos <a href="#links" style="color: #d99a00; text-decoration: underline; font-weight: 600;">Canais de Contato</a>. Nossa equipe comercial de compras fará a triagem inicial.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">O Grupo +B oferece vagas de emprego para quais áreas?</button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Temos oportunidades constantes em diversas áreas, incluindo operação de supermercado, farmácia, administrativo, TI, logística e posições gerenciais. Cadastre seu interesse pelo nosso <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener" style="color: #d99a00; text-decoration: underline; font-weight: 600;">Portal de Talentos Senior</a>.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Onde ficam localizadas as sedes e centros de distribuição?</button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Nossas unidades e escritórios administrativos estão concentrados em Belém do Pará, com forte infraestrutura logística integrada para abastecer todas as nossas marcas de forma rápida e eficiente.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Como posso entrar em contato com a Ouvidoria do Grupo?</button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Para denúncias, reclamações, sugestões ou elogios de forma confidencial, disponibilizamos a nossa Ouvidoria através do e-mail <a href="mailto:ouvidoria@grupomaisb.com.br" style="color: #d99a00; text-decoration: underline; font-weight: 600;">ouvidoria@grupomaisb.com.br</a>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== RODAPÉ MINIMALISTA (GLOW DOURADO) ===== -->
+  <footer class="footer-minimal-glow-section">
+    <div class="container footer-minimal-container">
+      
+      <!-- Bloco Central: Logo + Slogan + Redes Sociais & App Links -->
+      <div class="footer-minimal-centered-content">
+        <div class="footer-logo-glow-wrapper">
+          <img src="./assets/Logos/logo-supermercados-maisb.webp" alt="+B Supermercados" class="footer-minimal-logo">
+        </div>
+        <p class="footer-minimal-slogan">
+          Cada dia melhor pra você.<br>
+          O supermercado com a melhor experiência de compra.
+        </p>
+        <div class="footer-minimal-social-row">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/maisbsupermercados/" target="_blank" rel="noopener" aria-label="Instagram" class="social-circle-minimal" title="Instagram @maisbsupermercados">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/MaisBsupermercados/" target="_blank" rel="noopener" aria-label="Facebook" class="social-circle-minimal" title="Facebook MaisBsupermercados">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <!-- App Clube+ (Android - Google Play) -->
+          <a href="https://play.google.com/store/apps/details?id=com.intellisys.grupomaisbarato" target="_blank" rel="noopener" aria-label="App Clube+ Android (Google Play)" class="social-circle-minimal" title="App Clube+ (Android)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M3.6 2.25C3.24 2.43 3 2.8 3 3.26v17.48c0 .46.24.83.6 1.01l9.9-9.75L3.6 2.25zm11.3 8.38l2.67-2.63L5.4 1.17l9.5 9.46zm0 2.74l-9.5 9.46 12.17-6.83-2.67-2.63zm1.4-1.37l3.52-1.98c.67-.37.67-.98 0-1.35l-3.52-1.98-2.64 2.66 2.64 2.65z"/>
+            </svg>
+          </a>
+          <!-- App Clube+ (Apple - App Store) -->
+          <a href="https://apps.apple.com/br/app/clube-fidelidade/id1554152068" target="_blank" rel="noopener" aria-label="App Clube+ Apple (App Store)" class="social-circle-minimal" title="App Clube+ (iOS)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.13-1.97.99-3.12-.97.04-2.17.65-2.86 1.46-.61.72-1.15 1.89-.99 3.01 1.09.09 2.21-.52 2.86-1.35z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Barra Inferior de Direitos / Links -->
+      <div class="footer-minimal-bottom-bar">
+        <span class="copyright-left">Copyright © 2026 Grupo Mais Barato – Todos os direitos reservados</span>
+        <a href="#" class="legal-center">Termos & Privacidade</a>
+        <div class="dev-right">
+          <span>Desenvolvido por:</span>
+          <a href="https://idedigital.com.br" target="_blank" rel="noopener" aria-label="ide digital">
+            <img src="./assets/01-logoh-pb-white-mono-ide-digital-negativo-png.png" alt="ide digital" class="idedigital-logo-img">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="album-lightbox" id="album-lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fechar galeria">&times;</button>
+    <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Foto anterior">&#10094;</button>
+    <button class="lightbox-nav next" id="lightbox-next" aria-label="Próxima foto">&#10095;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Imagem ampliada">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div class="wf-modal-overlay" id="wf-modal-overlay"></div>
+
+  <!-- Modal Links e Redes Sociais -->
+  <div class="wf-modal links-fullscreen-modal" id="modal-redes-sociais" style="padding: 0 !important; overflow: hidden !important;">
+    <button class="wf-modal-close" aria-label="Fechar modal">&times;</button>
+    <iframe src="./links.html" style="width: 100%; height: 100%; border: none; overflow: auto; display: block; background-color: var(--yellow);"></iframe>
+  </div>
+
+  <!-- Modal Fullscreen Celular Premium para Vídeo Depoimento 9:16 -->
+  <div id="dep-fullscreen-modal" class="dep-fs-modal">
+    <div class="dep-fs-backdrop"></div>
+    <div class="dep-fs-phone-container">
+      <div class="dep-fs-phone-frame">
+        <video id="dep-fs-video" playsinline></video>
+        <!-- Tag de Informações (Preenchida dinamicamente via JS) -->
+        <div class="dep-card-tag" id="dep-fs-tag"></div>
+        <!-- Controles Customizados dentro do Modal Celular -->
+        <div class="dep-custom-controls">
+          <div class="dep-controls-timeline-wrapper">
+            <div class="dep-controls-timeline-bar">
+              <div class="dep-controls-timeline-progress"></div>
+            </div>
+          </div>
+          <div class="dep-controls-buttons-row">
+            <div class="dep-controls-left-buttons">
+              <button class="dep-ctrl-btn dep-play-pause-btn" aria-label="Reproduzir/Pausar">
+                <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3" fill="#ffc400"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><rect x="6" y="4" width="4" height="16" fill="#ffc400"/><rect x="14" y="4" width="4" height="16" fill="#ffc400"/></svg>
+              </button>
+              <button class="dep-ctrl-btn dep-rewind-btn" aria-label="Voltar 10 segundos">
+                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#ffc400"/></svg>
+              </button>
+              <button class="dep-ctrl-btn dep-forward-btn" aria-label="Avançar 10 segundos">
+                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#ffc400"/></svg>
+              </button>
+              <span class="dep-ctrl-time">00:00 / 00:00</span>
+            </div>
+            <div class="dep-controls-right-buttons">
+              <div class="dep-volume-control-wrapper">
+                <button class="dep-ctrl-btn dep-volume-btn" aria-label="Volume">
+                  <svg class="icon-volume-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#ffc400"/></svg>
+                  <svg class="icon-volume-off" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" fill="#ffc400"/></svg>
+                </button>
+                <input type="range" class="dep-volume-slider" min="0" max="1" step="0.05" value="1" aria-label="Ajustar Volume">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="dep-fs-close-btn" aria-label="Fechar modal">&times;</button>
+    </div>
+  </div>
+
+  <!-- Modal Video Depoimentos -->
+  <div class="wf-modal" id="modal-video-depoimento" style="padding: 0 !important; overflow: hidden !important; background: #000 !important; border: none !important; max-width: 800px;">
+    <button class="wf-modal-close" aria-label="Fechar modal" style="color: #fff !important; font-size: 2.5rem;">&times;</button>
+    <div class="wf-modal-body" style="padding: 0 !important; background: #000 !important;">
+      <video id="modal-testimonial-video" src="" controls playsinline style="width: 100%; max-height: 80vh; border-radius: 16px; display: block; margin: 0 auto;"></video>
+    </div>
+  </div>
+
+
+
+  <script src="./src/data/drive-assets.js" defer></script>
+  <script src="./src/data/brands.js" defer></script>
+  <script src="./src/data/units.js" defer></script>
+  <script src="./src/js/unidades.js" defer></script>
+  <script src="./src/js/hero-carousel.js" defer></script>
+  <script src="./src/js/main.js?v=5.6" defer></script>
+</body>
+</html>
+
