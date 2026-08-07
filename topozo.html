@@ -3,42 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Topozo — Header & Hero Slide (Inspiração Supermercados Mundial)</title>
-  <meta name="description" content="Recriação premium e responsiva do Header Menu e Hero Topo Slide inspirado no Supermercados Mundial com tecnologia moderna." />
+  <title>Supermercados Mais B — Header & Hero Slide (Padrão Oficial)</title>
+  <meta name="description" content="Header Menu e Hero Topo Slide do Supermercado Mais B recriados com a estrutura do Mundial e o Design System Oficial Mais B." />
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts do Projeto Mais B -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
   
   <!-- Swiper CSS (Slider CDN) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
     /* ==========================================================================
-       DESIGN TOKENS & RESET
+       DESIGN TOKENS OFICIAIS DO SUPERMERCADO MAIS B (src/css/tokens.css)
        ========================================================================== */
     :root {
-      --brand-red: #e30613;
-      --brand-red-dark: #b8000b;
-      --brand-red-light: #ff2d3b;
-      --brand-gold: #fdcb02;
-      --brand-gold-light: #feeabf;
-      --brand-gold-text: #7b6732;
-      --dark-header: #121214;
-      --dark-card: #18181b;
-      --text-dark: #1f2937;
-      --text-muted: #6b7280;
-      --bg-light: #f8fafc;
-      --white: #ffffff;
-      --border-color: #e2e8f0;
+      /* Paleta oficial do manual Mais B */
+      --black: #000000;
+      --graphite: #1A1A1A;
+      --yellow: #FFC400;
+      --red: #F20D18;
+
+      /* Neutros de interface */
+      --ink: #15110b;
+      --cream: #fffaf0;
+      --paper: #ffffff;
+      --muted: #a3998b;
+      --line: rgba(255, 255, 255, 0.12);
+      --line-dark: rgba(255, 255, 255, 0.14);
+
+      /* Estilização Premium e Glassmorphism Mais B */
+      --gold-gradient: linear-gradient(135deg, #FFC400, #D99A00);
+      --red-gradient: linear-gradient(135deg, #F20D18, #B30009);
+      --dark-surface: #0b0b0b;
+      --card-surface: #141414;
+      --glass-surface: rgba(18, 18, 18, 0.95);
+      --glass-border: rgba(255, 196, 0, 0.2);
+
       --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
       --radius-full: 9999px;
-      --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-      --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.05);
-      --shadow-lg: 0 20px 30px -10px rgba(227, 6, 19, 0.2);
+      --shadow: 0 22px 70px rgba(0, 0, 0, 0.4);
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -50,8 +57,8 @@
     }
 
     body {
-      background-color: var(--bg-light);
-      color: var(--text-dark);
+      background-color: #050505;
+      color: var(--paper);
       overflow-x: hidden;
     }
 
@@ -60,22 +67,22 @@
       color: inherit;
     }
 
-    /* ==========================================================================
-       HEADER NIVEL 1: TOPBAR INSTITUCIONAL
-       ========================================================================== */
-    .topbar {
-      background-color: var(--dark-header);
-      color: var(--white);
-      font-size: 0.825rem;
-      padding: 7px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
     .container {
       width: 100%;
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 20px;
+    }
+
+    /* ==========================================================================
+       HEADER NIVEL 1: TOPBAR INSTITUCIONAL MAIS B
+       ========================================================================== */
+    .topbar {
+      background-color: var(--black);
+      color: var(--paper);
+      font-size: 0.825rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .topbar-content {
@@ -91,7 +98,7 @@
     }
 
     .topbar-link {
-      color: #9ca3af;
+      color: var(--muted);
       transition: var(--transition);
       display: flex;
       align-items: center;
@@ -99,32 +106,33 @@
     }
 
     .topbar-link:hover {
-      color: var(--brand-gold);
+      color: var(--yellow);
     }
 
     .store-badge-top {
-      background: rgba(253, 203, 2, 0.15);
-      color: var(--brand-gold);
-      padding: 3px 10px;
+      background: rgba(255, 196, 0, 0.12);
+      color: var(--yellow);
+      padding: 4px 12px;
       border-radius: var(--radius-full);
       font-weight: 600;
       display: flex;
       align-items: center;
       gap: 6px;
-      border: 1px solid rgba(253, 203, 2, 0.3);
+      border: 1px solid var(--glass-border);
     }
 
     /* ==========================================================================
-       HEADER NIVEL 2: BARRA PRINCIPAL (LOGO, BUSCA, USUÁRIO)
+       HEADER NIVEL 2: BARRA PRINCIPAL COM MARCA MAIS B & BUSCA
        ========================================================================== */
     .header-main {
-      background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-dark) 100%);
-      color: var(--white);
+      background: var(--dark-surface);
+      border-bottom: 1px solid var(--line);
       padding: 16px 0;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .header-main-content {
@@ -134,74 +142,70 @@
       gap: 24px;
     }
 
-    /* Logo Brand */
-    .brand-logo {
+    /* Logo Oficial Mais B */
+    .brand-logo-wrapper {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 1.6rem;
+      gap: 12px;
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
       font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--white);
-      text-transform: uppercase;
-      flex-shrink: 0;
+      color: var(--paper);
+      line-height: 1;
     }
 
-    .brand-logo-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--brand-gold);
-      color: var(--brand-red);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    .brand-title span {
+      color: var(--yellow);
     }
 
-    .brand-logo span {
-      color: var(--brand-gold);
-    }
-
-    /* Search Bar */
+    /* Search Bar Inteligente */
     .search-box {
       flex: 1;
-      max-width: 580px;
+      max-width: 540px;
       position: relative;
     }
 
     .search-input-wrapper {
       display: flex;
       align-items: center;
-      background-color: var(--white);
+      background-color: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: var(--radius-full);
       padding: 4px 6px 4px 18px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
       transition: var(--transition);
     }
 
     .search-input-wrapper:focus-within {
-      box-shadow: 0 0 0 3px rgba(253, 203, 2, 0.5);
+      border-color: var(--yellow);
+      background-color: rgba(255,255,255,0.1);
+      box-shadow: 0 0 15px rgba(255, 196, 0, 0.25);
     }
 
     .search-input {
       border: none;
       outline: none;
       width: 100%;
-      font-size: 0.95rem;
-      color: var(--text-dark);
+      font-size: 0.925rem;
+      color: var(--paper);
       background: transparent;
     }
 
     .search-input::placeholder {
-      color: #9ca3af;
+      color: var(--muted);
     }
 
     .search-btn {
-      background: var(--brand-gold);
-      color: var(--brand-red-dark);
+      background: var(--gold-gradient);
+      color: var(--black);
       border: none;
       outline: none;
       width: 40px;
@@ -214,14 +218,15 @@
       font-weight: bold;
       transition: var(--transition);
       flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(255, 196, 0, 0.3);
     }
 
     .search-btn:hover {
-      background: #e5b700;
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 6px 16px rgba(255, 196, 0, 0.5);
     }
 
-    /* User Actions & Store Locator */
+    /* Header Actions */
     .header-actions {
       display: flex;
       align-items: center;
@@ -233,25 +238,18 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      color: var(--white);
+      color: var(--paper);
       padding: 8px 14px;
       border-radius: var(--radius-md);
       transition: var(--transition);
       cursor: pointer;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
     .action-btn:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
-    .action-icon {
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: rgba(255, 196, 0, 0.1);
+      border-color: var(--glass-border);
     }
 
     .action-text {
@@ -262,17 +260,18 @@
 
     .action-text-sm {
       font-size: 0.725rem;
-      opacity: 0.85;
+      color: var(--muted);
     }
 
     .action-text-bold {
       font-size: 0.875rem;
       font-weight: 700;
+      color: var(--paper);
     }
 
     .encarte-pill-btn {
-      background: var(--brand-gold);
-      color: var(--brand-red-dark);
+      background: var(--red-gradient);
+      color: var(--paper);
       font-weight: 800;
       font-size: 0.875rem;
       padding: 10px 18px;
@@ -280,23 +279,23 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 15px rgba(242, 13, 24, 0.3);
       transition: var(--transition);
     }
 
     .encarte-pill-btn:hover {
-      background: #ffffff;
-      color: var(--brand-red);
+      background: var(--gold-gradient);
+      color: var(--black);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 196, 0, 0.4);
     }
 
     /* ==========================================================================
        HEADER NIVEL 3: BARRA DE CATEGORIAS & DEPARTAMENTOS
        ========================================================================== */
     .nav-categories {
-      background-color: var(--white);
-      border-bottom: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
+      background-color: var(--graphite);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-categories-content {
@@ -305,18 +304,18 @@
       justify-content: space-between;
       gap: 15px;
       overflow-x: auto;
-      scrollbar-width: none; /* Firefox */
+      scrollbar-width: none;
     }
 
     .nav-categories-content::-webkit-scrollbar {
-      display: none; /* Chrome/Safari */
+      display: none;
     }
 
     .all-categories-btn {
-      background-color: var(--brand-red);
-      color: var(--white);
-      font-weight: 700;
-      font-size: 0.9rem;
+      background: var(--gold-gradient);
+      color: var(--black);
+      font-weight: 800;
+      font-size: 0.875rem;
       padding: 12px 20px;
       display: flex;
       align-items: center;
@@ -327,7 +326,8 @@
     }
 
     .all-categories-btn:hover {
-      background-color: var(--brand-red-dark);
+      background: var(--paper);
+      color: var(--black);
     }
 
     .category-links {
@@ -345,23 +345,23 @@
       padding: 12px 14px;
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--text-dark);
+      color: var(--paper);
       transition: var(--transition);
       border-bottom: 3px solid transparent;
     }
 
     .category-link-item a:hover {
-      color: var(--brand-red);
-      border-bottom-color: var(--brand-red);
-      background-color: rgba(227, 6, 19, 0.03);
+      color: var(--yellow);
+      border-bottom-color: var(--yellow);
+      background-color: rgba(255, 196, 0, 0.05);
     }
 
     .badge-highlight {
-      background: var(--brand-red);
-      color: var(--white);
+      background: var(--red);
+      color: var(--paper);
       font-size: 0.7rem;
       font-weight: 800;
-      padding: 2px 7px;
+      padding: 2px 8px;
       border-radius: var(--radius-full);
       text-transform: uppercase;
       animation: pulse 2s infinite;
@@ -373,7 +373,7 @@
     }
 
     /* ==========================================================================
-       HERO TOPO SLIDE: CARROSSEL PRINCIPAL DE BANNERS
+       HERO TOPO SLIDE: CARROSSEL PRINCIPAL DE BANNERS MAIS B
        ========================================================================== */
     .hero-section {
       padding: 24px 0 10px 0;
@@ -382,7 +382,8 @@
     .hero-swiper-container {
       border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
       position: relative;
     }
 
@@ -398,23 +399,23 @@
     }
 
     .hero-slide-1 {
-      background: linear-gradient(100deg, rgba(18,18,20,0.85) 0%, rgba(227,6,19,0.7) 100%), 
-                  url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop');
+      background: linear-gradient(100deg, rgba(5,5,5,0.9) 0%, rgba(242,13,24,0.6) 100%), 
+                  url('./assets/Fotografias/00_Principais/1-foto-supermercado.webp') center/cover no-repeat;
     }
 
     .hero-slide-2 {
-      background: linear-gradient(100deg, rgba(18,18,20,0.85) 0%, rgba(253,203,2,0.8) 100%), 
-                  url('https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=1600&auto=format&fit=crop');
+      background: linear-gradient(100deg, rgba(5,5,5,0.9) 0%, rgba(255,196,0,0.6) 100%), 
+                  url('./assets/Fotografias/02_Hortifruti/unid-tapana-foto-de-visao-geral-do-hortifruti.webp') center/cover no-repeat;
     }
 
     .hero-slide-3 {
-      background: linear-gradient(100deg, rgba(18,18,20,0.9) 0%, rgba(15,118,110,0.8) 100%), 
-                  url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=1600&auto=format&fit=crop');
+      background: linear-gradient(100deg, rgba(5,5,5,0.9) 0%, rgba(75,16,32,0.7) 100%), 
+                  url('./assets/Fotografias/05_Bebidas/unid-plaza-foto-de-adega-e-bebidas.webp') center/cover no-repeat;
     }
 
     .hero-content {
-      max-width: 540px;
-      color: var(--white);
+      max-width: 560px;
+      color: var(--paper);
       z-index: 2;
     }
 
@@ -422,8 +423,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--brand-gold);
-      color: var(--brand-red-dark);
+      background: var(--gold-gradient);
+      color: var(--black);
       font-weight: 800;
       font-size: 0.8rem;
       padding: 6px 14px;
@@ -434,16 +435,21 @@
     }
 
     .hero-title {
-      font-size: 2.5rem;
-      font-weight: 900;
+      font-family: 'Fraunces', serif;
+      font-size: 2.6rem;
+      font-weight: 800;
       line-height: 1.1;
       margin-bottom: 12px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      color: var(--paper);
+    }
+
+    .hero-title span {
+      color: var(--yellow);
     }
 
     .hero-subtitle {
       font-size: 1.05rem;
-      opacity: 0.9;
+      color: var(--muted);
       margin-bottom: 24px;
       line-height: 1.4;
     }
@@ -452,30 +458,31 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--brand-red);
-      color: var(--white);
-      font-weight: 700;
+      background: var(--red-gradient);
+      color: var(--paper);
+      font-weight: 800;
       padding: 14px 28px;
       border-radius: var(--radius-full);
       font-size: 1rem;
       transition: var(--transition);
-      box-shadow: 0 6px 20px rgba(227, 6, 19, 0.4);
+      box-shadow: 0 6px 20px rgba(242, 13, 24, 0.4);
     }
 
     .hero-btn:hover {
-      background: var(--white);
-      color: var(--brand-red);
+      background: var(--gold-gradient);
+      color: var(--black);
       transform: translateY(-3px);
     }
 
-    /* Setas de navegação Swiper estilizadas */
+    /* Setas Swiper */
     .swiper-button-next, .swiper-button-prev {
       width: 46px;
       height: 46px;
-      background: rgba(255,255,255,0.9);
+      background: rgba(20,20,20,0.85);
+      border: 1px solid var(--line);
       border-radius: 50%;
-      color: var(--brand-red-dark);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      color: var(--yellow);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
       transition: var(--transition);
     }
 
@@ -485,15 +492,15 @@
     }
 
     .swiper-button-next:hover, .swiper-button-prev:hover {
-      background: var(--brand-gold);
-      color: var(--brand-red);
+      background: var(--yellow);
+      color: var(--black);
       transform: scale(1.1);
     }
 
     .swiper-pagination-bullet {
       width: 12px;
       height: 12px;
-      background: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.4);
       opacity: 1;
       transition: var(--transition);
     }
@@ -501,11 +508,11 @@
     .swiper-pagination-bullet-active {
       width: 32px;
       border-radius: 6px;
-      background: var(--brand-gold);
+      background: var(--yellow);
     }
 
     /* ==========================================================================
-       SECTION OFERTAS DESTAQUE (CARROSSEL DE CARDS ESTILO MUNDIAL TOTAL)
+       SECTION OFERTAS DESTAQUE (CARROSSEL DE CARDS ESTILO MAIS B)
        ========================================================================== */
     .offers-section {
       padding: 30px 0 50px 0;
@@ -522,22 +529,25 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 1.5rem;
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
       font-weight: 800;
-      color: var(--text-dark);
+      color: var(--paper);
     }
 
     .title-badge {
-      background: var(--brand-red);
-      color: var(--white);
+      background: var(--red);
+      color: var(--paper);
       padding: 4px 12px;
       border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.75rem;
       text-transform: uppercase;
+      font-weight: 800;
     }
 
     .view-all-link {
-      color: var(--brand-red);
+      color: var(--yellow);
       font-weight: 700;
       font-size: 0.9rem;
       display: flex;
@@ -547,17 +557,17 @@
     }
 
     .view-all-link:hover {
-      color: var(--brand-red-dark);
+      color: var(--paper);
       transform: translateX(4px);
     }
 
-    /* Product Cards Slider */
+    /* Product Cards Slider estilo Mais B Glassmorphism */
     .product-card {
-      background: var(--white);
+      background: var(--card-surface);
       border-radius: var(--radius-md);
       padding: 16px;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
       transition: var(--transition);
       position: relative;
       display: flex;
@@ -566,8 +576,8 @@
     }
 
     .product-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: rgba(227, 6, 19, 0.3);
+      box-shadow: 0 12px 30px rgba(255, 196, 0, 0.15);
+      border-color: var(--glass-border);
       transform: translateY(-4px);
     }
 
@@ -575,8 +585,9 @@
       position: absolute;
       top: 12px;
       left: 12px;
-      background-color: var(--brand-gold-light);
-      color: var(--brand-gold-text);
+      background: rgba(255, 196, 0, 0.15);
+      color: var(--yellow);
+      border: 1px solid rgba(255, 196, 0, 0.3);
       font-weight: 800;
       font-size: 0.725rem;
       padding: 4px 10px;
@@ -593,6 +604,8 @@
       justify-content: center;
       margin-bottom: 14px;
       padding: 10px;
+      background: rgba(255,255,255,0.02);
+      border-radius: var(--radius-sm);
     }
 
     .product-img-wrapper img {
@@ -609,7 +622,7 @@
     .product-title {
       font-size: 0.925rem;
       font-weight: 700;
-      color: var(--text-dark);
+      color: var(--paper);
       margin-bottom: 6px;
       line-height: 1.3;
       height: 40px;
@@ -621,7 +634,7 @@
 
     .product-unit {
       font-size: 0.775rem;
-      color: var(--text-muted);
+      color: var(--muted);
       margin-bottom: 12px;
       font-weight: 500;
     }
@@ -631,13 +644,14 @@
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      background: #fafafa;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--line);
       padding: 10px;
       border-radius: var(--radius-sm);
     }
 
     .price-main {
-      color: var(--brand-red);
+      color: var(--yellow);
       font-weight: 900;
       display: flex;
       align-items: baseline;
@@ -660,14 +674,14 @@
 
     .price-unit-label {
       font-size: 0.7rem;
-      color: var(--text-muted);
+      color: var(--muted);
       display: block;
       margin-top: 2px;
     }
 
     .add-btn {
-      background: var(--brand-red);
-      color: var(--white);
+      background: var(--gold-gradient);
+      color: var(--black);
       border: none;
       width: 36px;
       height: 36px;
@@ -677,81 +691,49 @@
       justify-content: center;
       cursor: pointer;
       transition: var(--transition);
+      font-weight: bold;
     }
 
     .add-btn:hover {
-      background: var(--brand-gold);
-      color: var(--brand-red-dark);
+      background: var(--paper);
       transform: scale(1.1);
     }
 
-    /* ==========================================================================
-       RESPONSIVIDADE (MOBILE & TABLET)
-       ========================================================================== */
+    /* Responsividade */
     @media (max-width: 992px) {
-      .topbar-left, .topbar-right {
-        gap: 10px;
-      }
-      .header-main-content {
-        flex-wrap: wrap;
-      }
-      .search-box {
-        order: 3;
-        max-width: 100%;
-        width: 100%;
-      }
-      .hero-slide-item {
-        height: 300px;
-        padding: 0 30px;
-      }
-      .hero-title {
-        font-size: 1.8rem;
-      }
+      .topbar-left, .topbar-right { gap: 10px; }
+      .header-main-content { flex-wrap: wrap; }
+      .search-box { order: 3; max-width: 100%; width: 100%; }
+      .hero-slide-item { height: 300px; padding: 0 30px; }
+      .hero-title { font-size: 1.9rem; }
     }
 
     @media (max-width: 640px) {
-      .topbar {
-        display: none;
-      }
-      .brand-logo {
-        font-size: 1.3rem;
-      }
-      .action-text {
-        display: none;
-      }
-      .hero-slide-item {
-        height: 240px;
-        padding: 0 20px;
-      }
-      .hero-title {
-        font-size: 1.4rem;
-      }
-      .hero-subtitle {
-        display: none;
-      }
-      .hero-btn {
-        padding: 10px 20px;
-        font-size: 0.875rem;
-      }
+      .topbar { display: none; }
+      .action-text { display: none; }
+      .hero-slide-item { height: 240px; padding: 0 20px; }
+      .hero-title { font-size: 1.4rem; }
+      .hero-subtitle { display: none; }
+      .hero-btn { padding: 10px 20px; font-size: 0.875rem; }
     }
   </style>
 </head>
 <body>
 
   <!-- ==========================================================================
-       HEADER NIVEL 1: TOPBAR INSTITUCIONAL
+       HEADER NIVEL 1: TOPBAR INSTITUCIONAL MAIS B
        ========================================================================== -->
   <div class="topbar">
     <div class="container">
       <div class="topbar-content">
         <div class="topbar-left">
-          <a href="#" class="topbar-link">
+          <a href="#unidades" class="topbar-link">
             <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            Nossas Lojas
+            Nossas 3 Lojas (Alcindo, Plaza, Tapanã)
           </a>
-          <a href="#" class="topbar-link">Sobre Nós</a>
-          <a href="#" class="topbar-link">Fale Conosco</a>
-          <a href="#" class="topbar-link">Trabalhe Conosco</a>
+          <a href="#sobre" class="topbar-link">Sobre o Grupo +B</a>
+          <a href="#atendimento" class="topbar-link">Fale Conosco</a>
+          <a href="#cartao" class="topbar-link">Cartão Mais B</a>
         </div>
         <div class="topbar-right">
           <div class="store-badge-top">
@@ -764,43 +746,45 @@
   </div>
 
   <!-- ==========================================================================
-       HEADER NIVEL 2: BARRA PRINCIPAL (LOGO, BUSCA, USUÁRIO)
+       HEADER NIVEL 2: BARRA PRINCIPAL COM LOGO OFICIAL MAIS B
        ========================================================================== -->
   <header class="header-main">
     <div class="container">
       <div class="header-main-content">
         
-        <!-- Logo do Supermercado -->
-        <a href="#" class="brand-logo">
-          <div class="brand-logo-icon">+B</div>
-          <div>SUPERMERCADOS <span>MAIS B</span></div>
+        <!-- Logo Oficial do Supermercado Mais B -->
+        <a href="#" class="brand-logo-wrapper">
+          <img src="./assets/Logos/logo-supermercados-maisb.webp" alt="Supermercados Mais B" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div class="brand-title" style="display:none;">
+            SUPERMERCADOS <span>MAIS B</span>
+          </div>
         </a>
 
-        <!-- Barra de Pesquisa Inteligente -->
+        <!-- Pesquisa Inteligente -->
         <div class="search-box">
           <div class="search-input-wrapper">
-            <input type="text" class="search-input" placeholder="O que você procura para a sua família hoje? (ex: Azeite, Heineken, Alcatra...)" />
+            <input type="text" class="search-input" placeholder="O que você procura hoje? (ex: Picanha, Cerveja, Azeite, Hortifrúti...)" />
             <button class="search-btn" title="Buscar">
               <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
             </button>
           </div>
         </div>
 
-        <!-- Ações do Usuário -->
+        <!-- Ações de Usuário -->
         <div class="header-actions">
           <div class="action-btn">
             <div class="action-icon">
               <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
             <div class="action-text">
-              <span class="action-text-sm">Bem-vindo(a)</span>
+              <span class="action-text-sm">Área do Cliente</span>
               <span class="action-text-bold">Entre ou Cadastre-se</span>
             </div>
           </div>
 
           <a href="#encarte" class="encarte-pill-btn">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-            VER ENCARTE DIGITAL
+            ENCARTE DIGITAL MAIS B
           </a>
         </div>
 
@@ -809,7 +793,7 @@
   </header>
 
   <!-- ==========================================================================
-       HEADER NIVEL 3: CATEGORIAS & DEPARTAMENTOS
+       HEADER NIVEL 3: DEPARTAMENTOS & DESTAQUES MAIS B
        ========================================================================== -->
   <nav class="nav-categories">
     <div class="container">
@@ -817,23 +801,23 @@
         
         <div class="all-categories-btn">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-          TODAS AS CATEGORIAS
+          SETORES & DEPARTAMENTOS
         </div>
 
         <ul class="category-links">
           <li class="category-link-item">
             <a href="#">
-              <span class="badge-highlight">IMPERDÍVEL</span>
-              Ofertas da Semana
+              <span class="badge-highlight">OFERTAS +B</span>
+              Encarte da Semana
             </a>
           </li>
-          <li class="category-link-item"><a href="#">🥩 Açougue & Carnes</a></li>
-          <li class="category-link-item"><a href="#">🥦 Hortifrúti Fresco</a></li>
+          <li class="category-link-item"><a href="#">🥩 Açougue de Carnes Nobres</a></li>
+          <li class="category-link-item"><a href="#">🥦 Hortifrúti Selecionado</a></li>
           <li class="category-link-item"><a href="#">🥖 Padaria & Confeitaria</a></li>
-          <li class="category-link-item"><a href="#">🍷 Adega & Bebidas</a></li>
+          <li class="category-link-item"><a href="#">🍷 Adega & Bebidas Especial</a></li>
           <li class="category-link-item"><a href="#">🧀 Laticínios & Frios</a></li>
-          <li class="category-link-item"><a href="#">🧊 Congelados</a></li>
-          <li class="category-link-item"><a href="#">📱 Clube+ Vantagens</a></li>
+          <li class="category-link-item"><a href="#">💳 Cartão Mais B</a></li>
+          <li class="category-link-item"><a href="#">📱 App Clube+</a></li>
         </ul>
 
       </div>
@@ -841,52 +825,52 @@
   </nav>
 
   <!-- ==========================================================================
-       HERO TOPO SLIDE: CARROSSEL PRINCIPAL DE BANNERS
+       HERO TOPO SLIDE: BANNERS MAIS B (SWIPER)
        ========================================================================== -->
   <section class="hero-section">
     <div class="container">
       <div class="swiper heroSwiper hero-swiper-container">
         <div class="swiper-wrapper">
           
-          <!-- Slide 1 -->
+          <!-- Slide 1: Promoção Geral -->
           <div class="swiper-slide">
             <div class="hero-slide-item hero-slide-1">
               <div class="hero-content">
-                <span class="hero-tag">🔥 OFERTAS IMBATÍVEIS DA SEMANA</span>
-                <h1 class="hero-title">Sua Economia Garantida no Supermercado +B</h1>
-                <p class="hero-subtitle">Confira nosso encarte completo com os melhores preços em carnes, hortifrúti e bebidas selecionadas.</p>
+                <span class="hero-tag">🔥 OFERTAS IMBATÍVEIS SUPERMERCADO MAIS B</span>
+                <h1 class="hero-title">Qualidade e Economia <span>para sua Família</span></h1>
+                <p class="hero-subtitle">Confira nosso encarte completo com os melhores preços de Belém em carnes, hortifrúti e mantimentos.</p>
                 <a href="#ofertas" class="hero-btn">
-                  VER OFERTAS DO ENCARTE
+                  VER OFERTAS DA SEMANA
                   <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Slide 2 -->
+          <!-- Slide 2: Hortifrúti -->
           <div class="swiper-slide">
             <div class="hero-slide-item hero-slide-2">
               <div class="hero-content">
                 <span class="hero-tag">🥦 HORTIFRÚTI FRESQUINHO</span>
-                <h1 class="hero-title">Feira de Verão com Frutas & Verduras Selecionadas</h1>
-                <p class="hero-subtitle">Direto dos melhores produtores para a mesa da sua família com qualidade incomparável.</p>
+                <h1 class="hero-title">Frutas & Verduras <span>Fresquinhas Todo Dia</span></h1>
+                <p class="hero-subtitle">Produtos direto do produtor com rigoroso controle de qualidade para a mesa da sua família.</p>
                 <a href="#hortifruti" class="hero-btn">
-                  CONFIRA OS SELETORES
+                  CONHEÇA NOSSO HORTIFRÚTI
                   <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Slide 3 -->
+          <!-- Slide 3: Adega & Bebidas -->
           <div class="swiper-slide">
             <div class="hero-slide-item hero-slide-3">
               <div class="hero-content">
-                <span class="hero-tag">📱 CLUBE DE VANTAGENS</span>
-                <h1 class="hero-title">Baixe o App Clube+ e Ganhe Descontos Exclusivos</h1>
-                <p class="hero-subtitle">Ative as ofertas personalizadas no seu celular e economize em cada compra nas nossas lojas.</p>
-                <a href="#app" class="hero-btn">
-                  BAIXAR APP GRATUITAMENTE
+                <span class="hero-tag">🍷 ADEGA & BEBIDAS ESPECIAS</span>
+                <h1 class="hero-title">Seleção Exclusiva de <span>Vinhos e Cervejas</span></h1>
+                <p class="hero-subtitle">Os melhores rótulos nacionais e importados com preços especiais em nossas unidades.</p>
+                <a href="#adega" class="hero-btn">
+                  VER ADEGA MAIS B
                   <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
                 </a>
               </div>
@@ -895,7 +879,6 @@
 
         </div>
 
-        <!-- Controles do Swiper -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
@@ -904,7 +887,7 @@
   </section>
 
   <!-- ==========================================================================
-       CARROSSEL DE CARDS DE OFERTAS (ESTILO MUNDIAL TOTAL)
+       CARROSSEL DE CARDS DE OFERTAS ESTILO MAIS B
        ========================================================================== -->
   <section class="offers-section" id="ofertas">
     <div class="container">
@@ -912,10 +895,10 @@
       <div class="section-header">
         <h2 class="section-title">
           <span class="title-badge">OFERTAS DO DIA</span>
-          Destaques Imperdíveis da Semana
+          Destaques Imperdíveis do Supermercado +B
         </h2>
         <a href="#" class="view-all-link">
-          Ver todas as ofertas
+          Ver encarte completo
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
         </a>
       </div>
@@ -927,7 +910,7 @@
           <!-- Card 1 -->
           <div class="swiper-slide">
             <div class="product-card">
-              <span class="product-tag">IMPERDÍVEL</span>
+              <span class="product-tag">OFERTA +B</span>
               <div class="product-img-wrapper">
                 <img src="https://mundial-api.supermercadosmundial.com.br/products/067987/300x300.webp" alt="Heineken" onerror="this.src='https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=300&auto=format&fit=crop'" />
               </div>
@@ -942,9 +925,7 @@
                   </div>
                   <span class="price-unit-label">cada unidade</span>
                 </div>
-                <button class="add-btn" title="Adicionar à lista">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-                </button>
+                <button class="add-btn" title="Adicionar à lista">+</button>
               </div>
             </div>
           </div>
@@ -952,9 +933,9 @@
           <!-- Card 2 -->
           <div class="swiper-slide">
             <div class="product-card">
-              <span class="product-tag">OFERTAÇO</span>
+              <span class="product-tag">DESTAQUE</span>
               <div class="product-img-wrapper">
-                <img src="https://mundial-api.supermercadosmundial.com.br/products/041737/300x300.webp" alt="Azeite Quinta do Arieiro" onerror="this.src='https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=300&auto=format&fit=crop'" />
+                <img src="https://mundial-api.supermercadosmundial.com.br/products/041737/300x300.webp" alt="Azeite Extravirgem" onerror="this.src='https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=300&auto=format&fit=crop'" />
               </div>
               <h3 class="product-title">AZEITE PORTUGUÊS EXTRAVIRGEM</h3>
               <p class="product-unit">GARRAFA 500ML</p>
@@ -967,9 +948,7 @@
                   </div>
                   <span class="price-unit-label">cada unidade</span>
                 </div>
-                <button class="add-btn" title="Adicionar à lista">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-                </button>
+                <button class="add-btn" title="Adicionar à lista">+</button>
               </div>
             </div>
           </div>
@@ -977,7 +956,7 @@
           <!-- Card 3 -->
           <div class="swiper-slide">
             <div class="product-card">
-              <span class="product-tag">CORTE NOBRE</span>
+              <span class="product-tag">AÇOUGUE +B</span>
               <div class="product-img-wrapper">
                 <img src="https://mundial-api.supermercadosmundial.com.br/products/000100/300x300.webp" alt="Alcatra Bovina" onerror="this.src='https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=300&auto=format&fit=crop'" />
               </div>
@@ -992,9 +971,7 @@
                   </div>
                   <span class="price-unit-label">por quilograma (kg)</span>
                 </div>
-                <button class="add-btn" title="Adicionar à lista">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-                </button>
+                <button class="add-btn" title="Adicionar à lista">+</button>
               </div>
             </div>
           </div>
@@ -1002,7 +979,7 @@
           <!-- Card 4 -->
           <div class="swiper-slide">
             <div class="product-card">
-              <span class="product-tag">FRESCURA DIA</span>
+              <span class="product-tag">HORTIFRÚTI</span>
               <div class="product-img-wrapper">
                 <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?q=80&w=300&auto=format&fit=crop" alt="Maçã Fuji" />
               </div>
@@ -1017,9 +994,7 @@
                   </div>
                   <span class="price-unit-label">por quilograma (kg)</span>
                 </div>
-                <button class="add-btn" title="Adicionar à lista">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-                </button>
+                <button class="add-btn" title="Adicionar à lista">+</button>
               </div>
             </div>
           </div>
@@ -1042,9 +1017,7 @@
                   </div>
                   <span class="price-unit-label">por quilograma (kg)</span>
                 </div>
-                <button class="add-btn" title="Adicionar à lista">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-                </button>
+                <button class="add-btn" title="Adicionar à lista">+</button>
               </div>
             </div>
           </div>
@@ -1090,22 +1063,10 @@
         prevEl: '.offers-section .swiper-button-prev',
       },
       breakpoints: {
-        576: {
-          slidesPerView: 2.2,
-          spaceBetween: 16,
-        },
-        768: {
-          slidesPerView: 3.2,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 4.2,
-          spaceBetween: 24,
-        },
-        1200: {
-          slidesPerView: 5,
-          spaceBetween: 24,
-        }
+        576: { slidesPerView: 2.2, spaceBetween: 16 },
+        768: { slidesPerView: 3.2, spaceBetween: 20 },
+        1024: { slidesPerView: 4.2, spaceBetween: 24 },
+        1200: { slidesPerView: 5, spaceBetween: 24 }
       }
     });
   </script>
