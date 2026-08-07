@@ -47,9 +47,9 @@
        TOPBAR: REDES SOCIAIS + LINKS INSTITUCIONAIS
        ===================================================== */
     .topbar {
-      background: var(--black);
+      background: var(--yellow);
       padding: 8px 0;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(0,0,0,0.12);
     }
 
     .topbar-inner {
@@ -69,16 +69,16 @@
     }
 
     .topbar-social a {
-      color: var(--paper);
-      opacity: 0.7;
+      color: var(--black);
+      opacity: 0.75;
       transition: var(--transition);
       display: flex;
       align-items: center;
     }
 
-    .topbar-social a:hover { opacity: 1; color: var(--yellow); }
+    .topbar-social a:hover { opacity: 1; color: #6b3700; }
 
-    /* Bloco central de ícones sociais (replica o design do PSD que mostra ao centro) */
+    /* Bloco central de ícones sociais */
     .topbar-center-social {
       position: absolute;
       left: 50%;
@@ -89,14 +89,14 @@
     }
 
     .topbar-center-social a {
-      color: var(--paper);
-      opacity: 0.75;
+      color: var(--black);
+      opacity: 0.8;
       transition: var(--transition);
       display: flex;
       align-items: center;
     }
 
-    .topbar-center-social a:hover { opacity: 1; color: var(--yellow); }
+    .topbar-center-social a:hover { opacity: 1; color: var(--red); }
 
     .topbar-links {
       display: flex;
@@ -105,14 +105,14 @@
     }
 
     .topbar-links a {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--paper);
-      opacity: 0.78;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--black);
+      opacity: 0.85;
       transition: var(--transition);
     }
 
-    .topbar-links a:hover { opacity: 1; color: var(--yellow); }
+    .topbar-links a:hover { opacity: 1; color: var(--red); }
 
     /* =====================================================
        HEADER PRINCIPAL: NAV HORIZONTAL COM LOGO CENTRAL
@@ -250,7 +250,7 @@
        ===================================================== */
     .hero-section {
       background: var(--graphite);
-      padding: 12px 24px 16px;
+      padding: 10px 20px 14px;
     }
 
     .hero-swiper-wrap {
@@ -498,12 +498,13 @@
       <div class="swiper hero-swiper">
         <div class="swiper-wrapper">
 
-          <!-- SLIDE 1: Clube Fidelidade (o banner em destaque no design) -->
+          <!-- SLIDE 1: Clube +Fidelidade (banner principal do design de referência) -->
           <div class="swiper-slide">
             <img
               src="./assets/Page/S1 TOPO HERO/BANNER-TOPO (3).png"
               alt="Clube +Fidelidade — Cadastre-se pelo app e comece a aproveitar"
               loading="eager"
+              style="width:100%;display:block;"
             />
           </div>
 
@@ -513,6 +514,7 @@
               src="./assets/Page/S1 TOPO HERO/BANNER-TOPO (1).png"
               alt="Dia dos Pais — Tudo pra quem sempre fez o melhor por você"
               loading="lazy"
+              style="width:100%;display:block;"
             />
           </div>
 
@@ -522,6 +524,7 @@
               src="./assets/Page/S1 TOPO HERO/BANNER-TOPO (2).png"
               alt="Por trás de grandes ideias, existe uma grande marca"
               loading="lazy"
+              style="width:100%;display:block;"
             />
           </div>
 
