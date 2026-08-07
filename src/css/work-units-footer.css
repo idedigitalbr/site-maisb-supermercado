@@ -3030,4 +3030,473 @@
   color: #fff;
 }
 
+/* ==========================================================================
+   ESTILOS DO LOCALIZADOR DE LOJAS GOLD (mapinha.html)
+   ========================================================================== */
+.store-locator-gold-wrapper {
+  width: 100%;
+  padding: 70px 0;
+  background: radial-gradient(circle at 85% 15%, rgba(197, 155, 39, 0.14), transparent 45%), #070709;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.store-locator-gold-section {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.store-locator-header {
+  margin-bottom: 24px;
+}
+
+.store-locator-grid {
+  display: grid;
+  grid-template-columns: 38% 62%;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.store-left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.store-right-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* CABEÇALHO & TIPOGRAFIA */
+.eyebrow-gold {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #c59b27;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.locator-gold-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.locator-gold-title .headline-highlight-italic {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #d8a72b;
+}
+
+.locator-gold-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 0;
+}
+
+/* CAMPO DE BUSCA */
+.locator-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(18, 18, 18, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 18px;
+  margin-bottom: 18px;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.locator-search-box:focus-within {
+  border-color: #c59b27;
+}
+
+.locator-search-box input {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  width: 100%;
+  padding-right: 30px;
+  outline: none;
+  font-family: inherit;
+}
+
+.locator-search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.locator-search-box .search-icon-svg {
+  position: absolute;
+  right: 16px;
+  width: 18px;
+  height: 18px;
+  stroke: #c59b27;
+  fill: none;
+  pointer-events: none;
+}
+
+/* LISTA DE CARDS */
+.store-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  max-height: 380px;
+  padding-right: 4px;
+}
+
+.store-cards-list::-webkit-scrollbar {
+  width: 6px;
+}
+.store-cards-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 3px;
+}
+.store-cards-list::-webkit-scrollbar-thumb {
+  background: rgba(197, 155, 39, 0.4);
+  border-radius: 3px;
+}
+
+/* CARD DE UNIDADE */
+.gold-unit-card {
+  display: flex;
+  background: #0D0D0E;
+  border: 1px solid rgba(197, 155, 39, 0.22);
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 14px;
+  gap: 14px;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.gold-unit-card:hover,
+.gold-unit-card.active {
+  border-color: #c59b27;
+  background: #141416;
+  box-shadow: 0 4px 20px rgba(197, 155, 39, 0.2);
+}
+
+.unit-card-thumb {
+  width: 95px;
+  height: 82px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.unit-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.unit-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.unit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.unit-card-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #c59b27;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.unit-card-rating {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #c59b27;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.unit-subbrands-inline-row {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin: 2px 0;
+}
+
+.unit-subbrands-inline-row .tag-divider {
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0 4px;
+  font-weight: 400;
+}
+
+.unit-card-addr {
+  font-size: 0.78rem;
+  color: #FFFFFF;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.unit-card-addr svg {
+  flex-shrink: 0;
+}
+
+.store-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.btn-unit-ver-mais {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-unit-ver-mais:hover {
+  background: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
+/* MAPA */
+.gold-map-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 445px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.panel-map {
+  width: 100%;
+  height: 100%;
+  min-height: 445px;
+}
+
+/* CUSTOM LEAFLET PINS */
+.custom-map-pin-container {
+  background: transparent !important;
+  border: none !important;
+  overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.custom-pin-wrapper {
+  position: relative;
+  width: 40px;
+  height: 54px;
+  transform-origin: bottom center;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.custom-pin-wrapper:hover,
+.custom-pin-wrapper.active {
+  transform: scale(1.18);
+  filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.75)) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+  z-index: 1000 !important;
+}
+
+.custom-pin-svg {
+  width: 40px;
+  height: 54px;
+  display: block;
+}
+
+/* CONTROLES DE ZOOM CUSTOMIZADOS */
+.gold-map-wrapper .leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  margin-top: 20px !important;
+  margin-left: 20px !important;
+}
+
+.gold-map-wrapper .leaflet-control-zoom-in,
+.gold-map-wrapper .leaflet-control-zoom-out {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: none !important;
+  border-bottom: 1px solid #E5E5E5 !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  transition: background 0.2s ease !important;
+}
+
+.gold-map-wrapper .leaflet-control-zoom-out {
+  border-bottom: none !important;
+}
+
+.gold-map-wrapper .leaflet-control-zoom-in:hover,
+.gold-map-wrapper .leaflet-control-zoom-out:hover {
+  background-color: #F4F4F4 !important;
+  color: #000000 !important;
+}
+
+/* RESPONSIVIDADE E OTIMIZAÇÕES MOBILE E MÓVEIS NATIVOS */
+@media (max-width: 980px) {
+  .store-locator-gold-wrapper {
+    padding: 40px 0;
+  }
+
+  .store-locator-gold-section {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .store-locator-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .gold-map-wrapper,
+  .panel-map {
+    min-height: 380px;
+    height: 380px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 580px) {
+  .store-locator-gold-wrapper {
+    padding: 24px 0;
+  }
+
+  .store-locator-gold-section {
+    padding: 18px 12px;
+    border-radius: 16px;
+  }
+
+  .locator-gold-title {
+    font-size: 1.5rem;
+  }
+
+  .locator-gold-desc {
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+
+  .locator-search-box {
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+  }
+
+  .locator-search-box input {
+    font-size: 0.84rem;
+  }
+
+  .gold-unit-card {
+    padding: 10px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .unit-card-thumb {
+    width: 80px;
+    height: 75px;
+    border-radius: 6px;
+  }
+
+  .unit-card-title {
+    font-size: 0.78rem;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.25;
+  }
+
+  .unit-card-rating {
+    font-size: 0.75rem;
+  }
+
+  .unit-subbrands-inline-row {
+    font-size: 0.58rem;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .unit-card-addr {
+    font-size: 0.72rem;
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  .btn-unit-ver-mais {
+    padding: 6px 10px;
+    font-size: 0.62rem;
+  }
+
+  .gold-map-wrapper,
+  .panel-map {
+    min-height: 320px;
+    height: 320px;
+    border-radius: 14px;
+  }
+
+  .store-cards-list {
+    max-height: 350px;
+    gap: 10px;
+  }
+}
+
+
 

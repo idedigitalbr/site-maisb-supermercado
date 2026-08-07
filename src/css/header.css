@@ -2,13 +2,44 @@
    TOPBAR & HEADER PRINCIPAL (PADRÃO OFICIAL MAIS B)
    ===================================================== */
 
-/* TOPBAR: REDES SOCIAIS + LINKS INSTITUCIONAIS */
+/* TOPBAR: FAIXA DOURADA COM BRILHO CINEMÁTICO RADIANTE (CONFORME REFERÊNCIA) */
 .topbar {
-  background: var(--yellow);
-  padding: 5px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  background: linear-gradient(90deg, #B8860B 0%, #E6B800 25%, #FFC400 50%, #E6B800 75%, #B8860B 100%);
+  padding: 4px 0;
+  border-top: 1px solid #FFE066;
+  border-bottom: 2px solid #805200;
   position: relative;
   z-index: 1000;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(255, 196, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Feixe Radiante Lens-Flare Dourado Passante (Glow Hotspot) */
+.topbar::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -140px;
+  width: 140px;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at center,
+    #FFFFFF 0%,
+    #FFF399 20%,
+    #FFC400 50%,
+    rgba(255, 196, 0, 0.2) 75%,
+    transparent 100%
+  );
+  transform: skewX(-30deg);
+  filter: drop-shadow(0 0 8px #FFD700) drop-shadow(0 0 16px #FF9900);
+  animation: flareGlint 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes flareGlint {
+  0% { left: -140px; opacity: 0; }
+  12% { opacity: 1; }
+  55%, 100% { left: 110%; opacity: 0; }
 }
 
 .topbar-inner {
