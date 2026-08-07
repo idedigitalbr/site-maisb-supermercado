@@ -2,7 +2,7 @@
 
 **Projeto**: `[SITE] MaisB Supermercado`  
 **Domínio (PRETENDIDO)**: `https://supermercadomaisb.suporte.ide.digital` (não ativo ainda)  
-**Status Geral**: `100% Código Local Concluído (Aguardando criação do Git e Deploy na VPS)`  
+**Status Geral**: `Repositório GitHub Criado e Pushed (Aguardando apenas Deploy na VPS)`  
 
 
 ---

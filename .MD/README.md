@@ -1,7 +1,8 @@
 # Supermercado Mais B — Projeto Institucional
 
-- **Repositório Git (PRETENDIDO)**: `idedigitalbr/site-maisb-supermercado` (ainda não criado)
-- **Domínio (PRETENDIDO)**: `https://supermercadomaisb.suporte.ide.digital` (não ativo / em breve)
-- **VPS IP (PRETENDIDO)**: `161.97.108.92` (deploy ainda não realizado)
+- **Repositório Git**: `idedigitalbr/site-maisb-supermercado` (https://github.com/idedigitalbr/site-maisb-supermercado)
+- **Domínio (PRETENDIDO)**: `https://supermercadomaisb.suporte.ide.digital` (não ativo / deploy VPS pendente)
+- **VPS IP (PRETENDIDO)**: `161.97.108.92` (deploy VPS pendente)
 - **Notion Project Select**: `[SITE] MaisB Supermercado`
+
 

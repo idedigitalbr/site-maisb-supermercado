@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-07
+
+- Criação e publicação do repositório privado oficial no GitHub: `idedigitalbr/site-maisb-supermercado` na branch `main`.
+- Commit inicial contendo todo o código local do site institucional, estilos, componentes, marcas e mídias otimizadas.
+
 ## 2026-08-03
 
 - Remoção das seções "Conheça as marcas do Grupo +B" (`#marcas`) e "Encontre nossas unidades" (`#store-locator-teaser`) no site do Supermercado +B, com ajuste nos menus de navegação.
