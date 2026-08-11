@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-11
+
+- **Seção Sobre o Grupo +B (S3 SOBRE)**: Restaurada a barra de métricas (`.metrics-bar`) idêntica à imagem de referência visual (`S3 SOBRE.png`).
+- **Métricas e Textos**: Ajustada a primeira métrica para `+10 MIL M²` / `Área operacional` e alinhadas as demais (`+500 Colaboradores`, `+20 MIL Itens no sortimento`, `+100 MIL Clientes atendidos/mês`).
+- **Ícones Vetoriais Dourados**: Restaurados os 4 ícones em linhas douradas `#E5C158` (Fachada de loja, Selo de colaborador, Cesto de compras e Selo de clientes).
+- **Estilização Visual**: Aplicado fundo escuro `#121214`, borda dourada `2px solid #E5C158`, cantos arredondados `24px` e divisores verticais nítidos.
+
 ## 2026-08-10
 
 - **Seção de Categorias (S2-cards)**: Substituição do card "Adega & Bebidas" pela nova categoria **"Lanchonete"**, utilizando a fotografia `lanchonet.png` (`./assets/Fotografias/09_Lanchonete/lanchonet.png`) e ícone correspondente.
