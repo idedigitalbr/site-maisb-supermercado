@@ -2,6 +2,12 @@
 
 ## 2026-08-11
 
+- **Ajustes na Seção Depoimentos Premium (`src/css/sections.css` & `depoimentos.html`)**: Expandida a largura do container para 1280px e os cards 9:16 para 270x480px, aperfeiçoando o alinhamento da grade e enquadramento em tela cheia (100vh).
+- **Alinhamento de Tipografia e Justificação**: Ajustado o alinhamento do texto institucional (`.testimonials-subheading` e `.sobre-text p`) com justificativo e calibração de tamanhos/pesos de fonte entre títulos serifados (`Playfair Display`) e fontes da interface (`DM Sans`).
+
+
+- **Atualização da Imagem de Fundo da Seção WhatsApp (`src/css/main.css`)**: Alterada a imagem de fundo do card da seção WhatsApp (`.wpp-card`) para utilizar a imagem escuro oficial [`bg-depo-dark.webp`](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb-supermercados/assets/Page/S5-depoimentos/bg-depo-dark.webp).
+
 - **Correção da Integração Visual na Home (`index.html`)**: Identificada e eliminada a colisão de CSS provocada por um bloco antigo duplicado no arquivo `src/css/sections.css` que sobrescrevia a disposição das colunas (forçando 1440px de container e carrossel na coluna 1). Com a limpeza e aplicação estrita das regras oficiais de `depoimentos.html`, o layout em `index.html` passou a exibir perfeitamente o fundo escuro oficial `bg-depo-dark.webp`, o texto institucional à esquerda e o carrossel 9:16 alinhado à direita.
 
 - **Integração da Seção Premium na Home (`index.html`)**: Removida a seção antiga de depoimentos (`s-depoimentos`) e aplicada a nova versão oficial otimizada (`testimonials-section-premium`) com carrossel 9:16, vídeos WebM, suporte a modal em fullscreen no celular, imagem de fundo `bg-depo-dark.webp` e colunas invertidas (Texto na esquerda, Carrossel na direita).

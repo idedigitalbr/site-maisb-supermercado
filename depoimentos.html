@@ -44,6 +44,9 @@
     /* Container Principal */
     .testimonials-section-premium {
       width: 100%;
+      height: 100vh !important;
+      min-height: 100vh !important;
+      max-height: 100vh !important;
       padding: 40px 24px !important;
       background: transparent !important;
       box-sizing: border-box;
@@ -76,16 +79,16 @@
       height: 180px;
     }
 
-    /* Grid Principal: TEXTO À ESQUERDA (370px) | CARROSSEL À DIREITA (584px) */
+    /* Grid Principal: TEXTO À ESQUERDA | CARROSSEL À DIREITA */
     .testimonials-premium-grid {
-      width: auto !important;
-      max-width: 1060px !important;
+      width: 100% !important;
+      max-width: 1280px !important;
       margin: 0 auto !important;
       display: grid !important;
-      grid-template-columns: 370px 584px !important;
+      grid-template-columns: 1fr auto !important;
       gap: 48px !important;
       align-items: center !important;
-      justify-content: center !important;
+      justify-content: space-between !important;
       position: relative;
       z-index: 2;
     }
@@ -94,7 +97,8 @@
     .testimonials-copy-col {
       grid-column: 1 !important;
       grid-row: 1 !important;
-      width: 370px !important;
+      width: 100% !important;
+      max-width: 380px !important;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -106,9 +110,9 @@
     .testimonials-carousel-wrapper {
       grid-column: 2 !important;
       grid-row: 1 !important;
-      width: 584px !important;
-      min-width: 584px !important;
-      max-width: 584px !important;
+      width: 676px !important;
+      min-width: 676px !important;
+      max-width: 676px !important;
       padding: 0 44px !important;
       box-sizing: border-box !important;
       position: relative !important;
@@ -158,9 +162,9 @@
     /* Título Institucional */
     .testimonials-heading {
       font-family: 'Playfair Display', 'Fraunces', Georgia, serif !important;
-      font-size: clamp(2rem, 2.5vw, 2.7rem) !important;
+      font-size: clamp(2.1rem, 2.5vw, 2.75rem) !important;
       font-weight: 700 !important;
-      line-height: 1.2 !important;
+      line-height: 1.15 !important;
       letter-spacing: -0.01em !important;
       color: #ffffff !important;
       margin-bottom: 0 !important;
@@ -187,16 +191,17 @@
       color: rgba(255, 255, 255, 0.7) !important;
       margin: 0 !important;
       font-weight: 400 !important;
+      text-align: justify !important;
     }
 
     /* ---- CARDS DE VÍDEO (SLIM 9:16 VERTICAL FIGMA) ---- */
     .dep-video-card {
-      width: 220px !important;
-      min-width: 220px !important;
-      max-width: 220px !important;
-      height: 391px !important;
+      width: 270px !important;
+      min-width: 270px !important;
+      max-width: 270px !important;
+      height: 480px !important;
       aspect-ratio: 9 / 16 !important;
-      flex: 0 0 220px !important;
+      flex: 0 0 270px !important;
       border-radius: 22px !important;
       background: #0d0d0e !important;
       border: 1.5px solid rgba(221, 167, 18, 0.45) !important;
@@ -439,7 +444,7 @@
         <!-- Coluna 1 (Esquerda): Texto de Apresentação -->
         <div class="testimonials-copy-col">
           <span class="testimonial-badge-kicker">DEPOIMENTOS</span>
-          <h2 class="testimonials-heading">A confiança de <br> quem faz parte da <br> <span class="highlight-red">nossa história.</span></h2>
+          <h2 class="testimonials-heading">A confiança de quem faz parte da <span class="highlight-red">nossa história.</span></h2>
           <div class="testimonials-divider"></div>
           <p class="testimonials-subheading">Parceiros e clientes que compartilham como o Supermercado +B faz a diferença todos os dias, com honestidade, qualidade e cuidado.</p>
         </div>

@@ -234,13 +234,16 @@ p {
 .testimonials-section-premium {
   position: relative !important;
   background: #060607 url('../../assets/Page/S5-depoimentos/bg-depo-dark.webp') center center / cover no-repeat !important;
-  padding: 50px 24px !important;
+  padding: 40px 24px !important;
   overflow: hidden !important;
   color: #ffffff !important;
   border-radius: 0 !important;
   margin: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  max-height: 100vh !important;
   z-index: 3 !important;
   box-sizing: border-box !important;
   display: flex !important;
@@ -251,9 +254,9 @@ p {
 /* Container Interior */
 .testimonials-section-premium > .container {
   width: 100% !important;
-  max-width: 1060px !important;
+  max-width: 1280px !important;
   margin: 0 auto !important;
-  padding: 0 !important;
+  padding: 0 32px !important;
   box-sizing: border-box !important;
 }
 
@@ -279,16 +282,16 @@ p {
   height: 180px;
 }
 
-/* Grid Principal: TEXTO À ESQUERDA (370px) | CARROSSEL À DIREITA (584px) */
+/* Grid Principal: TEXTO À ESQUERDA | CARROSSEL À DIREITA */
 .testimonials-premium-grid {
-  width: auto !important;
-  max-width: 1060px !important;
+  width: 100% !important;
+  max-width: 1280px !important;
   margin: 0 auto !important;
   display: grid !important;
-  grid-template-columns: 370px 584px !important;
+  grid-template-columns: 1fr auto !important;
   gap: 48px !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: space-between !important;
   position: relative;
   z-index: 2;
 }
@@ -297,7 +300,8 @@ p {
 .testimonials-copy-col {
   grid-column: 1 !important;
   grid-row: 1 !important;
-  width: 370px !important;
+  width: 100% !important;
+  max-width: 380px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -329,9 +333,9 @@ p {
 /* Título Institucional */
 .testimonials-heading {
   font-family: 'Playfair Display', 'Fraunces', Georgia, serif !important;
-  font-size: clamp(2rem, 2.5vw, 2.7rem) !important;
+  font-size: clamp(2rem, 2.3vw, 2.5rem) !important;
   font-weight: 700 !important;
-  line-height: 1.2 !important;
+  line-height: 1.15 !important;
   letter-spacing: -0.01em !important;
   color: #ffffff !important;
   margin-bottom: 0 !important;
@@ -361,16 +365,16 @@ p {
   color: rgba(255, 255, 255, 0.7) !important;
   margin: 0 !important;
   font-weight: 400 !important;
-  text-align: left !important;
+  text-align: justify !important;
 }
 
 /* Coluna 2 (Direita): Carrossel de Vídeos */
 .testimonials-carousel-wrapper {
   grid-column: 2 !important;
   grid-row: 1 !important;
-  width: 584px !important;
-  min-width: 584px !important;
-  max-width: 584px !important;
+  width: 676px !important;
+  min-width: 676px !important;
+  max-width: 676px !important;
   padding: 0 44px !important;
   box-sizing: border-box !important;
   position: relative !important;
@@ -396,14 +400,14 @@ p {
   will-change: transform;
 }
 
-/* ---- CARDS DE VÍDEO (SLIM 9:16 VERTICAL FIGMA) ---- */
+/* ---- CARDS DE VÍDEO (SLIM 9:16 VERTICAL FIGMA - ALTURA EXPANDIDA) ---- */
 .dep-video-card {
-  width: 220px !important;
-  min-width: 220px !important;
-  max-width: 220px !important;
-  height: 391px !important;
+  width: 270px !important;
+  min-width: 270px !important;
+  max-width: 270px !important;
+  height: 480px !important;
   aspect-ratio: 9 / 16 !important;
-  flex: 0 0 220px !important;
+  flex: 0 0 270px !important;
   border-radius: 22px !important;
   background: #0d0d0e !important;
   border: 1.5px solid rgba(221, 167, 18, 0.45) !important;
@@ -587,6 +591,9 @@ p {
 @media (max-width: 991px) {
   .testimonials-section-premium {
     padding: 30px 12px !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    max-height: none !important;
   }
   .testimonials-premium-grid {
     grid-template-columns: 1fr !important;
