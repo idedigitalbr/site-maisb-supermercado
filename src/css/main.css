@@ -238,8 +238,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
    barra de métricas dark pill sobreposicionada embaixo.
    ────────────────────────────────────────────── */
 .s-sobre{padding:60px 0 70px;background:var(--cream);position:relative}
-.s-sobre .container{max-width:1380px}
-.sobre-layout{display:grid;grid-template-columns:60% 1fr;gap:48px;align-items:center}
+.sobre-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .sobre-text{padding-top:0}
 .sobre-title{font-family:var(--font-serif);font-size:40px;font-weight:700;line-height:1.08;letter-spacing:-0.02em;color:#111;margin-bottom:18px}
 .sobre-line{width:50px;height:3px;background:var(--red);margin-bottom:22px}
