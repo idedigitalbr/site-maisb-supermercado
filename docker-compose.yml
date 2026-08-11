@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: site-maisb-supermercado-web
+    restart: always
+    networks:
+      - default
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.site-maisb-supermercado-router.rule=Host(`maisbsupermercados.suporteide.digital`)"
+      - "traefik.http.routers.site-maisb-supermercado-router.entrypoints=websecure"
+      - "traefik.http.routers.site-maisb-supermercado-router.tls=true"
+      - "traefik.http.routers.site-maisb-supermercado-router.tls.certresolver=letsencrypt"
+      - "traefik.http.services.site-maisb-supermercado-service.loadbalancer.server.port=80"
+
+networks:
+  proxy:
+    external: true
