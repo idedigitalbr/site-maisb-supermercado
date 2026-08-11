@@ -2,6 +2,9 @@
 
 ## 2026-08-11
 
+- **Atualização do Texto da Seção "Depoimentos" (`index.html` & `depoimentos.html`)**: Subtítulo atualizado conforme solicitação ("Clientes que compartilham com os nossos valores. Honestidade, qualidade e cuidado todos os dias.").
+- **Atualização do Texto da Seção "Sobre Nós" (`index.html`)**: Texto reduzido e ajustado conforme orientação do cliente ("Desde 2015, o Supermercado Mais Barato nasceu com o propósito de transformar a sua rotina...").
+
 - **Ajustes na Seção Depoimentos Premium (`src/css/sections.css` & `depoimentos.html`)**: Expandida a largura do container para 1280px e os cards 9:16 para 270x480px, aperfeiçoando o alinhamento da grade e enquadramento em tela cheia (100vh).
 - **Alinhamento de Tipografia e Justificação**: Ajustado o alinhamento do texto institucional (`.testimonials-subheading` e `.sobre-text p`) com justificativo e calibração de tamanhos/pesos de fonte entre títulos serifados (`Playfair Display`) e fontes da interface (`DM Sans`).
 
