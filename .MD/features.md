@@ -9,8 +9,8 @@
 
 ## 🌲 Hierarquia Mestre no Notion (`DB_IDE`)
 
-- [ ] **`[SITE] MaisB Supermercado`** (ID: `3b1b42b6-c517-811a-a830-f0d1b92c27cc`) — *Aguardando (ED)*
-  - [ ] **`ANOTAÇÕES`** (ID: `3b1b42b6-c517-81bd-b8bf-cb8fc0a74eee`) — *Aguardando (ED)*
+- [x] **`[SITE] MaisB Supermercado`** (ID: `3b1b42b6-c517-811a-a830-f0d1b92c27cc`) — *Concluída*
+  - [x] **`ANOTAÇÕES`** (ID: `3b1b42b6-c517-81bd-b8bf-cb8fc0a74eee`) — *Concluída*
     - [x] **`PRÉ PROJETO & DOCUMENTAÇÃO`** (ID: `3b1b42b6-c517-81d5-9090-df3df41c119f`)
       - [x] `Mapeamento de Escopo & Briefing` (15/07/2026)
       - [x] `Arquitetura & Contexto IA` (21/07/2026)
@@ -22,13 +22,15 @@
     - [/] **`REUNIÕES & LEMBRETES`** (ID: `3b1b42b6-c517-8158-a51f-fa87620490ba`) — *Aguardando (ED)*
       - [/] `Falta EDmundo marcar próxima Reunião com JR Lopes` (06/08/2026) — *Aguardando (ED)*
   - [x] **`[PG] HOME`** (ID: `3b1b42b6-c517-8148-af5d-d9ccc7347cf8`)
-    - [x] `HEADER MENU` (30/07/2026)
-    - [x] `[S1] TOPO HERO - SUPERMERCADO MAIS B` (30/07/2026)
-    - [x] `[S2] FAIXA MARQUEE - OFERTAS DA SEMANA` (30/07/2026)
-    - [x] `[S3] SOBREZINHO - QUALIDADE E ECONOMIA PARA SUA FAMÍLIA` (15/07/2026)
-    - [x] `[S4] DESTAQUES - OFERTAS E ENCARTE DA SEMANA` (15/07/2026)
-    - [x] `[S5] SETORES & DEPARTAMENTOS` (15/07/2026)
-    - [x] `[S6] CARTÃO MAIS B & VANTAGENS` (15/07/2026)
-    - [x] `[S7] NOSSAS LOJAS & LOCALIZADOR` (15/07/2026)
-    - [x] `[S8] CTA CLUBE DE VANTAGENS & ATENDIMENTO` (31/07/2026)
-    - [x] `FOOTER` (31/07/2026)
+    - [x] `HEADER MENU`
+    - [x] `[S1] CARROSSEL HERO PRINCIPAL (SLIDER BANNERS)`
+    - [x] `[S2] CARDS DE CATEGORIAS (Hortifruti, Açougue, Padaria, Lanchonete, Clube)`
+    - [x] `[S3] SOBRE O SUPERMERCADO +B & MÉTRICAS`
+    - [x] `[S4] CAMPANHAS & OFERTAS DA SEMANA`
+    - [x] `[S5] DEPOIMENTOS (VÍDEOS PREMIUM 9:16)`
+    - [x] `[S6] ENCARTE DIGITAL & APP`
+    - [x] `[S7] SLIDE BANNERS PROMOCIONAIS (MARCAS)`
+    - [x] `[S8] DÚVIDAS FREQUENTES (FAQ)`
+    - [x] `[S9] CTA GRUPO VIP WHATSAPP`
+    - [x] `[S10] NOSSAS UNIDADES & MAPA INTERATIVO`
+    - [x] `FOOTER`
