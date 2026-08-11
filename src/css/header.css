@@ -1,0 +1,263 @@
+/* =====================================================
+   TOPBAR & HEADER PRINCIPAL (PADRÃO OFICIAL MAIS B)
+   ===================================================== */
+
+/* TOPBAR: FAIXA DOURADA COM BRILHO CINEMÁTICO RADIANTE (CONFORME REFERÊNCIA) */
+.topbar {
+  background: linear-gradient(90deg, #B8860B 0%, #E6B800 25%, #FFC400 50%, #E6B800 75%, #B8860B 100%);
+  padding: 4px 0;
+  border-top: 1px solid #FFE066;
+  border-bottom: 2px solid #805200;
+  position: relative;
+  z-index: 1000;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(255, 196, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Feixe Radiante Lens-Flare Dourado Passante (Glow Hotspot) */
+.topbar::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -140px;
+  width: 140px;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at center,
+    #FFFFFF 0%,
+    #FFF399 20%,
+    #FFC400 50%,
+    rgba(255, 196, 0, 0.2) 75%,
+    transparent 100%
+  );
+  transform: skewX(-30deg);
+  filter: drop-shadow(0 0 8px #FFD700) drop-shadow(0 0 16px #FF9900);
+  animation: flareGlint 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes flareGlint {
+  0% { left: -140px; opacity: 0; }
+  12% { opacity: 1; }
+  55%, 100% { left: 110%; opacity: 0; }
+}
+
+.topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar-social a {
+  color: var(--black);
+  opacity: 0.75;
+  transition: all 0.28s ease;
+  display: flex;
+  align-items: center;
+}
+
+.topbar-social a:hover {
+  opacity: 1;
+  color: #6b3700;
+}
+
+.topbar-center-social {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.topbar-center-social a {
+  color: var(--black);
+  opacity: 0.8;
+  transition: all 0.28s ease;
+  display: flex;
+  align-items: center;
+}
+
+.topbar-center-social a:hover {
+  opacity: 1;
+  color: var(--red);
+}
+
+.topbar-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.topbar-links a {
+  font-size: 0.775rem;
+  font-weight: 400;
+  color: var(--black);
+  opacity: 0.82;
+  transition: all 0.28s ease;
+  text-decoration: none;
+}
+
+.topbar-links a:hover {
+  opacity: 1;
+  color: var(--red);
+}
+
+/* HEADER PRINCIPAL: NAV HORIZONTAL COM LOGO CENTRAL */
+.site-header {
+  background: #000000;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: relative;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 0%;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 8px;
+  transition: all 0.28s ease;
+  white-space: nowrap;
+  opacity: 0.88;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.06);
+  opacity: 1;
+  color: var(--yellow);
+}
+
+.nav-link.active {
+  color: var(--yellow);
+  opacity: 1;
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: var(--red);
+  border-radius: 2px;
+}
+
+.nav-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* Logo Central */
+.header-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-fallback {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.logo-fallback .plus { color: var(--yellow); }
+.logo-fallback .b { color: var(--red); }
+
+/* Botão CTA Vermelho (Contatos) — Header Principal */
+.btn-cta-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--red, #BB2E2C);
+  color: #ffffff !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: none !important;
+  outline: none;
+  transition: all 0.28s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(187, 46, 44, 0.35);
+  text-decoration: none;
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
+.btn-cta-red svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+.btn-cta-red:hover {
+  background: #a32422 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(187, 46, 44, 0.5);
+}
+
+/* Responsividade Header */
+@media (max-width: 900px) {
+  .topbar-center-social { position: static; transform: none; }
+  .topbar-inner { position: relative; }
+  .nav-left { display: none; }
+  .nav-right .nav-link:not(.btn-cta-red):not(.btn-encarte) { display: none; }
+  .header-logo { position: static; transform: none; }
+  .header-inner { justify-content: space-between; }
+}
+

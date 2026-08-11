@@ -2,8 +2,10 @@
 
 ## 2026-08-11
 
+- **Otimização de Grade & Ajuste Responsivo para Notebooks (S3 SOBRE)**: Reajustado o layout da seção Sobre o Grupo +B em `src/css/main.css` com dimensões inteligentes em pixels/minmax (`minmax(0, 460px) minmax(0, 1fr)`) e compactação proporcional da barra de métricas (`.metrics-bar`). Resolução definitiva do estouro lateral na resolução 1366x768 e garantia de centralização perfeita em telas 1920px Full HD e 4K.
+
 - **Reescrita Focada no Supermercado +B & Cliente Final**:
-  - **Seção Sobre (S3 SOBRE)**: Badge ajustado para **"SOBRE O SUPERMERCADO +B"**, título modificado para *"Qualidade, frescor e carinho no dia a dia da sua família."* e parágrafos reformulados com foco em hortifruti fresco, cortes especiais, padaria e experiência agradável de compras para o consumidor retail (substituindo termos de holding/expansão B2B).
+  - **Seção Sobre (S3 SOBRE)**: Reestruturada totalmente alinhada à tagline oficial (*"Cada dia melhor pra você. O supermercado com a melhor experiência de compra."*). Remoção de clichês como "frescor/fresquinho" e foco na evolução constante das lojas, atendimento de qualidade, praticidade, ambiente acolhedor e ofertas reais.
   - **Seção Depoimentos (S5)**: Texto descritivo ajustado para enfatizar a satisfação dos clientes do supermercado no seu dia a dia.
   - **Seção Dúvidas Frequentes (S8 FAQ)**: Perguntas e respostas reestruturadas para responder diretamente a dúvidas de clientes finais (Formas de pagamento aceitas, Clube +Fidelidade, Horários de funcionamento e Recebimento de ofertas no WhatsApp), substituindo os itens corporativos/fornecedores/ouvidoria.
   - **Rodapé (S11 FOOTER)**: Copyright atualizado para **"Supermercado +B"**.
@@ -23,9 +25,9 @@
 
 ## 2026-08-10
 
-- **Seção de Categorias (S2-cards)**: Substituição do card "Adega & Bebidas" pela nova categoria **"Lanchonete"**, utilizando a fotografia `lanchonet.png` (`./assets/Fotografias/09_Lanchonete/lanchonet.png`) e ícone correspondente.
+- **Seção de Categorias (S2-cards)**: Substituição do card "Adega & Bebidas" pela nova categoria **"Lanchonete"**, utilizando a fotografia `lanchonet.webp` (`./assets/Fotografias/09_Lanchonete/lanchonet.webp`) e ícone correspondente.
 - **Seção 4 (Campanhas & Ofertas da Semana)**: Centralização perfeita da tipografia do título (`Ofertas que rendem mais pra você.`) e subtítulo (`CAMPANHAS DA SEMANA`), com o link `Ver todas as campanhas →` alinhado à direita no desktop e responsivo no mobile.
-- Reordenação estrita dos 4 cards verticais de acordo com a imagem oficial de referência (`card-semana (2).png` [Gold], `card-semana (1).png` [Salada], `card-semana (3).png` [Açougue], `card-semana (4).png` [Peixaria]).
+- Reordenação estrita dos 4 cards verticais de acordo com a imagem oficial de referência (`card-semana (2).webp` [Gold], `card-semana (1).webp` [Salada], `card-semana (3).webp` [Açougue], `card-semana (4).webp` [Peixaria]).
 - Aprimoramento visual em `src/css/main.css`: aplicação de `border-radius: 24px`, elevação suave e micro-animação zoom no hover das imagens.
 - **Navegação do Carrossel de Banners (S7)**: Botões de navegação anterior/próximo (`swiper-button-prev` / `swiper-button-next`) atualizados para o estilo círculo escuro sólido (`#141414`) com seta vetorial branca (`#ffffff`), exatamente conforme imagem de referência.
 
