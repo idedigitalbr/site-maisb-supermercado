@@ -136,8 +136,8 @@
 .nav-left, .nav-right {
   display: flex;
   align-items: center;
-  gap: 6px;
-  flex: 1;
+  gap: 8px;
+  flex: 1 1 0%;
 }
 
 .nav-right {
@@ -216,30 +216,39 @@
 .logo-fallback .plus { color: var(--yellow); }
 .logo-fallback .b { color: var(--red); }
 
-/* Botão Ver Encarte */
-.btn-encarte {
+/* Botão CTA Vermelho (Contatos) — Header Principal */
+.btn-cta-red {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  background: #ffffff;
-  color: #000000;
+  background: var(--red, #BB2E2C);
+  color: #ffffff !important;
   font-size: 0.85rem;
   font-weight: 700;
   padding: 9px 18px;
   border-radius: 8px;
+  border: none !important;
+  outline: none;
   transition: all 0.28s ease;
   white-space: nowrap;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 10px rgba(187, 46, 44, 0.35);
   text-decoration: none;
+  opacity: 1 !important;
+  cursor: pointer;
 }
 
-.btn-encarte svg { color: var(--red); }
+.btn-cta-red svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
 
-.btn-encarte:hover {
-  background: var(--yellow);
-  color: #000000;
+.btn-cta-red:hover {
+  background: #a32422 !important;
+  color: #ffffff !important;
   transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(187, 46, 44, 0.5);
 }
 
 /* Responsividade Header */
@@ -247,7 +256,8 @@
   .topbar-center-social { position: static; transform: none; }
   .topbar-inner { position: relative; }
   .nav-left { display: none; }
-  .nav-right .nav-link:not(.btn-encarte) { display: none; }
+  .nav-right .nav-link:not(.btn-cta-red):not(.btn-encarte) { display: none; }
   .header-logo { position: static; transform: none; }
   .header-inner { justify-content: space-between; }
 }
+

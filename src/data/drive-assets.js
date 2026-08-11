@@ -12,6 +12,6 @@ window.driveAssets = {
     theWineExperience: '/assets/Logos SubMarcas/logo-the-wine-experience.webp'
   },
   photos: {
-    corredorAlcindoCacela: '/assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-corredor-central-com-exposicao-de-produtos.webp'
+    corredorAlcindoCacela: '/assets/Fotografias/01_Fachadas/unid-alcindo-foto-de-corredor-central-com-exposicao-de-produtos.webp'
   }
 };
