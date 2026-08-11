@@ -38,7 +38,7 @@ jobs:
           trap 'ssh-agent -k >/dev/null' EXIT
           ssh-add - <<< "$VPS_SSH_KEY"
           
-          ssh -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes "$VPS_USER"@"$VPS_HOST" <<'REMOTE'
+          ssh -A -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes "$VPS_USER"@"$VPS_HOST" <<'REMOTE'
           set -e
           
           PROJECT_DIR="/opt/site-maisb-supermercado/app"
