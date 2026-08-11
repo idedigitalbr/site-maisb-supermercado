@@ -1,0 +1,62 @@
+# Changelog
+
+## 2026-08-11
+
+- **Reescrita Focada no Supermercado +B & Cliente Final**:
+  - **Seção Sobre (S3 SOBRE)**: Badge ajustado para **"SOBRE O SUPERMERCADO +B"**, título modificado para *"Qualidade, frescor e carinho no dia a dia da sua família."* e parágrafos reformulados com foco em hortifruti fresco, cortes especiais, padaria e experiência agradável de compras para o consumidor retail (substituindo termos de holding/expansão B2B).
+  - **Seção Depoimentos (S5)**: Texto descritivo ajustado para enfatizar a satisfação dos clientes do supermercado no seu dia a dia.
+  - **Seção Dúvidas Frequentes (S8 FAQ)**: Perguntas e respostas reestruturadas para responder diretamente a dúvidas de clientes finais (Formas de pagamento aceitas, Clube +Fidelidade, Horários de funcionamento e Recebimento de ofertas no WhatsApp), substituindo os itens corporativos/fornecedores/ouvidoria.
+  - **Rodapé (S11 FOOTER)**: Copyright atualizado para **"Supermercado +B"**.
+
+- **Grupo de Ofertas (Âncora WhatsApp)**: Ajustado o link **"Grupo de Ofertas"** da barra superior (topbar) em [`index.html`](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb-supermercados/index.html) para rolar diretamente até a seção **CTA WhatsApp** (`#grupo-wpp` - "Receba Ofertas no WhatsApp").
+- **Redes Sociais**: Atualização dos links oficiais do Instagram (`https://www.instagram.com/maisbsupermercados/`), Facebook (`https://www.facebook.com/MaisBsupermercados/`) e YouTube (`https://www.youtube.com/channel/UC_5InPLuERhTQ5wnIeS480g`) no topo (topbar) e rodapé (footer) do site ([`index.html`](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb-supermercados/index.html)), configurando abertura em nova aba com `target="_blank"` e inclusão do ícone do YouTube no rodapé.
+- **Trabalhe Conosco**: Atualização do link **"Trabalhe Conosco"** no subheader (topbar) para o portal de vagas oficial: `https://grupomaisbarato.portaldetalentos.senior.com.br/` com abertura em nova aba (`target="_blank"`).
+
+- **Proporção das Colunas (S3 SOBRE)**: Ajustada a proporção do grid da seção Sobre o Grupo +B em `src/css/main.css` (`grid-template-columns: 590fr 1350fr`) para respeitar com precisão cirúrgica a medição de referência de **590px (Texto ~30%) vs 1350px (Visual ~70%)**, expandindo o mosaico de fotos e a barra de métricas.
+- **Clube +Fidelidade & Google Play**: Atualização dos links e botões referentes ao **Clube +Fidelidade** (Header, Banner Hero 1, Card de Categoria S2 e ícone Google Play no Rodapé) para direcionar diretamente para o aplicativo oficial na Google Play Store (`https://play.google.com/store/apps/details?id=com.intellisys.grupomaisbarato&hl=pt_BR`) em nova aba (`target="_blank"`).
+- **Subheader (Topbar Links)**: Adição dos links **"Vendas no Atacado"**, **"Crediário"** e **"+B Run"** na barra superior após **"Encarte Digital"**, direcionando para o Linktree oficial `https://linktr.ee/maisbsupermercado` com abertura em nova aba (`target="_blank"`).
+- **Links Oficiais**: Atualização dos destinos dos botões **"Contatos"** (Header) e **"Ver encarte digital"** (Seção Encarte Digital) para o Linktree oficial: `https://linktr.ee/maisbsupermercado` com abertura em nova aba (`target="_blank"`).
+- **Seção Sobre o Grupo +B (S3 SOBRE)**: Restaurada a barra de métricas (`.metrics-bar`) idêntica à imagem de referência visual (`S3 SOBRE.png`).
+- **Métricas e Textos**: Ajustada a primeira métrica para `+10 MIL M²` / `Área operacional` e alinhadas as demais (`+500 Colaboradores`, `+20 MIL Itens no sortimento`, `+100 MIL Clientes atendidos/mês`).
+- **Ícones Vetoriais Dourados**: Restaurados os 4 ícones em linhas douradas `#E5C158` (Fachada de loja, Selo de colaborador, Cesto de compras e Selo de clientes).
+- **Estilização Visual**: Aplicado fundo escuro `#121214`, borda dourada `2px solid #E5C158`, cantos arredondados `24px` e divisores verticais nítidos.
+
+## 2026-08-10
+
+- **Seção de Categorias (S2-cards)**: Substituição do card "Adega & Bebidas" pela nova categoria **"Lanchonete"**, utilizando a fotografia `lanchonet.png` (`./assets/Fotografias/09_Lanchonete/lanchonet.png`) e ícone correspondente.
+- **Seção 4 (Campanhas & Ofertas da Semana)**: Centralização perfeita da tipografia do título (`Ofertas que rendem mais pra você.`) e subtítulo (`CAMPANHAS DA SEMANA`), com o link `Ver todas as campanhas →` alinhado à direita no desktop e responsivo no mobile.
+- Reordenação estrita dos 4 cards verticais de acordo com a imagem oficial de referência (`card-semana (2).png` [Gold], `card-semana (1).png` [Salada], `card-semana (3).png` [Açougue], `card-semana (4).png` [Peixaria]).
+- Aprimoramento visual em `src/css/main.css`: aplicação de `border-radius: 24px`, elevação suave e micro-animação zoom no hover das imagens.
+- **Navegação do Carrossel de Banners (S7)**: Botões de navegação anterior/próximo (`swiper-button-prev` / `swiper-button-next`) atualizados para o estilo círculo escuro sólido (`#141414`) com seta vetorial branca (`#ffffff`), exatamente conforme imagem de referência.
+
+## 2026-08-07
+
+- Integração completa da nova seção **Localizador de Unidades Gold** (`#store-locator-teaser`) inspirada em `mapinha.html` na parte inferior do site principal ([`index.html`](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb-supermercados/index.html)).
+- Inclusão do mapa interativo Leaflet.js com marcadores customizados em gota escura com logo **+B** em gradiente dourado.
+- Adição da busca em tempo real por endereço/unidade e cards responsivos (`.gold-unit-card`) com avaliação, submarcas e link direto para o Google Maps.
+- Aplicação do efeito **Gold Lens-Flare Shimmer** dinâmico na barra superior (`.topbar`) com feixe de luz dourada reluzente.
+- Ajuste e alinhamento do topo do mapa com o campo de busca e otimização responsiva para celulares.
+- Criação e publicação do repositório privado oficial no GitHub: `idedigitalbr/site-maisb-supermercado` na branch `main` (commit `2cb6a88`).
+
+## 2026-08-03
+
+- Remoção das seções "Conheça as marcas do Grupo +B" (`#marcas`) e "Encontre nossas unidades" (`#store-locator-teaser`) no site do Supermercado +B, com ajuste nos menus de navegação.
+- Criação e reposicionamento da seção **Nossas Promoções** (`#promocoes-secao`) com carrossel interativo de banners logo após a seção **Sobre o Grupo**.
+- Substituição do rodapé anterior pelo modelo minimalista com efeito ambiental Glow Dourado ([footer-standalone.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb-supermercados/footer-standalone.html)), configurando os links oficiais do Instagram, Facebook e os aplicativos do **Clube+** (Google Play Store e Apple App Store).
+- Remoção completa do botão "LOGS" (`#changelog-trigger`), estilos CSS e modal popup de logs de atualizações (`#changelog-modal`).
+- Configuração da logomarca oficial colorida do rodapé (`logo-supermercados-maisb.webp`) com efeito suave de transição para monocromático no hover (`grayscale`).
+- Atualização do texto/slogan abaixo da logo do rodapé para: *"Cada dia melhor pra você. O supermercado com a melhor experiência de compra."*
+- Remoção completa da seção **Faça parte do Grupo +B** (`#oportunidades`).
+- Alteração do fundo da seção **Depoimentos** (`#depoimentos`) para preto (`#060607`), ajustando tipografia, títulos, badges e divisores para contraste em modo escuro.
+
+
+
+
+
+
+
+
+## 2026-07-08
+
+- Sincronização inicial automática e mapeamento da estrutura do projeto.
+
