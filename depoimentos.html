@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Depoimentos | Supermercado +B</title>
+  <meta name="description" content="Seção exclusiva de depoimentos em vídeo 9:16 dos clientes do Supermercado +B." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/webp" href="./assets/Logo Marca Grupo MaisB/FavIcon-Grupo Mais Barato (Color Negativo).webp" />
+
+  <!-- Google Fonts (Identidade Oficial +B) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./src/css/main.css?v=11.0" />
+  <link rel="stylesheet" href="./src/css/sections.css?v=11.0" />
+
+  <style>
+    /* ==========================================================================
+       CORREÇÃO DE CORTE NO CARD DA DIREITA (FOLGA COMPLETA NO CARROSSEL)
+       ========================================================================== */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #060607 url('./assets/Page/S5-depoimentos/bg-depo-dark.webp') center center / cover no-repeat fixed;
+      color: #ffffff;
+      font-family: var(--font-sans, 'DM Sans', sans-serif);
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    /* Container Principal */
+    .testimonials-section-premium {
+      width: 100%;
+      padding: 40px 24px !important;
+      background: transparent !important;
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* VETORES DECORATIVOS DA CRUZ "+B" */
+    .plus-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.16;
+    }
+
+    .plus-decor-top {
+      top: 15px;
+      left: -20px;
+      width: 170px;
+      height: 170px;
+    }
+
+    .plus-decor-bottom {
+      bottom: -15px;
+      right: -20px;
+      width: 180px;
+      height: 180px;
+    }
+
+    /* Grid Principal: TEXTO À ESQUERDA (370px) | CARROSSEL À DIREITA (584px) */
+    .testimonials-premium-grid {
+      width: auto !important;
+      max-width: 1060px !important;
+      margin: 0 auto !important;
+      display: grid !important;
+      grid-template-columns: 370px 584px !important;
+      gap: 48px !important;
+      align-items: center !important;
+      justify-content: center !important;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Coluna 1 (Esquerda): Texto de Apresentação */
+    .testimonials-copy-col {
+      grid-column: 1 !important;
+      grid-row: 1 !important;
+      width: 370px !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    /* Coluna 2 (Direita): Carrossel de Vídeos (Largura Ajustada sem Cortes) */
+    .testimonials-carousel-wrapper {
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+      width: 584px !important;
+      min-width: 584px !important;
+      max-width: 584px !important;
+      padding: 0 44px !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+      margin: 0 !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Área de Corte Flexível para Evitar que a Borda Direita do Card Seja Cortada */
+    .testimonials-carousel-track-wrapper {
+      overflow: hidden !important;
+      width: 100% !important;
+      padding: 16px 12px !important;
+      margin: -16px -12px !important;
+      box-sizing: border-box !important;
+    }
+
+    .testimonials-carousel-track {
+      display: flex !important;
+      gap: 24px !important;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+      will-change: transform;
+    }
+
+    /* Kicker Badge "DEPOIMENTOS" (Pill Dourado Fino) */
+    .testimonial-badge-kicker {
+      background: transparent !important;
+      border: 1.5px solid rgba(221, 167, 18, 0.4) !important;
+      color: #dda712 !important;
+      font-weight: 700 !important;
+      font-size: 0.72rem !important;
+      letter-spacing: 2px !important;
+      padding: 6px 18px !important;
+      border-radius: 99px !important;
+      margin-bottom: 20px !important;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+
+    .testimonial-badge-kicker .badge-dot {
+      display: none !important;
+    }
+
+    /* Título Institucional */
+    .testimonials-heading {
+      font-family: 'Playfair Display', 'Fraunces', Georgia, serif !important;
+      font-size: clamp(2rem, 2.5vw, 2.7rem) !important;
+      font-weight: 700 !important;
+      line-height: 1.2 !important;
+      letter-spacing: -0.01em !important;
+      color: #ffffff !important;
+      margin-bottom: 0 !important;
+    }
+
+    .testimonials-heading .highlight-red {
+      color: #bb2e2c !important;
+    }
+
+    /* Linha de Acento Vermelho */
+    .testimonials-divider {
+      width: 48px !important;
+      height: 3px !important;
+      background: #bb2e2c !important;
+      margin-top: 18px !important;
+      margin-bottom: 20px !important;
+      border-radius: 2px !important;
+    }
+
+    /* Subtítulo */
+    .testimonials-subheading {
+      font-size: clamp(0.9rem, 1vw, 1rem) !important;
+      line-height: 1.65 !important;
+      color: rgba(255, 255, 255, 0.7) !important;
+      margin: 0 !important;
+      font-weight: 400 !important;
+    }
+
+    /* ---- CARDS DE VÍDEO (SLIM 9:16 VERTICAL FIGMA) ---- */
+    .dep-video-card {
+      width: 220px !important;
+      min-width: 220px !important;
+      max-width: 220px !important;
+      height: 391px !important;
+      aspect-ratio: 9 / 16 !important;
+      flex: 0 0 220px !important;
+      border-radius: 22px !important;
+      background: #0d0d0e !important;
+      border: 1.5px solid rgba(221, 167, 18, 0.45) !important;
+      box-shadow: 0 0 15px rgba(221, 167, 18, 0.12), 0 10px 25px rgba(0, 0, 0, 0.8) !important;
+      overflow: hidden !important;
+      position: relative !important;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    .dep-video-card:hover {
+      transform: translateY(-4px) scale(1.01) !important;
+      border-color: rgba(221, 167, 18, 0.8) !important;
+      box-shadow: 0 0 22px rgba(221, 167, 18, 0.22), 0 14px 32px rgba(0, 0, 0, 0.9) !important;
+    }
+
+    .dep-video-inner {
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 20px !important;
+      overflow: hidden !important;
+      position: relative !important;
+    }
+
+    .dep-video {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      aspect-ratio: 9 / 16 !important;
+    }
+
+    /* BOTÃO PLAY CENTRALIZADO */
+    .dep-play-btn {
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 48px !important;
+      height: 48px !important;
+      background: rgba(0, 0, 0, 0.48) !important;
+      backdrop-filter: blur(4px) !important;
+      -webkit-backdrop-filter: blur(4px) !important;
+      border: 1.5px solid rgba(221, 167, 18, 0.65) !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 !important;
+      z-index: 5 !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .dep-play-btn svg {
+      width: 18px !important;
+      height: 18px !important;
+      margin-left: 2px !important;
+    }
+
+    .dep-play-btn svg polygon {
+      fill: #ffffff !important;
+    }
+
+    /* TAG FIXA NA BASE DO CARD (SEM PULOS) */
+    .dep-card-tag,
+    .dep-video-card:hover .dep-card-tag,
+    .dep-video-card.playing .dep-card-tag,
+    .dep-video-card.touch-active .dep-card-tag {
+      position: absolute !important;
+      bottom: 12px !important;
+      left: 12px !important;
+      right: 12px !important;
+      top: auto !important;
+      width: auto !important;
+      max-width: none !important;
+      transform: none !important;
+      z-index: 4 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      background: rgba(10, 10, 12, 0.85) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 12px !important;
+      padding: 10px 12px !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .dep-tag-left-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .dep-tag-name {
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      font-size: 0.92rem !important;
+      margin: 0 !important;
+      line-height: 1.2 !important;
+    }
+
+    .dep-tag-role {
+      color: #dda712 !important;
+      font-size: 0.76rem !important;
+      font-weight: 500 !important;
+      margin: 0 !important;
+    }
+
+    .dep-tag-duration {
+      border: 1px solid rgba(221, 167, 18, 0.45) !important;
+      background: rgba(0, 0, 0, 0.35) !important;
+      color: #dda712 !important;
+      border-radius: 6px !important;
+      padding: 3px 8px !important;
+      font-size: 0.72rem !important;
+      font-weight: 600 !important;
+    }
+
+    /* BOTÕES DE NAVEGAÇÃO */
+    .testimonials-prev-btn,
+    .testimonials-next-btn {
+      width: 38px !important;
+      height: 38px !important;
+      border-radius: 50% !important;
+      border: 1.5px solid rgba(221, 167, 18, 0.4) !important;
+      background: rgba(13, 13, 14, 0.9) !important;
+      color: #dda712 !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+      position: absolute !important;
+      top: calc(50% - 16px) !important;
+      transform: translateY(-50%) !important;
+      z-index: 10 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .testimonials-prev-btn {
+      left: 0 !important;
+    }
+
+    .testimonials-next-btn {
+      right: 0 !important;
+    }
+
+    .testimonials-prev-btn:hover,
+    .testimonials-next-btn:hover {
+      background: #dda712 !important;
+      color: #000000 !important;
+      box-shadow: 0 6px 16px rgba(221, 167, 18, 0.4) !important;
+    }
+
+    /* DOTS INFERIORES */
+    .testimonials-dots {
+      margin-top: 20px !important;
+      display: flex !important;
+      justify-content: center !important;
+      gap: 8px !important;
+    }
+
+    .testimonial-dot {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 50% !important;
+      background: #444444 !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .testimonial-dot.active {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 50% !important;
+      background: #bb2e2c !important;
+      box-shadow: 0 0 8px rgba(187, 46, 44, 0.6) !important;
+    }
+
+    /* ==========================================================================
+       RESPONSIVIDADE MOBILE (< 992px)
+       ========================================================================== */
+    @media (max-width: 991px) {
+      body {
+        justify-content: flex-start;
+        padding: 20px 0;
+      }
+      .testimonials-section-premium {
+        padding: 20px 12px !important;
+      }
+      .testimonials-premium-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 100% !important;
+        gap: 24px !important;
+      }
+      .testimonials-copy-col {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        max-width: 460px !important;
+        margin: 0 auto !important;
+        text-align: center;
+        align-items: center;
+      }
+      .testimonials-carousel-wrapper {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 340px !important;
+        margin: 0 auto !important;
+        padding: 0 40px !important;
+      }
+      .dep-video-card {
+        width: 205px !important;
+        min-width: 205px !important;
+        max-width: 205px !important;
+        height: 364px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       SEÇÃO DEPOIMENTOS PREMIUM (CORREÇÃO DE LARGURA DO CARROSSEL)
+       ============================================ -->
+  <section class="testimonials-section-premium" id="depoimentos">
+    
+    <!-- Vetores Decorativos de Fundo "+B" -->
+    <svg class="plus-decor plus-decor-top" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M42 12 H78 C82 12 86 16 86 20 V42 H108 C112 42 116 46 116 50 V78 C116 82 112 86 108 86 H86 V108 C86 112 82 116 78 116 H42 C38 116 34 112 34 108 V86 H12 C8 86 4 82 4 78 V50 C4 46 8 42 12 42 H34 V20 C34 16 38 12 42 12 Z" stroke="rgba(221, 167, 18, 0.22)" stroke-width="1.8"/>
+    </svg>
+
+    <svg class="plus-decor plus-decor-bottom" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M42 12 H78 C82 12 86 16 86 20 V42 H108 C112 42 116 46 116 50 V78 C116 82 112 86 108 86 H86 V108 C86 112 82 116 78 116 H42 C38 116 34 112 34 108 V86 H12 C8 86 4 82 4 78 V50 C4 46 8 42 12 42 H34 V20 C34 16 38 12 42 12 Z" stroke="rgba(221, 167, 18, 0.22)" stroke-width="1.8"/>
+    </svg>
+
+    <div class="container">
+      <div class="testimonials-premium-grid">
+        
+        <!-- Coluna 1 (Esquerda): Texto de Apresentação -->
+        <div class="testimonials-copy-col">
+          <span class="testimonial-badge-kicker">DEPOIMENTOS</span>
+          <h2 class="testimonials-heading">A confiança de <br> quem faz parte da <br> <span class="highlight-red">nossa história.</span></h2>
+          <div class="testimonials-divider"></div>
+          <p class="testimonials-subheading">Parceiros e clientes que compartilham como o Supermercado +B faz a diferença todos os dias, com honestidade, qualidade e cuidado.</p>
+        </div>
+
+        <!-- Coluna 2 (Direita): Carrossel de Cards 9:16 Vertical -->
+        <div class="testimonials-carousel-wrapper">
+          
+          <!-- Seta Anterior -->
+          <button class="testimonials-prev-btn" id="dep-prev-btn" aria-label="Depoimento anterior">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <div class="testimonials-carousel-track-wrapper">
+            <div class="testimonials-carousel-track" id="dep-track">
+              
+              <!-- Card 1: Miki Nogani -->
+              <div class="dep-video-card">
+                <div class="dep-video-inner">
+                  <video class="dep-video" poster="./assets/Videos/Depoimentos/thumb-miki-nogani.webp" preload="metadata" playsinline>
+                    <source src="./assets/Videos/Depoimentos/depo-miki-nogani-cliente.webm" type="video/webm" />
+                    <source src="./assets/Videos/Depoimentos/depo-miki-nogani-cliente.mp4" type="video/mp4" />
+                  </video>
+                  <button class="dep-play-btn" aria-label="Reproduzir depoimento de Miki Nogani">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <polygon points="6,3 20,12 6,21" fill="#ffffff"/>
+                    </svg>
+                  </button>
+                  <div class="dep-card-tag">
+                    <div class="dep-tag-left-stack">
+                      <p class="dep-tag-name">Miki Nogami</p>
+                      <p class="dep-tag-role">Cliente +B</p>
+                    </div>
+                    <span class="dep-tag-duration">01:06</span>
+                  </div>
+                  <!-- Controles Customizados -->
+                  <div class="dep-custom-controls">
+                    <div class="dep-controls-timeline-wrapper">
+                      <div class="dep-controls-timeline-bar">
+                        <div class="dep-controls-timeline-progress"></div>
+                      </div>
+                    </div>
+                    <div class="dep-controls-buttons-row">
+                      <div class="dep-controls-left-buttons">
+                        <button class="dep-ctrl-btn dep-play-pause-btn" aria-label="Reproduzir/Pausar">
+                          <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3" fill="#dda712"/></svg>
+                          <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><rect x="6" y="4" width="4" height="16" fill="#dda712"/><rect x="14" y="4" width="4" height="16" fill="#dda712"/></svg>
+                        </button>
+                        <button class="dep-ctrl-btn dep-rewind-btn" aria-label="Voltar 10 segundos">
+                          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#dda712"/></svg>
+                        </button>
+                        <button class="dep-ctrl-btn dep-forward-btn" aria-label="Avançar 10 segundos">
+                          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s-2.7 6-6 6-6-2.7-6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#dda712"/></svg>
+                        </button>
+                        <span class="dep-ctrl-time">00:00 / 00:00</span>
+                      </div>
+                      <div class="dep-controls-right-buttons">
+                        <div class="dep-volume-control-wrapper">
+                          <button class="dep-ctrl-btn dep-volume-btn" aria-label="Volume">
+                            <svg class="icon-volume-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#dda712"/></svg>
+                            <svg class="icon-volume-off" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" fill="#dda712"/></svg>
+                          </button>
+                          <input type="range" class="dep-volume-slider" min="0" max="1" step="0.05" value="1" aria-label="Ajustar Volume">
+                        </div>
+                        <button class="dep-ctrl-btn dep-fullscreen-btn" aria-label="Tela Cheia">
+                          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="#dda712"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Card 2: Karina Santos -->
+              <div class="dep-video-card">
+                <div class="dep-video-inner">
+                  <video class="dep-video" poster="./assets/Videos/Depoimentos/thumb-karina-santos.webp" preload="metadata" playsinline>
+                    <source src="./assets/Videos/Depoimentos/depo-karina-santos-cliente.webm" type="video/webm" />
+                    <source src="./assets/Videos/Depoimentos/depo-karina-santos-cliente.mp4" type="video/mp4" />
+                  </video>
+                  <button class="dep-play-btn" aria-label="Reproduzir depoimento de Karina Santos">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <polygon points="6,3 20,12 6,21" fill="#ffffff"/>
+                    </svg>
+                  </button>
+                  <div class="dep-card-tag">
+                    <div class="dep-tag-left-stack">
+                      <p class="dep-tag-name">Karina Santos</p>
+                      <p class="dep-tag-role">Cliente +B</p>
+                    </div>
+                    <span class="dep-tag-duration">01:06</span>
+                  </div>
+                  <!-- Controles Customizados -->
+                  <div class="dep-custom-controls">
+                    <div class="dep-controls-timeline-wrapper">
+                      <div class="dep-controls-timeline-bar">
+                        <div class="dep-controls-timeline-progress"></div>
+                      </div>
+                    </div>
+                    <div class="dep-controls-buttons-row">
+                      <div class="dep-controls-left-buttons">
+                        <button class="dep-ctrl-btn dep-play-pause-btn" aria-label="Reproduzir/Pausar">
+                          <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3" fill="#dda712"/></svg>
+                          <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><rect x="6" y="4" width="4" height="16" fill="#dda712"/><rect x="14" y="4" width="4" height="16" fill="#dda712"/></svg>
+                        </button>
+                        <button class="dep-ctrl-btn dep-rewind-btn" aria-label="Voltar 10 segundos">
+                          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#dda712"/></svg>
+                        </button>
+                        <button class="dep-ctrl-btn dep-forward-btn" aria-label="Avançar 10 segundos">
+                          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s-2.7 6-6 6-6-2.7-6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#dda712"/></svg>
+                        </button>
+                        <span class="dep-ctrl-time">00:00 / 00:00</span>
+                      </div>
+                      <div class="dep-controls-right-buttons">
+                        <div class="dep-volume-control-wrapper">
+                          <button class="dep-ctrl-btn dep-volume-btn" aria-label="Volume">
+                            <svg class="icon-volume-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#dda712"/></svg>
+                            <svg class="icon-volume-off" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" fill="#dda712"/></svg>
+                          </button>
+                          <input type="range" class="dep-volume-slider" min="0" max="1" step="0.05" value="1" aria-label="Ajustar Volume">
+                        </div>
+                        <button class="dep-ctrl-btn dep-fullscreen-btn" aria-label="Tela Cheia">
+                          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="#dda712"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3: Fábio Cardoso -->
+              <div class="dep-video-card">
+                <div class="dep-video-inner">
+                  <video class="dep-video" poster="./assets/Videos/Depoimentos/thumb-fabio-cardoso.webp" preload="metadata" playsinline>
+                    <source src="./assets/Videos/Depoimentos/depo-fabio-cardoso-cliente.webm" type="video/webm" />
+                    <source src="./assets/Videos/Depoimentos/depo-fabio-cardoso-cliente.mp4" type="video/mp4" />
+                  </video>
+                  <button class="dep-play-btn" aria-label="Reproduzir depoimento de Fábio Cardoso">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <polygon points="6,3 20,12 6,21" fill="#ffffff"/>
+                    </svg>
+                  </button>
+                  <div class="dep-card-tag">
+                    <div class="dep-tag-left-stack">
+                      <p class="dep-tag-name">Fábio Cardoso</p>
+                      <p class="dep-tag-role">Cliente +B</p>
+                    </div>
+                    <span class="dep-tag-duration">01:28</span>
+                  </div>
+                  <!-- Controles Customizados -->
+                  <div class="dep-custom-controls">
+                    <div class="dep-controls-timeline-wrapper">
+                      <div class="dep-controls-timeline-bar">
+                        <div class="dep-controls-timeline-progress"></div>
+                      </div>
+                    </div>
+                    <div class="dep-controls-buttons-row">
+                      <div class="dep-controls-left-buttons">
+                        <button class="dep-ctrl-btn dep-play-pause-btn" aria-label="Reproduzir/Pausar">
+                          <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3" fill="#dda712"/></svg>
+                          <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><rect x="6" y="4" width="4" height="16" fill="#dda712"/><rect x="14" y="4" width="4" height="16" fill="#dda712"/></svg>
+                        </button>
+                        <button class="dep-ctrl-btn dep-rewind-btn" aria-label="Voltar 10 segundos">
+                          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#dda712"/></svg>
+                        </button>
+                        <button class="dep-ctrl-btn dep-forward-btn" aria-label="Avançar 10 segundos">
+                          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s-2.7 6-6 6-6-2.7-6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#dda712"/></svg>
+                        </button>
+                        <span class="dep-ctrl-time">00:00 / 00:00</span>
+                      </div>
+                      <div class="dep-controls-right-buttons">
+                        <div class="dep-volume-control-wrapper">
+                          <button class="dep-ctrl-btn dep-volume-btn" aria-label="Volume">
+                            <svg class="icon-volume-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#dda712"/></svg>
+                            <svg class="icon-volume-off" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" fill="#dda712"/></svg>
+                          </button>
+                          <input type="range" class="dep-volume-slider" min="0" max="1" step="0.05" value="1" aria-label="Ajustar Volume">
+                        </div>
+                        <button class="dep-ctrl-btn dep-fullscreen-btn" aria-label="Tela Cheia">
+                          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="#dda712"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4: João Marcos -->
+              <div class="dep-video-card">
+                <div class="dep-video-inner">
+                  <video class="dep-video" poster="./assets/Videos/Depoimentos/thumb-joao-marcos.webp" preload="metadata" playsinline>
+                    <source src="./assets/Videos/Depoimentos/depo-joao-marcos-cliente.webm" type="video/webm" />
+                    <source src="./assets/Videos/Depoimentos/depo-.mp4" type="video/mp4" />
+                  </video>
+                  <button class="dep-play-btn" aria-label="Reproduzir depoimento de João Marcos">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <polygon points="6,3 20,12 6,21" fill="#ffffff"/>
+                    </svg>
+                  </button>
+                  <div class="dep-card-tag">
+                    <div class="dep-tag-left-stack">
+                      <p class="dep-tag-name">João Marcos</p>
+                      <p class="dep-tag-role">Cliente +B</p>
+                    </div>
+                    <span class="dep-tag-duration">00:29</span>
+                  </div>
+                  <!-- Controles Customizados -->
+                  <div class="dep-custom-controls">
+                    <div class="dep-controls-timeline-wrapper">
+                      <div class="dep-controls-timeline-bar">
+                        <div class="dep-controls-timeline-progress"></div>
+                      </div>
+                    </div>
+                    <div class="dep-controls-buttons-row">
+                      <div class="dep-controls-left-buttons">
+                        <button class="dep-ctrl-btn dep-play-pause-btn" aria-label="Reproduzir/Pausar">
+                          <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3" fill="#dda712"/></svg>
+                          <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><rect x="6" y="4" width="4" height="16" fill="#dda712"/><rect x="14" y="4" width="4" height="16" fill="#dda712"/></svg>
+                        </button>
+                        <button class="dep-ctrl-btn dep-rewind-btn" aria-label="Voltar 10 segundos">
+                          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#dda712"/></svg>
+                        </button>
+                        <button class="dep-ctrl-btn dep-forward-btn" aria-label="Avançar 10 segundos">
+                          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s-2.7 6-6 6-6-2.7-6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#dda712"/></svg>
+                        </button>
+                        <span class="dep-ctrl-time">00:00 / 00:00</span>
+                      </div>
+                      <div class="dep-controls-right-buttons">
+                        <div class="dep-volume-control-wrapper">
+                          <button class="dep-ctrl-btn dep-volume-btn" aria-label="Volume">
+                            <svg class="icon-volume-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#dda712"/></svg>
+                            <svg class="icon-volume-off" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" fill="#dda712"/></svg>
+                          </button>
+                          <input type="range" class="dep-volume-slider" min="0" max="1" step="0.05" value="1" aria-label="Ajustar Volume">
+                        </div>
+                        <button class="dep-ctrl-btn dep-fullscreen-btn" aria-label="Tela Cheia">
+                          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="#dda712"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Seta Próxima -->
+          <button class="testimonials-next-btn" id="dep-next-btn" aria-label="Próximo depoimento">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Dots abaixo dos cards -->
+          <div class="testimonials-dots" id="dep-dots"></div>
+
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Fullscreen Celular Premium para Vídeo Depoimento 9:16 -->
+  <div id="dep-fullscreen-modal" class="dep-fs-modal">
+    <div class="dep-fs-backdrop"></div>
+    <div class="dep-fs-phone-container">
+      <div class="dep-fs-phone-frame">
+        <video id="dep-fs-video" playsinline></video>
+        <!-- Tag de Informações (Preenchida dinamicamente via JS) -->
+        <div class="dep-card-tag" id="dep-fs-tag"></div>
+        <!-- Controles Customizados dentro do Modal Celular -->
+        <div class="dep-custom-controls">
+          <div class="dep-controls-timeline-wrapper">
+            <div class="dep-controls-timeline-bar">
+              <div class="dep-controls-timeline-progress"></div>
+            </div>
+          </div>
+          <div class="dep-controls-buttons-row">
+            <div class="dep-controls-left-buttons">
+              <button class="dep-ctrl-btn dep-play-pause-btn" aria-label="Reproduzir/Pausar">
+                <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3" fill="#dda712"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><rect x="6" y="4" width="4" height="16" fill="#dda712"/><rect x="14" y="4" width="4" height="16" fill="#dda712"/></svg>
+              </button>
+              <button class="dep-ctrl-btn dep-rewind-btn" aria-label="Voltar 10 segundos">
+                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#dda712"/></svg>
+              </button>
+              <button class="dep-ctrl-btn dep-forward-btn" aria-label="Avançar 10 segundos">
+                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s-2.7 6-6 6-6-2.7-6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8-3.6-8-8-8zm-1 5.5h-1v5h1v-5zm3 0h-2v5h2v-5z" fill="#dda712"/></svg>
+              </button>
+              <span class="dep-ctrl-time">00:00 / 00:00</span>
+            </div>
+            <div class="dep-controls-right-buttons">
+              <div class="dep-volume-control-wrapper">
+                <button class="dep-ctrl-btn dep-volume-btn" aria-label="Volume">
+                  <svg class="icon-volume-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#dda712"/></svg>
+                  <svg class="icon-volume-off" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" fill="#dda712"/></svg>
+                </button>
+                <input type="range" class="dep-volume-slider" min="0" max="1" step="0.05" value="1" aria-label="Ajustar Volume">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="dep-fs-close-btn" aria-label="Fechar modal">&times;</button>
+    </div>
+  </div>
+
+  <!-- Script de Inicialização -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+
+      function initTestimonialsCarousel() {
+        const track      = document.getElementById('dep-track') || document.querySelector('.testimonials-carousel-track');
+        const cards      = track ? track.querySelectorAll('.dep-video-card') : [];
+        const prevBtn    = document.getElementById('dep-prev-btn') || document.querySelector('.testimonials-prev-btn');
+        const nextBtn    = document.getElementById('dep-next-btn') || document.querySelector('.testimonials-next-btn');
+        const dotsWrap   = document.getElementById('dep-dots')    || document.querySelector('.testimonials-dots');
+        const wrapper    = document.querySelector('.testimonials-carousel-wrapper');
+
+        if (!track || cards.length === 0) return;
+
+        let currentIndex = 0;
+        const GAP = 24;
+
+        function getVisible() {
+          if (window.innerWidth > 768) return 2;
+          return 1;
+        }
+
+        function maxIdx() {
+          return Math.max(0, cards.length - getVisible());
+        }
+
+        function goTo(idx) {
+          currentIndex = Math.max(0, Math.min(idx, maxIdx()));
+          const cardW = cards[0].getBoundingClientRect().width;
+          track.style.transform = `translateX(-${currentIndex * (cardW + GAP)}px)`;
+
+          cards.forEach((card, i) => {
+            card.classList.toggle('active-slide', i === currentIndex);
+          });
+
+          if (prevBtn) prevBtn.disabled = (currentIndex === 0);
+          if (nextBtn) nextBtn.disabled = (currentIndex === maxIdx());
+
+          if (dotsWrap) {
+            dotsWrap.querySelectorAll('.testimonial-dot').forEach((d, i) => {
+              d.classList.toggle('active', i === currentIndex);
+            });
+          }
+        }
+
+        function updateDots() {
+          if (!dotsWrap) return;
+          dotsWrap.innerHTML = '';
+          const count = maxIdx() + 1;
+          for (let i = 0; i < count; i++) {
+            const dot = document.createElement('span');
+            dot.className = `testimonial-dot ${i === currentIndex ? 'active' : ''}`;
+            dot.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(dot);
+          }
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
+
+        const fsModal = document.getElementById('dep-fullscreen-modal');
+        const fsVideo = document.getElementById('dep-fs-video');
+
+        function openCellularFullscreen(origVideo) {
+          if (!fsModal || !fsVideo) return;
+          origVideo.pause();
+          
+          const currentSrc = origVideo.currentSrc || origVideo.src || (origVideo.querySelector('source') && origVideo.querySelector('source').src);
+          fsVideo.src = currentSrc;
+          fsVideo.currentTime = origVideo.currentTime;
+          fsVideo.muted = origVideo.muted;
+          
+          const cardContainer = origVideo.closest('.dep-video-card');
+          if (cardContainer) {
+            const origTag = cardContainer.querySelector('.dep-card-tag');
+            const fsTag = fsModal.querySelector('#dep-fs-tag');
+            if (origTag && fsTag) {
+              fsTag.innerHTML = origTag.innerHTML;
+              const durationEl = fsTag.querySelector('.dep-tag-duration');
+              if (durationEl) durationEl.style.display = 'none';
+            }
+          }
+          
+          const playPauseBtn = fsModal.querySelector('.dep-play-pause-btn');
+          if (playPauseBtn) {
+            const iconPlay = playPauseBtn.querySelector('.icon-play');
+            const iconPause = playPauseBtn.querySelector('.icon-pause');
+            if (origVideo.paused) {
+              if (iconPlay) iconPlay.style.display = 'block';
+              if (iconPause) iconPause.style.display = 'none';
+            } else {
+              if (iconPlay) iconPlay.style.display = 'none';
+              if (iconPause) iconPause.style.display = 'block';
+            }
+          }
+
+          const volumeBtn = fsModal.querySelector('.dep-volume-btn');
+          if (volumeBtn) {
+            const iconVolOn = volumeBtn.querySelector('.icon-volume-on');
+            const iconVolOff = volumeBtn.querySelector('.icon-volume-off');
+            if (origVideo.muted) {
+              if (iconVolOn) iconVolOn.style.display = 'none';
+              if (iconVolOff) iconVolOff.style.display = 'block';
+            } else {
+              if (iconVolOn) iconVolOn.style.display = 'block';
+              if (iconVolOff) iconVolOff.style.display = 'none';
+            }
+          }
+          
+          const volumeSlider = fsModal.querySelector('.dep-volume-slider');
+          if (volumeSlider) {
+            volumeSlider.value = origVideo.muted ? 0 : origVideo.volume;
+          }
+
+          fsModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          document.documentElement.style.overflow = 'hidden';
+          fsVideo.play().catch(() => {});
+          fsModal.activeOriginalVideo = origVideo;
+        }
+
+        function closeCellularFullscreen() {
+          if (!fsModal || !fsVideo) return;
+          fsVideo.pause();
+          fsModal.classList.remove('active');
+          document.body.style.overflow = '';
+          document.documentElement.style.overflow = '';
+          
+          const origVideo = fsModal.activeOriginalVideo;
+          if (origVideo) {
+            origVideo.currentTime = fsVideo.currentTime;
+            origVideo.muted = fsVideo.muted;
+            origVideo.volume = fsVideo.volume;
+            
+            const cardContainer = origVideo.closest('.dep-video-card');
+            if (cardContainer) {
+              const origVolumeBtn = cardContainer.querySelector('.dep-volume-btn');
+              const origVolumeSlider = cardContainer.querySelector('.dep-volume-slider');
+              if (origVolumeBtn) {
+                const iconVolOn = origVolumeBtn.querySelector('.icon-volume-on');
+                const iconVolOff = origVolumeBtn.querySelector('.icon-volume-off');
+                if (fsVideo.muted) {
+                  if (iconVolOn) iconVolOn.style.display = 'none';
+                  if (iconVolOff) iconVolOff.style.display = 'block';
+                } else {
+                  if (iconVolOn) iconVolOn.style.display = 'block';
+                  if (iconVolOff) iconVolOff.style.display = 'none';
+                }
+              }
+              if (origVolumeSlider) {
+                origVolumeSlider.value = fsVideo.muted ? 0 : fsVideo.volume;
+              }
+            }
+            
+            origVideo.play().catch(() => {});
+          }
+        }
+
+        if (fsModal && fsVideo) {
+          const closeBtn = fsModal.querySelector('.dep-fs-close-btn');
+          const backdrop = fsModal.querySelector('.dep-fs-backdrop');
+          if (closeBtn) closeBtn.addEventListener('click', closeCellularFullscreen);
+          if (backdrop) backdrop.addEventListener('click', closeCellularFullscreen);
+          
+          const phoneFrame = fsModal.querySelector('.dep-fs-phone-frame');
+          
+          fsVideo.addEventListener('play', () => {
+            if (phoneFrame) phoneFrame.classList.add('playing');
+          });
+          
+          fsVideo.addEventListener('pause', () => {
+            if (phoneFrame) {
+              phoneFrame.classList.remove('playing');
+              phoneFrame.classList.remove('touch-active');
+            }
+          });
+          
+          fsVideo.addEventListener('ended', () => {
+            if (phoneFrame) {
+              phoneFrame.classList.remove('playing');
+              phoneFrame.classList.remove('touch-active');
+            }
+          });
+          
+          const triggerFsPlay = (e) => {
+            e.stopPropagation();
+            if (fsVideo.paused) {
+              fsVideo.play().catch(() => {});
+            } else {
+              fsVideo.pause();
+            }
+          };
+
+          if (phoneFrame) {
+            phoneFrame.addEventListener('click', (e) => {
+              if (phoneFrame.classList.contains('playing') && e.pointerType === 'touch') {
+                e.stopPropagation();
+                e.preventDefault();
+                if (!phoneFrame.classList.contains('touch-active')) {
+                  phoneFrame.classList.add('touch-active');
+                  clearTimeout(phoneFrame.touchTimeout);
+                  phoneFrame.touchTimeout = setTimeout(() => {
+                    phoneFrame.classList.remove('touch-active');
+                  }, 3000);
+                } else {
+                  phoneFrame.classList.remove('touch-active');
+                  triggerFsPlay(e);
+                }
+              } else if (e.target === fsVideo) {
+                triggerFsPlay(e);
+              }
+            });
+          }
+          
+          setupCustomControls(fsModal, fsVideo);
+        }
+
+        function setupCustomControls(container, video) {
+          const controls = container.querySelector('.dep-custom-controls');
+          if (!controls) return;
+
+          controls.addEventListener('click', (e) => {
+            e.stopPropagation();
+          });
+
+          const playPauseBtn = controls.querySelector('.dep-play-pause-btn');
+          const rewindBtn    = controls.querySelector('.dep-rewind-btn');
+          const forwardBtn   = controls.querySelector('.dep-forward-btn');
+          const volumeBtn    = controls.querySelector('.dep-volume-btn');
+          const volumeSlider = controls.querySelector('.dep-volume-slider');
+          const fullscreenBtn = controls.querySelector('.dep-fullscreen-btn');
+          const timeline     = controls.querySelector('.dep-controls-timeline-wrapper');
+          const progress     = controls.querySelector('.dep-controls-timeline-progress');
+          const timeText     = controls.querySelector('.dep-ctrl-time');
+
+          if (!playPauseBtn) return;
+
+          const iconPlay = playPauseBtn.querySelector('.icon-play');
+          const iconPause = playPauseBtn.querySelector('.icon-pause');
+
+          playPauseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (video.paused) {
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+
+          if (rewindBtn) {
+            rewindBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              video.currentTime = Math.max(0, video.currentTime - 10);
+            });
+          }
+
+          if (forwardBtn) {
+            forwardBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              video.currentTime = Math.min(video.duration || 0, video.currentTime + 10);
+            });
+          }
+
+          if (volumeBtn) {
+            const iconVolOn = volumeBtn.querySelector('.icon-volume-on');
+            const iconVolOff = volumeBtn.querySelector('.icon-volume-off');
+            volumeBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              video.muted = !video.muted;
+              if (video.muted) {
+                if (iconVolOn) iconVolOn.style.display = 'none';
+                if (iconVolOff) iconVolOff.style.display = 'block';
+                if (volumeSlider) volumeSlider.value = 0;
+              } else {
+                if (iconVolOn) iconVolOn.style.display = 'block';
+                if (iconVolOff) iconVolOff.style.display = 'none';
+                if (volumeSlider) volumeSlider.value = video.volume || 1;
+              }
+            });
+          }
+
+          if (volumeSlider) {
+            volumeSlider.addEventListener('input', (e) => {
+              e.stopPropagation();
+              const val = parseFloat(e.target.value);
+              video.volume = val;
+              if (val === 0) {
+                video.muted = true;
+              } else {
+                video.muted = false;
+              }
+              if (volumeBtn) {
+                const iconVolOn = volumeBtn.querySelector('.icon-volume-on');
+                const iconVolOff = volumeBtn.querySelector('.icon-volume-off');
+                if (video.muted) {
+                  if (iconVolOn) iconVolOn.style.display = 'none';
+                  if (iconVolOff) iconVolOff.style.display = 'block';
+                } else {
+                  if (iconVolOn) iconVolOn.style.display = 'block';
+                  if (iconVolOff) iconVolOff.style.display = 'none';
+                }
+              }
+            });
+          }
+
+          if (fullscreenBtn) {
+            fullscreenBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              openCellularFullscreen(video);
+            });
+          }
+
+          function formatTime(secs) {
+            if (isNaN(secs)) return '00:00';
+            const m = Math.floor(secs / 60).toString().padStart(2, '0');
+            const s = Math.floor(secs % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+          }
+
+          video.addEventListener('timeupdate', () => {
+            if (video.duration) {
+              const pct = (video.currentTime / video.duration) * 100;
+              if (progress) progress.style.width = `${pct}%`;
+              if (timeText) {
+                timeText.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+              }
+            }
+          });
+
+          if (timeline) {
+            timeline.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const rect = timeline.getBoundingClientRect();
+              const clickX = e.clientX - rect.left;
+              const width = rect.width;
+              if (video.duration) {
+                video.currentTime = (clickX / width) * video.duration;
+              }
+            });
+          }
+
+          video.addEventListener('play', () => {
+            if (iconPlay) iconPlay.style.display = 'none';
+            if (iconPause) iconPause.style.display = 'block';
+          });
+          video.addEventListener('pause', () => {
+            if (iconPlay) iconPlay.style.display = 'block';
+            if (iconPause) iconPause.style.display = 'none';
+          });
+        }
+
+        cards.forEach(card => {
+          const video   = card.querySelector('.dep-video');
+          const playBtn = card.querySelector('.dep-play-btn');
+
+          if (!video) return;
+
+          setupCustomControls(card, video);
+
+          video.addEventListener('play', () => {
+            cards.forEach(c => {
+              if (c !== card) {
+                const v = c.querySelector('.dep-video');
+                if (v) v.pause();
+              }
+            });
+            card.classList.add('playing');
+          });
+
+          video.addEventListener('pause', () => {
+            card.classList.remove('playing');
+            card.classList.remove('touch-active');
+          });
+
+          video.addEventListener('ended', () => {
+            card.classList.remove('playing');
+            card.classList.remove('touch-active');
+            card.removeAttribute('data-started');
+            video.currentTime = 0;
+          });
+
+          function triggerPlay(e) {
+            e.stopPropagation();
+            if (video.paused) {
+              if (!card.hasAttribute('data-started')) {
+                video.currentTime = 0;
+                card.setAttribute('data-started', 'true');
+              }
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          }
+
+          if (playBtn) playBtn.addEventListener('click', triggerPlay);
+          
+          card.addEventListener('click', function(e) {
+            if (card.classList.contains('playing') && e.pointerType === 'touch') {
+              e.stopPropagation();
+              e.preventDefault();
+              if (!card.classList.contains('touch-active')) {
+                card.classList.add('touch-active');
+                clearTimeout(card.touchTimeout);
+                card.touchTimeout = setTimeout(() => {
+                  card.classList.remove('touch-active');
+                }, 3000);
+              } else {
+                card.classList.remove('touch-active');
+                triggerPlay(e);
+              }
+            } else {
+              triggerPlay(e);
+            }
+          });
+        });
+
+        if (wrapper) {
+          let startX = 0;
+          wrapper.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+          wrapper.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 50) goTo(currentIndex + (dx < 0 ? 1 : -1));
+          }, { passive: true });
+
+          wrapper.setAttribute('tabindex', '0');
+          wrapper.setAttribute('role', 'region');
+          wrapper.setAttribute('aria-label', 'Depoimentos de clientes');
+          wrapper.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(currentIndex - 1); }
+            if (e.key === 'ArrowRight') { e.preventDefault(); goTo(currentIndex + 1); }
+          });
+        }
+
+        window.addEventListener('resize', debounce(() => {
+          updateDots();
+          goTo(currentIndex);
+        }, 150));
+
+        updateDots();
+        setTimeout(() => goTo(0), 100);
+      }
+
+      initTestimonialsCarousel();
+    });
+  </script>
+</body>
+</html>

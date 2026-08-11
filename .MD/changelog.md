@@ -2,6 +2,26 @@
 
 ## 2026-08-11
 
+- **Correção da Integração Visual na Home (`index.html`)**: Identificada e eliminada a colisão de CSS provocada por um bloco antigo duplicado no arquivo `src/css/sections.css` que sobrescrevia a disposição das colunas (forçando 1440px de container e carrossel na coluna 1). Com a limpeza e aplicação estrita das regras oficiais de `depoimentos.html`, o layout em `index.html` passou a exibir perfeitamente o fundo escuro oficial `bg-depo-dark.webp`, o texto institucional à esquerda e o carrossel 9:16 alinhado à direita.
+
+- **Integração da Seção Premium na Home (`index.html`)**: Removida a seção antiga de depoimentos (`s-depoimentos`) e aplicada a nova versão oficial otimizada (`testimonials-section-premium`) com carrossel 9:16, vídeos WebM, suporte a modal em fullscreen no celular, imagem de fundo `bg-depo-dark.webp` e colunas invertidas (Texto na esquerda, Carrossel na direita).
+
+- **Correção de Corte no Carrossel (`depoimentos.html`)**: Resolvido o travamento da borda lateral do 2º card de vídeo no carrossel. Ajustada a largura do wrapper para `584px` e aplicados respiros laterais flexíveis (`padding: 16px 12px; margin: -16px -12px`) na área de *overflow*, garantindo que as bordas douradas arredondadas e sombras fiquem 100% visíveis e íntegras.
+
+- **Atualização da Imagem de Fundo (`depoimentos.html`)**: Atualizado o plano de fundo da página para o novo arquivo WebP de alta eficiência [`bg-depo-dark.webp`](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb-supermercados/assets/Page/S5-depoimentos/bg-depo-dark.webp) localizado em `assets/Page/S5-depoimentos/`.
+
+- **Inversão de Colunas (`depoimentos.html`)**: Reorganizada a disposição das colunas no grid principal: o bloco de texto institucional foi posicionado na **esquerda** (Coluna 1) e o carrossel de cards de vídeo 9:16 na **direita** (Coluna 2).
+
+- **Imagem de Fundo Oficial Integrada (`depoimentos.html`)**: Aplicada a imagem de fundo oficial da marca [`bg-depoimentos-dark.webp`](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb-supermercados/assets/Page/S5-depoimentos/bg-depoimentos-dark.webp) localizada em `assets/Page/S5-depoimentos/`, substituindo o fundo preto sólido por uma textura escura de iluminação premium.
+
+- **Ajuste Fino de Fidelidade Visual ao Figma (`depoimentos.html`)**: Alinhamento estrito com o print do Figma: carrossel posicionado à esquerda e texto à direita, botão play de vidro escuro com triângulo branco, pill limpo para a tag `DEPOIMENTOS`, vetores decorativos sutilmente traçados em formato de cruz "+B" no fundo, e indicador de paginação (dots) com a primeira bolinha em vermelho.
+
+- **Seção Isolada & Otimizada 16:9 (`depoimentos.html`)**: Remoção de header/footer e calibração fina da altura para enquadramento perfeito no formato de tela 16:9 (Notebooks 1366x768, 1920x1080 e telas 4K) sem necessidade de rolagem vertical. Efeitos de glow neon foram suavizados para um acabamento escuro de luxo discreto, mantendo total responsividade mobile e suporte a swipe por toque.
+
+- **Integração de Vídeos Reais & Otimização WebM (`depoimentos.html`)**: Processados e comprimidos os 4 vídeos reais de depoimentos (`depo-miki-nogani-cliente`, `depo-karina-santos-cliente`, `depo-fabio-cardoso-cliente` e `depo-joao-marcos-cliente`) para formato WebM leve via VP9, reduzindo o tamanho de arquivo em até 85%. Foram extraídas e integradas as capas originais em formato WebP (`thumb-miki-nogani.webp`, `thumb-karina-santos.webp`, `thumb-fabio-cardoso.webp`, `thumb-joao-marcos.webp`) para carregamento instantâneo.
+
+- **Restauração da Seção de Depoimentos Premium (`depoimentos.html`)**: Resgatada e empacotada a versão original e completa da seção de depoimentos premium em um arquivo HTML independente [`depoimentos.html`](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb-supermercados/depoimentos.html). A página conta com topo/rodapé dedicados, grade responsiva com visualização em carrossel de cards verticais (9:16), tags em glassmorphism, player com linha do tempo e volume customizados, navegação por setas/bolinhas e o modal interativo em formato de smartphone.
+
 - **Otimização de Grade & Ajuste Responsivo para Notebooks (S3 SOBRE)**: Reajustado o layout da seção Sobre o Grupo +B em `src/css/main.css` com dimensões inteligentes em pixels/minmax (`minmax(0, 460px) minmax(0, 1fr)`) e compactação proporcional da barra de métricas (`.metrics-bar`). Resolução definitiva do estouro lateral na resolução 1366x768 e garantia de centralização perfeita em telas 1920px Full HD e 4K.
 
 - **Reescrita Focada no Supermercado +B & Cliente Final**:
