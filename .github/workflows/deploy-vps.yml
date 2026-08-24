@@ -32,7 +32,8 @@ jobs:
           chmod 700 ~/.ssh
           
           SCAN_FILE="$(mktemp)"
-          trap 'rm -f "$SCAN_FILE"; ssh-agent -k >/dev/null' EXIT
+          AGENT_STARTED=0
+          trap 'rm -f "$SCAN_FILE"; if [ "$AGENT_STARTED" -eq 1 ]; then ssh-agent -k >/dev/null; fi' EXIT
           ssh-keyscan -p "$VPS_PORT" -T 10 -t rsa,ecdsa,ed25519 "$VPS_HOST" > "$SCAN_FILE" 2>/dev/null
           if [ ! -s "$SCAN_FILE" ]; then
             echo "Não foi possível obter a chave SSH do VPS." >&2
@@ -48,6 +49,7 @@ jobs:
           chmod 600 ~/.ssh/known_hosts
           
           eval "$(ssh-agent -s)"
+          AGENT_STARTED=1
           if ! printf '%s\n' "$VPS_SSH_KEY" | tr -d '\r' | ssh-add -; then
             echo "VPS_SSH_KEY inválida ou em formato não suportado." >&2
             exit 1
