@@ -31,12 +31,27 @@ jobs:
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
           
-          ssh-keyscan -p "$VPS_PORT" -t rsa,ecdsa,ed25519 "$VPS_HOST" >> ~/.ssh/known_hosts
+          SCAN_FILE="$(mktemp)"
+          trap 'rm -f "$SCAN_FILE"; ssh-agent -k >/dev/null' EXIT
+          ssh-keyscan -p "$VPS_PORT" -T 10 -t rsa,ecdsa,ed25519 "$VPS_HOST" > "$SCAN_FILE" 2>/dev/null
+          if [ ! -s "$SCAN_FILE" ]; then
+            echo "Não foi possível obter a chave SSH do VPS." >&2
+            exit 1
+          fi
+
+          if ! ssh-keygen -lf "$SCAN_FILE" -E sha256 | awk '{print $2}' | grep -Fxq "$VPS_FINGERPRINT"; then
+            echo "Fingerprint SSH do VPS não confere com VPS_SSH_FINGERPRINT." >&2
+            exit 1
+          fi
+
+          cat "$SCAN_FILE" >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
           
           eval "$(ssh-agent -s)"
-          trap 'ssh-agent -k >/dev/null' EXIT
-          ssh-add - <<< "$VPS_SSH_KEY"
+          if ! printf '%s\n' "$VPS_SSH_KEY" | tr -d '\r' | ssh-add -; then
+            echo "VPS_SSH_KEY inválida ou em formato não suportado." >&2
+            exit 1
+          fi
           
           ssh -A -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes "$VPS_USER"@"$VPS_HOST" <<'REMOTE'
           set -e
