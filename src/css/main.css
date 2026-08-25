@@ -41,20 +41,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 /* ── UTILITIES ── */
 .txt-red{color:var(--red)}
-.sub-gold{display:block;font-size:.78rem;font-weight:800;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+.sub-gold{display:block;font-size:.8rem;font-weight:700;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:6px}
 .link-arrow{font-weight:700;color:var(--red);font-size:.92rem;white-space:nowrap}
 .link-arrow:hover{text-decoration:underline}
 .link-arrow-gold{font-weight:700;color:var(--gold);font-size:.92rem}
 .link-arrow-gold:hover{color:#fff;text-decoration:underline}
 
-.pill-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:5px 14px;border-radius:var(--r-full);
-  background:rgba(221,167,18,.12);border:1px solid rgba(221,167,18,.35);
-  font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#8c6600;
-  margin-bottom:14px;
-}
-.pill-badge svg{color:#8c6600;stroke:#8c6600}
 .pill-badge-dark{
   display:inline-flex;align-items:center;gap:6px;
   padding:5px 14px;border-radius:var(--r-full);
@@ -264,7 +256,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .s-ofertas { padding: 64px 0 80px; background: var(--cream); position: relative; }
 .s-ofertas .section-head { position: relative; display: flex; justify-content: center; align-items: center; max-width: 100%; width: 100%; margin: 0 auto 40px; text-align: center; }
 .s-ofertas .section-head-center { text-align: center; margin: 0 auto; }
-.s-ofertas .sub-gold { display: block; font-size: 0.8rem; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 6px; text-align: center; }
 .s-ofertas .section-head h2 { font-family: var(--font-sans); font-size: 42px; color: #1a1a1a; line-height: 1.05; letter-spacing: -0.01em; font-weight: 700; text-align: center; margin: 0; }
 .s-ofertas .link-arrow-gold { position: absolute; right: 0; bottom: 6px; font-weight: 700; color: var(--gold); font-size: 0.95rem; text-decoration: none; transition: color 0.3s ease; white-space: nowrap; }
 .s-ofertas .link-arrow-gold:hover { color: #8c6600; text-decoration: underline; }
@@ -386,14 +377,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   position: relative;
   z-index: 2;
 }
-.encarte-text .sub-gold {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: #B5841D;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
 .encarte-text h2 {
   font-family: var(--font-sans);
   font-size: 42px;
@@ -488,7 +471,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
    ────────────────────────────────────────────── */
 .s-faq{padding:72px 0 80px}
 .faq-head{text-align:center;max-width:600px;margin:0 auto 40px}
-.faq-head span{display:block;font-size:.88rem;font-weight:600;color:#888;margin-bottom:4px}
 .faq-head h2{font-family:var(--font-sans);font-size:42px;color:#111;margin-bottom:10px;font-weight:700;line-height:1.05}
 .faq-head p{color:#777;font-size:.95rem}
 .faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
@@ -536,15 +518,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 }
 .wpp-text-content{
   flex:1;
-}
-.wpp-label{
-  display:block;
-  font-size:0.75rem;
-  font-weight:800;
-  letter-spacing:2px;
-  color:#E2B449;
-  margin-bottom:12px;
-  text-transform:uppercase;
 }
 .wpp-left h2{
   font-family:var(--font-serif);
