@@ -593,7 +593,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
    sidebar com busca + lista de cards de lojas,
    mapa Leaflet à direita.
    ────────────────────────────────────────────── */
-.s-unidades{background:var(--dark);color:#fff;padding:80px 0 88px}
+.s-unidades{background:var(--dark);color:#fff;padding:80px 0 88px;border-radius:40px 40px 0 0;overflow:hidden}
 .unid-header{margin-bottom:36px}
 .unid-header h2{font-family:var(--font-serif);font-size:42px;font-weight:700;line-height:1.05;margin-bottom:6px}
 .unid-header em{color:var(--gold);font-style:italic}
@@ -686,6 +686,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .sobre-title{font-size:2rem}
   .depo-text h2,.wpp-left h2{font-size:1.8rem}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+  .s-unidades{border-radius:24px 24px 0 0}
   .topbar-links{display:none}
 }
 @media(max-width:480px){

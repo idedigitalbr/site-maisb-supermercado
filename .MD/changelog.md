@@ -2,6 +2,8 @@
 
 ## 2026-08-25
 
+- **Cantos Arredondados em Seções Dark (`src/css/sections.css`, `src/css/main.css`, `depoimentos.html`)**: Aplicado `border-radius: 40px` (e `24px` no mobile) nos cantos superiores e inferiores da seção de Depoimentos Premium (`.testimonials-section-premium`) e nos cantos superiores da seção Nossas Unidades (`.s-unidades`), criando transições suaves com o fundo claro das seções adjacentes.
+- **Remoção da Seção Banners Promocionais (`index.html`)**: Removida a seção de carrossel de banners promocionais/ofertas (S7 - `s-banners` / `#clube`) contendo os banners horizontais de vinhos e ofertas da marca.
 - **Atualização do FAQ (`index.html`)**: Substituição completa dos textos de perguntas e respostas da seção de dúvidas frequentes (formas de pagamento com cartão crediário próprio, adesão e cadastro do Clube +Fidelidade, horários detalhados por unidade Alcindo Cacela/Plaza/Tapanã e link do Grupo de Ofertas WhatsApp). Ajuste do `max-height` no CSS (`src/css/main.css`) para garantir expansão suave em todas as resoluções.
 - **Identidade Visual & Depoimentos (`depoimentos.html`, `index.html`, `src/css/sections.css`)**: Inclusão do logotipo monocromático branco (`LOGO-MAISB-SUPERMERCADO-MONO-WHITE.png`) acima da tag de Depoimentos, substituição dos acentos e destaques vermelhos pelo tom amarelo ouro oficial (`#dda712`), e ajuste da altura da seção para `95vh`.
 

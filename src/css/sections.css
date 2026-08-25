@@ -45,17 +45,18 @@
   max-width: 100% !important;
 }
 
-/* Seção de depoimentos: remove arredondamento e margem para encaixe perfeito sem sobra de espaço */
+/* Seção de depoimentos: bordas arredondadas superior e inferior */
 .testimonials-section-premium {
-  border-radius: 0 !important;
+  border-radius: 40px !important;
   overflow: hidden !important;
   margin: 0 !important;
   box-shadow: none !important;
   width: 100% !important;
   max-width: 100% !important;
 }
-@media (min-width: 768px) {
+@media (max-width: 991px) {
   .testimonials-section-premium {
+    border-radius: 24px !important;
     margin: 0 !important;
   }
 }
@@ -237,7 +238,7 @@ p {
   padding: 40px 24px !important;
   overflow: hidden !important;
   color: #ffffff !important;
-  border-radius: 0 !important;
+  border-radius: 40px !important;
   margin: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -604,6 +605,7 @@ p {
     height: auto !important;
     min-height: 95vh !important;
     max-height: none !important;
+    border-radius: 24px !important;
   }
   .testimonials-premium-grid {
     grid-template-columns: 1fr !important;
