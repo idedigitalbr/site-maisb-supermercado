@@ -160,53 +160,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .hero-swiper .swiper-pagination-bullet-active{background:var(--gold);opacity:1;width:22px;border-radius:4px}
 
 /* ──────────────────────────────────────────────
-   S2  CATEGORIAS (CARDSZINHO)
-   Referência: 5 cards lado a lado, imagem em cima,
-   base escura com ícone circular dourado + texto.
-   Parece um scroll/marquee horizontal (cards cortados nos lados).
-   ────────────────────────────────────────────── */
-.s-categorias{padding:0 0 48px}
-.cat-scroll{
-  display:grid;
-  grid-template-columns:repeat(5, 1fr);
-  gap:12px;
-  padding:4px 0;
-}
-
-.cat-card{
-  width:100%;
-  background:#1a1a1c;border-radius:14px;overflow:hidden;
-  display:flex;flex-direction:column;
-  transition:transform var(--ease), box-shadow var(--ease);
-  box-shadow:0 4px 15px rgba(0,0,0,0.25);
-  text-decoration:none;
-}
-.cat-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.45);
-}
-.cat-img{height:145px;overflow:hidden}
-.cat-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.cat-card:hover .cat-img img{transform:scale(1.06)}
-.cat-body{padding:14px 12px 16px;color:#fff;display:flex;flex-direction:column;gap:8px;flex:1;justify-content:flex-start}
-.cat-header{display:flex;align-items:center;gap:10px}
-.cat-icon{
-  width:38px;height:38px;min-width:38px;border-radius:50%;
-  border:1px solid rgba(221,167,18,.35);
-  display:flex;align-items:center;justify-content:center;
-  position:relative;
-  background:rgba(221,167,18,.05);
-}
-.cat-icon::before{
-  content:'';position:absolute;inset:2px;
-  border-radius:50%;border:1.2px solid #DDA712;
-}
-.cat-icon svg{color:#DDA712;stroke:#DDA712;position:relative;z-index:1}
-.cat-body h3{font-family:var(--font-serif);font-size:0.96rem;font-weight:700;line-height:1.2;color:#ffffff;margin:0}
-.cat-body p{font-size:.76rem;color:#a0a0a0;line-height:1.35;margin:0}
-
-/* ──────────────────────────────────────────────
-   S3  SOBRE O GRUPO +B
+   S2  SOBRE O GRUPO +B
    ────────────────────────────────────────────── */
 .s-sobre{padding:60px 0 70px;background:var(--cream);position:relative}
 .sobre-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -741,16 +695,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .metric:nth-child(3), .metric:nth-child(4){border-bottom:none}
   .ofertas-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:991px){
-  .cat-scroll{
-    display:flex;gap:12px;
-    overflow-x:auto;scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-  }
-  .cat-scroll::-webkit-scrollbar{display:none}
-  .cat-card{flex:0 0 210px;width:auto;scroll-snap-align:start}
-}
 @media(max-width:768px){
   .header-inner{min-height:64px;padding:8px 16px;flex-wrap:wrap;align-content:flex-start;row-gap:8px}
   .header-inner.menu-open{padding-bottom:16px}
@@ -770,7 +714,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .s-ofertas .section-head{flex-direction:column;gap:12px;align-items:center}
   .s-ofertas .link-arrow-gold{position:static;margin-top:4px}
   .ofertas-grid{grid-template-columns:1fr 1fr}
-  .cat-card{flex:0 0 190px}
   .sobre-title{font-size:2rem}
   .depo-text h2,.wpp-left h2{font-size:1.8rem}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
@@ -783,8 +726,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .hero-swiper{border-radius:20px}
   .hero-swiper .swiper-button-prev,.hero-swiper .swiper-button-next{width:34px;height:34px}
   .hero-swiper .swiper-button-prev::after,.hero-swiper .swiper-button-next::after{font-size:13px}
-  .cat-scroll{margin-right:-16px;padding-right:16px}
-  .cat-img{height:130px}
   .s-sobre{padding:40px 0 48px}
   .sobre-layout{gap:24px}
   .sobre-title{font-size:1.85rem}
@@ -795,5 +736,4 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .metric:last-child{border-bottom:none !important}
   .encarte-row{padding:24px}
   .wpp-card{padding:28px 24px}
-  .cat-card{flex:0 0 170px}
 }
