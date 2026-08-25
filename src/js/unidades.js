@@ -39,34 +39,6 @@ const unitsData = [
   }
 ];
 
-let map = null;
-const markersMap = {};
-
-// Criar Pin SVG Customizado do +B (Fundo Preto com Gradiente Ouro)
-function createCustomPinIcon(unit) {
-  return L.divIcon({
-    className: `custom-map-pin-container pin-${unit.id}`,
-    html: `
-      <div class="custom-pin-wrapper" id="pin-wrapper-${unit.id}" style="cursor:pointer;">
-        <svg class="custom-pin-svg" width="36" height="48" viewBox="0 0 40 54" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="gold-grad-${unit.id}" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FFF099"/>
-              <stop offset="50%" stop-color="#F5C400"/>
-              <stop offset="100%" stop-color="#C59B27"/>
-            </linearGradient>
-          </defs>
-          <path class="pin-base-path" d="M20 0C8.95 0 0 8.95 0 20c0 14.5 18.2 32.2 19.1 33.1a1.4 1.4 0 0 0 1.8 0C21.8 52.2 40 34.5 40 20 40 8.95 31.05 0 20 0z" fill="#0C0C0D" stroke="#DDA712" stroke-width="1.5" />
-          <circle cx="20" cy="20" r="13" fill="#050505" />
-          <text x="20" y="25" font-family="'DM Sans', sans-serif" font-size="14" font-weight="900" font-style="italic" fill="url(#gold-grad-${unit.id})" text-anchor="middle">+B</text>
-        </svg>
-      </div>
-    `,
-    iconSize: [36, 48],
-    iconAnchor: [18, 48]
-  });
-}
-
 // Renderizar Lista de Cards Gold
 function renderCards(units) {
   const container = document.getElementById('units-list-container') || document.getElementById('teaser-stores-list-container');
@@ -103,37 +75,13 @@ function renderCards(units) {
   if (window.refreshLucideIcons) window.refreshLucideIcons();
 }
 
-// Inicializar Mapa Leaflet
-function initMap() {
-  const mapContainer = document.getElementById('map') || document.getElementById('teaser-unidades-map');
-  if (!mapContainer || typeof L === 'undefined') return;
+// Atualizar o mapa do Google ao selecionar uma unidade.
+function updateGoogleMap(unit) {
+  const mapFrame = document.getElementById('google-map-embed') || document.getElementById('teaser-google-map-embed');
+  if (!mapFrame) return;
 
-  map = L.map(mapContainer.id, {
-    center: [-1.448, -48.472],
-    zoom: 12.5,
-    zoomControl: true,
-    scrollWheelZoom: false,
-    attributionControl: false
-  });
-
-  // Camada de Tiles Suave CartoDB Light
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
-
-  // Adicionar Marcadores no Mapa
-  unitsData.forEach(unit => {
-    const marker = L.marker(unit.coords, {
-      icon: createCustomPinIcon(unit)
-    }).addTo(map);
-
-    markersMap[unit.id] = marker;
-
-    marker.on('click', () => {
-      selectUnit(unit.id);
-    });
-  });
+  const query = encodeURIComponent(`${unit.name} ${unit.address}, Belém - PA`);
+  mapFrame.src = `https://www.google.com/maps?q=${query}&output=embed`;
 }
 
 // Selecionar Unidade (Card + Pin no Mapa)
@@ -141,9 +89,7 @@ function selectUnit(unitId) {
   const unit = unitsData.find(u => u.id === unitId);
   if (!unit) return;
 
-  if (map) {
-    map.flyTo(unit.coords, 15, { duration: 1.2 });
-  }
+  updateGoogleMap(unit);
 
   document.querySelectorAll('.unit-card').forEach(card => card.classList.remove('active'));
   const activeCard = document.getElementById(`card-${unitId}`);
@@ -169,22 +115,11 @@ function initSearch() {
 
     renderCards(filtered);
 
-    unitsData.forEach(u => {
-      const isMatch = filtered.some(f => f.id === u.id);
-      if (markersMap[u.id]) {
-        if (isMatch) {
-          if (!map.hasLayer(markersMap[u.id])) markersMap[u.id].addTo(map);
-        } else {
-          if (map.hasLayer(markersMap[u.id])) map.removeLayer(markersMap[u.id]);
-        }
-      }
-    });
   });
 }
 
 // Executar ao Carregar a Página
 document.addEventListener('DOMContentLoaded', () => {
   renderCards(unitsData);
-  initMap();
   initSearch();
 });

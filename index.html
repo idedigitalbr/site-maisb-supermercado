@@ -15,10 +15,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Playfair+Display:ital,wght@0,700..900;1,700..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="./src/css/main.css?v=35.6" />
+  <link rel="stylesheet" href="./src/css/main.css?v=35.7" />
   <link rel="stylesheet" href="./src/css/sections.css?v=35.2" />
 </head>
 <body>
@@ -585,7 +584,15 @@
           </div>
           <div class="units-list" id="units-list-container"></div>
         </div>
-        <div class="unid-map"><div id="map"></div></div>
+        <div class="unid-map">
+          <iframe
+            id="google-map-embed"
+            title="Mapa das unidades Supermercados +B"
+            src="https://www.google.com/maps?q=Supermercados+Mais+B+Bel%C3%A9m+PA&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -660,10 +667,9 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./src/js/lucide-init.js?v=1.0"></script>
   <script src="./src/js/main.js?v=11.1"></script>
-  <script src="./src/js/unidades.js?v=11.1"></script>
+  <script src="./src/js/unidades.js?v=11.2"></script>
 </body>
 </html>
