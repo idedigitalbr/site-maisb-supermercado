@@ -486,7 +486,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .faq-plus{font-size:1.4rem;color:#999;transition:transform var(--ease),color var(--ease)}
 .faq-item.open .faq-plus{transform:rotate(45deg);color:var(--gold)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 24px}
-.faq-item.open .faq-a{max-height:200px;padding:0 24px 18px}
+.faq-item.open .faq-a{max-height:350px;padding:0 24px 18px}
 .faq-a p{color:#666;font-size:.92rem;line-height:1.6}
 
 /* ──────────────────────────────────────────────

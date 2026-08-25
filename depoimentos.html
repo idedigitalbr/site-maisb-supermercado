@@ -15,7 +15,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./src/css/main.css?v=11.2" />
-  <link rel="stylesheet" href="./src/css/sections.css?v=11.0" />
+  <link rel="stylesheet" href="./src/css/sections.css?v=11.1" />
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
   <style>
@@ -45,9 +45,9 @@
     /* Container Principal */
     .testimonials-section-premium {
       width: 100%;
-      height: 100vh !important;
-      min-height: 100vh !important;
-      max-height: 100vh !important;
+      height: 95vh !important;
+      min-height: 95vh !important;
+      max-height: 95vh !important;
       padding: 40px 24px !important;
       background: transparent !important;
       box-sizing: border-box;
@@ -139,6 +139,16 @@
       will-change: transform;
     }
 
+    /* Logomarca Monocromática Branca */
+    .testimonials-brand-logo {
+      height: 50px !important;
+      width: auto !important;
+      max-height: 50px !important;
+      object-fit: contain !important;
+      margin-bottom: 16px !important;
+      display: block !important;
+    }
+
     /* Kicker Badge "DEPOIMENTOS" (Pill Dourado Fino) */
     .testimonial-badge-kicker {
       background: transparent !important;
@@ -172,14 +182,14 @@
     }
 
     .testimonials-heading .highlight-red {
-      color: #bb2e2c !important;
+      color: #dda712 !important;
     }
 
-    /* Linha de Acento Vermelho */
+    /* Linha de Acento Amarelo Dourado */
     .testimonials-divider {
       width: 48px !important;
       height: 3px !important;
-      background: #bb2e2c !important;
+      background: #dda712 !important;
       margin-top: 18px !important;
       margin-bottom: 20px !important;
       border-radius: 2px !important;
@@ -376,8 +386,8 @@
       width: 8px !important;
       height: 8px !important;
       border-radius: 50% !important;
-      background: #bb2e2c !important;
-      box-shadow: 0 0 8px rgba(187, 46, 44, 0.6) !important;
+      background: #dda712 !important;
+      box-shadow: 0 0 8px rgba(221, 167, 18, 0.6) !important;
     }
 
     /* ==========================================================================
@@ -444,6 +454,7 @@
         
         <!-- Coluna 1 (Esquerda): Texto de Apresentação -->
         <div class="testimonials-copy-col">
+          <img src="./assets/Logos/mono/LOGO-MAISB-SUPERMERCADO-MONO-WHITE.png" alt="Supermercados Mais B" class="testimonials-brand-logo" />
           <span class="testimonial-badge-kicker">DEPOIMENTOS</span>
           <h2 class="testimonials-heading">A confiança de quem faz parte da <span class="highlight-red">nossa história.</span></h2>
           <div class="testimonials-divider"></div>

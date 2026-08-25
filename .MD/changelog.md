@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-25
+
+- **Atualização do FAQ (`index.html`)**: Substituição completa dos textos de perguntas e respostas da seção de dúvidas frequentes (formas de pagamento com cartão crediário próprio, adesão e cadastro do Clube +Fidelidade, horários detalhados por unidade Alcindo Cacela/Plaza/Tapanã e link do Grupo de Ofertas WhatsApp). Ajuste do `max-height` no CSS (`src/css/main.css`) para garantir expansão suave em todas as resoluções.
+- **Identidade Visual & Depoimentos (`depoimentos.html`, `index.html`, `src/css/sections.css`)**: Inclusão do logotipo monocromático branco (`LOGO-MAISB-SUPERMERCADO-MONO-WHITE.png`) acima da tag de Depoimentos, substituição dos acentos e destaques vermelhos pelo tom amarelo ouro oficial (`#dda712`), e ajuste da altura da seção para `95vh`.
+
+
 ## 2026-08-11
 
 - **Atualização do Texto da Seção "Depoimentos" (`index.html` & `depoimentos.html`)**: Subtítulo atualizado conforme solicitação ("Clientes que compartilham com os nossos valores. Honestidade, qualidade e cuidado todos os dias.").
