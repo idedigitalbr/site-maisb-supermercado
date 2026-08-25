@@ -54,6 +54,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#8c6600;
   margin-bottom:14px;
 }
+.pill-badge svg{color:#8c6600;stroke:#8c6600}
 .pill-badge-dark{
   display:inline-flex;align-items:center;gap:6px;
   padding:5px 14px;border-radius:var(--r-full);
@@ -200,6 +201,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   content:'';position:absolute;inset:2px;
   border-radius:50%;border:1.2px solid #DDA712;
 }
+.cat-icon svg{color:#DDA712;stroke:#DDA712;position:relative;z-index:1}
 .cat-body h3{font-family:var(--font-serif);font-size:0.96rem;font-weight:700;line-height:1.2;color:#ffffff;margin:0}
 .cat-body p{font-size:.76rem;color:#a0a0a0;line-height:1.35;margin:0}
 
@@ -268,6 +270,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .metric-icon svg {
   width: 30px;
   height: 30px;
+  color: #E5C158;
+  stroke: #E5C158;
 }
 .metric:hover .metric-icon {
   transform: scale(1.08);
@@ -692,7 +696,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .unit-card-title h3{font-size:.8rem;font-weight:800;line-height:1.2}
 .unit-rating{font-size:.78rem;color:var(--gold);font-weight:700;white-space:nowrap}
 .unit-tags{font-size:.65rem;color:var(--gold);font-weight:700;letter-spacing:.3px}
-.unit-address{font-size:.76rem;color:#aaa}
+.unit-address{font-size:.76rem;color:#aaa;display:flex;align-items:center;gap:5px}
+.unit-address svg{color:var(--gold);stroke:var(--gold);flex:0 0 auto}
 .btn-maps{
   align-self:flex-start;font-size:.68rem;font-weight:800;
   border:1px solid #555;padding:3px 10px;border-radius:var(--r-full);

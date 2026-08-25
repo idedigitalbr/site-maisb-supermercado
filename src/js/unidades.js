@@ -92,13 +92,15 @@ function renderCards(units) {
             <span class="unit-rating">★ ${unit.rating.toString().replace('.', ',')}</span>
           </div>
           <div class="unit-tags">${subbrandsHTML}</div>
-          <p class="unit-address">&map; ${unit.address}</p>
+          <p class="unit-address"><i data-lucide="map-pin" width="14" height="14" aria-hidden="true"></i> ${unit.address}</p>
           <a href="${unit.googleMapsUrl}" target="_blank" rel="noopener" class="btn-maps" onclick="event.stopPropagation();">VER NO GOOGLE MAPS</a>
         </div>
       </div>
     `;
     container.insertAdjacentHTML('beforeend', cardHTML);
   });
+
+  if (window.refreshLucideIcons) window.refreshLucideIcons();
 }
 
 // Inicializar Mapa Leaflet
