@@ -66,10 +66,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
    S0  TOPBAR DOURADA METÁLICA 3D ULTRA-COMPACTA
    ────────────────────────────────────────────── */
 .topbar {
-  background: #FFC400;
+  background: #FAC577;
   padding: 2px 0;
-  border-top: 1px solid #FFC400;
-  border-bottom: 1px solid #FFC400;
+  border-top: 1px solid #FAC577;
+  border-bottom: 1px solid #FAC577;
   position: relative;
   z-index: 1000;
   overflow: hidden;
