@@ -18,6 +18,22 @@
   --wpp-green: #0C2518;
   --font-serif: 'Playfair Display', 'Fraunces', Georgia, serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;
+
+  /* ── PADRÃO OFICIAL DE TIPOGRAFIA (DS 2026) ── */
+  --tag-size: 13px;
+  --tag-lh: 20px;
+  --tag-weight: 700;
+  --tag-spacing: 2px;
+
+  --h2-size: 38px;
+  --h2-lh: 1.15;
+  --h2-weight: 700;
+  --h2-spacing: -0.02em;
+
+  --p-size: 15px;
+  --p-lh: 25px;
+  --p-weight: 400;
+
   --r-sm: 10px;
   --r-md: 16px;
   --r-lg: 24px;
@@ -40,8 +56,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .container-full{max-width:1320px;margin:0 auto;padding:0 24px}
 
 /* ── UTILITIES ── */
-.txt-red{color:var(--red)}
-.sub-gold{display:block;font-size:.8rem;font-weight:700;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:6px}
+.txt-red{color:var(--red) !important}
+.txt-gold, .highlight-gold{color:var(--gold) !important}
+.sub-gold{
+  display:block;
+  font-family:var(--font-sans);
+  font-size:var(--tag-size);
+  font-weight:var(--tag-weight);
+  line-height:var(--tag-lh);
+  color:var(--gold);
+  letter-spacing:var(--tag-spacing);
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
 .link-arrow{font-weight:700;color:var(--red);font-size:.92rem;white-space:nowrap}
 .link-arrow:hover{text-decoration:underline}
 .link-arrow-gold{font-weight:700;color:var(--gold);font-size:.92rem}
@@ -157,9 +184,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .s-sobre{padding:60px 0 70px;background:var(--cream);position:relative}
 .sobre-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .sobre-text{padding-top:0;min-width:0}
-.sobre-title{font-family:var(--font-serif);font-size:35px;font-weight:700;line-height:1.15;letter-spacing:-0.02em;color:#111;margin-bottom:18px}
+.sobre-title{font-family:var(--font-serif);font-size:var(--h2-size);font-weight:var(--h2-weight);line-height:var(--h2-lh);letter-spacing:var(--h2-spacing);color:#111;margin-bottom:16px}
 .sobre-line{width:50px;height:3px;background:var(--red);margin-bottom:22px}
-.sobre-text p{font-family:var(--font-sans);font-size:0.95rem;color:#555;margin-bottom:16px;line-height:1.65;font-style:normal;text-align:justify}
+.sobre-text p{font-family:var(--font-sans);font-size:var(--p-size);font-weight:var(--p-weight);line-height:var(--p-lh);color:#555;margin-bottom:16px;font-style:normal;text-align:justify}
 .sobre-visual{display:flex;flex-direction:column;gap:0;position:relative;min-width:0}
 .sobre-photos-wrapper{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg)}
 .sobre-main-photo{width:100%;height:auto;display:block}
@@ -256,7 +283,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .s-ofertas { padding: 64px 0 80px; background: var(--cream); position: relative; }
 .s-ofertas .section-head { position: relative; display: flex; justify-content: center; align-items: center; max-width: 100%; width: 100%; margin: 0 auto 40px; text-align: center; }
 .s-ofertas .section-head-center { text-align: center; margin: 0 auto; }
-.s-ofertas .section-head h2 { font-family: var(--font-sans); font-size: 42px; color: #1a1a1a; line-height: 1.05; letter-spacing: -0.01em; font-weight: 700; text-align: center; margin: 0; }
+.s-ofertas .section-head h2 { font-family: var(--font-sans); font-size: var(--h2-size); color: #1a1a1a; line-height: var(--h2-lh); letter-spacing: var(--h2-spacing); font-weight: var(--h2-weight); text-align: center; margin: 0; }
 .s-ofertas .link-arrow-gold { position: absolute; right: 0; bottom: 6px; font-weight: 700; color: var(--gold); font-size: 0.95rem; text-decoration: none; transition: color 0.3s ease; white-space: nowrap; }
 .s-ofertas .link-arrow-gold:hover { color: #8c6600; text-decoration: underline; }
 .ofertas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
@@ -321,97 +348,205 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 }
 .depo-prev:hover,.depo-next:hover{background:var(--gold);color:#000}
 
-.depo-text h2{font-family:var(--font-serif);font-size:42px;font-weight:700;line-height:1.05;letter-spacing:-0.01em;margin-bottom:18px}
-.depo-text p{color:#aaa;font-size:1rem;margin-bottom:24px;line-height:1.6}
+.depo-text h2{font-family:var(--font-serif);font-size:var(--h2-size);font-weight:var(--h2-weight);line-height:var(--h2-lh);letter-spacing:var(--h2-spacing);margin-bottom:16px}
+.depo-text p{font-family:var(--font-sans);color:#aaa;font-size:var(--p-size);font-weight:var(--p-weight);line-height:var(--p-lh);margin-bottom:24px}
 
 /* ──────────────────────────────────────────────
-   S6  ENCARTE DIGITAL
-   Referência: fundo creme suave, layout 2 colunas,
-   à esquerda composição de celular + encarte impresso,
-   à direita texto com botão outline dourado.
-   Há um sutil carrinho de compras como watermark no fundo.
+   S6  CLUBE+ FIDELIDADE (PIXEL-PERFECT ANEXO 2)
    ────────────────────────────────────────────── */
-.s-encarte {
+.s-clube {
   padding: 56px 0;
 }
-.encarte-row {
+
+.clube-card {
   position: relative;
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 40px;
-  align-items: center;
-  background: #F5EDE3;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
+  background: #FAF7F2;
   border-radius: 28px;
-  padding: 44px 56px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.05);
 }
-.encarte-bg-leaf {
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  opacity: 0.25;
-  pointer-events: none;
-}
-.encarte-bg-cart {
-  position: absolute;
-  right: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.18;
-  pointer-events: none;
-}
-.encarte-media {
+
+.clube-content {
   position: relative;
   z-index: 2;
+  padding: 54px 44px 50px 60px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
-.encarte-media img {
-  max-height: 360px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.12));
-}
-.encarte-text {
-  position: relative;
-  z-index: 2;
-}
-.encarte-text h2 {
+
+.clube-tag {
+  display: inline-block;
   font-family: var(--font-sans);
-  font-size: 42px;
+  font-size: var(--tag-size);
+  font-weight: var(--tag-weight);
+  line-height: var(--tag-lh);
+  color: var(--gold);
+  letter-spacing: var(--tag-spacing);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.clube-title {
+  font-family: var(--font-serif);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  color: #141414;
+  line-height: var(--h2-lh);
+  letter-spacing: var(--h2-spacing);
+  margin-bottom: 16px;
+}
+
+.clube-title-highlight {
+  color: var(--red);
+  display: inline;
+}
+
+.clube-desc {
+  font-family: var(--font-sans);
+  font-size: var(--p-size);
+  font-weight: var(--p-weight);
+  line-height: var(--p-lh);
+  color: #4A4A4A;
+  max-width: 440px;
+  margin-bottom: 24px;
+}
+
+.clube-brand-red {
+  color: #C51E28;
+  font-weight: 800;
+}
+
+.clube-benefits {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 26px;
+}
+
+.clube-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid #EBE3D6;
+}
+
+.clube-benefit-item:last-child {
+  border-bottom: none;
+}
+
+.clube-benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #D49B28;
+}
+
+.clube-benefit-icon svg,
+.clube-benefit-icon i {
+  stroke-width: 1.8px;
+  color: #D49B28;
+}
+
+.clube-benefit-text {
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
   font-weight: 700;
   color: #1A1A1A;
-  line-height: 1.08;
   letter-spacing: -0.01em;
-  margin-bottom: 14px;
 }
-.encarte-sub {
-  color: #555555;
-  font-size: 1.05rem;
-  font-style: normal;
-  margin-bottom: 28px;
+
+.clube-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
 }
-.btn-outline-gold {
+
+.btn-app-store {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 13px 28px;
-  border: 1.5px solid #C8992E;
-  border-radius: 10px;
-  background: rgba(245, 237, 227, 0.4);
-  color: #7D5F18;
-  font-weight: 700;
-  font-size: 0.95rem;
-  transition: all var(--ease);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  gap: 9px;
+  padding: 10px 18px;
+  background: #141414;
+  color: #FFFFFF;
+  border-radius: 9px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease;
 }
-.btn-outline-gold:hover {
-  background: #C8992E;
-  color: #ffffff;
-  border-color: #C8992E;
-  box-shadow: 0 6px 18px rgba(200, 153, 46, 0.3);
+
+.btn-app-store:hover {
+  background: #000000;
+  color: #FFFFFF;
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+.btn-app-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
+.btn-app-text {
+  white-space: nowrap;
+}
+
+.app-tag-gold {
+  color: #F4C542;
+  font-weight: 700;
+}
+
+.clube-tagline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: #333333;
+  font-weight: 500;
+}
+
+.clube-sparkle-icon {
+  color: #D49B28;
+  flex-shrink: 0;
+}
+
+.clube-tagline strong {
+  font-weight: 800;
+  color: #111111;
+}
+
+/* Coluna Direita (Imagem) */
+.clube-media {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.clube-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
 }
 
 /* ──────────────────────────────────────────────
@@ -471,8 +606,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
    ────────────────────────────────────────────── */
 .s-faq{padding:72px 0 80px}
 .faq-head{text-align:center;max-width:600px;margin:0 auto 40px}
-.faq-head h2{font-family:var(--font-sans);font-size:42px;color:#111;margin-bottom:10px;font-weight:700;line-height:1.05}
-.faq-head p{color:#777;font-size:.95rem}
+.faq-head h2{font-family:var(--font-sans);font-size:var(--h2-size);color:#111;margin-bottom:12px;font-weight:var(--h2-weight);line-height:var(--h2-lh);letter-spacing:var(--h2-spacing)}
+.faq-head p{font-family:var(--font-sans);color:#666;font-size:var(--p-size);font-weight:var(--p-weight);line-height:var(--p-lh)}
 .faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
 .faq-item{
   background:#fff;border:1px solid #e8e4de;border-radius:var(--r-md);
@@ -521,29 +656,28 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 }
 .wpp-left h2{
   font-family:var(--font-serif);
-  font-size:38px;
-  font-weight:400;
-  line-height:1.16;
+  font-size:var(--h2-size);
+  font-weight:var(--h2-weight);
+  line-height:var(--h2-lh);
+  letter-spacing:var(--h2-spacing);
   margin-bottom:14px;
   color:#ffffff;
   max-width:560px;
 }
 .wpp-gold-text{
-  color:#E5B834;
-  background:linear-gradient(135deg, #FFEAA5 0%, #E5B834 50%, #B88519 100%);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  color:var(--gold);
   font-style:normal;
 }
 .wpp-text-content p{
+  font-family:var(--font-sans);
   color:rgba(255,255,255,0.85);
   margin-bottom:28px;
-  font-size:1.05rem;
-  font-style:normal;
-  line-height:1.4;
+  font-size:var(--p-size);
+  font-weight:var(--p-weight);
+  line-height:var(--p-lh);
 }
 .wpp-gold-highlight{
-  color:#E5B834;
+  color:var(--gold);
   font-weight:700;
 }
 .btn-wpp-white{
@@ -595,9 +729,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
    ────────────────────────────────────────────── */
 .s-unidades{background:var(--dark);color:#fff;padding:80px 0 88px;border-radius:40px 40px 0 0;overflow:hidden}
 .unid-header{margin-bottom:36px}
-.unid-header h2{font-family:var(--font-serif);font-size:42px;font-weight:700;line-height:1.05;margin-bottom:6px}
-.unid-header em{color:var(--gold);font-style:italic}
-.unid-header p{color:#888;font-size:.95rem}
+.unid-header h2{font-family:var(--font-serif);font-size:var(--h2-size);font-weight:var(--h2-weight);line-height:var(--h2-lh);letter-spacing:var(--h2-spacing);margin-bottom:8px;color:#ffffff}
+.unid-header em, .unid-header .txt-gold{color:var(--gold);font-style:italic}
+.unid-header p{font-family:var(--font-sans);color:#aaa;font-size:var(--p-size);font-weight:var(--p-weight);line-height:var(--p-lh)}
 .unid-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;align-items:stretch}
 .search-box{position:relative;margin-bottom:18px}
 .search-box input{
@@ -658,6 +792,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
    ────────────────────────────────────────────── */
 @media(max-width:1100px){
   .sobre-layout,.depo-layout,.encarte-row,.wpp-card,.unid-layout{grid-template-columns:1fr;gap:32px}
+  .clube-card{grid-template-columns:1fr;gap:0}
+  .clube-content{padding:48px 36px 36px}
+  .clube-media{height:400px;width:100%}
   .metrics-bar{grid-template-columns:repeat(2,1fr);border-radius:16px;max-width:100%;padding:10px}
   .metric{border-right:1px solid rgba(255, 255, 255, 0.12);border-bottom:1px solid rgba(255, 255, 255, 0.12);padding:14px 16px}
   .metric:nth-child(2n){border-right:none}
@@ -665,6 +802,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .ofertas-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
+  :root {
+    --h2-size: 28px;
+    --tag-size: 12px;
+    --p-size: 14px;
+    --p-lh: 22px;
+  }
   .header-inner{min-height:64px;padding:8px 16px;flex-wrap:wrap;align-content:flex-start;row-gap:8px}
   .header-inner.menu-open{padding-bottom:16px}
   .header-logo{top:50%;transform:translate(-50%,-50%)}
@@ -683,13 +826,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .s-ofertas .section-head{flex-direction:column;gap:12px;align-items:center}
   .s-ofertas .link-arrow-gold{position:static;margin-top:4px}
   .ofertas-grid{grid-template-columns:1fr 1fr}
-  .sobre-title{font-size:2rem}
-  .depo-text h2,.wpp-left h2{font-size:1.8rem}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
   .s-unidades{border-radius:24px 24px 0 0}
   .topbar-links{display:none}
 }
 @media(max-width:480px){
+  :root {
+    --h2-size: 26px;
+    --tag-size: 11.5px;
+    --p-size: 13.5px;
+    --p-lh: 21px;
+  }
   .container{padding-left:16px;padding-right:16px}
   .container-full{padding-left:16px;padding-right:16px}
   .s-hero{padding:14px 0 24px}
@@ -698,12 +845,20 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .hero-swiper .swiper-button-prev::after,.hero-swiper .swiper-button-next::after{font-size:13px}
   .s-sobre{padding:40px 0 48px}
   .sobre-layout{gap:24px}
-  .sobre-title{font-size:1.85rem}
-  .unid-header h2{font-size:2.2rem}
   .ofertas-grid{grid-template-columns:1fr}
   .metrics-bar{grid-template-columns:1fr;border-radius:14px}
   .metric{border-right:none !important;border-bottom:1px solid rgba(255, 255, 255, 0.12) !important}
   .metric:last-child{border-bottom:none !important}
+  .s-clube{padding:36px 0}
+  .clube-card{border-radius:20px}
+  .clube-content{padding:28px 18px 24px}
+  .clube-benefits{margin-bottom:22px}
+  .clube-benefit-item{padding:7.5px 0}
+  .clube-benefit-text{font-size:0.88rem}
+  .clube-buttons{flex-direction:column;width:100%;gap:10px}
+  .btn-app-store{width:100%;justify-content:center;padding:12px 16px}
+  .clube-tagline{font-size:0.82rem;justify-content:center}
+  .clube-media{height:280px}
   .encarte-row{padding:24px}
   .wpp-card{padding:28px 24px}
 }

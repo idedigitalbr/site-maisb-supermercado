@@ -2,6 +2,20 @@
 
 ## 2026-08-25
 
+- **Padronização Universal de Tipografia & Hierarquia Visual (`src/css/main.css`, `src/css/sections.css`, `index.html`)**:
+  - **Headlines (H2)**: Unificados para `38px`, `font-weight: 700` (Bold), `line-height: 1.15`, `letter-spacing: -0.02em` em todas as seções do site, preservando com precisão a distinção entre seções **Serifadas** (`Sobre`, `Depoimentos`, `Clube+ Fidelidade`, `WhatsApp`, `Nossas Unidades`) e seções **Sem Serifa** (`Ofertas da Semana`, `FAQ`).
+  - **Destaque Cromático de Palavras-Chave nos Headlines**:
+    - **Seções em Fundo Claro**: Destaque com span em **Vermelho** (`#BB2E2C` / `.txt-red`) nas seções `Sobre`, `Ofertas da Semana`, `Clube+ Fidelidade` e `FAQ`.
+    - **Seções em Fundo Dark**: Destaque com span em **Amarelo Queimado / Dourado** (`#DDA712` / `.txt-gold`) nas seções `Depoimentos`, `WhatsApp` e `Nossas Unidades`.
+  - **Tagzinhas (Kickers / Eyebrows)**: Padronizadas universalmente com a classe `.sub-gold` para `13px`, `font-weight: 700` (Bold), `line-height: 20px`, `letter-spacing: 2px`, `text-transform: uppercase` na cor dourada da marca (`#DDA712`).
+  - **Textos de Apoio / Parágrafos**: Calibrados para `15px`, `font-weight: 400` (Regular), `line-height: 25px` em `DM Sans`, com cores de alto contraste para fundos claros (`#555` / `#666`) e fundos escuros (`rgba(255,255,255,0.75)` / `#aaa`).
+  - **Responsividade**: Variáveis CSS dinâmicas (`--h2-size`, `--tag-size`, `--p-size`, `--p-lh`) ajustadas de forma fluida para telas menores que 768px (`28px` H2, `12px` tag, `14px` texto) e 480px (`26px` H2, `11.5px` tag, `13.5px` texto).
+
+- **Substituição da Seção Encarte Digital pela Seção Clube+ Fidelidade (`index.html`, `src/css/main.css`)**:
+  - Seção antiga de Encarte Digital (ANEXO 1) substituída completamente pela nova seção **Clube+ Fidelidade** fiel ao layout visual do ANEXO 2.
+  - **Coluna Esquerda**: Tag `CLUBE+ FIDELIDADE`, título em tipografia serifada de alto contraste com destaque em vermelho (*"Mais vantagens para você, todos os dias."*), texto descritivo com destaque no `+B`, lista com 4 benefícios em divisórias sutis e ícones dourados (`Descontos especiais`, `Cashback`, `Eventos exclusivos`, `Prêmios incríveis`), botões de download do app para **Android** (Google Play) e **iOS** (App Store) com badges coloridos e microcopy inferior (*"✦ Baixe. Cadastre-se. Ative. Aproveite."*).
+  - **Coluna Direita**: Utilização da imagem oficial `assets/Page/APP CLUBE +B FIDELIDADE (1)-optimized.webp` estendendo-se em 100% da altura do card e colada na extremidade direita com cantos arredondados contidos.
+  - **Responsividade**: Adaptação para Desktop (2 colunas lado a lado), Tablet e Mobile com botões touch-friendly e enquadramento equilibrado.
 - **Cantos Arredondados em Seções Dark (`src/css/sections.css`, `src/css/main.css`, `depoimentos.html`)**: Aplicado `border-radius: 40px` (e `24px` no mobile) nos cantos superiores e inferiores da seção de Depoimentos Premium (`.testimonials-section-premium`) e nos cantos superiores da seção Nossas Unidades (`.s-unidades`), criando transições suaves com o fundo claro das seções adjacentes.
 - **Remoção da Seção Banners Promocionais (`index.html`)**: Removida a seção de carrossel de banners promocionais/ofertas (S7 - `s-banners` / `#clube`) contendo os banners horizontais de vinhos e ofertas da marca.
 - **Atualização do FAQ (`index.html`)**: Substituição completa dos textos de perguntas e respostas da seção de dúvidas frequentes (formas de pagamento com cartão crediário próprio, adesão e cadastro do Clube +Fidelidade, horários detalhados por unidade Alcindo Cacela/Plaza/Tapanã e link do Grupo de Ofertas WhatsApp). Ajuste do `max-height` no CSS (`src/css/main.css`) para garantir expansão suave em todas as resoluções.

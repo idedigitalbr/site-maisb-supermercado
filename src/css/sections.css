@@ -343,18 +343,19 @@ p {
 
 /* Título Institucional */
 .testimonials-heading {
-  font-family: 'Playfair Display', 'Fraunces', Georgia, serif !important;
-  font-size: clamp(2rem, 2.3vw, 2.5rem) !important;
-  font-weight: 700 !important;
-  line-height: 1.15 !important;
-  letter-spacing: -0.01em !important;
+  font-family: var(--font-serif) !important;
+  font-size: var(--h2-size, 38px) !important;
+  font-weight: var(--h2-weight, 700) !important;
+  line-height: var(--h2-lh, 1.15) !important;
+  letter-spacing: var(--h2-spacing, -0.02em) !important;
   color: #ffffff !important;
   margin-bottom: 0 !important;
   text-align: left !important;
 }
 
-.testimonials-heading .highlight-red {
-  color: #dda712 !important;
+.testimonials-heading .highlight-red,
+.testimonials-heading .txt-gold {
+  color: var(--gold, #dda712) !important;
 }
 
 /* Linha de Acento Amarelo Dourado */
@@ -371,11 +372,12 @@ p {
 
 /* Subtítulo */
 .testimonials-subheading {
-  font-size: clamp(0.9rem, 1vw, 1rem) !important;
-  line-height: 1.65 !important;
-  color: rgba(255, 255, 255, 0.7) !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--p-size, 15px) !important;
+  line-height: var(--p-lh, 25px) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
   margin: 0 !important;
-  font-weight: 400 !important;
+  font-weight: var(--p-weight, 400) !important;
   text-align: justify !important;
 }
 
