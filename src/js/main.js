@@ -508,6 +508,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.getElementById('mobile-toggle');
   var navL = document.getElementById('nav-left');
   var navR = document.getElementById('nav-right');
+  var headerInner = toggle ? toggle.closest('.header-inner') : null;
 
   if (toggle && navL && navR) {
     toggle.addEventListener('click', function () {
@@ -515,10 +516,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (isOpen) {
         navL.classList.remove('open');
         navR.classList.remove('open');
+        if (headerInner) headerInner.classList.remove('menu-open');
         toggle.setAttribute('aria-expanded', 'false');
       } else {
         navL.classList.add('open');
         navR.classList.add('open');
+        if (headerInner) headerInner.classList.add('menu-open');
         toggle.setAttribute('aria-expanded', 'true');
       }
     });
@@ -528,6 +531,7 @@ document.addEventListener('DOMContentLoaded', function () {
       link.addEventListener('click', function () {
         navL.classList.remove('open');
         navR.classList.remove('open');
+        if (headerInner) headerInner.classList.remove('menu-open');
         toggle.setAttribute('aria-expanded', 'false');
       });
     });
