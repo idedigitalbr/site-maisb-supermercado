@@ -229,30 +229,56 @@ body.sp-body {
   border-radius: 8px;
 }
 
+.sp-btn-cta-card,
+.sp-btn-red,
 .sp-btn-gold {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
-  background: linear-gradient(135deg, #FCBF0C 0%, #DDA712 100%);
-  color: #000000;
-  font-size: 14px;
+  background: var(--sp-red, #BB2E2C);
+  color: #ffffff !important;
+  font-size: 15px;
   font-weight: 700;
-  padding: 12px 16px;
-  border-radius: 50px;
+  padding: 13px 18px;
+  border-radius: 8px;
   text-decoration: none;
   text-align: center;
   margin-top: 16px;
-  box-shadow: 0 4px 15px rgba(221, 167, 18, 0.35);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(187, 46, 44, 0.35);
+  transition: all 0.28s ease;
   border: none;
   cursor: pointer;
   font-family: inherit;
+  line-height: 1.2;
 }
 
+.sp-btn-cta-card svg,
+.sp-btn-cta-card i,
+.sp-btn-red svg,
+.sp-btn-red i,
+.sp-btn-gold svg,
+.sp-btn-gold i {
+  flex-shrink: 0;
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.sp-btn-cta-card:hover,
+.sp-btn-red:hover,
 .sp-btn-gold:hover {
-  background: linear-gradient(135deg, #FFD043 0%, #EAA90A 100%);
+  background: #a32422 !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(221, 167, 18, 0.5);
-  color: #000000;
+  box-shadow: 0 6px 18px rgba(187, 46, 44, 0.5);
+  color: #ffffff !important;
+}
+
+.sp-btn-cta-card:active,
+.sp-btn-red:active,
+.sp-btn-gold:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(187, 46, 44, 0.3);
 }
 
 @media (max-width: 1024px) {

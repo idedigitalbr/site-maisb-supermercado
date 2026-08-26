@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.1.14] - 2026-08-26
+- **Padronização Visual do Botão CTA do Passo 1 (`show-de-premios.html`, `src/css/show-de-premios.css`)**:
+  - **Identidade Visual Vermelha e Tipografia**: O botão do card Passo 1 (*Cadastre-se no app Clube + Fidelidade*) foi reformulado do estilo pílula dourado para o formato padrão do site (fundo vermelho oficial `#BB2E2C`, cantos arredondados `8px`, tipografia branca em negrito perfeitamente centralizada e sombra suave `rgba(187, 46, 44, 0.35)`).
+  - **Texto Minimalista**: Mantido apenas o texto *"Clube + Fidelidade"* sem ícones, preservando a leitura limpa e direta.
+
 ## [2.1.13] - 2026-08-26
 - **Ajuste de Altura e Respiro da Barra do Cabeçalho (`src/css/main.css`, `index.html`, `show-de-premios.html`)**:
   - **Aumento do Padding Vertical**: Ajustado o padding do `.header-inner` para `15px 32px` com `min-height: 72px`, proporcionando respiro elegante acima e abaixo da logo central e dos links de navegação.
