@@ -1,5 +1,115 @@
 # Changelog
 
+## [2.1.13] - 2026-08-26
+- **Ajuste de Altura e Respiro da Barra do Cabeçalho (`src/css/main.css`, `index.html`, `show-de-premios.html`)**:
+  - **Aumento do Padding Vertical**: Ajustado o padding do `.header-inner` para `15px 32px` com `min-height: 72px`, proporcionando respiro elegante acima e abaixo da logo central e dos links de navegação.
+  - **Centralização Precisa da Logo**: A `.header-logo` agora utiliza alinhamento absoluto perfeitamente centralizado com `top: 50%; transform: translate(-50%, -50%)`, com altura proporcional de `46px` para evitar qualquer encosto nas bordas superior e inferior.
+
+## [2.1.12] - 2026-08-26
+- **Otimização Responsiva & Mobile do Modal Clube+ Fidelidade (`src/css/show-de-premios.css`, `show-de-premios.html`)**:
+  - **Adaptação Completa para Smartphones**: Layout do card e FAQ com empilhamento vertical suave, dimensionamento adaptável de fontes e botões de download com largura total (`width: 100%`) e alinhamento central.
+  - **Touch & Acessibilidade**: Botão de fechar fixo redimensionado para `42x42px` no mobile com espaçamento de toque aprimorado (`top: 14px; right: 14px`), padding do backdrop ajustado para `24px 12px 64px 12px`, e suporte nativo a rolagem suave por toque (`-webkit-overflow-scrolling: touch`).
+
+## [2.1.11] - 2026-08-26
+- **Padronização Visual do Link "Clube +Fidelidade" no Cabeçalho (`index.html`, `show-de-premios.html`)**:
+  - **Ajuste de Estilo no Header**: O CTA *"Clube +Fidelidade"* no canto superior direito do cabeçalho teve a classe `.btn-cta-red` (botão sólido vermelho com sombra) alterada para `.nav-link` (link textual minimalista com ícone).
+  - **Harmonização Visual**: O item agora segue a mesma identidade e padrão visual discreto do link *"Show de Prêmios"*, mantendo o ícone correspondente, transições de hover e alinhamento equilibrado no menu.
+
+## [2.1.10] - 2026-08-26
+- **Ajuste de Rolagem e Visibilidade Superior do Modal (`show-de-premios.html`, `src/css/show-de-premios.css`, `src/js/show-de-premios.js`)**:
+  - **Correção da Rolagem no Topo**: Corrigido o alinhamento do modal no container backdrop (`align-items: center` substituído por fluxo de rolagem no backdrop com `justify-content: flex-start` e padding vertical), permitindo que o usuário role livremente até o topo da seção principal do Clube+ Fidelidade sem qualquer corte ou travamento.
+  - **Botão de Fechar Fixo**: Botão de fechar configurado com `position: fixed` no canto superior direito para fácil acesso em qualquer ponto da rolagem.
+  - **Reset de Scroll**: O modal agora sempre inicia com `scrollTop = 0` ao ser aberto.
+
+## [2.1.9] - 2026-08-26
+- **Substituição da Imagem da Seção e Modal Clube+ Fidelidade (`index.html`, `show-de-premios.html`)**:
+  - Atualizada a arte oficial da coluna direita para a versão com recorte e fundo transparente (`assets/Page/APP CLUBE +B FIDELIDADE-fundo-transparente.webp`), integrando perfeitamente a imagem ao novo tom de fundo creme `#fef7e5` do card.
+
+## [2.1.8] - 2026-08-26
+- **Atualização do Carrossel Hero do Topo (`index.html`, `src/css/main.css`)**:
+  - **Substituição do Banner**: Removido o banner expirado do *Dia dos Pais* e inserido o novo banner oficial da campanha *Show de Prêmios* (`assets/show-de-premios/banner-topo-promo-show-premios.webp`).
+  - **Link Interno da Campanha**: Configurado link direto do slide para a página interna da promoção (`show-de-premios.html`).
+  - **Ajustes de Estilização CSS**: Adicionada regra `.hero-swiper .swiper-slide a { display: block; width: 100%; }` para garantir área de clique perfeita em todo o slide do carrossel.
+  - **Organização de Arquivos**: O banner anterior do Dia dos Pais foi movido para `assets-nao-usados/Page/S1 TOPO HERO/`.
+
+## [2.1.7] - 2026-08-26
+- **Ajuste de Cor de Fundo da Seção Clube+ Fidelidade (`src/css/main.css`)**:
+  - Atualizada a cor de fundo do container `.clube-card` para `#fef7e5` (substituindo o tom anterior `#FAF7F2`), proporcionando uma tonalidade creme mais quente e perfeitamente integrada à paleta visual da marca.
+
+## [2.1.6] - 2026-08-26
+- **Aprimoramento do Modal Clube+ Fidelidade & Correção do FAQ (`show-de-premios.html`, `src/css/show-de-premios.css`, `src/js/show-de-premios.js`)**:
+  - **Fundo Deep Black (`rgba(0, 0, 0, 0.98)`) & Ultra Blur**: Fundo escurecido quase preto absoluto com desfoque de 24px para isolar completamente o modal.
+  - **Bloqueio Total do Scroll de Fundo (Scroll Lock)**: Implementado travamento via `position: fixed; top: -scrollY` no `body`, `overscroll-behavior: contain` e contenção de toque/scroll, impedindo que a página de trás role enquanto o modal estiver aberto, restaurando a posição exata de scroll ao fechar.
+  - **Bloco de FAQ Integrado no Modal**: Adicionado card expansível de FAQ logo abaixo da seção principal com a pergunta *"Como funciona o Clube +Fidelidade e como ter acesso a ofertas exclusivas?"*.
+  - **Correção da Abertura do Accordion**: Resolvido conflito de manipuladores de evento (`stopPropagation` e método `toggleClubeModalFaq` dedicado com suporte inline e via captura de evento), assegurando expansão instantânea e suave de todas as respostas do FAQ ao clicar.
+  - **Conteúdo Completo & Interativo**: Inclui banner dourado com aviso importante da versão Beta, explicação detalhada das regras, acúmulo de pontos a cada R$ 1,00, validade de 90 dias, consulta e resgate direto no caixa. Ao abrir, o card ganha borda dourada `#FCBF0C` e o ícone alterna suavemente de `+` para `×`.
+
+## [2.1.5] - 2026-08-26
+- **Redesign dos Containers do FAQ & Card de Regulamento da Campanha "Show de Prêmios" (`show-de-premios.html`, `src/css/show-de-premios.css`)**:
+  - **Containers do FAQ em Fundo Branco (White Mode)**:
+    - Cards de cada pergunta convertidos para containers brancos (`#FFFFFF`) com bordas suaves (`rgba(0, 0, 0, 0.08)`), cantos arredondados (`border-radius: 16px`) e sombreamento elegante (`box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08)`).
+    - Tipografia de alta legibilidade com títulos em preto escuro (`#1a1a1a`), numeração destacada em dourado queimado (`#C5940E`), texto interno em cinza grafite (`#4B5563`) e links em vermelho institucional (`#BB2E2C`).
+    - Botão de expansão `+`/`×` com fundo dinâmico e transições suaves ao abrir e fechar.
+  - **Card de Regulamento Minimalista em Dark Mode**:
+    - Fundo escuro em glassmorphism translúcido (`rgba(18, 18, 18, 0.85)` com `backdrop-filter: blur(14px)`), borda sutil (`rgba(255, 255, 255, 0.1)`), cantos refinados e padding mais compacto e elegante.
+    - Ícone com preenchimento dark/transparente e traços dourados (`#FCBF0C`).
+    - Headline em branco puro (`#FFFFFF`) e texto de apoio em cinza claro (`#9CA3AF`), com botão de download vermelho institucional (`#BB2E2C`) refinado.
+
+## [2.1.4] - 2026-08-26
+- **Modal Clube+ Fidelidade na Campanha "Show de Prêmios" (`show-de-premios.html`, `src/css/show-de-premios.css`, `src/js/show-de-premios.js`)**:
+  - **Integração no Botão do Passo 1**: O botão *"Clube + Fidelidade"* na seção *"Como Participar"* agora abre um modal/popup com a seção completa do Clube+ Fidelidade da Home.
+  - **Conteúdo Fiel**: Inclui headline serifada, benefícios com ícones dourados (Descontos, Cashback, Eventos, Prêmios), botões oficiais de download para Android e iOS, tagline e imagem de alta resolução do aplicativo e cliente.
+  - **Interatividade & Usabilidade**: Abertura com animação suave, backdrop escurecido com blur, botão de fechar estilizado, suporte a fechamento por clique fora ou pela tecla `ESC`, e bloqueio do scroll de fundo (`modal-open`).
+
+## [2.1.3] - 2026-08-26
+- **Consolidação Completa do FAQ - Clube+ Fidelidade (`index.html`, `src/css/main.css`)**:
+  - **Texto de Apoio Atualizado**: Subtítulo do FAQ atualizado para *"Esclareça suas principais dúvidas sobre nossas lojas, ofertas, app Clube+ Fidelidade, promoções, formas de pagamento e facilidades para suas compras."*.
+  - **Reordenação dos Itens do FAQ**:
+    1. *Como funciona o Clube +Fidelidade e como ter acesso a ofertas exclusivas?* (Posicionado em 1º lugar com todas as regras completas, aviso beta e dúvidas detalhadas).
+    2. *Quais são as formas de pagamento aceitas no +B?*
+    3. *Qual o horário de funcionamento das unidades do +B?*
+    4. *Como recebo as ofertas e o encarte da semana pelo WhatsApp?*
+  - **Conteúdo Interno do Item 2 (Clube+ Fidelidade)**:
+    - Aviso de fase de desenvolvimento e versão Beta temporária.
+    - O que é o programa de vantagens Clube Mais.
+    - Como acompanhar pontos e datas de expiração (90 dias).
+    - Cadastro e acúmulo de pontos (R$ 1,00 = 1 ponto, CPF no caixa).
+    - Como consultar saldo e pontuação (prazo de 1 dia).
+    - Como resgatar pontos e trocar por descontos/brindes (exigência de RG e CPF originais).
+  - **Ajustes de Estilização (`src/css/main.css`)**: Estilos dedicados para `.faq-inner-alert`, subblocos estruturados (`.faq-subblock`), notas (`.faq-note`) e expansão de `max-height` para abertura fluida sem sobreposições.
+
+## [2.1.2] - 2026-08-26
+- **Seção Clube+ Fidelidade (`index.html`, `src/css/main.css`)**:
+  - **Link Oficial App Store**: Atualizado o link do botão iOS para o app oficial `https://apps.apple.com/br/app/clube-fidelidade/id1554152068`.
+  - **Headline em 2 Linhas**: Ajustada a quebra de linha do título H2 para *"Mais vantagens para você,<br>todos os dias."*.
+  - **Otimização de Altura e Espaçamento**: Reduzidos os paddings verticais e margens internas da seção (`padding: 36px 0`, padding interno do card, margens da lista e botões) para que a seção ocupe uma altura mais compacta e proporcional na viewport.
+
+## [2.1.1] - 2026-08-26
+- **Ajuste na Seção Clube+ Fidelidade (`src/css/main.css`)**:
+  - Corrigido o enquadramento da imagem (`object-fit: contain` e proporção `1fr 1fr` no grid) para exibir a arte inteira do app e da cliente sem cortes indesejados nas bordas, mantendo perfeita adaptação em desktop, tablet e mobile.
+
+## 2026-08-26
+
+- **Criação e Clonagem Oficial da Landing Page "Show de Prêmios Mais B" (`show-de-premios.html`, `src/css/show-de-premios.css`, `src/js/show-de-premios.js`)**:
+  - **Recriação Fiel e Pixel-Perfect**: Baseada na URL `https://showdepremiosmaisb.com.br/` e no layout da campanha oficial 2026.
+  - **Assets Oficiais Integrados**:
+    - Download e estruturação de todas as artes em alta resolução em `assets/show-de-premios/img/` (`hero.png`, `hero-mobile.png`, `hero-under.png`, `telas-app.png`, `cada-100-1-cupom.png`, `atendimento.jpg`, `toten-urna.png`, `premiacao.png`, `data.png`, `bg.jpg`, `bg-mobile.jpg`, `favicon.png`).
+    - Regulamento completo oficial anexado em PDF (`assets/show-de-premios/regulamento.pdf`).
+  - **Design System & Padrões da Marca (+B Supermercados)**:
+    - Paleta de cores oficial: Ouro/Amarelo Queimado (`#FCBF0C` / `#DDA712`), Vermelho Bordô (`#BB2E2C`), Superfícies Dark Glassmorphism (`#0e0e0e`, `#161616`) e cards em branco puro `#FFFFFF` com sombras suaves.
+    - Tipografia: Integração com Google Fonts (`DM Sans`, `Questrial`, `Fraunces`).
+    - Ícones oficiais via **Lucide Icons** com estilização circular em ouro.
+  - **Seções Implementadas**:
+    - **Header & Navbar**: Barra fixa oficial padronizada com a Home, contendo logo oficial, links de navegação (`Início`, `Sobre`, `Nossas Lojas`) e o item minimalista **Show de Prêmios** (`.nav-link` com ícone de presente) posicionado ao lado do botão vermelho **Clube +Fidelidade** (`.btn-cta-red`).
+  - **Topbar Superior**: Mantida a barra padrão sem redundância.
+    - **Hero Section**: Banner 3D da premiação com medalha Show de Prêmios, 3 TVs 85", Kits da Seleção e Vales-Compras, com versão responsiva para desktop e celular.
+    - **Como Participar**: 4 Cards brancos com o passo a passo completo (App Clube+ Fidelidade com botão CTA, Acumular cupons a cada R$ 100, CPF no Caixa e Totem/Urna).
+    - **Premiação**: Destaque lateral 3D + contadores numéricos animados dinamicamente com IntersectionObserver (`3 TVs 85"`, `12 Kits Oficiais`, `9 Vales-Compras`) e banner da data do sorteio (05/06/2026).
+    - **Perguntas Frequentes (FAQ)**: Accordion interativo com numeração dourada `01` a `05`, ícones expansíveis `+`/`-` e respostas completas.
+    - **Card de Download do Regulamento**: Seção minimalista integrada logo abaixo do FAQ ("*Consulte o regulamento completo - Leia o regulamento e fique por dentro de todas as regras e condições da promoção.*") com ícone dourado de documento/escudo e botão vermelho de download direto do PDF oficial.
+    - **Rodapé Legal**: Textos de autorização SPA/ME e botão flutuante para voltar ao topo.
+  - **Integração no Site Institucional (`index.html`)**: Inclusão de atalho em destaque para a campanha na topbar superior.
+
 ## 2026-08-25
 
 - **Padronização Universal de Tipografia & Hierarquia Visual (`src/css/main.css`, `src/css/sections.css`, `index.html`)**:

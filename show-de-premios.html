@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Show de Prêmios Mais B | Supermercados Mais B</title>
+  <meta name="description" content="Participe do Show de Prêmios Supermercados Mais B! Concorra a 3 TVs 85 polegadas, 12 Kits Oficiais da Seleção e 9 Vales-Compras de R$ 2.000,00." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="./assets/Logos/FavIcon-Supermercados-MaisB-icone).webp" />
+  <link rel="apple-touch-icon" href="./assets/show-de-premios/img/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Show de Prêmios Mais B | Supermercados Mais B" />
+  <meta property="og:description" content="A cada R$ 100 em compras ganhe 1 cupom e concorra a 3 TVs 85'', 12 Kits Oficiais e 9 Vales-Compras de R$ 2.000!" />
+  <meta property="og:image" content="./assets/show-de-premios/img/hero.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Playfair+Display:ital,wght@0,700..900;1,700..900&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+  <!-- CSS Padrão do Projeto + Campanha -->
+  <link rel="stylesheet" href="./src/css/tokens.css" />
+  <link rel="stylesheet" href="./src/css/main.css?v=36.2" />
+  <link rel="stylesheet" href="./src/css/sections.css?v=36.0" />
+  <link rel="stylesheet" href="./src/css/show-de-premios.css?v=10.0" />
+</head>
+<body class="sp-body">
+
+  <!-- ============================================
+       S0: TOPBAR (EXATAMENTE IGUAL À HOME)
+       ============================================ -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-social">
+        <a href="https://www.instagram.com/maisbsupermercados/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/MaisBsupermercados/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UC_5InPLuERhTQ5wnIeS480g" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+      <div class="topbar-links">
+        <a href="index.html#depoimentos">Depoimentos</a>
+        <a href="index.html#grupo-wpp">Grupo de Ofertas</a>
+        <a href="index.html#clube">Clube+ Fidelidade</a>
+        <a href="https://linktr.ee/maisbsupermercado" target="_blank" rel="noopener">Vendas no Atacado</a>
+        <a href="https://linktr.ee/maisbsupermercado" target="_blank" rel="noopener">Crediário</a>
+        <a href="https://linktr.ee/maisbsupermercado" target="_blank" rel="noopener">+B Run</a>
+        <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener noreferrer">Trabalhe Conosco</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       S0: HEADER PRINCIPAL (EXATAMENTE IGUAL À HOME)
+       ============================================ -->
+  <header class="site-header" id="topo">
+    <div class="header-inner">
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-left" id="nav-left">
+        <a href="index.html#home" class="nav-link">
+          <i data-lucide="home" width="15" height="15" aria-hidden="true"></i>
+          Início
+        </a>
+        <a href="index.html#sobre" class="nav-link">
+          <i data-lucide="user-round" width="15" height="15" aria-hidden="true"></i>
+          Sobre
+        </a>
+        <a href="index.html#unidades" class="nav-link">
+          <i data-lucide="map-pin" width="15" height="15" aria-hidden="true"></i>
+          Nossas Lojas
+        </a>
+      </nav>
+      <a href="index.html#home" class="header-logo"><img src="./assets/Logos/IMG_5606.PNG" alt="Supermercados Mais B" /></a>
+      <nav class="nav-right" id="nav-right">
+        <a href="#hero" class="nav-link active">
+          <i data-lucide="gift" width="15" height="15" aria-hidden="true"></i>
+          Show de Prêmios
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.intellisys.grupomaisbarato&hl=pt_BR" target="_blank" rel="noopener noreferrer" class="nav-link">
+          <i data-lucide="credit-card" width="15" height="15" aria-hidden="true"></i>
+          Clube +Fidelidade
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="sp-hero" id="hero">
+    <div class="container">
+      <div class="sp-hero-image-wrapper">
+        <!-- Desktop Hero Banner -->
+        <img src="./assets/show-de-premios/img/hero.png" alt="Show de Prêmios Mais B - 3 TVs 85 polegadas, 12 Kits Oficiais e 9 Vales-Compras" class="sp-hero-main-img" />
+        
+        <!-- Mobile Hero Banner -->
+        <img src="./assets/show-de-premios/img/hero-mobile.png" alt="Show de Prêmios Mais B" class="sp-hero-mobile-img" />
+
+        <!-- Banner Inferior de Resumo de Prêmios -->
+        <img src="./assets/show-de-premios/img/hero-under.png" alt="A cada R$ 100 em compras ganhe 1 cupom. Sorteio dia 05 de junho de 2026" class="sp-hero-under-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SEÇÃO: COMO PARTICIPAR
+       ============================================ -->
+  <section class="sp-participar" id="participar">
+    <div class="container">
+      <div class="sp-section-title">
+        <h2>Como Participar</h2>
+        <div class="sp-title-divider"></div>
+        <p>Veja o passo a passo de como fazer para participar da nossa promoção!</p>
+      </div>
+
+      <div class="sp-cards-grid">
+        <!-- Passo 1 -->
+        <div class="sp-card">
+          <div class="sp-card-icon-wrap">
+            <i data-lucide="smartphone" width="28" height="28"></i>
+          </div>
+          <h3 class="sp-card-title">Cadastre-se no app Clube + Fidelidade</h3>
+          <p class="sp-card-text">Baixe o app e crie sua conta</p>
+          <div class="sp-card-img-wrap">
+            <img src="./assets/show-de-premios/img/telas-app.png" alt="Aplicativo Clube + Fidelidade Mais B" class="sp-card-img" />
+          </div>
+          <button type="button" class="sp-btn-gold" id="open-clube-modal" aria-haspopup="dialog" aria-controls="clube-modal">
+            Clube + Fidelidade
+          </button>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="sp-card">
+          <div class="sp-card-icon-wrap">
+            <i data-lucide="ticket" width="28" height="28"></i>
+          </div>
+          <h3 class="sp-card-title">Acumule Cupons</h3>
+          <p class="sp-card-text">A cada R$ 100,00 em compras você tem direito a um cupom da promoção.</p>
+          <div class="sp-card-img-wrap">
+            <img src="./assets/show-de-premios/img/cada-100-1-cupom.png" alt="A cada R$ 100 = 1 Cupom" class="sp-card-img" />
+          </div>
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="sp-card">
+          <div class="sp-card-icon-wrap">
+            <i data-lucide="megaphone" width="28" height="28"></i>
+          </div>
+          <h3 class="sp-card-title">Informe seu CPF no Caixa</h3>
+          <p class="sp-card-text">Antes de finalizar suas compras, forneça seu CPF para registrar os pontos no seu cadastro.</p>
+          <div class="sp-card-img-wrap">
+            <img src="./assets/show-de-premios/img/atendimento.jpg" alt="Atendimento no Caixa Mais B" class="sp-card-img" />
+          </div>
+        </div>
+
+        <!-- Passo 4 -->
+        <div class="sp-card">
+          <div class="sp-card-icon-wrap">
+            <i data-lucide="printer" width="28" height="28"></i>
+          </div>
+          <h3 class="sp-card-title">Imprima e Deposite seus Cupons</h3>
+          <p class="sp-card-text">Vá aos totens de impressão, disponíveis em nossas lojas.</p>
+          <p class="sp-card-text-extra">Imprima seus cupons e deposite-os na urna destinada à promoção.</p>
+          <div class="sp-card-img-wrap">
+            <img src="./assets/show-de-premios/img/toten-urna.png" alt="Totem de Impressão e Urna Promocional" class="sp-card-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SEÇÃO: PREMIAÇÃO
+       ============================================ -->
+  <section class="sp-premiacao" id="premiacao">
+    <div class="container">
+      <div class="sp-premiacao-row">
+        <!-- Coluna de Imagem / Composição 3D -->
+        <div class="sp-premiacao-media">
+          <img src="./assets/show-de-premios/img/premiacao.png" alt="Premiação Show de Prêmios Mais B" class="sp-premiacao-img" />
+        </div>
+
+        <!-- Coluna de Conteúdo & Contadores -->
+        <div class="sp-premiacao-content">
+          <h2>Premiação</h2>
+          <div class="sp-stats-grid">
+            <div class="sp-stat-box">
+              <div class="sp-stat-number" data-target="3">3</div>
+              <p class="sp-stat-label">3 TVS 85"</p>
+            </div>
+            <div class="sp-stat-box">
+              <div class="sp-stat-number" data-target="12">12</div>
+              <p class="sp-stat-label">
+                12 Kits Oficiais
+                <small>(Camisa da Seleção + Bola)</small>
+              </p>
+            </div>
+            <div class="sp-stat-box">
+              <div class="sp-stat-number" data-target="9">9</div>
+              <p class="sp-stat-label">9 Vales-Compras de R$ 2.000,00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner de Data do Sorteio -->
+      <div class="sp-date-banner-wrap">
+        <img src="./assets/show-de-premios/img/data.png" alt="Sorteio dia 05 de junho de 2026" class="sp-date-banner-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SEÇÃO: PERGUNTAS FREQUENTES (FAQ)
+       ============================================ -->
+  <section class="sp-faq" id="faq">
+    <div class="container">
+      <div class="sp-section-title">
+        <h2>Perguntas Frequentes</h2>
+        <div class="sp-title-divider"></div>
+        <p>Tire suas principais dúvidas sobre a nossa promoção</p>
+      </div>
+
+      <div class="sp-faq-wrapper">
+        <!-- Item 01 (Aberto por padrão) -->
+        <div class="sp-faq-item faq-active">
+          <div class="sp-faq-header">
+            <div class="sp-faq-header-left">
+              <span class="sp-faq-num">01</span>
+              <h3 class="sp-faq-title">Qual o período de participação na promoção?</h3>
+            </div>
+            <div class="sp-faq-toggle-icon">+</div>
+          </div>
+          <div class="sp-faq-content">
+            <div class="sp-faq-content-inner">
+              <p>A promoção é válida de <strong>04/03/2026</strong> a <strong>05/06/2026</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 02 -->
+        <div class="sp-faq-item">
+          <div class="sp-faq-header">
+            <div class="sp-faq-header-left">
+              <span class="sp-faq-num">02</span>
+              <h3 class="sp-faq-title">Quem pode participar desta promoção?</h3>
+            </div>
+            <div class="sp-faq-toggle-icon">+</div>
+          </div>
+          <div class="sp-faq-content">
+            <div class="sp-faq-content-inner">
+              <p>Pessoas físicas, residentes e domiciliadas no Brasil, sem qualquer limite de idade, desde que preenchidos todos os requisitos do regulamento. A participação deverá ser para maiores de 18 anos e em caso de participação para menores de idade deverão ser representados por seus responsáveis legais.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 03 -->
+        <div class="sp-faq-item">
+          <div class="sp-faq-header">
+            <div class="sp-faq-header-left">
+              <span class="sp-faq-num">03</span>
+              <h3 class="sp-faq-title">Como faço para me cadastrar na promoção?</h3>
+            </div>
+            <div class="sp-faq-toggle-icon">+</div>
+          </div>
+          <div class="sp-faq-content">
+            <div class="sp-faq-content-inner">
+              <p>Os clientes deverão, obrigatoriamente, baixar o aplicativo <strong>"Clube +Fidelidade"</strong> disponível nas plataformas Android e iOS em suas devidas lojas de aplicativos ou acessar o site da empresa promotora <a href="https://www.grupomaisbarato.com.br/promocoes" target="_blank" rel="noopener noreferrer">www.grupomaisbarato.com.br/promocoes</a> e realizar o cadastro completo dos seus dados pessoais.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 04 -->
+        <div class="sp-faq-item">
+          <div class="sp-faq-header">
+            <div class="sp-faq-header-left">
+              <span class="sp-faq-num">04</span>
+              <h3 class="sp-faq-title">Como funciona a mecânica de participação?</h3>
+            </div>
+            <div class="sp-faq-toggle-icon">+</div>
+          </div>
+          <div class="sp-faq-content">
+            <div class="sp-faq-content-inner">
+              <p>A cada R$ 100,00 (Cem Reais) em compras, você tem direito a um cupom. Para isso, você deve informar o CPF cadastrado na promoção no caixa onde está finalizando a sua compra. Após isso, dirija-se aos totens da promoção, imprima seus cupons e deposite-os na urna destinada à promoção.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 05 -->
+        <div class="sp-faq-item">
+          <div class="sp-faq-header">
+            <div class="sp-faq-header-left">
+              <span class="sp-faq-num">05</span>
+              <h3 class="sp-faq-title">Como será realizado o sorteio?</h3>
+            </div>
+            <div class="sp-faq-toggle-icon">+</div>
+          </div>
+          <div class="sp-faq-content">
+            <div class="sp-faq-content-inner">
+              <p>No dia da apuração, todas as urnas das unidades Tapanã, José Malcher Plaza e Alcindo serão levadas para o local onde será realizada a apuração (frente de loja do supermercado – Unidade Tapanã) que é de livre acesso aos interessados. Os cupons deverão ser depositados nas urnas até as 12:00 horas do dia 05/06/2026, quando as urnas serão lacradas. Às 18:00 horas do dia 05/06/2026 será retirado manual e aleatoriamente um cupom por sorteio, cujo titular será contemplado com o prêmio. Serão 24 sorteios em sequência com os prêmios: 12 kits contendo uma camisa da seleção brasileira Nike torcedor e uma bola Adidas oficial, 09 Vale-compras de R$ 2.000,00 cada e 03 TVs Samsung Smart 85", totalizando 24 prêmios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SEÇÃO: REGULAMENTO COMPLETO (DOWNLOAD CARD)
+       ============================================ -->
+  <section class="sp-regulamento-section" id="regulamento">
+    <div class="container">
+      <div class="sp-reg-card">
+        <div class="sp-reg-left">
+          <div class="sp-reg-icon-wrapper">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="4" width="28" height="38" rx="4" stroke="#FCBF0C" stroke-width="2.5" fill="none"/>
+              <path d="M26 4L34 12" stroke="#FCBF0C" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="12" y1="14" x2="22" y2="14" stroke="#FCBF0C" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="12" y1="20" x2="28" y2="20" stroke="#FCBF0C" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="12" y1="26" x2="20" y2="26" stroke="#FCBF0C" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Escudo com Check -->
+              <path d="M34 26C34 26 42 27 42 33C42 39 34 43 34 43C34 43 26 39 26 33C26 27 34 26 34 26Z" fill="rgba(252, 191, 12, 0.15)" stroke="#FCBF0C" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M30.5 33.5L33 36L38 31" stroke="#FCBF0C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="sp-reg-text">
+            <h3>Consulte o regulamento completo</h3>
+            <p>Leia o regulamento e fique por dentro de todas as regras e condições da promoção.</p>
+          </div>
+        </div>
+        <div class="sp-reg-right">
+          <a href="./assets/show-de-premios/regulamento.pdf" target="_blank" download="Regulamento-Show-de-Premios-MaisB.pdf" class="btn-reg-download">
+            <span>Baixar Regulamento</span>
+            <i data-lucide="download" width="18" height="18" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       S11: FOOTER (EXATAMENTE IGUAL À HOME)
+       ============================================ -->
+  <footer class="s-footer">
+    <div class="container">
+      <div class="sp-footer-legal-notice">
+        <p>Imagens meramente ilustrativas | Promoção válida de 04 de março a 05 de junho de 2026</p>
+        <p>CERTIFICADO DE AUTORIZAÇÃO SPA/ME Nº 06.047964/2026</p>
+      </div>
+
+      <div class="footer-center">
+        <a href="#topo"><img src="./assets/Logos/IMG_5606.PNG" alt="Supermercados Mais B" class="footer-logo" /></a>
+        <p class="footer-slogan">Cada dia melhor pra você.<br>O supermercado com a melhor experiência de compra.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/maisbsupermercados/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://www.facebook.com/MaisBsupermercados/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UC_5InPLuERhTQ5wnIeS480g" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://play.google.com/store/apps/details?id=com.intellisys.grupomaisbarato&hl=pt_BR" target="_blank" rel="noopener noreferrer" aria-label="Google Play Store"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.9 1.9 0 01-.61-.954V2.768c.1-.37.316-.69.609-.954zM15.206 13.414l2.76 2.76-12.8 7.375 10.04-10.135zM15.206 10.586L5.166.451l12.8 7.375-2.76 2.76zM16.62 12l2.9-2.9 2.5 1.442a1.71 1.71 0 010 2.916l-2.5 1.442-2.9-2.9z"/></svg></a>
+          <a href="#" aria-label="Apple Store"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.13-1.96.99-3.12-.97.04-2.17.65-2.86 1.46-.61.71-1.15 1.87-.99 3.01 1.09.08 2.21-.53 2.86-1.35z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-line"><span class="glow-dot"></span></div>
+      <div class="footer-bottom">
+        <span>Copyright © 2026 Supermercado +B – Todos os direitos reservados</span>
+        <a href="#">Termos & Privacidade</a>
+        <span>Desenvolvido por: <strong>ide.digital</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       MODAL: CLUBE+ FIDELIDADE
+       ============================================ -->
+  <div id="clube-modal" class="clube-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="clube-modal-title" aria-hidden="true">
+    <div class="clube-modal-container">
+      <button type="button" class="clube-modal-close" id="close-clube-modal" aria-label="Fechar janela">
+        <i data-lucide="x" width="22" height="22" aria-hidden="true"></i>
+      </button>
+
+      <div class="clube-card">
+        <!-- Coluna Esquerda: Textos, Benefícios e Botões -->
+        <div class="clube-content">
+          <span class="clube-tag">CLUBE+ FIDELIDADE</span>
+          <h2 class="clube-title" id="clube-modal-title">
+            Mais vantagens para você,<br>
+            <span class="clube-title-highlight">todos os dias.</span>
+          </h2>
+          <p class="clube-desc">
+            Faça parte do Clube+ Fidelidade e aproveite benefícios exclusivos nas suas compras no <strong class="clube-brand-red">+B</strong>.
+          </p>
+
+          <!-- Lista de Benefícios -->
+          <div class="clube-benefits">
+            <div class="clube-benefit-item">
+              <span class="clube-benefit-icon">
+                <i data-lucide="badge-percent" width="20" height="20" aria-hidden="true"></i>
+              </span>
+              <span class="clube-benefit-text">Descontos especiais</span>
+            </div>
+            <div class="clube-benefit-item">
+              <span class="clube-benefit-icon">
+                <i data-lucide="circle-dollar-sign" width="20" height="20" aria-hidden="true"></i>
+              </span>
+              <span class="clube-benefit-text">Cashback</span>
+            </div>
+            <div class="clube-benefit-item">
+              <span class="clube-benefit-icon">
+                <i data-lucide="star" width="20" height="20" aria-hidden="true"></i>
+              </span>
+              <span class="clube-benefit-text">Eventos exclusivos</span>
+            </div>
+            <div class="clube-benefit-item">
+              <span class="clube-benefit-icon">
+                <i data-lucide="gift" width="20" height="20" aria-hidden="true"></i>
+              </span>
+              <span class="clube-benefit-text">Prêmios incríveis</span>
+            </div>
+          </div>
+
+          <!-- Botões de Download do App -->
+          <div class="clube-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.intellisys.grupomaisbarato&hl=pt_BR" target="_blank" rel="noopener noreferrer" class="btn-app-store btn-android" aria-label="Baixe o app no Google Play para Android">
+              <svg class="btn-app-icon" viewBox="0 0 24 24" width="20" height="20" fill="none">
+                <path d="M3.609 1.814L13.792 12 3.61 22.186a1.9 1.9 0 01-.61-.954V2.768c.1-.37.316-.69.609-.954z" fill="#00E676"/>
+                <path d="M17.966 7.826L5.166.451l10.04 10.135 2.76-2.76z" fill="#00B0FF"/>
+                <path d="M15.206 13.414l2.76 2.76-12.8 7.375 10.04-10.135z" fill="#FF3D00"/>
+                <path d="M16.62 12l2.9-2.9 2.5 1.442a1.71 1.71 0 010 2.916l-2.5 1.442-2.9-2.9z" fill="#FFC107"/>
+              </svg>
+              <span class="btn-app-text">Baixe o app <span class="app-tag-gold">(Android)</span></span>
+            </a>
+
+            <a href="https://apps.apple.com/br/app/clube-fidelidade/id1554152068" target="_blank" rel="noopener noreferrer" class="btn-app-store btn-ios" aria-label="Baixe o app na App Store para iOS">
+              <svg class="btn-app-icon" viewBox="0 0 24 24" width="19" height="19" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.87c.62-.75 1.04-1.8 0.92-2.87-.9.04-2 .6-2.65 1.35-.58.67-1.09 1.74-.95 2.78 1.01.08 2.06-.51 2.68-1.26z"/>
+              </svg>
+              <span class="btn-app-text">Baixe o app <span class="app-tag-gold">(iOS)</span></span>
+            </a>
+          </div>
+
+          <!-- Microcopy / Tagline inferior -->
+          <div class="clube-tagline">
+            <svg class="clube-sparkle-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+            </svg>
+            <span>Baixe. Cadastre-se. <strong>Ative.</strong> Aproveite.</span>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Imagem do App e Cliente colada na borda -->
+        <div class="clube-media">
+          <img src="./assets/Page/APP CLUBE +B FIDELIDADE-fundo-transparente.webp" alt="App Clube+ Fidelidade Supermercados Mais B" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Bloco FAQ Clube+ Fidelidade -->
+      <div class="clube-modal-faq">
+        <div class="faq-item" id="modal-faq-item">
+          <button type="button" class="faq-q" id="modal-faq-toggle" onclick="toggleClubeModalFaq(event)" aria-expanded="false">
+            <span>Como funciona o Clube +Fidelidade e como ter acesso a ofertas exclusivas?</span>
+            <span class="faq-plus">+</span>
+          </button>
+          <div class="faq-a">
+            <!-- Aviso Versão Beta -->
+            <div class="faq-inner-alert">
+              <strong>Aviso Importante:</strong> O CLUBE+ FIDELIDADE AINDA ESTÁ EM FASE DE DESENVOLVIMENTO PARA MELHOR ATENDÊ-LO. O PROGRAMA DE VANTAGENS CLUBE MAIS ESTÁ FUNCIONANDO TEMPORARIAMENTE COM UMA VERSÃO TESTE (BETA) QUE SERÁ ATUALIZADA AUTOMATICAMENTE A PARTIR DO LANÇAMENTO OFICIAL DO PROGRAMA DE VANTAGENS CLUBE MAIS.
+            </div>
+
+            <div class="faq-subblock">
+              <h4>O que é o programa de vantagens Clube Mais?</h4>
+              <p>É o nosso programa de fidelização que visa oferecer benefícios, além de aprimorar a qualidade dos serviços e produtos oferecidos aos clientes.</p>
+              <p>Aproveite as vantagens em forma de descontos, brindes exclusivos e ofertas personalizadas.</p>
+              <p>Para participar, basta se cadastrar aqui ou pelo APP <strong>"Clube Mais Barato"</strong> disponível em qualquer plataforma.</p>
+            </div>
+
+            <div class="faq-subblock">
+              <h4>Como acompanhar os meus pontos e datas que expiram?</h4>
+              <p>As pontuações têm o prazo de validade de 90 dias, independente do lançamento oficial do programa de vantagens Clube Mais. Acompanhe seus pontos e as datas que expiram pelo site, APP e nas lojas.</p>
+            </div>
+
+            <div class="faq-subblock">
+              <h4>Como cadastrar e acumular pontos no programa de vantagens Clube Mais?</h4>
+              <p>Preencha o cadastro em nosso site, APP ou nas lojas.</p>
+              <p>Antes de começar a registrar as suas compras na loja, informe seu CPF ao atendente do caixa para acumular pontos.</p>
+              <p>A cada R$ 1,00 (um real) em compras você acumula 1 ponto.</p>
+              <p class="faq-note"><strong>Importante:</strong> Acompanhe o período de vigência dos pontos no site, APP e nas lojas.</p>
+            </div>
+
+            <div class="faq-subblock">
+              <h4>Como consultar meus pontos?</h4>
+              <p>Você pode acompanhar a sua pontuação pelo site, APP e nas lojas.</p>
+              <p>Para isso, basta fazer o seu login e clicar em "Clube Mais" para conferir os seus pontos.</p>
+              <p>O prazo para visualizar sua pontuação é de 1 dia após a realização das compras.</p>
+              <p>Em caso de dúvidas, fale com a nossa Central de atendimento pelo app.</p>
+            </div>
+
+            <div class="faq-subblock">
+              <h4>Como resgatar meus pontos e trocar por descontos ou brindes?</h4>
+              <p>As trocas por benefício só poderão ser feitas após o lançamento oficial do Programa de vantagens Clube Mais.</p>
+              <p>Você poderá resgatar e utilizar seus pontos das compras em qualquer unidade física do Grupo Mais Barato.</p>
+              <p>O resgate deverá ser direto no caixa. É só informar seu CPF e ao finalizar sua compra, escolha a opção de trocar os pontos que possui por descontos ou no guichê de atendimento ao cliente para a trocar pelos brindes exclusivos.</p>
+              <p class="faq-note"><strong>Importante:</strong> O resgate de pontos na loja só pode ser feito, única e exclusivamente, com a apresentação do RG e CPF originais do titular da conta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./src/js/lucide-init.js?v=1.0"></script>
+  <script src="./src/js/main.js?v=11.1"></script>
+  <script src="./src/js/show-de-premios.js?v=10.0"></script>
+</body>
+</html>
