@@ -22,7 +22,7 @@
 body.sp-body {
   background-color: var(--sp-black);
   background-image: url('../../assets/show-de-premios/img/bg.jpg');
-  background-position: center 120px;
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: 100% auto;
   color: #ffffff;
@@ -31,7 +31,7 @@ body.sp-body {
 @media (max-width: 768px) {
   body.sp-body {
     background-image: url('../../assets/show-de-premios/img/bg-mobile.jpg');
-    background-position: center 110px;
+    background-position: center top;
     background-size: 100% auto;
   }
 }
@@ -300,105 +300,294 @@ body.sp-body {
 }
 
 /* ==========================================================================
-   SEÇÃO PREMIAÇÃO
+   SEÇÃO PREMIAÇÃO — PADRÃO OFICIAL COM FUNDO SUAVE, 2 COLUNAS & RELÓGIO
    ========================================================================== */
-.sp-premiacao {
-  padding: 60px 0 80px 0;
-  position: relative;
+.sp-gold-kicker {
+  display: block;
+  font-family: var(--sp-font-heading, 'DM Sans', sans-serif);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--sp-gold, #FCBF0C);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
-.sp-premiacao-row {
+.sp-premiacao-matched {
+  padding: 60px 0 70px 0;
+  position: relative;
+  background: #080808;
+  overflow: hidden;
+}
+
+.sp-bg-ambient-layer {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/show-de-premios/img/bg.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+}
+
+.sp-premiacao-matched .container {
+  position: relative;
+  z-index: 1;
+}
+
+.sp-matched-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 40px;
   align-items: center;
 }
 
-.sp-premiacao-media {
+.sp-matched-media {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.sp-premiacao-img {
+.sp-matched-img {
   width: 100%;
-  max-width: 540px;
+  max-width: 520px;
   height: auto;
+  display: block;
   filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8));
 }
 
-.sp-premiacao-content h2 {
+.sp-matched-content h2 {
+  font-family: var(--sp-font-heading, 'DM Sans', sans-serif);
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 800;
   color: #ffffff;
-  margin-bottom: 28px;
-  font-family: var(--font-serif, 'Playfair Display', serif);
+  margin: 0 0 8px 0;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
 }
 
-.sp-stats-grid {
+.sp-matched-subtitle {
+  font-family: var(--sp-font-body, 'DM Sans', sans-serif);
+  font-size: 14px;
+  color: var(--sp-text-muted, #9ca3af);
+  margin: 0 0 20px 0;
+  line-height: 1.45;
+}
+
+.sp-matched-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin-bottom: 22px;
+}
+
+.sp-matched-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 28px;
+  gap: 14px;
 }
 
-.sp-stat-box {
+.sp-matched-prize-card {
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.sp-stat-number {
-  font-size: 48px;
+.sp-matched-prize-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(252, 191, 12, 0.4);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(252, 191, 12, 0.1);
+}
+
+.sp-matched-num-wrapper {
+  width: 52px;
+  height: 52px;
+  background: rgba(252, 191, 12, 0.08);
+  border: 1px solid rgba(252, 191, 12, 0.25);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.sp-matched-num {
+  font-family: var(--sp-font-heading, 'DM Sans', sans-serif);
+  font-size: 28px;
   font-weight: 800;
-  color: var(--sp-gold);
+  color: var(--sp-gold, #FCBF0C);
   line-height: 1;
-  margin-bottom: 8px;
-  font-family: var(--sp-font-heading);
 }
 
-.sp-stat-label {
-  font-size: 13px;
-  font-weight: 700;
+.sp-matched-prize-name {
+  font-family: var(--sp-font-heading, 'DM Sans', sans-serif);
+  font-size: 13.5px;
+  font-weight: 800;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  line-height: 1.4;
+  line-height: 1.3;
+  margin: 0 0 4px 0;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.sp-stat-label small {
-  display: block;
-  font-size: 11px;
-  color: var(--sp-text-muted);
-  text-transform: none;
-  margin-top: 3px;
-  font-weight: 400;
+.sp-matched-prize-sub {
+  font-family: var(--sp-font-body, 'DM Sans', sans-serif);
+  font-size: 11.5px;
+  color: var(--sp-text-muted, #9ca3af);
+  margin: 0;
+  line-height: 1.35;
 }
 
-.sp-date-banner-wrap {
-  margin-top: 60px;
+/* ==========================================================================
+   SEÇÃO: DATA DO SORTEIO (HEADLINE QUEBRADA EM 2 LINHAS & RELÓGIO)
+   ========================================================================== */
+.sp-draw-epic-section {
+  margin-top: 50px;
+}
+
+.sp-draw-epic-card {
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 38px 36px 36px 36px;
   text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
 }
 
-.sp-date-banner-img {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+.sp-draw-epic-card:hover {
+  border-color: rgba(252, 191, 12, 0.35);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(252, 191, 12, 0.08);
+}
+
+.sp-draw-main-heading {
+  font-family: var(--sp-font-heading, 'DM Sans', sans-serif);
+  margin: 8px 0 28px 0;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.sp-draw-heading-top {
   display: block;
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.sp-draw-heading-bottom {
+  display: block;
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--sp-gold, #FCBF0C);
+}
+
+/* Relógio Centralizado */
+.sp-draw-countdown-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.sp-cd-box-square {
+  background: rgba(24, 25, 29, 0.95);
+  border: 1px solid rgba(252, 191, 12, 0.25);
+  border-radius: 16px;
+  padding: 16px 24px;
+  min-width: 110px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.sp-cd-box-square:hover {
+  transform: translateY(-3px);
+  border-color: var(--sp-gold, #FCBF0C);
+}
+
+.sp-cd-num-lg {
+  font-family: var(--sp-font-heading, 'DM Sans', sans-serif);
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--sp-gold, #FCBF0C);
+  line-height: 1;
+  display: block;
+  margin-bottom: 4px;
+  min-width: 60px;
+}
+
+.sp-cd-label-sm {
+  font-family: var(--sp-font-body, 'DM Sans', sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sp-text-muted, #9ca3af);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.sp-cd-dots {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--sp-gold, #FCBF0C);
+  opacity: 0.6;
 }
 
 @media (max-width: 900px) {
-  .sp-premiacao-row {
+  .sp-matched-row {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 30px;
   }
-  .sp-premiacao-content h2 {
-    text-align: center;
-  }
-  .sp-stats-grid {
+  .sp-matched-cards-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 12px;
   }
-  .sp-stat-number {
-    font-size: 42px;
+  .sp-matched-prize-name {
+    min-height: auto;
+  }
+  .sp-draw-heading-top {
+    font-size: 24px;
+  }
+  .sp-draw-heading-bottom {
+    font-size: 34px;
+  }
+  .sp-draw-countdown-grid {
+    gap: 8px;
+  }
+  .sp-cd-box-square {
+    min-width: 72px;
+    padding: 12px 10px;
+  }
+  .sp-cd-num-lg {
+    font-size: 28px;
+  }
+  .sp-cd-dots {
+    display: none;
   }
 }
 

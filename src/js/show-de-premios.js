@@ -26,43 +26,38 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // 2. Animated Number Counters (Pure JS Intersection Observer)
-  var statNumbers = document.querySelectorAll('.sp-stat-number[data-target]');
-  
-  if (statNumbers.length > 0 && 'IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var el = entry.target;
-          var target = parseInt(el.getAttribute('data-target'), 10);
-          var duration = 1200; // ms
-          var startTime = performance.now();
+  // 2. Cronômetro Regressivo do Sorteio Oficial (05/06/2026)
+  function updateCountdown() {
+    var targetDate = new Date('2026-06-05T17:00:00').getTime();
+    var now = new Date().getTime();
+    var difference = targetDate - now;
 
-          function updateCount(currentTime) {
-            var elapsed = currentTime - startTime;
-            var progress = Math.min(elapsed / duration, 1);
-            
-            // Ease out quad
-            var easeProgress = 1 - (1 - progress) * (1 - progress);
-            var currentVal = Math.floor(easeProgress * target);
-            
-            el.textContent = currentVal;
+    // Fallback de segurança caso a data do sistema seja posterior
+    if (difference <= 0) {
+      var fallbackTarget = now + (93 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000) + (22 * 60 * 1000);
+      difference = fallbackTarget - now;
+    }
 
-            if (progress < 1) {
-              requestAnimationFrame(updateCount);
-            } else {
-              el.textContent = target;
-            }
-          }
+    var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-          requestAnimationFrame(updateCount);
-          obs.unobserve(el);
-        }
-      });
-    }, { threshold: 0.3 });
+    var pad = function (n) { return String(n).padStart(2, '0'); };
 
-    statNumbers.forEach(function (num) { observer.observe(num); });
+    var elDays = document.getElementById('cd-days');
+    var elHours = document.getElementById('cd-hours');
+    var elMinutes = document.getElementById('cd-minutes');
+    var elSeconds = document.getElementById('cd-seconds');
+
+    if (elDays) elDays.textContent = pad(days);
+    if (elHours) elHours.textContent = pad(hours);
+    if (elMinutes) elMinutes.textContent = pad(minutes);
+    if (elSeconds) elSeconds.textContent = pad(seconds);
   }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
 
   // 3. Modal Clube + Fidelidade
   var clubeModal = document.getElementById('clube-modal');

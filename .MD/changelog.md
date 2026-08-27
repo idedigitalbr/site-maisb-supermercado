@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.1.16] - 2026-08-26
+- **Redesign Minimalista & Premium da Seção de Premiação e Data do Sorteio (`show-de-premios.html`, `src/css/show-de-premios.css`, `src/js/show-de-premios.js`)**:
+  - **Disposição em 2 Colunas**: Imagem 3D dos prêmios na coluna esquerda e cabeçalho com os 3 cards horizontais de prêmios na coluna direita.
+  - **Cabeçalho com Titulinho & Headline Sem Serifa**: Titulinho `CONFIRA` em texto dourado puro (`#FCBF0C`, `letter-spacing: 2.5px`) e headline `Premiação Oficial` na tipografia padrão `DM Sans` com peso 800.
+  - **Cards de Premiação no Padrão do Regulamento**:
+    - Superfície em *dark glassmorphism* (`rgba(18, 18, 18, 0.85)` com `backdrop-filter: blur(14px)` e borda fina translúcida).
+    - Caixas de números quadradas `52x52px` com borda e dígitos dourados (`3`, `12`, `9`).
+    - Títulos limpos e sem duplicidade numérica: `TV'S 85 POLEGADAS`, `KITS OFICIAIS` e `VALES-COMPRAS`.
+  - **Fundo com Máscara Gradiente Vertical (*Fade In/Out*)**: Camada de imagem de fundo com opacidade reduzida (`0.18`) e máscara suave nas bordas superior e inferior (`mask-image: linear-gradient`), dissolvendo-se gradualmente no preto absoluto.
+  - **Card do Sorteio Centralizado & Relógio em Tempo Real**:
+    - Titulinho `NÃO PERCA` em texto dourado.
+    - Headline quebrada em 2 linhas com alto impacto: `Sorteio Oficial Dia` (branco) / `05 de Junho 2026` (dourado grande de 48px).
+    - Cronômetro regressivo com 4 caixas quadradas (`DIAS : HORAS : MINUTOS : SEGUNDOS`) centralizadas de ponta a ponta e calculando o tempo restante ao vivo segundo a segundo via JavaScript.
+
+## [2.1.15] - 2026-08-26
+- **Reposicionamento da Imagem de Fundo (Background) Atrás do Header (`show-de-premios.html`, `src/css/show-de-premios.css`)**:
+  - **Ajuste de Posição Vertical**: Atualizado o `background-position` do corpo da página (`body.sp-body`) de `center 120px` para `center top` (0px) no desktop e de `center 110px` para `center top` no mobile.
+  - **Efeito Visual Imersivo**: A iluminação dourada e a atmosfera de partículas do fundo agora sobem e se estendem harmoniosamente por trás do cabeçalho de navegação (`header`), eliminando o vão preto superior.
+
 ## [2.1.14] - 2026-08-26
 - **Padronização Visual do Botão CTA do Passo 1 (`show-de-premios.html`, `src/css/show-de-premios.css`)**:
   - **Identidade Visual Vermelha e Tipografia**: O botão do card Passo 1 (*Cadastre-se no app Clube + Fidelidade*) foi reformulado do estilo pílula dourado para o formato padrão do site (fundo vermelho oficial `#BB2E2C`, cantos arredondados `8px`, tipografia branca em negrito perfeitamente centralizada e sombra suave `rgba(187, 46, 44, 0.35)`).

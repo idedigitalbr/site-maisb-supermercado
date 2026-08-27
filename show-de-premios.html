@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="./src/css/tokens.css" />
   <link rel="stylesheet" href="./src/css/main.css?v=36.2" />
   <link rel="stylesheet" href="./src/css/sections.css?v=36.0" />
-  <link rel="stylesheet" href="./src/css/show-de-premios.css?v=10.0" />
+  <link rel="stylesheet" href="./src/css/show-de-premios.css?v=11.0" />
 </head>
 <body class="sp-body">
 
@@ -183,43 +183,106 @@
   </section>
 
   <!-- ============================================
-       SEÇÃO: PREMIAÇÃO
+       SEÇÃO: PREMIAÇÃO OFICIAL
        ============================================ -->
-  <section class="sp-premiacao" id="premiacao">
+  <section class="sp-premiacao-matched" id="premiacao">
+    <!-- Camada de Fundo Suave com Máscara Gradiente -->
+    <div class="sp-bg-ambient-layer"></div>
+
     <div class="container">
-      <div class="sp-premiacao-row">
-        <!-- Coluna de Imagem / Composição 3D -->
-        <div class="sp-premiacao-media">
-          <img src="./assets/show-de-premios/img/premiacao.png" alt="Premiação Show de Prêmios Mais B" class="sp-premiacao-img" />
+      
+      <!-- Linha 2 Colunas: Esquerda Imagem / Direita Informações -->
+      <div class="sp-matched-row">
+        
+        <!-- Coluna Esquerda: Imagem 3D -->
+        <div class="sp-matched-media">
+          <img src="./assets/show-de-premios/img/premiacao.png" alt="Show de Prêmios Mais B" class="sp-matched-img" />
         </div>
 
-        <!-- Coluna de Conteúdo & Contadores -->
-        <div class="sp-premiacao-content">
-          <h2>Premiação</h2>
-          <div class="sp-stats-grid">
-            <div class="sp-stat-box">
-              <div class="sp-stat-number" data-target="3">3</div>
-              <p class="sp-stat-label">3 TVS 85"</p>
+        <!-- Coluna Direita: Titulinho "CONFIRA" + Headline "Premiação Oficial" -->
+        <div class="sp-matched-content">
+          <span class="sp-gold-kicker">CONFIRA</span>
+          <h2>Premiação Oficial</h2>
+          <p class="sp-matched-subtitle">
+            A cada R$ 100 em compras identificadas no caixa você ganha cupons para concorrer:
+          </p>
+          
+          <div class="sp-matched-divider"></div>
+
+          <!-- Grid com os 3 Cards de Prêmios -->
+          <div class="sp-matched-cards-grid">
+            
+            <!-- Card 1: 3 TVs -->
+            <div class="sp-matched-prize-card">
+              <div class="sp-matched-num-wrapper">
+                <span class="sp-matched-num">3</span>
+              </div>
+              <h3 class="sp-matched-prize-name">TV's 85 POLEGADAS</h3>
+              <p class="sp-matched-prize-sub">Smart TV Ultra HD 4K</p>
             </div>
-            <div class="sp-stat-box">
-              <div class="sp-stat-number" data-target="12">12</div>
-              <p class="sp-stat-label">
-                12 Kits Oficiais
-                <small>(Camisa da Seleção + Bola)</small>
-              </p>
+
+            <!-- Card 2: 12 Kits -->
+            <div class="sp-matched-prize-card">
+              <div class="sp-matched-num-wrapper">
+                <span class="sp-matched-num">12</span>
+              </div>
+              <h3 class="sp-matched-prize-name">KITS OFICIAIS</h3>
+              <p class="sp-matched-prize-sub">Camisa Seleção + Bola</p>
             </div>
-            <div class="sp-stat-box">
-              <div class="sp-stat-number" data-target="9">9</div>
-              <p class="sp-stat-label">9 Vales-Compras de R$ 2.000,00</p>
+
+            <!-- Card 3: 9 Vales -->
+            <div class="sp-matched-prize-card">
+              <div class="sp-matched-num-wrapper">
+                <span class="sp-matched-num">9</span>
+              </div>
+              <h3 class="sp-matched-prize-name">VALES-COMPRAS</h3>
+              <p class="sp-matched-prize-sub">R$ 2.000,00 cada</p>
             </div>
+
           </div>
         </div>
+
       </div>
 
-      <!-- Banner de Data do Sorteio -->
-      <div class="sp-date-banner-wrap">
-        <img src="./assets/show-de-premios/img/data.png" alt="Sorteio dia 05 de junho de 2026" class="sp-date-banner-img" />
+      <!-- Seção da Data do Sorteio: Headline Quebrada + Relógio -->
+      <div class="sp-draw-epic-section">
+        <div class="sp-draw-epic-card">
+          
+          <!-- Titulinho -->
+          <span class="sp-gold-kicker">NÃO PERCA</span>
+
+          <!-- Headline Quebrada em 2 Linhas -->
+          <h3 class="sp-draw-main-heading">
+            <span class="sp-draw-heading-top">Sorteio Oficial Dia</span>
+            <span class="sp-draw-heading-bottom">05 de Junho 2026</span>
+          </h3>
+
+          <!-- Relógio Pegando a Seção Toda (Centralizado) -->
+          <div class="sp-draw-countdown-grid">
+            <div class="sp-cd-box-square">
+              <span class="sp-cd-num-lg" id="cd-days">00</span>
+              <span class="sp-cd-label-sm">Dias</span>
+            </div>
+            <span class="sp-cd-dots">:</span>
+            <div class="sp-cd-box-square">
+              <span class="sp-cd-num-lg" id="cd-hours">00</span>
+              <span class="sp-cd-label-sm">Horas</span>
+            </div>
+            <span class="sp-cd-dots">:</span>
+            <div class="sp-cd-box-square">
+              <span class="sp-cd-num-lg" id="cd-minutes">00</span>
+              <span class="sp-cd-label-sm">Minutos</span>
+            </div>
+            <span class="sp-cd-dots">:</span>
+            <div class="sp-cd-box-square">
+              <span class="sp-cd-num-lg" id="cd-seconds">00</span>
+              <span class="sp-cd-label-sm">Segundos</span>
+            </div>
+          </div>
+
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -523,6 +586,6 @@
   <!-- Scripts -->
   <script src="./src/js/lucide-init.js?v=1.0"></script>
   <script src="./src/js/main.js?v=11.1"></script>
-  <script src="./src/js/show-de-premios.js?v=10.0"></script>
+  <script src="./src/js/show-de-premios.js?v=11.0"></script>
 </body>
 </html>

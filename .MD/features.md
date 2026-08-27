@@ -34,3 +34,10 @@
     - [x] `[S9] CTA GRUPO VIP WHATSAPP`
     - [x] `[S10] NOSSAS UNIDADES & MAPA INTERATIVO`
     - [x] `FOOTER`
+  - [x] **`[PG] SHOW DE PRÊMIOS`**
+    - [x] `Hero 3D da Premiação`
+    - [x] `Como Participar (Passo a Passo)`
+    - [x] `Premiação Oficial & Contagem Regressiva do Sorteio`
+    - [x] `FAQ da Campanha & Regulamento em PDF`
+    - [x] `Modal Clube+ Fidelidade Integrado`
+
