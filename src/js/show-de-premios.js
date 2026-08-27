@@ -26,16 +26,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // 2. Cronômetro Regressivo do Sorteio Oficial (05/06/2026)
+  // 2. Cronômetro Regressivo do Sorteio Oficial (05/06/2026 às 18:00)
+  var targetDate = new Date(2026, 5, 5, 18, 0, 0).getTime();
+  var fallbackTarget = null;
+
   function updateCountdown() {
-    var targetDate = new Date('2026-06-05T17:00:00').getTime();
-    var now = new Date().getTime();
+    var now = Date.now();
     var difference = targetDate - now;
 
-    // Fallback de segurança caso a data do sistema seja posterior
+    // Fallback dinâmico persistente caso a data alvo já tenha passado (para testes e preview)
     if (difference <= 0) {
-      var fallbackTarget = now + (93 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000) + (22 * 60 * 1000);
+      if (!fallbackTarget) {
+        var savedFallback = null;
+        try {
+          savedFallback = sessionStorage.getItem('maisb_countdown_target');
+        } catch (e) {}
+
+        if (savedFallback && Number(savedFallback) > now) {
+          fallbackTarget = Number(savedFallback);
+        } else {
+          // Inicializa contagem ativa uma única vez (93 dias, 14h, 22m, 45s)
+          fallbackTarget = now + (93 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000) + (22 * 60 * 1000) + (45 * 1000);
+          try {
+            sessionStorage.setItem('maisb_countdown_target', String(fallbackTarget));
+          } catch (e) {}
+        }
+      }
       difference = fallbackTarget - now;
+    }
+
+    if (difference < 0) {
+      difference = 0;
     }
 
     var days = Math.floor(difference / (1000 * 60 * 60 * 24));

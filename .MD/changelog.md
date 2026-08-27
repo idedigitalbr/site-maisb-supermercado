@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.18] - 2026-08-27
+- **Correção da Execução e Ticking do Cronômetro Regressivo (`src/js/show-de-premios.js`, `preview-premiacao.html`, `show-de-premios.html`)**:
+  - **Descongelamento da Contagem**: Corrigido o cálculo do cronômetro em que a data alvo / fallback era recalculada a cada tick dentro do loop de 1s gerando uma diferença estática congelada (`93 DIAS 14 HORAS 22 MINUTOS 00 SEGUNDOS`).
+  - **Contagem Regressiva Ativa em Tempo Real**: A data alvo e o fallback persistente agora são inicializados uma única vez (com suporte a `sessionStorage`), garantindo que segundos, minutos, horas e dias diminuam ao vivo segundo a segundo.
+  - **Cache-Buster**: Atualização do script `show-de-premios.js?v=11.1`.
+
 ## [2.1.17] - 2026-08-27
 - **Padronização da Cor de Fundo da Topbar Superior (`src/css/main.css`, `index.html`, `show-de-premios.html`)**:
   - **Amarelo Queimado Oficial / Dourado (`#DDA712` / `var(--gold)`)**: A barra superior (topbar) com os links institucionais e redes sociais teve seu fundo e bordas atualizados de `#FAC577` para o tom amarelo queimado oficial da marca (`#DDA712`), harmonizando 100% com a paleta oficial, tipografia de destaque das seções escuras (*"nossas unidades"*) e ícones institucionais.

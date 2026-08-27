@@ -612,17 +612,34 @@
     }
 
     // Cronômetro Ativo e Diminuindo em Tempo Real
+    const targetDate = new Date(2026, 5, 5, 18, 0, 0).getTime();
+    let fallbackTarget = null;
+
     function updateCountdown() {
-      // Data Alvo Oficial: 05 de Junho de 2026 às 17:00
-      const targetDate = new Date('2026-06-05T17:00:00').getTime();
-      const now = new Date().getTime();
+      const now = Date.now();
       let difference = targetDate - now;
 
-      // Fallback seguro: se a data do relógio do sistema local for posterior, mantém a contagem ativa
+      // Fallback seguro persistente: se a data já passou, mantém contagem ao vivo
       if (difference <= 0) {
-        const fallbackTarget = now + (93 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000) + (22 * 60 * 1000);
+        if (!fallbackTarget) {
+          let savedFallback = null;
+          try {
+            savedFallback = sessionStorage.getItem('maisb_countdown_target');
+          } catch (e) {}
+
+          if (savedFallback && Number(savedFallback) > now) {
+            fallbackTarget = Number(savedFallback);
+          } else {
+            fallbackTarget = now + (93 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000) + (22 * 60 * 1000) + (45 * 1000);
+            try {
+              sessionStorage.setItem('maisb_countdown_target', String(fallbackTarget));
+            } catch (e) {}
+          }
+        }
         difference = fallbackTarget - now;
       }
+
+      if (difference < 0) difference = 0;
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
