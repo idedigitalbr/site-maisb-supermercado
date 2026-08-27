@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.1.17] - 2026-08-27
+- **Padronização da Cor de Fundo da Topbar Superior (`src/css/main.css`, `index.html`, `show-de-premios.html`)**:
+  - **Amarelo Queimado Oficial / Dourado (`#DDA712` / `var(--gold)`)**: A barra superior (topbar) com os links institucionais e redes sociais teve seu fundo e bordas atualizados de `#FAC577` para o tom amarelo queimado oficial da marca (`#DDA712`), harmonizando 100% com a paleta oficial, tipografia de destaque das seções escuras (*"nossas unidades"*) e ícones institucionais.
+  - **Cache-Buster**: Atualização de versão dos assets para `v=36.3`.
+
 ## [2.1.16] - 2026-08-26
 - **Redesign Minimalista & Premium da Seção de Premiação e Data do Sorteio (`show-de-premios.html`, `src/css/show-de-premios.css`, `src/js/show-de-premios.js`)**:
   - **Disposição em 2 Colunas**: Imagem 3D dos prêmios na coluna esquerda e cabeçalho com os 3 cards horizontais de prêmios na coluna direita.
