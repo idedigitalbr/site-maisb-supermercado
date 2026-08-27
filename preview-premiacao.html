@@ -611,35 +611,18 @@
       }
     }
 
-    // Cronômetro Ativo e Diminuindo em Tempo Real
-    const targetDate = new Date(2026, 5, 5, 18, 0, 0).getTime();
-    let fallbackTarget = null;
+    // Cronômetro Sincronizado Globalmente no Horário de Brasília (UTC-3)
+    const OFFICIAL_DRAW_DATE = new Date('2026-06-05T18:00:00-03:00').getTime();
+    const DEMO_DRAW_DATE = new Date('2026-11-28T18:00:00-03:00').getTime();
+    const globalTargetDate = OFFICIAL_DRAW_DATE > Date.now() ? OFFICIAL_DRAW_DATE : DEMO_DRAW_DATE;
 
     function updateCountdown() {
       const now = Date.now();
-      let difference = targetDate - now;
+      let difference = globalTargetDate - now;
 
-      // Fallback seguro persistente: se a data já passou, mantém contagem ao vivo
       if (difference <= 0) {
-        if (!fallbackTarget) {
-          let savedFallback = null;
-          try {
-            savedFallback = sessionStorage.getItem('maisb_countdown_target');
-          } catch (e) {}
-
-          if (savedFallback && Number(savedFallback) > now) {
-            fallbackTarget = Number(savedFallback);
-          } else {
-            fallbackTarget = now + (93 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000) + (22 * 60 * 1000) + (45 * 1000);
-            try {
-              sessionStorage.setItem('maisb_countdown_target', String(fallbackTarget));
-            } catch (e) {}
-          }
-        }
-        difference = fallbackTarget - now;
+        difference = 0;
       }
-
-      if (difference < 0) difference = 0;
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));

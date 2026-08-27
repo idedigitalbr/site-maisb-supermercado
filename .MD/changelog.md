@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.1.19] - 2026-08-27
+- **Sincronização Global e Absoluta do Cronômetro Regressivo (`src/js/show-de-premios.js`, `preview-premiacao.html`, `show-de-premios.html`)**:
+  - **Data Alvo Global Unificada (Fuso de Brasília / UTC-3)**: Substituição de inicializações relativas (`now + ...`) por timestamp ISO global absoluto e imutável. Todos os visitantes e computadores no mundo agora calculam exatamente os mesmos dias, horas, minutos e segundos simultaneamente.
+  - **Cache-Buster**: Atualização do script `show-de-premios.js?v=11.2`.
+
 ## [2.1.18] - 2026-08-27
 - **Correção da Execução e Ticking do Cronômetro Regressivo (`src/js/show-de-premios.js`, `preview-premiacao.html`, `show-de-premios.html`)**:
   - **Descongelamento da Contagem**: Corrigido o cálculo do cronômetro em que a data alvo / fallback era recalculada a cada tick dentro do loop de 1s gerando uma diferença estática congelada (`93 DIAS 14 HORAS 22 MINUTOS 00 SEGUNDOS`).
