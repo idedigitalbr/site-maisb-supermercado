@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.21] - 2026-08-28
+- **Atualização da Imagem do Clube+ Fidelidade (`index.html`, `show-de-premios.html`)**:
+  - Substituição da imagem anterior pela versão oficial `assets/Page/APP-CLUBE-FIDELIDADE.webp` contendo o mockup do smartphone com a interface do aplicativo Clube+ Fidelidade e a cliente no supermercado.
+
 ## [2.1.20] - 2026-08-28
 - **Sincronização Integral com a Nova Campanha Show de Prêmios 2026.02 (`show-de-premios.html`, `src/js/show-de-premios.js`, `src/css/show-de-premios.css`, `preview-premiacao.html`, `index.html`)**:
   - **Atualização da Premiação Oficial (Total de 21 Prêmios)**:
