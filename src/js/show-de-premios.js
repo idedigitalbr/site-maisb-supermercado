@@ -27,10 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // 2. Cronômetro Regressivo do Sorteio Oficial (Sincronizado Globalmente no Horário de Brasília UTC-3)
-  // Utiliza timestamp ISO fixo absoluto para garantir sincronia idêntica em qualquer dispositivo no mundo
-  var OFFICIAL_DRAW_DATE = new Date('2026-06-05T18:00:00-03:00').getTime();
-  var DEMO_DRAW_DATE = new Date('2026-11-28T18:00:00-03:00').getTime();
-  var globalTargetDate = OFFICIAL_DRAW_DATE > Date.now() ? OFFICIAL_DRAW_DATE : DEMO_DRAW_DATE;
+  // Campanha Show de Prêmios 2026.02 — Sorteio em 29/01/2027 às 18:00h
+  var OFFICIAL_DRAW_DATE = new Date('2027-01-29T18:00:00-03:00').getTime();
+  var globalTargetDate = OFFICIAL_DRAW_DATE;
 
   function updateCountdown() {
     var now = Date.now();

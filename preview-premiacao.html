@@ -189,7 +189,7 @@
 
     .sp-matched-cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
 
@@ -463,36 +463,45 @@
             <span class="sp-gold-kicker">CONFIRA</span>
             <h2>Premiação Oficial</h2>
             <p class="sp-matched-subtitle">
-              A cada R$ 100 em compras identificadas no caixa você ganha cupons para concorrer:
+              A cada R$ 100 em compras identificadas no caixa você ganha cupons para concorrer a 21 super prêmios:
             </p>
             
             <div class="sp-matched-divider"></div>
 
-            <!-- Grid com os 3 Cards de Prêmios -->
+            <!-- Grid com os 4 Cards de Prêmios -->
             <div class="sp-matched-cards-grid">
               
-              <!-- Card 1: 3 TVs -->
+              <!-- Card 1: 1 Carro -->
               <div class="sp-matched-prize-card">
                 <div class="sp-matched-num-wrapper">
-                  <span class="sp-matched-num">3</span>
+                  <span class="sp-matched-num">1</span>
                 </div>
-                <h3 class="sp-matched-prize-name">TV's 85 POLEGADAS</h3>
-                <p class="sp-matched-prize-sub">Smart TV Ultra HD 4K</p>
+                <h3 class="sp-matched-prize-name">CARRO ZERO KM</h3>
+                <p class="sp-matched-prize-sub">01 Automóvel 0 KM</p>
               </div>
 
-              <!-- Card 2: 12 Kits -->
+              <!-- Card 2: 4 Motos -->
+              <div class="sp-matched-prize-card">
+                <div class="sp-matched-num-wrapper">
+                  <span class="sp-matched-num">4</span>
+                </div>
+                <h3 class="sp-matched-prize-name">MOTOS ZERO KM</h3>
+                <p class="sp-matched-prize-sub">04 Motos 0 KM</p>
+              </div>
+
+              <!-- Card 3: 4 TVs -->
+              <div class="sp-matched-prize-card">
+                <div class="sp-matched-num-wrapper">
+                  <span class="sp-matched-num">4</span>
+                </div>
+                <h3 class="sp-matched-prize-name">TV'S 50 POLEGADAS</h3>
+                <p class="sp-matched-prize-sub">Samsung Smart 50"</p>
+              </div>
+
+              <!-- Card 4: 12 Vales -->
               <div class="sp-matched-prize-card">
                 <div class="sp-matched-num-wrapper">
                   <span class="sp-matched-num">12</span>
-                </div>
-                <h3 class="sp-matched-prize-name">KITS OFICIAIS</h3>
-                <p class="sp-matched-prize-sub">Camisa Seleção + Bola</p>
-              </div>
-
-              <!-- Card 3: 9 Vales -->
-              <div class="sp-matched-prize-card">
-                <div class="sp-matched-num-wrapper">
-                  <span class="sp-matched-num">9</span>
                 </div>
                 <h3 class="sp-matched-prize-name">VALES-COMPRAS</h3>
                 <p class="sp-matched-prize-sub">R$ 2.000,00 cada</p>
@@ -513,7 +522,7 @@
             <!-- Headline Quebrada em 2 Linhas -->
             <h3 class="sp-draw-main-heading">
               <span class="sp-draw-heading-top">Sorteio Oficial Dia</span>
-              <span class="sp-draw-heading-bottom">05 de Junho 2026</span>
+              <span class="sp-draw-heading-bottom">29 de Janeiro 2027</span>
             </h3>
 
             <!-- Relógio Pegando a Seção Toda (Centralizado) -->
@@ -612,9 +621,9 @@
     }
 
     // Cronômetro Sincronizado Globalmente no Horário de Brasília (UTC-3)
-    const OFFICIAL_DRAW_DATE = new Date('2026-06-05T18:00:00-03:00').getTime();
-    const DEMO_DRAW_DATE = new Date('2026-11-28T18:00:00-03:00').getTime();
-    const globalTargetDate = OFFICIAL_DRAW_DATE > Date.now() ? OFFICIAL_DRAW_DATE : DEMO_DRAW_DATE;
+    // Campanha Show de Prêmios 2026.02 — Sorteio em 29/01/2027 às 18:00h
+    const OFFICIAL_DRAW_DATE = new Date('2027-01-29T18:00:00-03:00').getTime();
+    const globalTargetDate = OFFICIAL_DRAW_DATE;
 
     function updateCountdown() {
       const now = Date.now();

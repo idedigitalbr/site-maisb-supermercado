@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.1.20] - 2026-08-28
+- **Sincronização Integral com a Nova Campanha Show de Prêmios 2026.02 (`show-de-premios.html`, `src/js/show-de-premios.js`, `src/css/show-de-premios.css`, `preview-premiacao.html`, `index.html`)**:
+  - **Atualização da Premiação Oficial (Total de 21 Prêmios)**:
+    - `01 Carro zero km`
+    - `04 Motos zero km`
+    - `04 TV's de 50"` (Samsung Smart 50")
+    - `12 Vales-compras de R$ 2.000,00` cada
+  - **Atualização do Período de Vigência e Sorteio**:
+    - Período de participação atualizado de `02/09/2026` a `29/01/2027`.
+    - Fechamento das urnas às `12:00h do dia 29/01/2027`.
+    - Data do sorteio oficial e cronômetro regressivo atualizados para `29 de Janeiro de 2027 às 18:00h` (Fuso de Brasília / UTC-3).
+  - **Lojas Participantes**:
+    - Inclusão da unidade **Shopping Grão Pará** ao lado das unidades Tapanã, José Malcher Plaza e Alcindo no FAQ 05.
+  - **Perguntas Frequentes (FAQ)**:
+    - Atualização dos itens 1, 3 e 5 com as novas datas, URL de cadastro oficial (`/show-de-premios`) e discriminação detalhada dos 21 sorteios.
+  - **Layout & CSS**:
+    - Grid de premiação ajustado para 4 cards harmoniosos (`repeat(2, 1fr)`).
+    - Cache-buster atualizado para `show-de-premios.css?v=12.0` e `show-de-premios.js?v=12.0`.
+
 ## [2.1.19] - 2026-08-27
 - **Sincronização Global e Absoluta do Cronômetro Regressivo (`src/js/show-de-premios.js`, `preview-premiacao.html`, `show-de-premios.html`)**:
   - **Data Alvo Global Unificada (Fuso de Brasília / UTC-3)**: Substituição de inicializações relativas (`now + ...`) por timestamp ISO global absoluto e imutável. Todos os visitantes e computadores no mundo agora calculam exatamente os mesmos dias, horas, minutos e segundos simultaneamente.
