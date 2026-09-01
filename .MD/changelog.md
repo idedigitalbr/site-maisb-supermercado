@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.23] - 2026-09-01
+- **Documentação & Padrão de Check de Ajustes (`Check - Show de Premios (Site Ajustes).docx`, `.MD/`, `GEMINI.md`)**:
+  - **Criação do Documento Oficial de Status da Campanha Show de Prêmios**:
+    - Estruturação modular por seções (S1 a S6) contemplando Topo Banner, Como Participar & Modal Clube+ Fidelidade, Premiação Oficial (21 prêmios e cronômetro), FAQ, Regulamento em PDF e Rodapé com Autorização SPA/ME Nº 06.047964/2026.
+    - Padronização rigorosa das tags visuais: `[100% FINALIZADO NO SITE]` (Verde `#2E7D32`) e `[▶️ Em desenvolvimento pela equipe Tec]` (Azul `#0066CC`).
+    - Integração da tabela com o **Guia Técnico de Medidas & Especificações de Artes (Para o Marketing)**.
+
 ## [2.1.22] - 2026-09-01
 - **Implementação dos Ajustes Oficiais da Reunião de 01/SET/2026 (`index.html`, `src/css/main.css`, `Ajustes - Supermercado +B (01 SET 2026).docx`)**:
   - **Cabeçalho & CTA Clube Fidelidade**:
