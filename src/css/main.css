@@ -190,6 +190,30 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   box-shadow: 0 5px 16px rgba(221, 167, 18, 0.55) !important;
 }
 
+.nav-link-cta-clube {
+  background: linear-gradient(135deg, #FCBF0C 0%, #DDA712 100%) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  padding: 7px 16px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 3px 12px rgba(221, 167, 18, 0.35) !important;
+  transition: all 0.28s ease !important;
+  text-decoration: none !important;
+}
+
+.nav-link-cta-clube:hover {
+  background: linear-gradient(135deg, #FFD043 0%, #EAA90A 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 5px 16px rgba(221, 167, 18, 0.55) !important;
+  color: #000000 !important;
+}
+
+.nav-link-cta-clube svg,
+.nav-link-cta-clube i {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
 .btn-encarte{
   display:inline-flex;align-items:center;gap:7px;
   background:#fff;color:var(--red);border:1.5px solid var(--red);
@@ -310,18 +334,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 }
 
 /* ──────────────────────────────────────────────
-   S4  OFERTAS DA SEMANA
-   Referência: subtítulo dourado centralizado "CAMPANHAS DA SEMANA",
-   título "Ofertas que rendem mais pra você.",
-   link à direita "Ver todas as campanhas",
-   4 cards verticais lado a lado com imagens que preenchem totalmente.
+   S4  DIAS DA SEMANA
+   Referência: subtítulo dourado centralizado "DIAS DA SEMANA",
+   título "Com ofertas que rendem mais para você.",
+   Grade visual dos cards de imagens de ofertas.
    ────────────────────────────────────────────── */
 .s-ofertas { padding: 64px 0 80px; background: var(--cream); position: relative; }
 .s-ofertas .section-head { position: relative; display: flex; justify-content: center; align-items: center; max-width: 100%; width: 100%; margin: 0 auto 40px; text-align: center; }
-.s-ofertas .section-head-center { text-align: center; margin: 0 auto; }
+.s-ofertas .section-head-center { text-align: center; margin: 0 auto; max-width: 780px; }
 .s-ofertas .section-head h2 { font-family: var(--font-sans); font-size: var(--h2-size); color: #1a1a1a; line-height: var(--h2-lh); letter-spacing: var(--h2-spacing); font-weight: var(--h2-weight); text-align: center; margin: 0; }
-.s-ofertas .link-arrow-gold { position: absolute; right: 0; bottom: 6px; font-weight: 700; color: var(--gold); font-size: 0.95rem; text-decoration: none; transition: color 0.3s ease; white-space: nowrap; }
-.s-ofertas .link-arrow-gold:hover { color: #8c6600; text-decoration: underline; }
+.s-ofertas .section-sub-desc { font-size: 1rem; color: #666; margin-top: 10px; line-height: 1.5; }
+
 .ofertas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .oferta-card { border-radius: 24px; overflow: hidden; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease; position: relative; background: #fff; cursor: pointer; }
 .oferta-card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }

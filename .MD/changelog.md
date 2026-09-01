@@ -1,8 +1,20 @@
 # Changelog
 
-## [2.1.21] - 2026-08-28
-- **Atualização da Imagem do Clube+ Fidelidade (`index.html`, `show-de-premios.html`)**:
-  - Substituição da imagem anterior pela versão oficial `assets/Page/APP-CLUBE-FIDELIDADE.webp` contendo o mockup do smartphone com a interface do aplicativo Clube+ Fidelidade e a cliente no supermercado.
+## [2.1.22] - 2026-09-01
+- **Implementação dos Ajustes Oficiais da Reunião de 01/SET/2026 (`index.html`, `src/css/main.css`, `Ajustes - Supermercado +B (01 SET 2026).docx`)**:
+  - **Cabeçalho & CTA Clube Fidelidade**:
+    - Destaque do botão CTA do Clube +Fidelidade com estilização em gradiente dourado (`.nav-link-cta-clube`) direcionado diretamente para a seção de benefícios e download.
+    - Limpeza de contatos redundantes no menu superior.
+    - Padronização do alt text oficial da marca com slogan: *"Supermercado Mais B | Cada dia melhor para você"*.
+  - **Seção "Dias da Semana" (Substituição de Campanhas)**:
+    - Atualização do conceito e headline para: `DIAS DA SEMANA — Com ofertas que rendem mais para você.`
+    - Estruturação da grade oficial com os 6 dias temáticos: Segunda da Limpeza, Terça do Infantil, Quarta do Pet, Quinta do Horti, Sexta do Churrasco (card destaque) e Sábado do Pão.
+  - **Depoimentos & Contraste Visual**:
+    - Fundo Dark puro de alto contraste com acentos dourados e logo monocromática branca de alta legibilidade.
+  - **Atualização Oficial do FAQ**:
+    - Homologação das 4 perguntas e respostas oficiais: Formas de pagamento, Clube +Fidelidade, Horários das 3 unidades (Alcindo Cacela, Plaza e Tapanã) e Grupo de Ofertas no WhatsApp.
+  - **Sincronização com o Google Drive / Docs**:
+    - Documento `Ajustes - Supermercado +B (01 SET 2026).docx` atualizado com checklist de status (`[✅ CONCLUÍDO NO SITE]` / `[⏳ AGUARDANDO ARTES DO MARKETING]`) e tabela com o Guia Técnico de Medidas & Resoluções para a equipe de Marketing.
 
 ## [2.1.20] - 2026-08-28
 - **Sincronização Integral com a Nova Campanha Show de Prêmios 2026.02 (`show-de-premios.html`, `src/js/show-de-premios.js`, `src/css/show-de-premios.css`, `preview-premiacao.html`, `index.html`)**:
