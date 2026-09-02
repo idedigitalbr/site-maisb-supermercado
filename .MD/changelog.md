@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.32] - 2026-09-02
+- **Criação da Página Oficial de Política de Privacidade & Termos de Uso (`termos-e-privacidade.html`, `src/css/legal.css`, `index.html`)**:
+  - **Página Institucional Dedicada**: Desenvolvida a página `termos-e-privacidade.html` exclusivamente para o **Supermercado Mais B**, adaptando a estrutura visual de alta fidelidade e elegância da campanha Show de Prêmios para as diretrizes institucionais do supermercado (lojas físicas, Clube+ Fidelidade, encartes e canais digitais).
+  - **Estilização & Design System (`src/css/legal.css`)**: Folha de estilos dedicada com as cores e tokens oficiais (`#DDA712`, `#BB2E2C`), container central em card branco `#FFFFFF` de alto contraste e legibilidade, listas de compromissos do usuário com badges, callout boxes para cookies e dados, botões de ação e estilos de impressão clean print (`@media print`).
+  - **Hero Legal & Metadados Oficiais**: Breadcrumbs de navegação, badge oficial de diretrizes, data de vigência, tempo estimado de leitura (~5 min), selo de conformidade com a LGPD (Lei Federal nº 13.709/2018) e botão nativo para impressão/PDF.
+  - **Estruturação Jurídica Conforme LGPD & CDC**: Redação completa com 8 cláusulas para a Política de Privacidade (coleta consciente, direitos dos titulares art. 18 LGPD, canal de DPO/Encarregado) e 8 cláusulas para os Termos de Uso (isenção de estoque/vigência de ofertas, regras de propriedade intelectual e foro de Belém/PA).
+  - **Conexão Global no Rodapé**: Atualizado o link de rodapé institucional em `index.html` de `href="#"` para `href="termos-e-privacidade.html"`, com marcação ativa na página legal e botão flutuante para retorno suave ao topo.
+
 ## [2.1.31] - 2026-09-02
 - **Sistema Inteligente de Horários em Tempo Real Minimalista & Atualização de Notas do Google (`src/js/unidades.js`, `src/css/main.css`, `src/data/units.js`, `index.html`)**:
   - **Layout Minimalista & Alinhamento Perfeito**: Reformulada a linha de horário para seguir exatamente o padrão visual do endereço (`.unit-address`), com ícone de relógio dourado, tipografia limpa em tom neutro (`#aaa`), sem blocos/bordas pesadas e sem cor verde estridente.
