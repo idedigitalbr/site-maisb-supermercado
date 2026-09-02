@@ -71,8 +71,8 @@
 }
 
 .brand-section.wine h2 {
-  font-family: 'Fraunces', serif;
-  letter-spacing: -0.04em;
+  font-family: 'DM Sans', Arial, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .brand-info p {
@@ -145,9 +145,9 @@
 }
 
 .brand-photo.wine-card span {
-  font-family: 'Fraunces', serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   text-transform: none;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
 }
 
 /* ==========================================================================
@@ -1295,13 +1295,13 @@
 }
 
 .card-brand-title.serif-font {
-  font-family: 'Fraunces', serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-weight: 700;
 }
 
 .card-brand-subtitle {
-  font-family: 'Cormorant Garamond', 'Fraunces', serif;
-  font-style: italic;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 0.65em;
   letter-spacing: 0.05em;

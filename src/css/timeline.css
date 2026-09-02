@@ -172,14 +172,14 @@ body.theme-holding #linha-tempo.trajetoria-section {
 
 .trajetoria-title em,
 .trajetoria-title .serif-accent {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-style: normal;
   font-weight: 700;
 }
 
 /* --- Ano Gigante --- */
 .trajetoria-year-display {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: clamp(2.5rem, 5vw, 3.4rem);

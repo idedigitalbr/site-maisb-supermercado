@@ -107,9 +107,9 @@ window.units = [
     phone: "(91) 3200-3000",
     email: "contato.plaza@grupomaisbarato.com.br",
     googleMapsUrl: "https://maps.google.com/?q=-1.452655,-48.468202",
-    rating: 4.7,
-    reviewsCount: 980,
-    hours: "07h às 22h. Domingos: 07h às 21h.",
+    rating: 4.2,
+    reviewsCount: 6740,
+    hours: "07h às 22h. Domingos: 07h30 às 21h.",
     hoursDetail: {
       weekday: "07:00 - 22:00",
       saturday: "07:00 - 22:00",

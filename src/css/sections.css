@@ -290,7 +290,7 @@ p {
   margin: 0 auto !important;
   display: grid !important;
   grid-template-columns: 1fr auto !important;
-  gap: 48px !important;
+  gap: 36px !important;
   align-items: center !important;
   justify-content: space-between !important;
   position: relative;
@@ -302,7 +302,7 @@ p {
   grid-column: 1 !important;
   grid-row: 1 !important;
   width: 100% !important;
-  max-width: 380px !important;
+  max-width: 530px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -343,8 +343,8 @@ p {
 
 /* Título Institucional */
 .testimonials-heading {
-  font-family: var(--font-serif) !important;
-  font-size: var(--h2-size, 38px) !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(30px, 2.35vw, 38px) !important;
   font-weight: var(--h2-weight, 700) !important;
   line-height: var(--h2-lh, 1.15) !important;
   letter-spacing: var(--h2-spacing, -0.02em) !important;
@@ -1667,7 +1667,7 @@ textarea.form-control {
   letter-spacing: -0.01em;
 }
 
-.unit-address {
+.unit-detail-card .unit-address {
   font-size: 0.94rem;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 20px;

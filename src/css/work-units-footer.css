@@ -3084,9 +3084,9 @@
 }
 
 .locator-gold-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-  font-weight: 400;
+  font-weight: 700;
   color: #FFFFFF;
   line-height: 1.15;
   margin-bottom: 8px;
@@ -3094,9 +3094,9 @@
 }
 
 .locator-gold-title .headline-highlight-italic {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 400;
-  font-style: italic;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-weight: inherit;
+  font-style: normal;
   color: #d8a72b;
 }
 

@@ -1,5 +1,63 @@
 # Changelog
 
+## [2.1.31] - 2026-09-02
+- **Sistema Inteligente de Horários em Tempo Real Minimalista & Atualização de Notas do Google (`src/js/unidades.js`, `src/css/main.css`, `src/data/units.js`, `index.html`)**:
+  - **Layout Minimalista & Alinhamento Perfeito**: Reformulada a linha de horário para seguir exatamente o padrão visual do endereço (`.unit-address`), com ícone de relógio dourado, tipografia limpa em tom neutro (`#aaa`), sem blocos/bordas pesadas e sem cor verde estridente.
+  - **Dropdown Expansível de Horários Semanais**: Accordion compacto integrado com clique no horário/chevron, expandindo com indentação alinhada a grade de horários de segunda a domingo com marcação do dia atual (`• hoje`).
+  - **Atualização das Avaliações Oficiais**: Sincronizada a nota do **Plaza** para `★ 4,2` com exibição de volume real de `(6.740)` avaliações, além das contagens e notas oficiais para **Alcindo Cacela** (`★ 4,8 (1.240)`) e **Tapanã** (`★ 4,5 (850)`).
+  - Atualizados cache-busters para `main.css?v=38.1`, `sections.css?v=37.3` e `unidades.js?v=11.4`. Corrigida sobreposição de margem legada em `.unit-address`.
+
+## [2.1.30] - 2026-09-02
+- **Atualização Visual do Rodapé Institucional (`index.html`, `src/css/main.css`, `assets/Logos/logo-idedigital.png`)**:
+  - Implementado layout simétrico em 3 colunas (`grid-template-columns: 1fr auto 1fr`) para a barra inferior do rodapé (`.footer-bottom`):
+    - **Esquerda**: `Copyright © 2026 Grupo +B – Todos os direitos reservados` alinhado à esquerda.
+    - **Centro**: Link `Termos & Privacidade` perfeitamente centralizado com hover suave.
+    - **Direita**: Bloco `Desenvolvido por:` acompanhado pelo logotipo oficial nítido em imagem (`assets/Logos/logo-idedigital.png`) com link para `https://ide.digital`.
+  - Refinado o divisor superior (`.footer-line`) e a barra de destaque central dourada radiante (`.glow-dot`) com gradiente e efeito glow (`box-shadow: 0 0 10px rgba(221, 167, 18, 0.75)`).
+  - Configurada responsividade mobile (`@media(max-width:768px)`) com empilhamento vertical limpo e centralizado.
+  - Atualizado o cache-buster para `main.css?v=37.7`.
+
+## [2.1.29] - 2026-09-02
+- **Reformulação e Estruturação Visual do FAQ com Redação Oficial (`src/css/main.css`, `index.html`)**:
+  - Reestruturadas todas as 4 respostas do accordion de Dúvidas Frequentes preservando rigorosamente as redações oficiais fornecidas:
+    - **Formas de Pagamento**: Organizada a lista em bullet points dourados (*Cartões de crédito e débito das principais bandeiras*, *Pix*, *Vale-alimentação e vale-refeição*, *Cartão Crediário do crediário próprio*).
+    - **Clube Fidelidade**: Texto com destaque e bloco de aviso estilizado (*"Importante: conclua seu cadastro para garantir todos os benefícios."*).
+    - **Horários de Funcionamento**: Segmentado em 3 cards visuais limpos para as unidades Alcindo Cacela, Plaza e Tapanã, detalhando segunda a sábado e domingos.
+    - **WhatsApp**: Organizado em parágrafos claros com destaques em negrito.
+  - Cache-buster atualizado para `main.css?v=37.6`.
+- **Ajuste de Headline da Seção Depoimentos (`src/css/sections.css`, `index.html`, `depoimentos.html`)**:
+  - Calibrada a headline H2 institucional para exatamente **duas linhas**: *"A confiança de quem faz parte"* / *"da nossa história."*.
+  - Expandida a largura da coluna de texto (`.testimonials-copy-col`) para `530px` e aplicado `font-size: clamp(30px, 2.35vw, 38px)` para garantir que *"A confiança de quem faz parte"* não quebre a palavra *"parte"*.
+  - Cache-buster atualizado para `sections.css?v=37.2`.
+- **Ajuste de Espaçamento, Quebra e Justificação na Seção Sobre (`src/css/main.css`, `index.html`)**:
+  - Padronizado o alinhamento do texto institucional para **justificado** (`text-align: justify; text-justify: inter-word;`) no bloco de texto (`.sobre-text p`), mantendo a uniformidade visual com a seção de Depoimentos e diretrizes de tipografia da agência.
+  - Quebra do título H2 estruturada em exatamente 3 linhas: *"Cada dia melhor pra você."* / *"O supermercado com a melhor"* / *"experiência de compra."*.
+  - Calibrada a largura máxima do bloco de texto para `max-width: 540px` e grid com respiro `gap: clamp(48px, 5.5vw, 68px)`.
+
+## [2.1.28] - 2026-09-02
+- **Auditoria e Limpeza de Assets Não Utilizados (`assets/` -> `assets-nao-usados/`)**:
+  - Executada varredura automatizada em todos os templates HTML, arquivos CSS e scripts JS para mapear o uso de arquivos de mídia.
+  - Transferidos 12 arquivos obsoletos e não referenciados para `assets-nao-usados/` (incluindo cards de categorias legados, banners de ofertas descontinuados, logo monocromático preto e backgrounds não utilizados).
+  - Removidos diretórios vazios remanescentes em `assets/`, mantendo estritamente os 57 assets 100% ativos em produção.
+- **Remoção de Arquivos Legados do Show de Prêmios (`show-de-premios.html`, `src/css/show-de-premios.css`, `src/js/show-de-premios.js`, `assets/show-de-premios/`)**:
+  - Excluída a landing page local legada `show-de-premios.html`.
+  - Removidos os arquivos de estilização e scripts específicos `src/css/show-de-premios.css` e `src/js/show-de-premios.js`.
+  - Removido o diretório completo de fotos e regulamento `assets/show-de-premios/`.
+  - Preservado apenas o banner ativo do carrossel no topo hero (`assets/Page/S1 TOPO HERO/TOPO-HERO-HOME-SHOW-PREMIOS.webp`).
+
+## [2.1.27] - 2026-09-02
+- **Redesign do Botão Clube +Fidelidade no Header (`src/css/main.css`, `index.html`, `show-de-premios.html`)**:
+  - Atualizado o ícone para o smartphone (`data-lucide="smartphone"`).
+  - Estado padrão (sem hover): visual limpo e discreto em texto/ícone sem moldura de botão (`background: transparent`).
+  - Estado hover / ativo: transição fluida para botão vermelho vibrante (`#cc1424`), cantos arredondados (`border-radius: 8px`), ícone e texto brancos com sombra difusa (`box-shadow: 0 4px 16px rgba(204, 20, 36, 0.45)`).
+  - Atualizado o cache-buster do stylesheet para `main.css?v=36.4`.
+- **Ajuste de Âncora do Banner Clube Fidelidade (`index.html`)**:
+  - Configurado o link do banner rotativo do Clube Fidelidade no Hero (`BANNER-TOPO (3).webp`) para navegar via âncora interna (`#clube`) diretamente para a seção correspondente **S6: CLUBE+ FIDELIDADE**.
+- **Redirecionamento Externo do Show de Prêmios (`index.html`, `show-de-premios.html`)**:
+  - Atualizados todos os pontos de link da campanha "Show de Prêmios" no site institucional (`index.html` — Menu de Navegação Superior e Banner Hero Principal) para apontarem diretamente para o novo hotsite oficial: `https://showdepremiosmaisb.suporteide.digital`.
+  - Configurada a abertura obrigatória em uma nova guia (`target="_blank" rel="noopener noreferrer"`).
+  - Atualizado link de navegação em `show-de-premios.html` para manter a coerência global de redirecionamento.
+
 ## [2.1.26] - 2026-09-01
 - **Criação do Módulo Header Standalone (`HEADER-STANDALONE/`)**:
   - Exportado o conjunto completo de cabeçalho (Topbar Dourada Radiante + Header Sticky Preto com Logo Centralizado + Menu Mobile) para a pasta autocontida `HEADER-STANDALONE/`.
