@@ -37,60 +37,18 @@ body.sp-body {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION (BANNER 100vh)
    ========================================================================== */
 .sp-hero {
-  padding-top: 30px;
-  padding-bottom: 40px;
-  text-align: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: var(--green, #16a34a);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
-}
-
-.sp-hero-image-wrapper {
-  position: relative;
-  max-width: 1020px;
-  margin: 0 auto;
-}
-
-.sp-hero-main-img {
-  width: 100%;
-  height: auto;
   display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.7));
-}
-
-.sp-hero-mobile-img {
-  display: none;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.7));
-}
-
-.sp-hero-under-img {
-  width: 100%;
-  max-width: 980px;
-  height: auto;
-  margin: 16px auto 0 auto;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .sp-hero {
-    padding-top: 15px;
-    padding-bottom: 20px;
-  }
-  .sp-hero-main-img {
-    display: none;
-  }
-  .sp-hero-mobile-img {
-    display: block;
-  }
-  .sp-hero-under-img {
-    display: block;
-    margin-top: 10px;
-  }
 }
 
 /* ==========================================================================
@@ -340,24 +298,14 @@ body.sp-body {
 }
 
 .sp-matched-row {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.sp-matched-media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sp-matched-img {
-  width: 100%;
-  max-width: 520px;
-  height: auto;
   display: block;
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8));
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sp-matched-content {
+  text-align: center;
 }
 
 .sp-matched-content h2 {
@@ -372,23 +320,26 @@ body.sp-body {
 
 .sp-matched-subtitle {
   font-family: var(--sp-font-body, 'DM Sans', sans-serif);
-  font-size: 14px;
+  font-size: 15px;
   color: var(--sp-text-muted, #9ca3af);
-  margin: 0 0 20px 0;
+  margin: 0 auto 20px auto;
+  max-width: 620px;
   line-height: 1.45;
 }
 
 .sp-matched-divider {
   width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.12);
-  margin-bottom: 22px;
+  max-width: 100px;
+  height: 2px;
+  background: var(--sp-gold, #FCBF0C);
+  margin: 0 auto 26px auto;
+  border-radius: 2px;
 }
 
 .sp-matched-cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
 .sp-matched-prize-card {
@@ -558,14 +509,9 @@ body.sp-body {
 }
 
 @media (max-width: 900px) {
-  .sp-matched-row {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 30px;
-  }
   .sp-matched-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
   .sp-matched-prize-name {
     min-height: auto;
@@ -588,6 +534,13 @@ body.sp-body {
   }
   .sp-cd-dots {
     display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .sp-matched-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
 

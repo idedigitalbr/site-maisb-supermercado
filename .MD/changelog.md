@@ -1,5 +1,42 @@
 # Changelog
 
+## [2.1.26] - 2026-09-01
+- **Criação do Módulo Header Standalone (`HEADER-STANDALONE/`)**:
+  - Exportado o conjunto completo de cabeçalho (Topbar Dourada Radiante + Header Sticky Preto com Logo Centralizado + Menu Mobile) para a pasta autocontida `HEADER-STANDALONE/`.
+  - Criado `header.css` com variáveis de design tokens `:root`, efeito lens flare na topbar, layout simétrico com 3 colunas, botões CTA dourado/vermelho e menu mobile animado em hambúrguer/X.
+  - Criado `header.js` com gerenciamento de toggle mobile, fechamento ao clique externo/ESC/links, efeito dinâmico de scroll na sombra e ScrollSpy via `IntersectionObserver`.
+  - Criado `header-snippet.html` (código limpo para copiar e colar em qualquer site) e `index.html` (página de teste/demonstração funcional e interativa).
+  - Incluídos os assets de imagem necessários (`assets/logo.png`, `assets/logo.webp`, `assets/favicon.webp`).
+  - Adicionado `PROMPT-PARA-IA.md` (prompt pronto formatado para solicitar replicação em outros sites por qualquer IA) e `README.md` com guia de integração técnica.
+
+## [2.1.25] - 2026-09-01
+- **Exportação do Pacote Standalone (`site-maisb-show-premio/`)**:
+  - Migrado o projeto autônomo da landing page para o diretório independente `G:\Meu Drive\.PROJETOS\Sites Institucionais\site-maisb-show-premio\`.
+  - Estrutura pronta para produção isolada com `index.html`, `src/` (CSS modular e JS) e `assets/` completos (sem dependências externas do projeto principal).
+- **Inclusão do Rodapé Oficial (`site-maisb-show-premio/index.html`, `assets/Logos/`)**:
+  - Adicionado o rodapé institucional completo (`.s-footer`) com aviso legal oficial SPA/ME Nº 06.047964/2026, logotipo oficial Supermercados Mais B (`IMG_5606.PNG`), slogan, redes sociais e créditos.
+- **Restauração do Card de Atendimento**:
+  - Restabelecido o **Passo 3: "Informe seu CPF no Caixa"** com o ícone de megafone (`megaphone`) e a imagem oficial de atendimento (`atendimento.jpg`), mantendo a grade completa com os 4 passos da seção *Como Participar*.
+- **Limpeza de Imagens Obsoletas (`assets/show-de-premios/img/`, `index-show/assets/show-de-premios/img/`)**:
+  - Excluídas do diretório: `data.png`, `favicon.png`, `patrocinadores.png` e `patrocinadores-mobile.png`.
+  - Mantidas as 7 imagens ativas da campanha, incluindo `atendimento.jpg`, `telas-app.png`, `cada-100-1-cupom.png`, `toten-urna.png`, backgrounds e ícone.
+- **Criação do Pacote & Diretório Standalone (`index-show/`, `index-premio.html`)**:
+  - Estruturada a pasta independente `index-show/` contendo todos os assets essenciais, CSS modular (`tokens.css`, `main.css`, `sections.css`, `show-de-premios.css`), JS interativo e `index.html` autossuficiente para publicação direta em novo domínio/hotsite.
+  - Estrutura 100% sem menu superior (header/topbar) e sem rodapé (footer), focada na conversão solo da campanha.
+- **Reformulação da Seção Hero & Premiação (`show-de-premios.html`, `src/css/show-de-premios.css`, `assets/show-de-premios/img/`)**:
+  - Limpeza completa dos elementos e imagens da primeira seção (`.sp-hero`).
+  - Configuração da seção em tela cheia (`height: 100vh; min-height: 100vh; width: 100%`) com fundo verde (`var(--green)`), posicionamento central e `background-size: cover`, preparada para receber a nova imagem de fundo.
+  - Exclusão dos arquivos de imagem obsoletos do diretório local: `hero.png`, `hero-mobile.png`, `hero-under.png` e `premiacao.png`.
+  - Remoção da coluna lateral com arte antiga na seção **Premiação Oficial**, centralizando o título e dispondo os 4 cards oficiais de prêmios em grade moderna de 4 colunas responsiva (2 colunas em tablets, 1 coluna em mobile).
+  - Atualização da tag `og:image` para `assets/Page/S1 TOPO HERO/TOPO-HERO-HOME-SHOW-PREMIOS.webp`.
+
+## [2.1.24] - 2026-09-01
+- **Atualização do Carrossel Hero da Home (`index.html`, `assets/Page/S1 TOPO HERO/`)**:
+  - **Banner Oficial Show de Prêmios (1920x640px)**:
+    - Atualizado o slide 1 do carrossel Hero para a nova arte oficial `assets/Page/S1 TOPO HERO/TOPO-HERO-HOME-SHOW-PREMIOS.webp` nas dimensões homologadas de 1920 x 640 px.
+    - Mantido link de redirecionamento para a página promocional dedicada (`show-de-premios.html`).
+    - Removida referência ao arquivo temporário anterior de banners.
+
 ## [2.1.23] - 2026-09-01
 - **Documentação & Padrão de Check de Ajustes (`Check - Show de Premios (Site Ajustes).docx`, `.MD/`, `GEMINI.md`)**:
   - **Criação do Documento Oficial de Status da Campanha Show de Prêmios**:
