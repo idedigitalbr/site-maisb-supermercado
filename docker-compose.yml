@@ -13,7 +13,7 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.site-maisb-supermercado-router.rule=Host(`maisbsupermercados.suporteide.digital`)"
+      - "traefik.http.routers.site-maisb-supermercado-router.rule=Host(`maisbsupermercados.suporteide.digital`) || Host(`maisbsupermercados.com.br`)"
       - "traefik.http.routers.site-maisb-supermercado-router.entrypoints=websecure"
       - "traefik.http.routers.site-maisb-supermercado-router.tls=true"
       - "traefik.http.routers.site-maisb-supermercado-router.tls.certresolver=letsencrypt"

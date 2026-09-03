@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.33] - 2026-09-03
+- **Apontamento e Ativação do Domínio Oficial (`docker-compose.yml`, Traefik, VPS)**:
+  - Configurada regra de roteamento no Traefik para aceitar simultaneamente o domínio próprio `maisbsupermercados.com.br` e o subdomínio da IDE `maisbsupermercados.suporteide.digital`: `Host(\`maisbsupermercados.suporteide.digital\`) || Host(\`maisbsupermercados.com.br\`)`.
+  - Aplicada a configuração no servidor de produção VPS (`161.97.108.92`), recriando o container e ativando o roteador Traefik com certificado SSL/TLS automático via Let's Encrypt.
+  - Testada e confirmada a resposta `HTTP 200 OK` e entrega íntegra do site em `https://maisbsupermercados.com.br`.
+
 ## [2.1.32] - 2026-09-02
 - **Criação da Página Oficial de Política de Privacidade & Termos de Uso (`termos-e-privacidade.html`, `src/css/legal.css`, `index.html`)**:
   - **Página Institucional Dedicada**: Desenvolvida a página `termos-e-privacidade.html` exclusivamente para o **Supermercado Mais B**, adaptando a estrutura visual de alta fidelidade e elegância da campanha Show de Prêmios para as diretrizes institucionais do supermercado (lojas físicas, Clube+ Fidelidade, encartes e canais digitais).
