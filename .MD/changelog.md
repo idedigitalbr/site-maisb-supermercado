@@ -1,5 +1,119 @@
 # Changelog
 
+## [2.1.44] - 2026-09-03
+- **Refinamento da Seção WhatsApp S9 (Altura 500px, 100% Contido, Celular no Topo & Mobile Fluido)**:
+  - **Dimensão e Altura do Card Contido (`.wpp-card`)**: O card preto agora possui altura exata e elegante de **`500px`** no desktop (`height: 500px; min-height: 500px;`), com `padding: 20px 56px` e `overflow: hidden`, garantindo que **absolutamente nada vaze ou corte fora da seção**.
+  - **Eliminação do Vazamento Inferior**: Removida a margem negativa inferior (`margin-bottom: 0`) que empurrava a base do smartphone para fora do card sobre o fundo claro da página.
+  - **Celular Encostado no Topo da Seção (`.wpp-right`)**: Posicionado com `align-self: flex-start; margin-top: 10px`, aproximando o smartphone da borda superior com respiro milimétrico, conferindo postura de destaque e equilíbrio harmônico com os textos e o botão da esquerda.
+  - **Chassi 3D Completo com 4 Cantos Arredondados (`wpp-animation.css`)**: O smartphone agora possui cantos arredondados contínuos nos 4 lados (`border-radius: 40px` no desktop, `38px` no mobile), com dimensões calibradas em **`290px x 460px`** e sombra realista sem cortes retos na base.
+  - **Mobile 100% Responsivo e Fluido**: No mobile (`@media (max-width: 900px)`), o card adapta-se com `height: auto`, `padding: 36px 24px 28px` e smartphone em `height: 480px`, preservando a margem lateral segura e zero overflow horizontal.
+  - **Cache-Busters**: Atualizados `main.css?v=39.5` e `wpp-animation.css?v=1.7` em `index.html`.
+
+## [2.1.43] - 2026-09-03
+- **Pacote de Ajustes Mobile Refinados (37px Lateral, Carrossel Netflix, Clube Reordenado & WhatsApp Sem Imagem Traseira)**:
+  - **Margens das Paredes em 37px**: Padronizado o recuo lateral dos containers mobile (`.container`, `.container-full`, `.testimonials-section-premium > .container`) para exatamente **`37px`**, conferindo respiro generoso e acabamento visual de revista.
+  - **Carrossel Netflix de Ofertas da Semana (Anexo 1)**: A seção `#ofertas` foi transformada em um carrossel horizontal de linha única (`display: flex; flex-direction: row; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory`), permitindo deslizar os 4 cards suavemente para o lado com o dedo, eliminando as 2 linhas verticais.
+  - **Reordenação do Clube+ Fidelidade (Anexo 2)**: Na versão mobile, a imagem institucional do app e cliente (`.clube-media-mobile`) foi posicionada logo abaixo dos benefícios, fazendo com que os botões de download (Android/iOS) e a tagline fiquem posicionados **DEPOIS** da imagem, preservando a diagramação em 2 colunas no desktop.
+  - **Smartphone do WhatsApp Robusto e Sem Imagem Traseira (Anexo 3)**:
+    - Eliminada a imagem estática `mockup-whatsapp-metade.webp` que vazava atrás do display.
+    - Construído um chassi CSS realista e autônomo com proporções ideais de smartphone (310px x 530px no mobile, 320px x 570px no desktop), bordas com acabamento escuro sofisticado e cantos arredondados, eliminando a tela "fininha" e as sobras visuais.
+  - **Tipografia Justificada nas Seções**: Aplicado `text-align: justify; text-justify: inter-word; hyphens: auto;` nos blocos de parágrafos não centralizados (Sobre Nós, descrição do Clube e respostas do FAQ).
+  - **Zero Overflow Lateral**: 100% dos testes Playwright aprovados em iPhone SE, iPhone 14 e Android Galaxy (`hasHorizontalScroll: False`).
+
+## [2.1.42] - 2026-09-03
+- **Remoção do Badge Slogan e Centralização das Redes Sociais na Topbar Mobile (`index.html`, `termos-e-privacidade.html`, `src/css/main.css`)**:
+  - **Remoção do Badge Institucional Mobile**: Eliminado o elemento `.topbar-badge-mobile` (*"⭐ Belém • Cada dia melhor pra você"*) da barra dourada superior nas visualizações mobile.
+  - **Centralização Simétrica dos Ícones Sociais**: Os ícones de Instagram, Facebook e YouTube (`.topbar-social`) foram perfeitamente centralizados no eixo horizontal (`margin: 0 auto; justify-content: center`) com espaçamento harmônico de 16px.
+  - **Layout Desktop Preservado**: Na versão desktop, as redes sociais permanecem à esquerda e os links institucionais à direita.
+  - **Cache-Buster**: Atualizado `main.css?v=39.3` em `index.html` e `termos-e-privacidade.html`.
+
+## [2.1.41] - 2026-09-03
+- **Inclusão do Card Oficial de Convite de Grupo com Link Clicável (`src/css/wpp-animation.css`, `src/js/wpp-animation.js`, `index.html`)**:
+  - **Mensagem de Convite Oficial do +B (`appendInviteMessage`)**: Após a confirmação dos ticks azuis na resposta do usuário (*"Quero as ofertas! 😍"*), o +B Supermercados envia como última mensagem o card oficial de convite do grupo do WhatsApp (`wpp-msg-invite`).
+  - **Fidelidade Visual ao WhatsApp**: Card com thumbnail circular oficial do +B, título em caixa alta (*"OFERTAS +B SUPERMERCADOS"*), subtítulo (*"WhatsApp Group Invite"*), URL exibida, horário `09:41` e botão verde de ação com chevron (*"Entrar no Grupo de Ofertas"*).
+  - **Link 100% Clicável**: Toda a mensagem e botão são links nativos apontando diretamente para `https://chat.whatsapp.com/IQe461Q5z0h1SSVDjKETh3` com `target="_blank" rel="noopener noreferrer"`, permitindo que o visitante clique no smartphone na página e entre diretamente no grupo.
+  - **Rolagem Suave & Hold Estendido (16s)**: O chat rola suavemente para o final exibindo o convite com destaque e segura a tela por **16 segundos** para visualização e clique confortável antes do reinício do ciclo.
+  - **Cache-Busters**: Atualizados `wpp-animation.css?v=1.5` e `wpp-animation.js?v=1.5`.
+
+## [2.1.40] - 2026-09-03
+- **Centralização Vertical dos Textos da Esquerda & Autonomia Total da Animação na Seção S9**:
+  - **Centralização Vertical da Headline e Conteúdo (`.wpp-left`)**: Configurado `align-self: center` em `.wpp-left` e `align-items: center` no `.wpp-card`, posicionando o selo dourado, a headline (*"Ofertas exclusivas diretamente no seu WhatsApp."*), parágrafo e botão de ação perfeitamente centralizados na metade vertical da seção.
+  - **Ancoragem da Base do Smartphone Mantida (`.wpp-right`)**: O smartphone permanece ancorado na base (`align-self: end; margin-bottom: -48px`) com seu topo ultrapassando a área superior.
+  - **Remoção da Intervenção de Clique do Mouse**: Eliminado o listener de clique no container do celular (`src/js/wpp-animation.js`), o cursor `pointer` e o tooltip (`title`). A animação agora roda 100% autônoma e contínua sem que cliques do usuário interfiram ou reiniciem o ciclo.
+  - **Cache-Busters**: Atualizados `main.css?v=39.2`, `wpp-animation.css?v=1.4` e `wpp-animation.js?v=1.4`.
+
+## [2.1.39] - 2026-09-03
+- **Calibração de Respiro Lateral para 30px em Todo o Layout Mobile (`src/css/main.css`, `src/css/sections.css`)**:
+  - **Margens das Paredes Definidas em 30px**: Ajustado o padding lateral global de todos os containers mobile (`.container`, `.container-full`, `.testimonials-section-premium > .container`) para **`30px`** (substituindo os 18px/20px anteriores).
+  - **Moldura Arejada & Leitura Confortável**: Textos, títulos e parágrafos da seção Sobre Nós, cards de ofertas, depoimentos, card do Clube, WhatsApp, FAQ e Lojas agora possuem um respiro generoso e consistente de 30px em relação às bordas físicas do display do aparelho.
+  - **Zero Overflow Horizontal**: Revalidado via Playwright em múltiplos viewports reais (iPhone SE 375px, iPhone 14 390px, Android 412px) com zero scroll lateral (`hasHorizontalScroll: False`).
+
+## [2.1.38] - 2026-09-03
+- **Correção da Proporção do Smartphone (Extensão Vertical Real sem Alargamento)**:
+  - **Smartphone Esbelto & Proporcional (`assets/Page/S9-whatsapp/mockup-whatsapp-metade.webp`)**: O mockup fotorealista do aparelho foi estendido verticalmente em sua resolução nativa para `1536 x 1680px`, acrescentando a continuação do chassi inferior do smartphone.
+  - **Largura Fina Preservada (365px)**: Com o aumento vertical nativo da imagem, o smartphone mantém sua largura elegante e natural de celular (`365px` de largura útil, `max-width: 440px`), eliminando completamente o aspecto esticado ou largo de tablet.
+  - **Encaixe Perfeito**: A base física assenta na borda inferior do card (`margin-bottom: -48px`) e o topo arredondado ultrapassa suavemente a borda superior do card escuro (~36px para fora), preenchendo a altura interna com harmonia.
+  - **Ajuste de Tela no CSS**: Reposicionado o display animado (`top: 6.96%`) em `src/css/wpp-animation.css` para encaixe subpixel perfeito no chassi estendido.
+  - **Cache-Busters**: Atualizados `main.css?v=39.1`, `wpp-animation.css?v=1.3`, `wpp-animation.js?v=1.3` e `mockup-whatsapp-metade.webp?v=2.0`.
+
+## [2.1.37] - 2026-09-03
+- **Posicionamento & Altura Dominante do Smartphone na Seção S9 (`src/css/main.css`, `src/css/wpp-animation.css`, `index.html`)**:
+  - **Altura Total Dominante (525px)**: Smartphone redimensionado para preencher toda a altura disponível da seção, tornando-se o elemento central e visualmente dominante da composição.
+  - **Base Encaixada no Final da Seção**: A parte inferior do aparelho fica perfeitamente alinhada e ancorada na borda inferior do card (`align-self: end`, `margin-bottom: -48px`), crescendo a partir desse ponto.
+  - **Topo Ultrapassando Suavemente a Seção**: Habilitado `overflow: visible` no `.wpp-card` e calibrado `padding: 48px 0 72px` na `.s-wpp`, permitindo que o topo do smartphone e sua moldura fotorealista ultrapassem elegantemente a borda superior do card escuro (~45px para fora), eliminando espaços vazios acima e abaixo do aparelho.
+  - **Barra de Digitação Ativa & Fluxo Completo**: Reintroduzida a barra de digitação inferior animada (`wpp-chat-bottom`) com digitação em tempo real de *"Quero as ofertas! 😍"*, pulso no botão enviar verde `#00A884`, emissão da mensagem enviada à direita e permanência de 14 segundos antes do reinício do loop.
+  - **Cache-Busters**: Atualizados `main.css?v=38.2`, `wpp-animation.css?v=1.2` e `wpp-animation.js?v=1.2`.
+
+## [2.1.36] - 2026-09-03
+- **Otimização Mobile Completa & Redesign do Menu de Navegação (Mobile Specialist Refactor)**:
+  - **Novo Menu Mobile Drawer (Off-Canvas Premium)**:
+    - Botão hambúrguer moderno e animado que se transforma suavemente em "X" ao abrir.
+    - Gaveta lateral elegante (`#0d0d0f`, borda dourada suave e `backdrop-filter: blur(8px)`) cobrindo toda a altura da tela.
+    - Fechamento ao tocar no backdrop escurecido, no botão "X" interno, ao pressionar tecla `Escape` ou ao clicar em qualquer âncora.
+    - Bloqueio de scroll do background (`body.drawer-open`) enquanto o menu estiver aberto.
+    - Inclusão completa de todos os links que faltavam no mobile: **Navegação Principal** (*Início, Sobre Nós, Ofertas da Semana com tag dourada, Depoimentos, Clube+ Fidelidade com tag vermelha, Nossas Lojas, Dúvidas Frequentes*) e **Serviços & Campanhas** (*Show de Prêmios, Grupo WhatsApp de Ofertas, Trabalhe Conosco, Crediário & Atacado*), além de atalhos diretos para redes sociais e botão verde CTA para receber ofertas.
+  - **Topbar e Header Mobile**:
+    - Topbar dourada reequilibrada no mobile com badge institucional (*"⭐ Belém • Cada dia melhor pra você"*) e ícones sociais centralizados.
+    - Header com alinhamento simétrico: botão hambúrguer à esquerda, logo oficial perfeitamente centralizado e botão atalho `📱 Clube` à direita.
+  - **Respiro Lateral & Fim do "Tudo Encostando"**:
+    - Padronização de margens de segurança confortáveis em todas as seções (`padding: 0 18px` a `0 20px`), eliminando qualquer elemento encostando na borda do display.
+    - **Sobre Nós**: Remoção de texto justificado no mobile (`text-align: left`) eliminando espaçamentos forçados entre palavras, e reformulação da barra de métricas (`.metrics-bar`) para um grid 2x2 compacto e luxuoso no celular.
+    - **Ofertas da Semana**: Grid mobile reformulado para 2 colunas proporcionais com cantos arredondados, permitindo visão de catálogo sem rolagem exaustiva.
+    - **Depoimentos**: Eliminação de overflow horizontal (`0 horizontal scroll` confirmado via Playwright em iPhone SE, iPhone 14 e Android Galaxy), remoção do trap `min-height: 95vh` e cards 9:16 perfeitamente centralizados entre setas de navegação.
+    - **Clube+ Fidelidade**: Margens laterais seguras no card creme, botões App Store e Google Play empilhados com largura total e imagem do app sem cortes bruscos.
+    - **CTA WhatsApp**: Centralização do selo dourado WhatsApp no topo do card mobile, título e texto legíveis sem estrangulamento lateral e botão de ação full-width.
+    - **Dúvidas Frequentes**: Padding interno calibrado (`14px 16px`) para leitura natural das perguntas e respostas.
+    - **Nossas Unidades**: Altura do mapa ajustada para `320px` no mobile para evitar scroll-trapping durante a rolagem da página.
+  - **Validação Automatizada via Playwright**: Testes executados nos viewports 375px (iPhone SE), 390px (iPhone 14) e 412px (Android) com `hasHorizontalScroll: false` em 100% dos testes.
+
+## [2.1.35] - 2026-09-03
+- **Refinamento Visual da Interface do WhatsApp (Estilo S23 & Legibilidade Aumentada)**:
+  - **Identidade S23 & Câmera Frontal Punch-Hole**: Substituída a Dynamic Island por um orifício circular discreto e realista de câmera frontal (`.wpp-s23-camera`) no topo central.
+  - **Faixa Superior Verde Contínua**: O cabeçalho verde oficial do WhatsApp (`#005C4B`) agora se estende até a borda física superior do display (`top: 0`), integrando perfeitamente a barra de status com horário e ícones em branco puro sobre o fundo verde.
+  - **Ampliação e Destaque da Tipografia**: Fontes substancialmente aumentadas para alta legibilidade:
+    - Balão 1: Título em destaque com quebra harmônica em duas linhas (*"Entre no nosso grupo<br>WhatsApp"*, `clamp(14px, 4.6cqi, 18.5px)`, negrito 700).
+    - Balão 2: Texto nítido (*"Você irá começar a receber ofertas."*, `clamp(12.5px, 4cqi, 16px)`).
+    - Balão 3: Resposta destacada com emoji e double check azul (*"Quero as ofertas! 😍"*, `clamp(13.5px, 4.3cqi, 17px)`).
+    - Cabeçalho do chat: Nome "+B Supermercados" e avatar ampliados para leitura clara.
+  - **Remoção da Barra de Entrada Inferior**: Eliminada a barra de input para proporcionar respiro e amplitude vertical total aos 3 balões de mensagens, espelhando fielmente a proporção da foto de referência.
+  - **Tempo de Leitura Estendido**: Aumentado o intervalo de exibição com a conversa finalizada de 4.8s para **14 segundos**, permitindo leitura serena antes de qualquer reinício de loop.
+  - **Replay Instantâneo por Toque**: Clique no aparelho a qualquer instante reinicia a animação imediatamente.
+
+## [2.1.34] - 2026-09-03
+- **Recriação da Interface Animada do WhatsApp dentro do Smartphone (`src/css/wpp-animation.css`, `src/js/wpp-animation.js`, `index.html`)**:
+  - **Encaixe Preciso na Moldura do Aparelho**: Mapeamento milimétrico subpixel da área do display (`left: 12.5%`, `width: 74.61%`, `top: 11.43%`) sobrepondo a arte original `mockup-whatsapp-metade.webp`, preservando 100% da moldura fotorealista em titânio, Dynamic Island e barra de status do iPhone.
+  - **Fluxo Narrativo em 5 Cenas**:
+    1. *Cena 1 (Gaveta de Aplicativos)*: Tela inicial moderna com app Clube +B, Câmera, Fotos e o ícone do WhatsApp com badge vermelho de notificação.
+    2. *Cena 2 (Toque no WhatsApp)*: Microinteração de feedback de pressão (`scale down`).
+    3. *Cena 3 (Abertura do Aplicativo)*: Expansão orgânica e suave para a interface do WhatsApp.
+    4. *Cena 4 (Lista de Conversas)*: Interface oficial com abas e conversa do **+B Supermercados** no topo com avatar oficial e selo verde de verificação.
+    5. *Cena 5 (A Conversa em Questão)*: Header oficial verde WhatsApp (`#075E54`), status alternando entre `online` e `digitando...`, balão com 3 pontos pulsantes (`● ● ●`), 1ª mensagem recebida (*"Entre no nosso grupo WhatsApp"*), 2ª mensagem recebida (*"Você irá começar a receber ofertas."*), simulação de digitação no campo de texto e envio da 3ª mensagem do usuário (*"Quero as ofertas! 😍"*) com double check azul (`✓✓`).
+  - **Orquestração & Performance**:
+    - Centralização via máquina de estados com cancelamento e cleanup rigoroso de timers.
+    - Inicialização automática ao entrar na viewport com `IntersectionObserver` (threshold `0.3`).
+    - Método de reinício `window.restartWppAnimation()` e suporte a clique no celular para replay após o término da conversa.
+    - Suporte a `@media (prefers-reduced-motion: reduce)` exibindo o estado final diretamente.
+
 ## [2.1.33] - 2026-09-03
 - **Apontamento e Ativação do Domínio Oficial (`docker-compose.yml`, Traefik, VPS)**:
   - Configurada regra de roteamento no Traefik para aceitar simultaneamente o domínio próprio `maisbsupermercados.com.br` e o subdomínio da IDE `maisbsupermercados.suporteide.digital`: `Host(\`maisbsupermercados.suporteide.digital\`) || Host(\`maisbsupermercados.com.br\`)`.
