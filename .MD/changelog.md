@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.1] - 2026-09-25
+- **Otimização do Hero Slider para Mobile (Imagens Responsivas & Ocultação de Setas)**:
+  - **Banners Mobile Otimizados (`<picture>`)**:
+    - Substituição e entrega de imagens mobile de alta resolução e proporção otimizada (`1536x1024`, 3:2) localizadas em `assets/Page/S1 TOPO HERO/mobile/`:
+      - Slide 1: `baninho-topo-hero-mobile (1).webp` (Show de Prêmios Mais B).
+      - Slide 2: `baninho-topo-hero-mobile (2).webp` (Academia da Vida).
+      - Slide 3: `baninho-topo-hero-mobile (3).webp` (Clube +Fidelidade).
+    - Utilização da tag semântica `<picture>` com `<source media="(max-width: 768px)">` e fallback desktop, garantindo carregamento ultrarrápido sem consumir tráfego de dados desnecessário no smartphone.
+  - **Remoção das Setas de Navegação no Mobile (`(max-width: 768px)`)**:
+    - Setas de anterior/próximo (`.swiper-button-prev`, `.swiper-button-next`) do Hero Slider foram ocultadas em dispositivos móveis (`display: none !important`), priorizando a área útil do banner e navegação por toque (swipe touch).
+  - **Cache-Buster**: Atualizado `main.css?v=39.7` no `index.html`.
+
 ## [2.2.0] - 2026-09-25
 - **Implementação do Pacote Oficial de Ajustes Solicitados pelo Cliente (Setembro/2026)**:
   - **Ajuste 01 — Seção Sobre Nós (`#sobre`)**:

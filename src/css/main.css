@@ -530,6 +530,7 @@ body.drawer-open {
 .s-hero{padding:20px 0 32px}
 .hero-swiper{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
 .hero-swiper .swiper-slide a{display:block;width:100%}
+.hero-swiper .swiper-slide picture{display:block;width:100%}
 .hero-swiper .swiper-slide img{width:100%;height:auto;display:block}
 .hero-swiper .swiper-button-prev,.hero-swiper .swiper-button-next{
   width:42px;height:42px;background:rgba(0,0,0,.55);border-radius:50%;color:#fff;backdrop-filter:blur(4px);
@@ -1402,13 +1403,7 @@ body.drawer-open {
   .hero-swiper{border-radius:18px}
   .hero-swiper .swiper-button-prev,
   .hero-swiper .swiper-button-next{
-    width:32px;
-    height:32px;
-    opacity:0.8;
-  }
-  .hero-swiper .swiper-button-prev::after,
-  .hero-swiper .swiper-button-next::after{
-    font-size:12px;
+    display:none !important;
   }
 
   /* Sobre Nós no Mobile */
