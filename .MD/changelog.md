@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.2.0] - 2026-09-25
+- **Implementação do Pacote Oficial de Ajustes Solicitados pelo Cliente (Setembro/2026)**:
+  - **Ajuste 01 — Seção Sobre Nós (`#sobre`)**:
+    - Sobretítulo atualizado para `SOBRE O +B SUPERMERCADOS`.
+    - Título principal reescrito e calibrado sem ponto final: `O supermercado com a melhor experiência de compra`.
+    - Texto institucional atualizado conforme nova redação: *"Em 2015, o +B Supermercados nasceu com o propósito de transformar a sua rotina. O compromisso diário é oferecer uma estrutura acolhedora, ofertas especiais e cuidado no que faz. Tudo pensado para entregar a melhor experiência aos clientes."*
+    - Removida a barra de métricas (`.metrics-bar`) que ficava abaixo da foto.
+    - Imagem principal atualizada para a fotografia oficial da fachada da Unidade Plaza (`assets/Fotografias/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp`).
+  - **Ajuste 02 — Seção Depoimentos (`#depoimentos` e `depoimentos.html`)**:
+    - Substituição do vídeo do operador de caixa pelo novo depoimento em vídeo de Bob Menezes (`depo-bob-menezes-cliente.mp4` e `depo-bob-menezes-cliente.webm`).
+    - Geração de poster/thumbnail oficial em alta definição 9:16 (`thumb-bob-menezes.webp`).
+    - Metadados do Card 4 calibrados: Nome *"Bob Menezes"*, Função *"Fotógrafo"*, Duração *"02:12"*.
+    - Remoção do ponto final no título da seção em `index.html` e `depoimentos.html`: `A confiança de quem faz parte da nossa história`.
+  - **Diretriz de Títulos — Remoção Geral de Ponto Final**:
+    - Todos os títulos (`h2`) do site foram auditados e tiveram seus pontos finais removidos (Sobre Nós, Dias da Semana, Depoimentos, Clube Fidelidade e WhatsApp), garantindo conformidade rigorosa com a identidade visual da agência.
+  - **Seção Clube +Fidelidade (`#clube`) — Remoção dos Itens Marcados em Vermelho**:
+    - Removida a tag superior dourada `CLUBE+ FIDELIDADE`.
+    - Título atualizado sem ponto final: `Mais vantagens para você, todos os dias`.
+    - Removido o trecho *"no +B"* da descrição (*"Faça parte do Clube+ Fidelidade e aproveite benefícios exclusivos nas suas compras."*).
+    - Removida a microcopy/tagline inferior abaixo dos botões (*"Baixe. Cadastre-se. Ative. Aproveite."*).
+  - **Seção FAQ (`#faq`) — Resposta do Clube +Fidelidade**:
+    - Pergunta 2 atualizada com o texto exato solicitado pelo cliente (*"Você pode baixar gratuitamente o aplicativo do Clube +Fidelidade nas lojas de download, fazer seu cadastro informar para garantir descontos especiais nas suas compras."*).
+    - Bloco de alerta mantido com destaque: *"Importante: conclua seu cadastro para garantir todos os benefícios"*.
+
 ## [2.1.44] - 2026-09-03
 - **Refinamento da Seção WhatsApp S9 (Altura 500px, 100% Contido, Celular no Topo & Mobile Fluido)**:
   - **Dimensão e Altura do Card Contido (`.wpp-card`)**: O card preto agora possui altura exata e elegante de **`500px`** no desktop (`height: 500px; min-height: 500px;`), com `padding: 20px 56px` e `overflow: hidden`, garantindo que **absolutamente nada vaze ou corte fora da seção**.
