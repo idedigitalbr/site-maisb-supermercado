@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.2.5] - 2026-09-25
+- **Atualização do Link de Créditos da IDE Digital (Rodapé)**:
+  - Atualizado o link de direcionamento do logotipo `Desenvolvido por: ide digital` no rodapé de `index.html` e `termos-e-privacidade.html`.
+  - O link agora aponta para o site oficial: `https://digital.ideinstituto.com.br/`, mantendo abertura em nova guia (`target="_blank"` e `rel="noopener noreferrer"`).
+
 ## [2.2.4] - 2026-09-25
 - **Refatoração da Ação 'Ver no Google Maps' (S10 - Nossas Unidades)**:
   - **Remoção do Botão Interno nos Cards**: Removido o botão individual `VER NO GOOGLE MAPS` que ficava na lateral/rodapé de cada card de unidade.
