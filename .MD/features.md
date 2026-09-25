@@ -1,8 +1,8 @@
 # Features & Status de Desenvolvimento — Supermercado Mais B
 
 **Projeto**: `[SITE] MaisB Supermercado`  
-**Domínio (PRETENDIDO)**: `https://supermercadomaisb.suporte.ide.digital` (não ativo ainda)  
-**Status Geral**: `Repositório GitHub Criado e Pushed (Aguardando apenas Deploy na VPS)`  
+**Domínio Oficial (Produção VPS)**: `https://maisbsupermercados.suporteide.digital` | `https://maisbsupermercados.com.br`  
+**Status Geral**: `100% Finalizado & Deployed na VPS (Docker + Traefik + Cloudflare)`  
 
 
 ---
