@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="./src/css/main.css?v=39.7" />
+  <link rel="stylesheet" href="./src/css/main.css?v=39.9" />
   <link rel="stylesheet" href="./src/css/sections.css?v=38.1" />
   <link rel="stylesheet" href="./src/css/wpp-animation.css?v=1.8" />
 </head>
@@ -246,18 +246,32 @@
        S4: DIAS DA SEMANA
        ============================================ -->
   <section class="s-ofertas" id="ofertas">
-    <div class="container">
+    <div class="container container-ofertas">
       <div class="section-head center">
         <div class="section-head-center">
           <span class="sub-gold">DIAS DA SEMANA</span>
           <h2>Com ofertas que <span class="txt-red">rendem mais para você</span></h2>
         </div>
       </div>
-      <div class="ofertas-grid" id="ofertas-grid">
-        <div class="oferta-card"><img src="./assets/Page/CARDS - OFERTAS SEMANA/card-semana (2).webp" alt="Ofertas da Semana - No +B as ofertas da semana estão aqui" /></div>
-        <div class="oferta-card"><img src="./assets/Page/CARDS - OFERTAS SEMANA/card-semana (1).webp" alt="Quinta da Salada - Folhas e legumes fresquinhos" /></div>
-        <div class="oferta-card"><img src="./assets/Page/CARDS - OFERTAS SEMANA/card-semana (3).webp" alt="Ofertas de Açougue - Toda 4ª e 5ª feira" /></div>
-        <div class="oferta-card"><img src="./assets/Page/CARDS - OFERTAS SEMANA/card-semana (4).webp" alt="Ofertas de Peixaria - Toda 5ª e 6ª feira" /></div>
+      <div class="ofertas-carousel-wrapper">
+        <button type="button" class="ofertas-nav-btn prev" id="ofertas-prev" aria-label="Ver ofertas anteriores">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="ofertas-grid" id="ofertas-grid">
+          <div class="oferta-card"><img src="./assets/Page/CARDS - OFERTAS SEMANA/card-semana-1-segunda-da-limpeza.webp" alt="Segunda da Limpeza - Supermercado +B" loading="lazy" /></div>
+          <div class="oferta-card"><img src="./assets/Page/CARDS - OFERTAS SEMANA/card-semana-2-terca-infantil.webp" alt="Terça Infantil - Supermercado +B" loading="lazy" /></div>
+          <div class="oferta-card"><img src="./assets/Page/CARDS - OFERTAS SEMANA/card-semana-3-quarta-do-pet.webp" alt="Quarta do Pet - Supermercado +B" loading="lazy" /></div>
+          <div class="oferta-card"><img src="./assets/Page/CARDS - OFERTAS SEMANA/card-semana-4-quinta-do-horti.webp" alt="Quinta do Horti - Supermercado +B" loading="lazy" /></div>
+          <div class="oferta-card"><img src="./assets/Page/CARDS - OFERTAS SEMANA/card-semana-5-sexta-do-churrasco.webp" alt="Sexta do Churrasco - Supermercado +B" loading="lazy" /></div>
+          <div class="oferta-card"><img src="./assets/Page/CARDS - OFERTAS SEMANA/card-semana-6-sexta-do-pao.webp" alt="Sexta do Pão - Supermercado +B" loading="lazy" /></div>
+        </div>
+        <button type="button" class="ofertas-nav-btn next" id="ofertas-next" aria-label="Ver próximas ofertas">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
       </div>
       <!-- Indicadores de Carrossel Mobile (Dots + Dica de deslize) -->
       <div class="ofertas-carousel-footer" id="ofertas-carousel-footer">
@@ -270,10 +284,12 @@
           <span>Deslize para ver todos os dias</span>
         </div>
         <div class="ofertas-dots" id="ofertas-dots" aria-label="Indicadores de dias da semana">
-          <button type="button" class="oferta-dot active" data-index="0" aria-label="Ver Dia 1"></button>
-          <button type="button" class="oferta-dot" data-index="1" aria-label="Ver Dia 2"></button>
-          <button type="button" class="oferta-dot" data-index="2" aria-label="Ver Dia 3"></button>
-          <button type="button" class="oferta-dot" data-index="3" aria-label="Ver Dia 4"></button>
+          <button type="button" class="oferta-dot active" data-index="0" aria-label="Ver Dia 1 - Segunda da Limpeza"></button>
+          <button type="button" class="oferta-dot" data-index="1" aria-label="Ver Dia 2 - Terça Infantil"></button>
+          <button type="button" class="oferta-dot" data-index="2" aria-label="Ver Dia 3 - Quarta do Pet"></button>
+          <button type="button" class="oferta-dot" data-index="3" aria-label="Ver Dia 4 - Quinta do Horti"></button>
+          <button type="button" class="oferta-dot" data-index="4" aria-label="Ver Dia 5 - Sexta do Churrasco"></button>
+          <button type="button" class="oferta-dot" data-index="5" aria-label="Ver Dia 6 - Sexta do Pão"></button>
         </div>
       </div>
     </div>
@@ -1111,7 +1127,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./src/js/lucide-init.js?v=1.0"></script>
-  <script src="./src/js/main.js?v=12.1"></script>
+  <script src="./src/js/main.js?v=12.2"></script>
   <script src="./src/js/unidades.js?v=11.4"></script>
   <script src="./src/js/wpp-animation.js?v=1.6"></script>
 </body>

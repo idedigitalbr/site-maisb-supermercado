@@ -610,36 +610,112 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ── Ofertas Mobile Carousel Dots Synchronization ── */
+  /* ── Ofertas Netflix Carousel Controls (Arrows, Drag & Dots) ── */
   var ofertasGrid = document.getElementById('ofertas-grid');
+  var ofertasPrevBtn = document.getElementById('ofertas-prev');
+  var ofertasNextBtn = document.getElementById('ofertas-next');
   var ofertasDots = document.querySelectorAll('#ofertas-dots .oferta-dot');
-  if (ofertasGrid && ofertasDots.length) {
-    var updateOfertasDots = function () {
-      var scrollLeft = ofertasGrid.scrollLeft;
-      var cards = ofertasGrid.querySelectorAll('.oferta-card');
-      if (!cards.length) return;
-      var cardWidth = cards[0].offsetWidth + 12;
-      var activeIndex = Math.round(scrollLeft / cardWidth);
-      activeIndex = Math.max(0, Math.min(activeIndex, ofertasDots.length - 1));
-      ofertasDots.forEach(function (dot, idx) {
-        if (idx === activeIndex) {
-          dot.classList.add('active');
+
+  if (ofertasGrid) {
+    var updateCarouselState = function () {
+      var scrollLeft = Math.ceil(ofertasGrid.scrollLeft);
+      var maxScroll = ofertasGrid.scrollWidth - ofertasGrid.clientWidth;
+
+      if (ofertasPrevBtn && ofertasNextBtn) {
+        if (maxScroll <= 8) {
+          ofertasPrevBtn.classList.add('is-hidden');
+          ofertasNextBtn.classList.add('is-hidden');
         } else {
-          dot.classList.remove('active');
+          if (scrollLeft <= 10) {
+            ofertasPrevBtn.classList.add('is-hidden');
+          } else {
+            ofertasPrevBtn.classList.remove('is-hidden');
+          }
+
+          if (scrollLeft >= maxScroll - 10) {
+            ofertasNextBtn.classList.add('is-hidden');
+          } else {
+            ofertasNextBtn.classList.remove('is-hidden');
+          }
         }
-      });
+      }
+
+      if (ofertasDots && ofertasDots.length) {
+        var cards = ofertasGrid.querySelectorAll('.oferta-card');
+        if (cards.length) {
+          var cardWidth = cards[0].offsetWidth + 16;
+          var activeIndex = Math.round(scrollLeft / cardWidth);
+          activeIndex = Math.max(0, Math.min(activeIndex, ofertasDots.length - 1));
+          ofertasDots.forEach(function (dot, idx) {
+            if (idx === activeIndex) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
+        }
+      }
     };
 
-    ofertasGrid.addEventListener('scroll', updateOfertasDots, { passive: true });
-
-    ofertasDots.forEach(function (dot) {
-      dot.addEventListener('click', function () {
-        var idx = parseInt(dot.getAttribute('data-index'), 10);
+    if (ofertasPrevBtn) {
+      ofertasPrevBtn.addEventListener('click', function () {
         var cards = ofertasGrid.querySelectorAll('.oferta-card');
-        if (cards[idx]) {
-          cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-        }
+        var step = cards.length ? (cards[0].offsetWidth + 20) * 1.5 : 300;
+        ofertasGrid.scrollBy({ left: -step, behavior: 'smooth' });
       });
+    }
+
+    if (ofertasNextBtn) {
+      ofertasNextBtn.addEventListener('click', function () {
+        var cards = ofertasGrid.querySelectorAll('.oferta-card');
+        var step = cards.length ? (cards[0].offsetWidth + 20) * 1.5 : 300;
+        ofertasGrid.scrollBy({ left: step, behavior: 'smooth' });
+      });
+    }
+
+    ofertasGrid.addEventListener('scroll', updateCarouselState, { passive: true });
+    window.addEventListener('resize', updateCarouselState, { passive: true });
+    setTimeout(updateCarouselState, 150);
+
+    if (ofertasDots && ofertasDots.length) {
+      ofertasDots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          var idx = parseInt(dot.getAttribute('data-index'), 10);
+          var cards = ofertasGrid.querySelectorAll('.oferta-card');
+          if (cards[idx]) {
+            cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+          }
+        });
+      });
+    }
+
+    // Drag-to-scroll com mouse para Desktop
+    var isDown = false;
+    var startX, scrollLeftPos;
+
+    ofertasGrid.addEventListener('mousedown', function (e) {
+      isDown = true;
+      ofertasGrid.style.cursor = 'grabbing';
+      startX = e.pageX - ofertasGrid.offsetLeft;
+      scrollLeftPos = ofertasGrid.scrollLeft;
+    });
+
+    ofertasGrid.addEventListener('mouseleave', function () {
+      isDown = false;
+      ofertasGrid.style.cursor = '';
+    });
+
+    ofertasGrid.addEventListener('mouseup', function () {
+      isDown = false;
+      ofertasGrid.style.cursor = '';
+    });
+
+    ofertasGrid.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - ofertasGrid.offsetLeft;
+      var walk = (x - startX) * 1.5;
+      ofertasGrid.scrollLeft = scrollLeftPos - walk;
     });
   }
 

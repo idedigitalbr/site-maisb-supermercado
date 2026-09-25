@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.2.2] - 2026-09-25
+- **Atualização e Otimização dos Cards de Dias da Semana (S4 - Ofertas)**:
+  - **Remoção dos arquivos antigos**: Excluídos os 4 cards legados em `assets/Page/CARDS - OFERTAS SEMANA/`.
+  - **Conversão e Compressão WebP de Alta Performance**:
+    - Processados os 6 novos arquivos a partir de `C:\Users\ide-probook-i5\Downloads\CARDS DIA SEMANA`.
+    - Conversão para WebP de última geração (qualidade 84, compression method 6), reduzindo o peso original em ~90% (de ~11 MB combinados para ~960 KB no total) mantendo resolução nativa de 1080x1440.
+    - Nomenclatura semântica padronizada:
+      - `card-semana-1-segunda-da-limpeza.webp` (~108 KB)
+      - `card-semana-2-terca-infantil.webp` (~84 KB)
+      - `card-semana-3-quarta-do-pet.webp` (~100 KB)
+      - `card-semana-4-quinta-do-horti.webp` (~328 KB)
+      - `card-semana-5-sexta-do-churrasco.webp` (~226 KB)
+      - `card-semana-6-sexta-do-pao.webp` (~124 KB)
+  - **Estrutura HTML & Carrossel Netflix em Linha Única**:
+    - `index.html`: Seção de ofertas mantida estritamente em **1 linha contínua**, sem quebra em múltiplas linhas, com container estendido (`.container-ofertas` até 1540px) e botões de navegação lateral Netflix (`#ofertas-prev` e `#ofertas-next`).
+    - `src/css/main.css`:
+      - `.ofertas-grid` configurado como `display: flex; flex-direction: row; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory`.
+      - `.oferta-card` calibrado para manter proporção vertical e largura confortável (`240px`, com peeking do próximo card nas laterais em telas menores e preenchimento total em telas ultra-wide).
+      - Removida quebra de 2 colunas do tablet (1024px) para garantir fluidez contínua horizontal em todos os dispositivos.
+      - Botões de navegação estilizados com visual dark premium (`#141414`), transição e hover dourado/vermelho.
+    - `src/js/main.js`:
+      - Controles inteligentes do carrossel: rolagem suave por clique nas setas, ocultação dinâmica quando não há mais conteúdo para rolar (`is-hidden`), sincronização dos indicadores (*dots*) e suporte a arrastar com o mouse (*drag-to-scroll*).
+    - Cache-busters atualizados: `main.css?v=39.9` e `main.js?v=12.2`.
+
 ## [2.2.1] - 2026-09-25
 - **Otimização do Hero Slider para Mobile (Imagens Responsivas & Ocultação de Setas)**:
   - **Banners Mobile Otimizados (`<picture>`)**:
