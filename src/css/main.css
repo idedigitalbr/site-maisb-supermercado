@@ -1353,21 +1353,65 @@ body.drawer-open {
   font-weight:700;
 }
 
-.btn-maps{
-  align-self:flex-start;font-size:.68rem;font-weight:800;
-  border:1px solid #555;padding:3px 10px;border-radius:var(--r-full);
-  margin-top:2px;color:#fff;transition:all var(--ease);
-}
-.btn-maps:hover{border-color:var(--gold);color:var(--gold)}
-.unid-map{border-radius:var(--r-lg);overflow:hidden;min-height:480px;border:1px solid var(--dark-border)}
+.unid-map{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:480px;border:1px solid var(--dark-border)}
 .unid-map iframe{display:block;width:100%;height:100%;min-height:480px;border:0}
+
+/* Botão Flutuante 'Como Chegar' sobre o Google Maps */
+.map-directions-btn{
+  position:absolute;
+  bottom:24px;
+  left:50%;
+  transform:translate(-50%, 14px);
+  z-index:10;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  background:#111111;
+  border:1.5px solid var(--gold);
+  border-radius:var(--r-full);
+  padding:9px 20px;
+  color:#fff;
+  text-decoration:none;
+  font-family:var(--font-sans);
+  font-size:.85rem;
+  font-weight:800;
+  letter-spacing:-0.01em;
+  white-space:nowrap;
+  box-shadow:0 4px 18px rgba(0,0,0,0.5), 0 0 12px rgba(221,167,18,0.25);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .3s ease, transform .3s cubic-bezier(0.16, 1, 0.3, 1), background var(--ease), border-color var(--ease), box-shadow var(--ease);
+  cursor:pointer;
+}
+.map-directions-btn.is-active{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translate(-50%, 0);
+}
+.map-directions-btn:hover{
+  background:#000000;
+  border-color:#f4c542;
+  color:#fff;
+  transform:translate(-50%, -2px);
+  box-shadow:0 6px 24px rgba(0,0,0,0.65), 0 0 18px rgba(221,167,18,0.45);
+}
+.map-directions-btn:active{
+  transform:translate(-50%, 0);
+}
+.map-directions-icon-pin,
+.map-directions-icon-link{
+  flex-shrink:0;
+  color:#fff;
+}
 
 /* ──────────────────────────────────────────────
    S11  FOOTER
    ────────────────────────────────────────────── */
 .s-footer{background:var(--black);color:#fff;padding:56px 0 24px}
 .footer-center{text-align:center;max-width:540px;margin:0 auto 36px;display:flex;flex-direction:column;align-items:center}
-.footer-logo{height:56px;margin-bottom:14px}
+.footer-logo{height:56px;margin-bottom:22px}
 .footer-slogan{font-size:.92rem;color:#999;line-height:1.5;margin-bottom:22px;font-style:italic}
 .footer-socials{display:flex;gap:14px}
 .footer-socials a{
@@ -1681,11 +1725,23 @@ body.drawer-open {
   .unit-card-title h3{font-size:0.78rem}
   .unid-map{min-height:320px;height:320px;border-radius:16px;margin-top:14px}
   .unid-map iframe{min-height:320px;height:320px}
+  .map-directions-btn{
+    bottom:14px;
+    max-width:calc(100% - 24px);
+    padding:7px 14px;
+    font-size:.76rem;
+    gap:6px;
+  }
+  .map-directions-text{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
 
   /* Rodapé no Mobile */
   .s-footer{padding:48px 0 24px}
   .footer-center{margin-bottom:28px}
-  .footer-logo{height:48px}
+  .footer-logo{height:48px;margin-bottom:18px}
   .footer-slogan{font-size:0.86rem;margin-bottom:18px}
   .footer-socials a{width:38px;height:38px}
   .footer-bottom{grid-template-columns:1fr;gap:10px;text-align:center;justify-items:center;font-size:0.78rem}

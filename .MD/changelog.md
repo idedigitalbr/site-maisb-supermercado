@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.4] - 2026-09-25
+- **Refatoração da Ação 'Ver no Google Maps' (S10 - Nossas Unidades)**:
+  - **Remoção do Botão Interno nos Cards**: Removido o botão individual `VER NO GOOGLE MAPS` que ficava na lateral/rodapé de cada card de unidade.
+  - **Novo Botão Flutuante sobre o Mapa ('Como chegar')**:
+    - Implementado o botão em formato de pílula estilizada flutuando diretamente sobre o mapa (`.map-directions-btn`), com borda dourada radiante (`var(--gold)`), fundo escuro (`#111`), sombra e cantos totalmente arredondados (`var(--r-full)`).
+    - Ícone de marcador de localização (`map-pin`) à esquerda e ícone de abertura externa à direita.
+    - O botão surge dinamicamente com animação suave quando o cliente clica em qualquer card de unidade (`selectUnit`), calibrando automaticamente o nome da unidade (`Como chegar em +B Supermercados (${unit.shortName})`) e o link direto correspondente no Google Maps.
+    - Responsividade ajustada para mobile com posicionamento a 14px do rodapé do mapa e truncamento de texto se necessário.
+  - **Cache-Busters**: Atualizados `main.css?v=40.1` e `unidades.js?v=11.5`.
+
+## [2.2.3] - 2026-09-25
+- **Remoção do Slogan Institucional do Rodapé (S11 - Footer)**:
+  - Removido o bloco de texto/slogan (`<p class="footer-slogan">Cada dia melhor pra você.<br>O supermercado com a melhor experiência de compra.</p>`) do rodapé em `index.html` e `termos-e-privacidade.html`.
+  - Calibrado o espaçamento inferior da logo do rodapé (`.footer-logo` com `margin-bottom: 22px` no desktop e `18px` no mobile em `src/css/main.css`) para garantir harmonia visual e respiro adequado diretamente antes dos ícones de redes sociais.
+  - Atualização do versionamento de cache para `main.css?v=40.0`.
+
 ## [2.2.2] - 2026-09-25
 - **Atualização e Otimização dos Cards de Dias da Semana (S4 - Ofertas)**:
   - **Remoção dos arquivos antigos**: Excluídos os 4 cards legados em `assets/Page/CARDS - OFERTAS SEMANA/`.

@@ -167,8 +167,6 @@ function renderCards(units) {
               </div>
             </div>
           </div>
-
-          <a href="${unit.googleMapsUrl}" target="_blank" rel="noopener" class="btn-maps" onclick="event.stopPropagation();">VER NO GOOGLE MAPS</a>
         </div>
       </div>
     `;
@@ -199,6 +197,15 @@ function selectUnit(unitId) {
   if (activeCard) {
     activeCard.classList.add('active');
     activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Atualizar e exibir botão 'Como chegar' flutuante sobre o mapa
+  const directionsBtn = document.getElementById('map-directions-btn');
+  const directionsText = document.getElementById('map-directions-text');
+  if (directionsBtn && directionsText) {
+    directionsBtn.href = unit.googleMapsUrl;
+    directionsText.textContent = `Como chegar em +B Supermercados (${unit.shortName})`;
+    directionsBtn.classList.add('is-active');
   }
 }
 
