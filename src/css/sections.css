@@ -320,20 +320,20 @@ p {
   display: block !important;
 }
 
-/* Kicker Badge "DEPOIMENTOS" (Pill Dourado Fino) */
+/* Kicker Badge "DEPOIMENTOS" (Maior Destaque Visual) */
+.testimonials-kicker,
+.testimonials-copy-col .sub-gold,
 .testimonial-badge-kicker {
   background: transparent !important;
-  border: 1.5px solid rgba(221, 167, 18, 0.4) !important;
+  border: none !important;
   color: #dda712 !important;
-  font-weight: 700 !important;
-  font-size: 0.72rem !important;
-  letter-spacing: 2px !important;
-  padding: 6px 18px !important;
-  border-radius: 99px !important;
-  margin-bottom: 20px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  letter-spacing: 3px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin-bottom: 14px !important;
+  display: inline-block !important;
   text-transform: uppercase !important;
 }
 
@@ -351,6 +351,16 @@ p {
   color: #ffffff !important;
   margin-bottom: 0 !important;
   text-align: left !important;
+}
+
+.testimonials-heading .testimonials-line-1 {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.testimonials-heading .testimonials-line-2 {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .testimonials-heading .highlight-red,
@@ -633,15 +643,29 @@ p {
     text-align: center !important;
     align-items: center !important;
   }
+  /* Ocultar logo branca no mobile conforme solicitação do Jr */
   .testimonials-brand-logo {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    height: 42px !important;
+    display: none !important;
+  }
+  .testimonials-kicker,
+  .testimonials-copy-col .sub-gold,
+  .testimonial-badge-kicker {
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    letter-spacing: 3px !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
+    display: inline-block !important;
   }
   .testimonials-heading {
-    font-size: 25px !important;
+    font-size: clamp(17px, 4.6vw, 24px) !important;
     line-height: 1.25 !important;
     text-align: center !important;
+  }
+  .testimonials-heading .testimonials-line-1,
+  .testimonials-heading .testimonials-line-2 {
+    display: inline-block !important;
+    white-space: nowrap !important;
   }
   .testimonials-subheading {
     text-align: center !important;
@@ -693,6 +717,9 @@ p {
     padding: 40px 0 38px !important;
     border-radius: 22px !important;
   }
+  .testimonials-section-premium > .container {
+    padding: 0 16px !important;
+  }
   .testimonials-carousel-wrapper {
     max-width: 296px !important;
     padding: 0 34px !important;
@@ -705,7 +732,13 @@ p {
     flex: 0 0 228px !important;
   }
   .testimonials-heading {
-    font-size: 22px !important;
+    font-size: clamp(16px, 4.4vw, 20px) !important;
+    line-height: 1.24 !important;
+  }
+  .testimonials-heading .testimonials-line-1,
+  .testimonials-heading .testimonials-line-2 {
+    display: inline-block !important;
+    white-space: nowrap !important;
   }
 }
 

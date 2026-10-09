@@ -1,5 +1,38 @@
 # Changelog
 
+## [2.2.8] - 2026-10-09
+- **Ajuste de Tipografia e Quebra de Linha Mobile (S2 - Sobre o +B Supermercados)**:
+  - **Correção da Palavra Órfã / Espaço Vazio ("Letra Vazia") no Mobile**:
+    - Corrigido o título `.sobre-title` onde a palavra *"melhor"* quebrava para a segunda linha isolada, deixando um espaço vazio ao lado antes do `<br>` com *"experiência de compra"*.
+  - **Estruturação por Spans Atômicos (`index.html`)**:
+    - O título foi envolvido em spans delimitadores: `<span class="sobre-title-line-1">O supermercado com a melhor</span>` e `<span class="txt-red sobre-title-line-2">experiência de compra</span>`.
+  - **Escala Tipográfica Fluida e Não-Quebra (`src/css/main.css`)**:
+    - Aplicado `text-wrap: balance` e `display: inline-block` nas linhas do título.
+    - No mobile (`<=480px`), o tamanho de fonte foi calibrado para `font-size: clamp(17px, 4.8vw, 20.5px)` e `white-space: nowrap`, acomodando toda a primeira linha de forma harmoniosa mesmo com a margem lateral de 37px solicitada pelo cliente.
+    - Telas ultra-compactas (`<=360px`) ajustadas para `16.5px`.
+  - **Cache-Buster**: Atualização de `main.css?v=40.3`.
+
+- **Refatoração Mobile da Seção de Depoimentos (S5 - Depoimentos)**:
+  - **Ocultação da Logomarca Branca no Mobile**:
+    - Ocultada a logomarca monocromática (`.testimonials-brand-logo { display: none !important; }`) em telas mobile/tablet (`<=991px`), eliminando redundância com a logo colorida do cabeçalho fixo e liberando respiro visual.
+  - **Maior Destaque no Kicker 'DEPOIMENTOS'**:
+    - Aumentado o peso tipográfico para `800`, tamanho de fonte para `15px` e espaçamento entre letras (`letter-spacing: 3px`) com cor dourada radiante (`var(--gold, #dda712)`), dando protagonismo à introdução da seção.
+  - **Título Restrito Estritamente a 2 Linhas no Mobile**:
+    - Estruturado o título institucional em spans delimitadores (`.testimonials-line-1` e `.testimonials-line-2`) com `white-space: nowrap !important; display: inline-block !important;` e dimensionamento fluido via `clamp()`.
+    - Garantido que o título quebre exclusivamente em duas linhas em qualquer largura de tela:
+      - *Linha 1:* "A experiência +B que conquista"
+      - *Linha 2:* "todos os dias"
+    - Eliminada definitivamente a quebra indesejada em três linhas.
+  - **Arquivos e Cache-Buster**:
+    - `src/css/sections.css`: atualizado com as novas regras responsivas e desktop.
+    - `index.html`: atualizado cache-buster para `sections.css?v=38.2` e markup semântico.
+    - `depoimentos.html`: alinhados estilos internos e externos com as mesmas diretrizes.
+
+## [2.2.7] - 2026-10-09
+- **Remoção do Banner 'Academia da Vida' do Carrossel Hero (S1 - Topo Hero)**:
+  - Removido o slide com o banner da campanha encerrada "Academia da Vida" (`BANNER-TOPO (2).webp` / `baninho-topo-hero-mobile (2).webp`) do carrossel principal em `index.html`.
+  - Mantidos os slides ativos: Show de Prêmios Mais B (com link oficial) e Clube +Fidelidade Mais B.
+
 ## [2.2.6] - 2026-10-09
 - **Inclusão da Unidade +B Grão Pará nos Horários de Funcionamento do FAQ (S8 - Dúvidas Frequentes)**:
   - Adicionado o card de horário da unidade **+B Grão Pará** na pergunta *"Qual o horário de funcionamento das unidades do +B?"* em `index.html`.

@@ -15,7 +15,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./src/css/main.css?v=11.2" />
-  <link rel="stylesheet" href="./src/css/sections.css?v=37.2" />
+  <link rel="stylesheet" href="./src/css/sections.css?v=38.2" />
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
   <style>
@@ -150,20 +150,19 @@
       display: block !important;
     }
 
-    /* Kicker Badge "DEPOIMENTOS" (Pill Dourado Fino) */
+    /* Kicker Badge "DEPOIMENTOS" (Maior Destaque Visual) */
+    .testimonials-kicker,
     .testimonial-badge-kicker {
       background: transparent !important;
-      border: 1.5px solid rgba(221, 167, 18, 0.4) !important;
+      border: none !important;
       color: #dda712 !important;
-      font-weight: 700 !important;
-      font-size: 0.72rem !important;
-      letter-spacing: 2px !important;
-      padding: 6px 18px !important;
-      border-radius: 99px !important;
-      margin-bottom: 20px !important;
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
+      font-weight: 800 !important;
+      font-size: 15px !important;
+      letter-spacing: 3px !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      margin-bottom: 14px !important;
+      display: inline-block !important;
       text-transform: uppercase;
     }
 
@@ -182,7 +181,18 @@
       margin-bottom: 0 !important;
     }
 
-    .testimonials-heading .highlight-red {
+    .testimonials-heading .testimonials-line-1 {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .testimonials-heading .testimonials-line-2 {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .testimonials-heading .highlight-red,
+    .testimonials-heading .txt-gold {
       color: #dda712 !important;
     }
 
@@ -417,6 +427,29 @@
         text-align: center;
         align-items: center;
       }
+      /* Ocultar logo branca no mobile (solicitação Jr) */
+      .testimonials-brand-logo {
+        display: none !important;
+      }
+      .testimonials-kicker,
+      .testimonial-badge-kicker {
+        font-size: 15px !important;
+        font-weight: 800 !important;
+        letter-spacing: 3px !important;
+        margin-bottom: 12px !important;
+        text-align: center !important;
+        display: inline-block !important;
+      }
+      .testimonials-heading {
+        font-size: clamp(17px, 4.6vw, 24px) !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .testimonials-heading .testimonials-line-1,
+      .testimonials-heading .testimonials-line-2 {
+        display: inline-block !important;
+        white-space: nowrap !important;
+      }
       .testimonials-carousel-wrapper {
         grid-column: 1 !important;
         grid-row: 2 !important;
@@ -431,6 +464,21 @@
         min-width: 205px !important;
         max-width: 205px !important;
         height: 364px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .testimonials-section-premium {
+        padding: 20px 10px !important;
+      }
+      .testimonials-heading {
+        font-size: clamp(16px, 4.4vw, 20px) !important;
+        line-height: 1.24 !important;
+      }
+      .testimonials-heading .testimonials-line-1,
+      .testimonials-heading .testimonials-line-2 {
+        display: inline-block !important;
+        white-space: nowrap !important;
       }
     }
   </style>
@@ -457,8 +505,8 @@
         <!-- Coluna 1 (Esquerda): Texto de Apresentação -->
         <div class="testimonials-copy-col">
           <img src="./assets/Logos/mono/LOGO-MAISB-SUPERMERCADO-MONO-WHITE.png" alt="Supermercados Mais B" class="testimonials-brand-logo" />
-          <span class="testimonial-badge-kicker">DEPOIMENTOS</span>
-          <h2 class="testimonials-heading">A experiência +B que conquista<br><span class="highlight-red">todos os dias</span></h2>
+          <span class="testimonial-badge-kicker testimonials-kicker">DEPOIMENTOS</span>
+          <h2 class="testimonials-heading"><span class="testimonials-line-1">A experiência +B que conquista</span><br><span class="testimonials-line-2 highlight-red txt-gold">todos os dias</span></h2>
           <div class="testimonials-divider"></div>
           <p class="testimonials-subheading">Cuidado em cada detalhe e uma experiência de compra que faz o cliente +B ter a melhor escolha todos os dias.</p>
         </div>

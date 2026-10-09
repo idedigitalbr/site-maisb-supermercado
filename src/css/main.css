@@ -545,7 +545,9 @@ body.drawer-open {
 .s-sobre{padding:60px 0 70px;background:var(--cream);position:relative}
 .sobre-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px, 5.5vw, 68px);align-items:center}
 .sobre-text{padding-top:0;min-width:0;max-width:540px}
-.sobre-title{font-family:var(--font-sans);font-size:var(--h2-size);font-weight:var(--h2-weight);line-height:var(--h2-lh);letter-spacing:var(--h2-spacing);color:#111;margin-bottom:16px}
+.sobre-title{font-family:var(--font-sans);font-size:var(--h2-size);font-weight:var(--h2-weight);line-height:var(--h2-lh);letter-spacing:var(--h2-spacing);color:#111;margin-bottom:16px;text-wrap:balance}
+.sobre-title .sobre-title-line-1,
+.sobre-title .sobre-title-line-2{display:inline-block}
 .sobre-line{width:50px;height:3px;background:var(--red);margin-bottom:22px}
 .sobre-text p{font-family:var(--font-sans);font-size:var(--p-size);font-weight:var(--p-weight);line-height:var(--p-lh);color:#555;margin-bottom:16px;font-style:normal;text-align:justify;text-justify:inter-word}
 .sobre-visual{display:flex;flex-direction:column;gap:0;position:relative;min-width:0}
@@ -1532,7 +1534,7 @@ body.drawer-open {
   /* Sobre Nós no Mobile */
   .s-sobre{padding:44px 0 48px}
   .sobre-layout{gap:28px}
-  .sobre-title{font-size:26px;line-height:1.2;margin-bottom:14px}
+  .sobre-title{font-size:clamp(21px, 3.8vw, 26px);line-height:1.22;margin-bottom:14px}
   .sobre-line{margin-bottom:16px}
   .sobre-text p{
     text-align:justify !important;
@@ -1770,7 +1772,15 @@ body.drawer-open {
   }
 
   .s-sobre{padding:38px 0 42px}
-  .sobre-title{font-size:23px}
+  .sobre-title{
+    font-size:clamp(17px, 4.8vw, 20.5px);
+    line-height:1.24;
+  }
+  .sobre-title .sobre-title-line-1,
+  .sobre-title .sobre-title-line-2{
+    display:inline-block;
+    white-space:nowrap;
+  }
   .metrics-bar{padding:6px 8px}
   .metric{padding:8px 6px;gap:6px}
   .metric strong{font-size:0.8rem}
@@ -1805,6 +1815,7 @@ body.drawer-open {
 }
 
 @media(max-width:360px){
+  .sobre-title{font-size:16.5px}
   .oferta-card{flex:0 0 134px !important;width:134px !important}
   .metrics-bar{grid-template-columns:1fr}
   .metric{border-right:none !important;border-bottom:1px solid rgba(255,255,255,0.12) !important}
