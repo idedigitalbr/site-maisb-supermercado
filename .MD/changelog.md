@@ -1,5 +1,36 @@
 # Changelog
 
+## [2.2.10] - 2026-10-09
+- **Correção de Corte e Alinhamento Lateral no Mobile (S9 - CTA WhatsApp)**:
+  - **Causa Raiz do Corte no Lado Direito**:
+    - O mockup interativo do smartphone (`.wpp-phone-container`) utilizava `width: min(300px, calc(100vw - 74px))` com `box-shadow` externo de 10px em cada lado, ignorando o padding interno do `.wpp-card` (24px/18px). Isso fazia o aparelho ter largura superior à largura útil interna do card, empurrando o chassi e cortando a lateral direita pela regra de `overflow: hidden`.
+    - Os containers internos `.wpp-left`, `.wpp-text-content` e `.wpp-right` mantinham propriedades desktop herdadas sem `width: 100%`, gerando assimetria (24px na margem esquerda e apenas 2px na margem direita), cortando a pontuação final (`!`) do parágrafo e a lateral do botão.
+  - **Refatoração Estrutural e Contenção Fluida (`src/css/main.css`)**:
+    - Convertido o layout mobile de `.wpp-card` para `display: flex; flex-direction: column; align-items: center` com `width: 100%; box-sizing: border-box`.
+    - Estabelecido `width: 100%; max-width: 100%` com `text-align: center` em `.wpp-left`, `.wpp-text-content` e `.wpp-right`.
+    - O botão `.btn-wpp-white` agora possui `max-width: 290px; margin: 0 auto` (e `265px` em telas pequenas), permanecendo perfeitamente centralizado com folga nas duas bordas.
+    - O texto do parágrafo recebeu `text-wrap: balance` e `margin: 0 auto 18px`, eliminando estouros de linha.
+  - **Calibração Responsiva do Smartphone Animado (`src/css/wpp-animation.css`)**:
+    - Redefinido o dimensionamento para `width: 100%; max-width: min(280px, calc(100% - 24px))` em `<=900px`, `max-width: min(255px, calc(100% - 20px))` em `<=480px`, e `max-width: min(230px, calc(100% - 16px))` em `<=360px`.
+    - Suavizado o `box-shadow` externo no mobile e garantido que as molduras esquerda e direita fiquem 100% íntegras e visíveis, com respiro simétrico.
+  - **Cache-Buster**: Atualização de `main.css?v=40.5` e `wpp-animation.css?v=1.9` em `index.html`.
+
+## [2.2.9] - 2026-10-09
+- **Ajuste de Tipografia, Quebra de Linha e Remoção de Vão Mobile (S6 - Clube+ Fidelidade)**:
+  - **Correção da Linha Órfã e Quebra Incorreta no Headline**:
+    - O título `.clube-title` quebrava a palavra *"você,"* para uma segunda linha isolada e empurrava *"todos os dias"* para uma terceira linha, gerando um vão/buraco vazio visível na headline.
+    - Estruturado o título com spans semânticos atômicos em `index.html`:
+      - `<span class="clube-title-line-1">Mais vantagens para você,</span><br>`
+      - `<span class="clube-title-highlight clube-title-line-2">todos os dias</span>`
+    - No CSS desktop e mobile, aplicadas propriedades `text-wrap: balance` e `display: inline-block`.
+    - No mobile (`<=768px` e `<=480px`), calibrado o dimensionamento fluido com `clamp()` e `white-space: nowrap`, garantindo que a Linha 1 caiba integralmente em uma linha sem deixar palavras órfãs.
+    - Telas ultra-compactas (`<=360px`): calibrado para `16px` e container lateral proporcional de 18px.
+  - **Eliminação do Vão Superior e Ajuste de Ancoragem (Mobile)**:
+    - Corrigido o `scroll-margin-top` da seção de 85px para 60px no mobile, evitando que a rolagem/clique pelo botão *"Clube"* mostrasse resquícios da seção anterior escura.
+    - Reduzido o padding vertical de `.s-clube` de 38px para 14px no mobile, eliminando o vão em branco excessivo acima do card bege.
+    - Ajustado o padding interno do topo do card (`.clube-content`) para 22px (em vez de 26px/32px) para proporção visual perfeita.
+  - **Cache-Buster**: Atualização de `main.css?v=40.4` em `index.html`.
+
 ## [2.2.8] - 2026-10-09
 - **Ajuste de Tipografia e Quebra de Linha Mobile (S2 - Sobre o +B Supermercados)**:
   - **Correção da Palavra Órfã / Espaço Vazio ("Letra Vazia") no Mobile**:
