@@ -1098,7 +1098,10 @@ body.drawer-open {
   color:#1a1a1a;font-weight:600;
 }
 .faq-schedule-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;margin-bottom:4px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px;margin-bottom:4px;
+}
+@media(max-width:860px){
+  .faq-schedule-grid{grid-template-columns:repeat(2,1fr)}
 }
 .faq-schedule-card{
   background:#faf8f5;border:1px solid #eee7db;border-radius:var(--r-sm,8px);padding:12px 14px;border-top:3px solid var(--gold,#dda712);transition:transform .2s ease,box-shadow .2s ease;
@@ -1688,7 +1691,7 @@ body.drawer-open {
   .faq-plus{font-size:1.3rem}
   .faq-item.open .faq-a{padding:0 18px 20px}
   .faq-a p{font-size:0.88rem;line-height:1.6;text-align:justify !important;text-justify:inter-word !important}
-  .faq-schedule-grid{grid-template-columns:1fr;gap:10px}
+  .faq-schedule-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 
   /* CTA WhatsApp no Mobile */
   .s-wpp{padding:0 0 54px}
@@ -1791,6 +1794,7 @@ body.drawer-open {
 
   .faq-q{padding:13px 14px;font-size:0.9rem}
   .faq-item.open .faq-a{padding:0 14px 16px}
+  .faq-schedule-grid{grid-template-columns:1fr;gap:10px}
 
   .wpp-card{padding:28px 18px 24px;border-radius:20px}
   .wpp-gold-badge svg{width:50px;height:50px}

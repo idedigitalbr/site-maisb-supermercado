@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.6] - 2026-10-09
+- **Inclusão da Unidade +B Grão Pará nos Horários de Funcionamento do FAQ (S8 - Dúvidas Frequentes)**:
+  - Adicionado o card de horário da unidade **+B Grão Pará** na pergunta *"Qual o horário de funcionamento das unidades do +B?"* em `index.html`.
+  - Horários padronizados idênticos aos da unidade Plaza conforme solicitação:
+    - *Segunda a sábado e feriados:* das 7h às 22h
+    - *Domingos:* das 7h30 às 21h
+  - **Grid & Responsividade (`src/css/main.css`)**:
+    - Ajustado o layout de `.faq-schedule-grid` para 4 colunas no desktop (`repeat(4, 1fr)`).
+    - Breakpoint para tablet (`<=860px` / `<=768px`) com 2 colunas (`repeat(2, 1fr)`), mantendo harmonia em 2 linhas de 2 cards.
+    - Breakpoint para mobile (`<=480px`) em coluna única (`1fr`), garantindo leitura confortável em smartphones.
+  - **Cache-Buster**: Atualização de `main.css?v=40.2`.
+- **Padronização das Redes Sociais Oficiais no Rodapé e Topo (`index.html`, `termos-e-privacidade.html`)**:
+  - Ajustados os botões sociais conforme solicitação da diretoria: mantidos exclusivamente os 4 canais oficiais de redes sociais: **Instagram**, **Facebook**, **YouTube** e **TikTok**.
+  - Removidos os botões de lojas de aplicativos (Google Play e App Store) do bloco de redes sociais do rodapé (`.footer-socials`), uma vez que os downloads do aplicativo já contam com seção exclusiva (`#clube`).
+  - Inserido o link oficial do TikTok (`https://www.tiktok.com/@maisbsupermercados`) com ícone SVG estilizado no rodapé, na topbar e no drawer de navegação mobile.
+
 ## [2.2.5] - 2026-09-25
 - **Atualização do Link de Créditos da IDE Digital (Rodapé)**:
   - Atualizado o link de direcionamento do logotipo `Desenvolvido por: ide digital` no rodapé de `index.html` e `termos-e-privacidade.html`.
