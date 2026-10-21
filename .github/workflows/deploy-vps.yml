@@ -82,6 +82,13 @@ jobs:
           echo "=== DIAGNOSTICO: CONTAINER E ROTEAMENTO ==="
           docker ps --format 'table {{.Names}}\t{{.Ports}}' | head -25 || true
           docker inspect -f '{{json .Config.Labels}}' site-maisb-supermercado-web || true
+          echo "=== DIAGNOSTICO: MIGRATION PROXY E TRAEFIK ==="
+          docker ps --format '{{.Names}} | {{.Image}} | {{.Ports}}' | grep -Ei 'traefik|supermercado|migration-proxy' || true
+          docker inspect -f 'migration-proxy labels: {{json .Config.Labels}}' site-maisb-supermercado-migration-proxy || true
+          docker inspect -f 'migration-proxy networks: {{range $k,$v:=.NetworkSettings.Networks}}{{$k}} {{end}}' site-maisb-supermercado-migration-proxy || true
+          docker inspect -f 'new-web networks: {{range $k,$v:=.NetworkSettings.Networks}}{{$k}} {{end}}' site-maisb-supermercado-web || true
+          echo "=== DIAGNOSTICO: ARQUIVOS DE ROTEAMENTO ==="
+          find /opt/migrated-stacks -maxdepth 2 -type f -iname '*supermercado*' -o -path '*supermercado*/compose.json' 2>/dev/null | head -12 || true
           echo "=== DIAGNOSTICO: HTTPS LOCAL NA VPS ==="
           curl -ksS --max-time 12 --resolve maisbsupermercados.com.br:443:127.0.0.1 https://maisbsupermercados.com.br/ | grep -o 'fachada-maisb-home-sobre-2026-10-21.jpg\|unid-plaza-foto-de-fachada-vila-plaza.webp' | head -5 || true
           
