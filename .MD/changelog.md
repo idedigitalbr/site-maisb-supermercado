@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.11] - 2026-10-21
+- **Atualização da Fachada Institucional (S2 - Sobre o +B Supermercados)**:
+  - Substituição da fotografia da fachada na seção "Sobre o +B Supermercados" (.s-sobre) pela imagem oficial da nova fachada com o logotipo "+B Supermercados", marquise arquitetônica e vidraçaria frontal.
+  - Calibração da proporção para `aspect-ratio: 4 / 5` e `object-position: center`, correspondente à resolução nativa da foto (819x1024), exibindo 100% da fachada (marquise superior curva, letreiro central e vitrine térrea) sem cortes indesejados.
+  - Implementação de cache-buster nos assets afetados (index.html com main.css?v=40.7 e fachada-maisb-home-sobre-2026-10-21.jpg?v=2).
+
 ## [2.2.10] - 2026-10-09
 - **Correção de Corte e Alinhamento Lateral no Mobile (S9 - CTA WhatsApp)**:
   - **Causa Raiz do Corte no Lado Direito**:
