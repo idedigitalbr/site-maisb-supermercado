@@ -99,6 +99,17 @@ jobs:
         shell: bash
         run: |
           set -uo pipefail
+          echo "===== ORIGIN IP COMPARISON ====="
+          for addr in 161.97.108.92 179.236.75.128; do
+            echo "ORIGIN: $addr"
+            tmp="$(mktemp)"
+            hdr="$(mktemp)"
+            curl -ksSL --max-time 15 --resolve "maisbsupermercados.com.br:443:$addr" -D "$hdr" -o "$tmp" "https://maisbsupermercados.com.br/?_origin_check=${GITHUB_SHA}" || true
+            awk 'BEGIN{IGNORECASE=1} /^HTTP\/|^server:|^location:/ {print}' "$hdr" | tail -8
+            echo "origin_bytes=$(wc -c < "$tmp")"
+            if grep -Fq 'fachada-maisb-home-sobre-2026-10-21.jpg' "$tmp"; then echo "ORIGIN_RESULT: NEW_PHOTO"; elif grep -Fq 'unid-plaza-foto-de-fachada-vila-plaza.webp' "$tmp"; then echo "ORIGIN_RESULT: OLD_PHOTO"; else echo "ORIGIN_RESULT: NOT_THE_EXPECTED_HTML"; fi
+            rm -f "$tmp" "$hdr"
+          done
           for host in maisbsupermercados.com.br www.maisbsupermercados.com.br maisbsupermercados.suporteide.digital; do
             echo "===== PUBLIC CHECK: $host ====="
             getent ahostsv4 "$host" | awk 'NR <= 3 {print "DNS: " $1}' || true
