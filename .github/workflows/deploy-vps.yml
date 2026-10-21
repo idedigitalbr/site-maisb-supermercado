@@ -73,6 +73,17 @@ jobs:
           git clean -fd
           
           docker compose up -d --build --remove-orphans
+
+          echo "=== DIAGNOSTICO: IMAGEM ATIVA NO CONTAINER ==="
+          docker exec site-maisb-supermercado-web sh -c 'grep -o "fachada-maisb-home-sobre-2026-10-21.jpg\|unid-plaza-foto-de-fachada-vila-plaza.webp" /usr/share/nginx/html/index.html | head -5' || true
+          docker exec site-maisb-supermercado-web sh -c 'ls -l /usr/share/nginx/html/assets/Fotografias/01_Fachadas/fachada-maisb-home-sobre-2026-10-21.jpg' || true
+          echo "=== DIAGNOSTICO: CONTÊINER VIA NGINX INTERNO ==="
+          docker exec site-maisb-supermercado-web sh -c 'wget -qO- http://127.0.0.1/ | grep -o "fachada-maisb-home-sobre-2026-10-21.jpg\|unid-plaza-foto-de-fachada-vila-plaza.webp" | head -5' || true
+          echo "=== DIAGNOSTICO: CONTAINER E ROTEAMENTO ==="
+          docker ps --format 'table {{.Names}}\t{{.Ports}}' | head -25 || true
+          docker inspect -f '{{json .Config.Labels}}' site-maisb-supermercado-web || true
+          echo "=== DIAGNOSTICO: HTTPS LOCAL NA VPS ==="
+          curl -ksS --max-time 12 --resolve maisbsupermercados.com.br:443:127.0.0.1 https://maisbsupermercados.com.br/ | grep -o 'fachada-maisb-home-sobre-2026-10-21.jpg\|unid-plaza-foto-de-fachada-vila-plaza.webp' | head -5 || true
           
           REMOTE
 
@@ -87,8 +98,8 @@ jobs:
             body="$(mktemp)"
             headers="$(mktemp)"
             url="https://$host/?_ci_check=${GITHUB_SHA}"
-            curl -LsS --max-time 18 -H "Cache-Control: no-cache" -H "Pragma: no-cache" -D "$headers" -o "$body" "$url"
-            rc=$?
+            rc=0
+            curl -LsS --max-time 18 -H "Cache-Control: no-cache" -H "Pragma: no-cache" -D "$headers" -o "$body" "$url" || rc=$?
             echo "curl_exit=$rc"
             awk 'BEGIN{IGNORECASE=1} /^HTTP\/|^server:|^cf-cache-status:|^location:|^age:|^content-type:/ {print}' "$headers" | tail -18
             echo "received_bytes=$(wc -c < "$body")"
