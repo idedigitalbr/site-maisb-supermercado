@@ -552,7 +552,7 @@ body.drawer-open {
 .sobre-text p{font-family:var(--font-sans);font-size:var(--p-size);font-weight:var(--p-weight);line-height:var(--p-lh);color:#555;margin-bottom:16px;font-style:normal;text-align:justify;text-justify:inter-word}
 .sobre-visual{display:flex;flex-direction:column;gap:0;position:relative;min-width:0;max-width:500px;width:100%;margin-left:auto}
 .sobre-photos-wrapper{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg)}
-.sobre-main-photo{width:100%;height:auto;aspect-ratio:4 / 5;object-fit:cover;object-position:center;display:block}
+.sobre-main-photo{width:100%;height:auto;aspect-ratio:1 / 1;object-fit:cover;object-position:center;display:block}
 .metrics-bar {
   background: #121214;
   backdrop-filter: blur(12px);

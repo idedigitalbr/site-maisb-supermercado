@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.12] - 2026-10-21
+- **Implementação da Nova Fotografia da Fachada em Proporção 1:1 Nativa (S2 - Sobre o +B Supermercados)**:
+  - Substituição da foto da fachada pelo arquivo quadrado oficial fornecido pelo cliente (`819x819`, proporção 1:1), com enquadramento perfeito da marquise, letreiro e vidraçaria.
+  - Atualização do estilo em `src/css/main.css`: definição de `aspect-ratio: 1 / 1` em `.sobre-main-photo` e restauração da largura do container `.sobre-visual` para `max-width: 500px` no desktop (e `480px` no mobile), eliminando qualquer vão indesejado e garantindo presença visual marcante alinhada com o bloco de texto.
+  - Atualização dos cache-busters em `index.html` (`main.css?v=41.0` e `fachada-maisb-home-sobre-2026-10-21.jpg?v=3`).
+
 ## [2.2.11] - 2026-10-21
 - **Atualização da Fachada Institucional (S2 - Sobre o +B Supermercados)**:
   - Substituição da fotografia da fachada na seção "Sobre o +B Supermercados" (.s-sobre) pela imagem oficial da nova fachada com o logotipo "+B Supermercados", marquise arquitetônica e vidraçaria frontal.
