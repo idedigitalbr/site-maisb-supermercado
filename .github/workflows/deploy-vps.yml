@@ -133,3 +133,33 @@ jobs:
             echo "NEW_ASSET: $asset_status"
             rm -f "$body" "$headers"
           done
+
+      - name: Verificar acesso SSH à VPS de produção real
+        if: always()
+        continue-on-error: true
+        shell: bash
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          ssh_dir="$(mktemp -d)"
+          trap 'ssh-agent -k >/dev/null 2>&1 || true; rm -rf "$ssh_dir"' EXIT
+          chmod 700 "$ssh_dir"
+          ssh-keyscan -T 10 -t rsa,ecdsa,ed25519 179.236.75.128 > "$ssh_dir/scanned" 2>/dev/null || true
+          : > "$ssh_dir/known_hosts"
+          while IFS= read -r line; do
+            [ -n "$line" ] || continue
+            printf '%s\n' "$line" > "$ssh_dir/testkey"
+            fingerprint="$(ssh-keygen -lf "$ssh_dir/testkey" -E sha256 | awk '{print $2}' || true)"
+            if [ "$fingerprint" = "SHA256:mq8COg7DKr2CSTiuioJCov0JMs3+YBkTzjPXZtUfh8E" ]; then
+              cat "$ssh_dir/testkey" >> "$ssh_dir/known_hosts"
+            fi
+          done < "$ssh_dir/scanned"
+          if [ ! -s "$ssh_dir/known_hosts" ]; then
+            echo "DIAG_SSH: PINNED_HOST_KEY_NOT_FOUND"
+            exit 1
+          fi
+          chmod 600 "$ssh_dir/known_hosts"
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "$VPS_SSH_KEY"
+          ssh -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$ssh_dir/known_hosts" -o GlobalKnownHostsFile=/dev/null -o IdentitiesOnly=no -p 22 root@179.236.75.128 'echo "DIAG_SSH: ACCESS_GRANTED"; if [ -d /opt/site-maisb-supermercado/app ]; then echo "DIAG_PROJECT: DIRECTORY_PRESENT"; git -C /opt/site-maisb-supermercado/app rev-parse --short HEAD || true; else echo "DIAG_PROJECT: DIRECTORY_MISSING"; fi; docker ps --filter name=site-maisb-supermercado --format "{{.Names}}" | head -8 || true'
