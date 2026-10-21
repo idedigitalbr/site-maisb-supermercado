@@ -75,3 +75,32 @@ jobs:
           docker compose up -d --build --remove-orphans
           
           REMOTE
+
+      - name: Diagnosticar entrega pública após o deploy
+        if: always()
+        shell: bash
+        run: |
+          set -uo pipefail
+          for host in maisbsupermercados.com.br www.maisbsupermercados.com.br maisbsupermercados.suporteide.digital; do
+            echo "===== PUBLIC CHECK: $host ====="
+            getent ahostsv4 "$host" | awk 'NR <= 3 {print "DNS: " $1}' || true
+            body="$(mktemp)"
+            headers="$(mktemp)"
+            url="https://$host/?_ci_check=${GITHUB_SHA}"
+            curl -LsS --max-time 18 -H "Cache-Control: no-cache" -H "Pragma: no-cache" -D "$headers" -o "$body" "$url"
+            rc=$?
+            echo "curl_exit=$rc"
+            awk 'BEGIN{IGNORECASE=1} /^HTTP\/|^server:|^cf-cache-status:|^location:|^age:|^content-type:/ {print}' "$headers" | tail -18
+            echo "received_bytes=$(wc -c < "$body")"
+            if grep -Fq 'fachada-maisb-home-sobre-2026-10-21.jpg' "$body"; then
+              echo "RESULT: NEW_PHOTO_REFERENCE_PRESENT"
+            elif grep -Fq 'unid-plaza-foto-de-fachada-vila-plaza.webp' "$body"; then
+              echo "RESULT: OLD_PHOTO_REFERENCE_PRESENT"
+            else
+              echo "RESULT: NEITHER_PHOTO_REFERENCE_PRESENT"
+            fi
+            asset_url="https://$host/assets/Fotografias/01_Fachadas/fachada-maisb-home-sobre-2026-10-21.jpg?_ci_check=${GITHUB_SHA}"
+            asset_status="$(curl -LsS --max-time 18 -o /dev/null -w '%{http_code} %{size_download} %{url_effective}' "$asset_url" || true)"
+            echo "NEW_ASSET: $asset_status"
+            rm -f "$body" "$headers"
+          done
