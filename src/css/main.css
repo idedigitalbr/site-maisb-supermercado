@@ -539,20 +539,21 @@ body.drawer-open {
 .hero-swiper .swiper-pagination-bullet{background:#fff;opacity:.45}
 .hero-swiper .swiper-pagination-bullet-active{background:var(--gold);opacity:1;width:22px;border-radius:4px}
 
-/* Banner da inauguração: preencher e centralizar a imagem na altura do carrossel mobile.
-   Somente esse slide usa o recorte cover; os demais continuam intactos. */
+/* No mobile, a moldura da inauguração tem altura própria (3:2).
+   O picture participa do layout do Swiper para evitar slide vazio.
+   Apenas a fotografia interna é recortada ao centro. */
 @media (max-width: 768px) {
-  .hero-swiper .swiper-slide--inauguracao {
-    position: relative;
-  }
   .hero-swiper .swiper-slide--inauguracao picture {
-    position: absolute;
-    inset: 0;
+    display: block;
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
   }
   .hero-swiper .swiper-slide--inauguracao img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
