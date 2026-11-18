@@ -561,6 +561,17 @@ body.drawer-open {
   }
 }
 
+/* Slide Esquenta Black Friday: a arte é mais baixa que os outros slides do
+   hero, então o slide preenche a altura com cover (desktop) e contém a arte
+   inteira no mobile, sempre sobre fundo preto para não aparecer faixa branca. */
+.hero-swiper .swiper-slide--esquenta { background: #000; }
+.hero-swiper .swiper-slide--esquenta a,
+.hero-swiper .swiper-slide--esquenta picture { display: block; width: 100%; height: 100%; }
+.hero-swiper .swiper-slide--esquenta img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+@media (max-width: 768px) {
+  .hero-swiper .swiper-slide--esquenta img { object-fit: contain; }
+}
+
 /* ──────────────────────────────────────────────
    S2  SOBRE O GRUPO +B
    ────────────────────────────────────────────── */
