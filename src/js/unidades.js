@@ -66,6 +66,28 @@ const unitsData = [
       5: { label: "sexta-feira", open: "07:00", close: "22:00", text: "07:00–22:00" },
       6: { label: "sábado", open: "07:00", close: "22:00", text: "07:00–22:00" }
     }
+  },
+  {
+    id: "grao-para",
+    name: "+B SUPERMERCADOS (GRÃO-PARÁ)",
+    shortName: "Grão-Pará",
+    coords: [-1.3916927, -48.4655369],
+    address: "Av. Centenário, 1052",
+    googleMapsUrl: "https://maps.app.goo.gl/nkMdLwc7DPhA7bpV8",
+    rating: 4.2,
+    reviewsCount: "13",
+    subbrands: ["SUPERMERCADOS +B"],
+    thumbLocal: "./assets/Fotografias/01_Fachadas/unid-grao-para-foto-de-fachada-da-loja.webp",
+    thumbOnline: "./assets/Fotografias/01_Fachadas/unid-grao-para-foto-de-fachada-da-loja.webp",
+    schedule: {
+      0: { label: "domingo", open: "07:30", close: "21:00", text: "07:30–21:00" },
+      1: { label: "segunda-feira", open: "07:00", close: "22:00", text: "07:00–22:00" },
+      2: { label: "terça-feira", open: "07:00", close: "22:00", text: "07:00–22:00" },
+      3: { label: "quarta-feira", open: "07:00", close: "22:00", text: "07:00–22:00" },
+      4: { label: "quinta-feira", open: "07:00", close: "22:00", text: "07:00–22:00" },
+      5: { label: "sexta-feira", open: "07:00", close: "22:00", text: "07:00–22:00" },
+      6: { label: "sábado", open: "07:00", close: "22:00", text: "07:00–22:00" }
+    }
   }
 ];
 
