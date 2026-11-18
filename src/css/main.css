@@ -561,15 +561,15 @@ body.drawer-open {
   }
 }
 
-/* Slide Esquenta Black Friday: a arte é mais baixa que os outros slides do
-   hero, então o slide preenche a altura com cover (desktop) e contém a arte
-   inteira no mobile, sempre sobre fundo preto para não aparecer faixa branca. */
+/* Slide Esquenta Black Friday: cover total pegando toda a altura do slide.
+   O picture define a altura (3:1 no desktop, 3:2 no mobile, igual aos outros
+   slides) e a imagem preenche tudo com cover, sem faixa branca. No mobile
+   usa a versão 1536x1024 com as bordas escuras estendidas. */
 .hero-swiper .swiper-slide--esquenta { background: #000; }
-.hero-swiper .swiper-slide--esquenta a,
-.hero-swiper .swiper-slide--esquenta picture { display: block; width: 100%; height: 100%; }
-.hero-swiper .swiper-slide--esquenta img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+.hero-swiper .swiper-slide--esquenta picture { position: relative; display: block; width: 100%; aspect-ratio: 3 / 1; overflow: hidden; }
+.hero-swiper .swiper-slide--esquenta img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
 @media (max-width: 768px) {
-  .hero-swiper .swiper-slide--esquenta img { object-fit: contain; }
+  .hero-swiper .swiper-slide--esquenta picture { aspect-ratio: 3 / 2; }
 }
 
 /* ──────────────────────────────────────────────
